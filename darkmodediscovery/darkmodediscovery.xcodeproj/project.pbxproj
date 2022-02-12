@@ -16,6 +16,9 @@
 		E09538BE27B36E9400AAAAAA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E09538BC27B36E9400AAAAAA /* LICENSE */; };
 		E09538BF27B36E9400AAAAAA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E09538BD27B36E9400AAAAAA /* README.md */; };
 		E09538C127B36ECA00AAAAAA /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */; };
+		E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */ = {isa = PBXBuildFile; fileRef = E0B3CA8127B81D6C00B8CE61 /* members.json */; };
+		E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8227B81D6C00B8CE61 /* Member.swift */; };
+		E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8327B81D6C00B8CE61 /* Race.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		E09538BC27B36E9400AAAAAA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E09538BD27B36E9400AAAAAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		E0B3CA8127B81D6C00B8CE61 /* members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = members.json; sourceTree = "<group>"; };
+		E0B3CA8227B81D6C00B8CE61 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		E0B3CA8327B81D6C00B8CE61 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,16 @@
 			path = DarkModeDiscoveryTests;
 			sourceTree = "<group>";
 		};
+		E0B3CA8027B81D4200B8CE61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0B3CA8227B81D6C00B8CE61 /* Member.swift */,
+				E0B3CA8127B81D6C00B8CE61 /* members.json */,
+				E0B3CA8327B81D6C00B8CE61 /* Race.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E0D0A73827B8012A006D46E8 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +133,7 @@
 			children = (
 				E095389227B36E7800AAAAAA /* MainViewController.storyboard */,
 				E095389027B36E7800AAAAAA /* MainViewController.swift */,
+				E0B3CA8027B81D4200B8CE61 /* Model */,
 			);
 			path = DemoContent;
 			sourceTree = "<group>";
@@ -177,7 +194,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */;
+			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "darkmodediscovery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,6 +221,7 @@
 				E095389927B36E7B00AAAAAA /* LaunchScreen.storyboard in Resources */,
 				E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */,
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
+				E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */,
 				E09538BE27B36E9400AAAAAA /* LICENSE in Resources */,
 				E095389427B36E7800AAAAAA /* MainViewController.storyboard in Resources */,
 			);
@@ -223,7 +241,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
 				E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */,
+				E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */,
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */ = {
+		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "darkmodediscovery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B127B36E7B00AAAAAA /* Debug */,

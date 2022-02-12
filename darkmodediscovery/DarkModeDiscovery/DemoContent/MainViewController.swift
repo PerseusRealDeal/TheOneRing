@@ -9,6 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController
 {
+    // MARK: - The data to show on screen
+    
+    private lazy var members: [Member] =
+        {
+            guard let fileURL = Bundle.main.url(forResource: "members", withExtension: "json"),
+                  let data = try? Data(contentsOf: fileURL)
+            else { return [] }
+            
+            return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Instance of the class
+    
     class func storyboardInstance() -> MainViewController
     {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
@@ -27,5 +40,7 @@ class MainViewController: UIViewController
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        members.forEach({ item in print(item) })
     }
 }
