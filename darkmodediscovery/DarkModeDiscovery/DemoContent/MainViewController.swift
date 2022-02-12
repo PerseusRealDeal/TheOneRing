@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  darkmodediscovery
+//  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin on 09.02.2022.
 //
@@ -9,13 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController
 {
-    deinit
-    {
-        #if DEBUG
-        print("\(type(of: self)).deinit")
-        #endif
-    }
-    
     class func storyboardInstance() -> MainViewController
     {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
@@ -32,6 +25,7 @@ class MainViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 }
