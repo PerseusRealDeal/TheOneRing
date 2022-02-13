@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  darkmodediscovery
+//  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin on 09.02.2022.
 //
@@ -9,12 +9,18 @@ import UIKit
 
 class MainViewController: UIViewController
 {
-    deinit
-    {
-        #if DEBUG
-        print("\(type(of: self)).deinit")
-        #endif
-    }
+    // MARK: - The data to show on screen
+    
+    private lazy var members: [Member] =
+        {
+            guard let fileURL = Bundle.main.url(forResource: "members", withExtension: "json"),
+                  let data = try? Data(contentsOf: fileURL)
+            else { return [] }
+            
+            return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Instance of the class
     
     class func storyboardInstance() -> MainViewController
     {
@@ -32,6 +38,9 @@ class MainViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
+        
+        members.forEach({ item in print(item) })
     }
 }

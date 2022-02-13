@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Boromir.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
