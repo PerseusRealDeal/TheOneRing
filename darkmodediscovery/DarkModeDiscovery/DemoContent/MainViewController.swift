@@ -7,8 +7,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    // MARK: - Interface Builder connectors
+    
+    @IBOutlet weak var titleTop  : UILabel!
+    @IBOutlet weak var titleImage: UIImageView!
+    
+    @IBOutlet weak var tableView : UITableView!
+    
     // MARK: - The data to show on screen
     
     private lazy var members: [Member] =
@@ -30,17 +37,56 @@ class MainViewController: UIViewController
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
         
         screen.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-        screen.view.backgroundColor = UIColor.yellow
+        screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         
         return screen
     }
+    
+    // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        titleTop.text = "The fellowship of the ring"
+        titleImage.image = UIImage(named: "TheFellowship")
         
-        members.forEach({ item in print(item) })
+        titleImage.layer.cornerRadius = 40
+        titleImage.layer.masksToBounds = true
+    }
+    
+    // MARK: - Table view datasource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        members.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
+                                                       for: indexPath) as? MemberTableViewCell
+        else { return UITableViewCell() }
+        
+        cell.data = members[indexPath.row]
+        
+        return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if let index = self.tableView.indexPathForSelectedRow
+        {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+        
+        // For taking action use indexPath here
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
     }
 }
