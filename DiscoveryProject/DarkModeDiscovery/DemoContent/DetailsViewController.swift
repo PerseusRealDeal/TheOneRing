@@ -23,7 +23,7 @@ class DetailsViewController: UIViewController
     @IBOutlet weak var closeButton   : UIButton!
     @IBOutlet weak var bottomImage   : UIImageView!
     
-    // MARK: - Data to show by using the cell
+    // MARK: - Data to show details
     
     var data: Member?
     {
