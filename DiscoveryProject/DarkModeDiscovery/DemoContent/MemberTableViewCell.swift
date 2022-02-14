@@ -59,9 +59,4 @@ class MemberTableViewCell: UITableViewCell
         selected.layer.cornerRadius = 45
         selected.layer.masksToBounds = true
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool)
-    {
-        super.setSelected(selected, animated: false)
-    }
 }

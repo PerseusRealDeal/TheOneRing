@@ -11,10 +11,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 {
     // MARK: - Interface Builder connectors
     
-    @IBOutlet weak var titleTop  : UILabel!
-    @IBOutlet weak var titleImage: UIImageView!
+    @IBOutlet weak var titleTop   : UILabel!
+    @IBOutlet weak var titleImage : UIImageView!
     
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var tableView  : UITableView!
     @IBOutlet weak var bottomImage: UIImageView!
     
     // MARK: - The data to show on screen
@@ -84,8 +84,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
-                                                       for: indexPath) as? MemberTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "MemberCell", for: indexPath) as? MemberTableViewCell
         else { return UITableViewCell() }
         
         cell.data = members[indexPath.row]
@@ -99,16 +99,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         if let index = self.tableView.indexPathForSelectedRow
         {
-            self.tableView.deselectRow(at: index, animated: true)
+            self.tableView.deselectRow(at: index, animated: false)
         }
         
         detailsToViewController.data = members[indexPath.row]
         
         self.present(detailsToViewController, animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
-    {
-        return true
     }
 }
