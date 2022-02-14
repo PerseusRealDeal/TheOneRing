@@ -48,7 +48,7 @@ class MemberTableViewCell: UITableViewCell
         
         selectedBackgroundView = selected
         
-        // Make coners of the views rounded
+        // Make corners of the views rounded
         
         memberIconBorder.layer.cornerRadius = 45
         memberIconBorder.layer.masksToBounds = true

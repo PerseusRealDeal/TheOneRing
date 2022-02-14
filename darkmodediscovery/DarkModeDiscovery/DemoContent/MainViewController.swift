@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var titleImage: UIImageView!
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var bottomImage: UIImageView!
     
     // MARK: - The data to show on screen
     
@@ -25,6 +26,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             else { return [] }
             
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Details View Controller instance
+    
+    private lazy var detailsToViewController =
+        { () -> DetailsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            
+            return screen
         }()
     
     // MARK: - Instance of the class
@@ -48,11 +66,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         super.viewDidLoad()
         
-        titleTop.text = "The fellowship of the ring"
+        titleTop.text = "The Fellowship of the Ring"
         titleImage.image = UIImage(named: "TheFellowship")
         
         titleImage.layer.cornerRadius = 40
         titleImage.layer.masksToBounds = true
+        
+        bottomImage.image = UIImage(named: "TheRingOfPower")
     }
     
     // MARK: - Table view datasource
@@ -82,7 +102,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.deselectRow(at: index, animated: true)
         }
         
-        // For taking action use indexPath here
+        detailsToViewController.data = members[indexPath.row]
+        
+        self.present(detailsToViewController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
