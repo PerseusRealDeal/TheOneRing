@@ -7,8 +7,16 @@
 
 import UIKit
 
-class MainViewController: UIViewController
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    // MARK: - Interface Builder connectors
+    
+    @IBOutlet weak var titleTop  : UILabel!
+    @IBOutlet weak var titleImage: UIImageView!
+    
+    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var bottomImage: UIImageView!
+    
     // MARK: - The data to show on screen
     
     private lazy var members: [Member] =
@@ -18,6 +26,23 @@ class MainViewController: UIViewController
             else { return [] }
             
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Details View Controller instance
+    
+    private lazy var detailsToViewController =
+        { () -> DetailsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            
+            return screen
         }()
     
     // MARK: - Instance of the class
@@ -30,17 +55,60 @@ class MainViewController: UIViewController
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
         
         screen.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-        screen.view.backgroundColor = UIColor.yellow
+        screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         
         return screen
     }
+    
+    // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        titleTop.text = "The Fellowship of the Ring"
+        titleImage.image = UIImage(named: "TheFellowship")
         
-        members.forEach({ item in print(item) })
+        titleImage.layer.cornerRadius = 40
+        titleImage.layer.masksToBounds = true
+        
+        bottomImage.image = UIImage(named: "TheRingOfPower")
+    }
+    
+    // MARK: - Table view datasource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        members.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
+                                                       for: indexPath) as? MemberTableViewCell
+        else { return UITableViewCell() }
+        
+        cell.data = members[indexPath.row]
+        
+        return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if let index = self.tableView.indexPathForSelectedRow
+        {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+        
+        detailsToViewController.data = members[indexPath.row]
+        
+        self.present(detailsToViewController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
     }
 }

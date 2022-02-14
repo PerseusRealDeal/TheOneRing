@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "TheRingOfPower.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
