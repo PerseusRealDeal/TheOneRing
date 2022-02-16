@@ -79,7 +79,7 @@ class OptionsPanel: UIView
     {
         // Content border
         
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 15
         contentView.layer.masksToBounds = true
         
         // Segmented control
@@ -117,14 +117,14 @@ class OptionsPanel: UIView
         }
     }
     
-    func updateActionButton()
+    private func updateActionButton()
     {
         actionButton.isEnabled = actionButtonClosure == nil ? false : true
     }
     
     // MARK: - Segmented control value changed event
     
-    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl)
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl)
     {
         switch sender.selectedSegmentIndex
         {

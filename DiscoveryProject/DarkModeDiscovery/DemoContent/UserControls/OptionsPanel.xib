@@ -28,9 +28,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="80" height="120"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqN-u2-gsj">
-                                    <rect key="frame" x="12.5" y="43.5" width="55" height="33"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="TAPME">
+                                    <rect key="frame" x="20.5" y="44" width="39" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="Tools">
                                         <color key="titleColor" systemColor="labelColor"/>
                                     </state>
                                     <connections>
@@ -68,8 +68,8 @@
                             <rect key="frame" x="240" y="0.0" width="80" height="120"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVV-Ph-uFV">
-                                    <rect key="frame" x="9" y="50" width="62" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="10.5" y="50.5" width="59" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

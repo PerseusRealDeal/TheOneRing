@@ -18,11 +18,11 @@ enum AppearanceStyle: Int, CustomStringConvertible
         switch self
         {
         case .unspecified:
-            return "AUTO"
+            return "Auto"
         case .light:
-            return "LIGHT"
+            return "Light"
         case .dark:
-            return "DARK"
+            return "Dark"
         }
     }
 }

@@ -23,6 +23,11 @@ class DetailsViewController: UIViewController
     @IBOutlet weak var closeButton   : UIButton!
     @IBOutlet weak var bottomImage   : UIImageView!
     
+    @IBAction func closeButtonAction(_ sender: UIButton)
+    {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Data to show details
     
     var data: Member?
@@ -55,12 +60,5 @@ class DetailsViewController: UIViewController
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
-    }
-    
-    // MARK: - Closing screen
-    
-    @IBAction func closeButtonAction(_ sender: UIButton)
-    {
-        dismiss(animated: true, completion: nil)
     }
 }

@@ -32,13 +32,30 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Details View Controller instance
     
-    private lazy var detailsToViewController =
+    private lazy var detailsViewController =
         { () -> DetailsViewController in
             
             let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
                                           bundle: nil)
             
             let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            
+            return screen
+        }()
+    
+    // MARK: - Details View Controller instance
+    
+    private lazy var semanticToolsViewController =
+        { () -> SemanticsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
             
             /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
             
@@ -77,7 +94,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         bottomImage.image = UIImage(named: "TheRingOfPower")
         
         optionsPanel.segmentedControlValueChangedClosure = darkModeValueChanged
-        optionsPanel.actionButtonClosure = { print("Tapped") }
+        optionsPanel.actionButtonClosure =
+            { self.present(self.semanticToolsViewController, animated: true, completion: nil) }
     }
     
     // MARK: - Interacting with options panel controls
@@ -86,7 +104,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         print("Dark Mode: " + actualValue.description)
         
-        // Appearance should be calculated but for now this statements.
+        // Appearance should be calculated but for now these statements.
         
         switch actualValue
         {
@@ -126,8 +144,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.deselectRow(at: index, animated: false)
         }
         
-        detailsToViewController.data = members[indexPath.row]
+        detailsViewController.data = members[indexPath.row]
         
-        self.present(detailsToViewController, animated: true, completion: nil)
+        self.present(detailsViewController, animated: true, completion: nil)
     }
 }
