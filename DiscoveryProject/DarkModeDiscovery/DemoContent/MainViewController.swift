@@ -9,13 +9,15 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    // MARK: - Interface Builder connectors
+    // MARK: - Interface Builder connections
     
-    @IBOutlet weak var titleTop   : UILabel!
-    @IBOutlet weak var titleImage : UIImageView!
+    @IBOutlet weak var titleTop    : UILabel!
+    @IBOutlet weak var titleImage  : UIImageView!
     
-    @IBOutlet weak var tableView  : UITableView!
-    @IBOutlet weak var bottomImage: UIImageView!
+    @IBOutlet weak var tableView   : UITableView!
+    @IBOutlet weak var bottomImage : UIImageView!
+    
+    @IBOutlet weak var optionsPanel: OptionsPanel!
     
     // MARK: - The data to show on screen
     
@@ -73,6 +75,28 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         titleImage.layer.masksToBounds = true
         
         bottomImage.image = UIImage(named: "TheRingOfPower")
+        
+        optionsPanel.segmentedControlValueChangedClosure = darkModeValueChanged
+        optionsPanel.actionButtonClosure = { print("Tapped") }
+    }
+    
+    // MARK: - Interacting with options panel controls
+    
+    func darkModeValueChanged(_ actualValue: DarkModeOption)
+    {
+        print("Dark Mode: " + actualValue.description)
+        
+        // Appearance should be calculated but for now this statements.
+        
+        switch actualValue
+        {
+        case .auto:
+            optionsPanel.setStatusValue(.unspecified)
+        case .on:
+            optionsPanel.setStatusValue(.dark)
+        case .off:
+            optionsPanel.setStatusValue(.light)
+        }
     }
     
     // MARK: - Table view datasource

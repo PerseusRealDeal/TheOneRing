@@ -9,7 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController
 {
-    // MARK: - Interface Builder connectors
+    // MARK: - Interface Builder connections
     
     @IBOutlet weak var memberName    : UILabel!
     @IBOutlet weak var memberIcon    : UIImageView!

@@ -9,7 +9,7 @@ import UIKit
 
 class MemberTableViewCell: UITableViewCell
 {
-    // MARK: - Interface Builder connectors
+    // MARK: - Interface Builder connections
     
     @IBOutlet weak var memberIconBorder: UIView!
     @IBOutlet weak var memberIcon      : UIImageView!
