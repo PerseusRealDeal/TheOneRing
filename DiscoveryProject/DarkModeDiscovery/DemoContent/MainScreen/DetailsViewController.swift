@@ -9,7 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController
 {
-    // MARK: - Interface Builder connectors
+    // MARK: - Interface Builder connections
     
     @IBOutlet weak var memberName    : UILabel!
     @IBOutlet weak var memberIcon    : UIImageView!
@@ -22,6 +22,11 @@ class DetailsViewController: UIViewController
     
     @IBOutlet weak var closeButton   : UIButton!
     @IBOutlet weak var bottomImage   : UIImageView!
+    
+    @IBAction func closeButtonAction(_ sender: UIButton)
+    {
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Data to show details
     
@@ -55,12 +60,5 @@ class DetailsViewController: UIViewController
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
-    }
-    
-    // MARK: - Closing screen
-    
-    @IBAction func closeButtonAction(_ sender: UIButton)
-    {
-        dismiss(animated: true, completion: nil)
     }
 }

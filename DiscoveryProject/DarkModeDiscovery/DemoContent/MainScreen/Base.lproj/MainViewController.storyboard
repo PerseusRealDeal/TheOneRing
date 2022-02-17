@@ -218,23 +218,9 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEH-cZ-4G4">
                                                 <rect key="frame" x="5" y="5" width="310" height="47"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="OptionsPanel" customModule="DarkModeDiscovery" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="253" height="47"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O P T I O N S  P A N E L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="725-25-7br">
-                                                                <rect key="frame" x="0.0" y="0.0" width="253" height="47"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="725-25-7br" secondAttribute="bottom" id="1KM-k3-spp"/>
-                                                            <constraint firstAttribute="trailing" secondItem="725-25-7br" secondAttribute="trailing" id="4lX-V0-z9w"/>
-                                                            <constraint firstItem="725-25-7br" firstAttribute="leading" secondItem="mFc-iZ-fRe" secondAttribute="leading" id="D29-6H-zZr"/>
-                                                            <constraint firstItem="725-25-7br" firstAttribute="top" secondItem="mFc-iZ-fRe" secondAttribute="top" id="qNr-ae-W0C"/>
-                                                        </constraints>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-co-Q6E" userLabel="Transparent Block">
                                                         <rect key="frame" x="253" y="0.0" width="57" height="47"/>
@@ -282,6 +268,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomImage" destination="NyA-XL-YJ8" id="3y0-0K-Zpn"/>
+                        <outlet property="optionsPanel" destination="mFc-iZ-fRe" id="41J-5T-o6c"/>
                         <outlet property="tableView" destination="XGe-tD-ua1" id="Vda-J9-5lE"/>
                         <outlet property="titleImage" destination="YlS-RV-cFq" id="Oup-t9-Xha"/>
                         <outlet property="titleTop" destination="hw7-jc-nVA" id="72H-O3-FOr"/>
