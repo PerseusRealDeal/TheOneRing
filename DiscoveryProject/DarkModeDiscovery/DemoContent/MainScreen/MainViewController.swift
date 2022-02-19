@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class MainViewController: UIViewController, AppearanceAdaptableElement
 {
     // MARK: - Interface Builder connections
     
@@ -28,40 +28,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             else { return [] }
             
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
-        }()
-    
-    // MARK: - Details View Controller instance
-    
-    private lazy var detailsViewController =
-        { () -> DetailsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            
-            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-            
-            return screen
-        }()
-    
-    // MARK: - Details View Controller instance
-    
-    private lazy var semanticToolsViewController =
-        { () -> SemanticsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            
-            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-            
-            return screen
         }()
     
     // MARK: - Instance of the class
@@ -85,6 +51,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         super.viewDidLoad()
         
+        AppearanceService.register(self)
+        
         titleTop.text = "The Fellowship of the Ring"
         titleImage.image = UIImage(named: "TheFellowship")
         
@@ -93,31 +61,90 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         bottomImage.image = UIImage(named: "TheRingOfPower")
         
-        optionsPanel.segmentedControlValueChangedClosure = darkModeValueChanged
+        optionsPanel.segmentedControlValueChangedClosure = userChoiceForDarkModeChanged
         optionsPanel.actionButtonClosure =
-            { self.present(self.semanticToolsViewController, animated: true, completion: nil) }
+            {
+                self.present(self.semanticToolsViewController,
+                             animated  : true,
+                             completion: nil)
+            }
+        
+        optionsPanel.setSegmentedControlValue(DarkMode.DarkModeUserChoice)
+        optionsPanel.setStatusValue(DarkMode.Style)
     }
     
-    // MARK: - Interacting with options panel controls
+    // MARK: - Dark Mode switched manually
     
-    func darkModeValueChanged(_ actualValue: DarkModeOption)
+    func userChoiceForDarkModeChanged(_ actualValue: DarkModeOption)
     {
-        print("Dark Mode: " + actualValue.description)
+        // Value should be saved
         
-        // Appearance should be calculated but for now these statements.
+        DarkMode.DarkModeUserChoice = actualValue
         
-        switch actualValue
-        {
-        case .auto:
-            optionsPanel.setStatusValue(.unspecified)
-        case .on:
-            optionsPanel.setStatusValue(.dark)
-        case .off:
-            optionsPanel.setStatusValue(.light)
-        }
+        // Value should be updated on screen after
+        
+        optionsPanel.setStatusValue(DarkMode.Style)
+        
+        // Customise appearance
+        
+        AppearanceService.adoptToDarkMode()
     }
     
-    // MARK: - Table view datasource
+    // MARK: - AppearanceAdaptableElement protocol
+    
+    func adoptAppearance()
+    {
+        // Appearance customisation starts here
+        
+        print("[\(type(of: self))]" +
+                " Dark Mode: \(DarkMode.DarkModeUserChoice)," +
+                " System Style: \(DarkModeDecision.calculateSystemStyle())," +
+                " Decision: \(DarkMode.Style)")
+        
+        optionsPanel.setStatusValue(DarkMode.Style)
+        
+        // TODO: Change appearance here
+        
+    }
+
+    // MARK: - Child View Controllers
+    
+    private lazy var detailsViewController =
+        { () -> DetailsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            
+            return screen
+        }()
+    
+    private lazy var semanticToolsViewController =
+        { () -> SemanticsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            
+            return screen
+        }()
+}
+
+// MARK: - UITableView
+
+extension MainViewController: UITableViewDataSource, UITableViewDelegate
+{
+    // MARK: - UITableViewDataSource protocol
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -135,7 +162,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: - UITableViewDelegate protocol
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

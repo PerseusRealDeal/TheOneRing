@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E001A2AB27BE289D004FAEBF /* AppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2AA27BE289D004FAEBF /* AppearanceService.swift */; };
+		E001A2AF27BF7FC3004FAEBF /* ServiceSetupByDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */; };
+		E001A2B127BF81E5004FAEBF /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B027BF81E5004FAEBF /* DarkMode.swift */; };
+		E001A2B327BFAE96004FAEBF /* DarkModeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */; };
+		E001A2B527BFAED0004FAEBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B427BFAED0004FAEBF /* Constants.swift */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E0761ADF27BB8BCD009E6AA5 /* OptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* OptionsPanel.swift */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E001A2AA27BE289D004FAEBF /* AppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceService.swift; sourceTree = "<group>"; };
+		E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupByDefault.swift; sourceTree = "<group>"; };
+		E001A2B027BF81E5004FAEBF /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
+		E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDecision.swift; sourceTree = "<group>"; };
+		E001A2B427BFAED0004FAEBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E0761ADE27BB8BCD009E6AA5 /* OptionsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPanel.swift; sourceTree = "<group>"; };
@@ -101,6 +111,11 @@
 			children = (
 				E0F078D127BCD38000EB626E /* DarkModeOption.swift */,
 				E0F078D327BCD62900EB626E /* AppearanceStyle.swift */,
+				E001A2AA27BE289D004FAEBF /* AppearanceService.swift */,
+				E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */,
+				E001A2B027BF81E5004FAEBF /* DarkMode.swift */,
+				E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */,
+				E001A2B427BFAED0004FAEBF /* Constants.swift */,
 			);
 			path = AppearanceService;
 			sourceTree = "<group>";
@@ -327,8 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0761ADF27BB8BCD009E6AA5 /* OptionsPanel.swift in Sources */,
+				E001A2AF27BF7FC3004FAEBF /* ServiceSetupByDefault.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0F078D427BCD62900EB626E /* AppearanceStyle.swift in Sources */,
+				E001A2AB27BE289D004FAEBF /* AppearanceService.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticsToolViewController.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsToolViewController.swift in Sources */,
@@ -336,10 +353,13 @@
 				E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */,
 				E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */,
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
+				E001A2B127BF81E5004FAEBF /* DarkMode.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
 				E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */,
+				E001A2B527BFAED0004FAEBF /* Constants.swift in Sources */,
 				E0F078D227BCD38000EB626E /* DarkModeOption.swift in Sources */,
 				E09183C327BD4C6A00475D2B /* SymbolsToolViewController.swift in Sources */,
+				E001A2B327BFAE96004FAEBF /* DarkModeDecision.swift in Sources */,
 				E09183C927BD4DBB00475D2B /* FontsToolViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController
+class DetailsViewController: UIViewController, AppearanceAdaptableElement
 {
     // MARK: - Interface Builder connections
     
@@ -52,6 +52,8 @@ class DetailsViewController: UIViewController
     {
         super.viewDidLoad()
         
+        AppearanceService.register(self)
+        
         closeButton.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
         closeButton.layer.cornerRadius = 8
         closeButton.clipsToBounds = true
@@ -60,5 +62,20 @@ class DetailsViewController: UIViewController
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
+    }
+    
+    // MARK: - AppearanceAdaptableElement protocol
+    
+    func adoptAppearance()
+    {
+        // Appearance adoptation starts here
+        
+        print("[\(type(of: self))]" +
+                " Dark Mode: \(DarkMode.DarkModeUserChoice)," +
+                " System Style: \(DarkModeDecision.calculateSystemStyle())," +
+                " Decision: \(DarkMode.Style)")
+        
+        // TODO: Change appearance here
+        
     }
 }

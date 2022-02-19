@@ -25,7 +25,7 @@ class OptionsPanel: UIView
     // MARK: - Variables
     
     private var segmentedControlValue: DarkModeOption = .auto
-    private var statusValue          : AppearanceStyle = .unspecified
+    private var statusValue          : AppearanceStyle = .light
     
     // MARK: - Closure for segmented control value changed event
     

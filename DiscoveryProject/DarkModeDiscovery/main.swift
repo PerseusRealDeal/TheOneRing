@@ -30,11 +30,21 @@ extension AppDelegate: UIApplicationDelegate
         print(">> [\(type(of: self))]." + #function)
         #endif
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindowAdoptable(frame: UIScreen.main.bounds)
         
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
         return true
+    }
+}
+
+// MARK: - Small helping functions
+
+extension UserDefaults
+{
+    func valueExists(forKey key: String) -> Bool
+    {
+        return object(forKey: key) != nil
     }
 }
