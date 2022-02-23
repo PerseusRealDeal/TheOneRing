@@ -7,21 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E001A2AB27BE289D004FAEBF /* AppearanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2AA27BE289D004FAEBF /* AppearanceService.swift */; };
-		E001A2AF27BF7FC3004FAEBF /* ServiceSetupByDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */; };
+		E001A2AF27BF7FC3004FAEBF /* SetupByDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2AE27BF7FC3004FAEBF /* SetupByDefault.swift */; };
 		E001A2B127BF81E5004FAEBF /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B027BF81E5004FAEBF /* DarkMode.swift */; };
 		E001A2B327BFAE96004FAEBF /* DarkModeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */; };
 		E001A2B527BFAED0004FAEBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E001A2B427BFAED0004FAEBF /* Constants.swift */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
+		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
+		E03450F227C36F870071443E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* Helpers.swift */; };
 		E0761ADF27BB8BCD009E6AA5 /* OptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* OptionsPanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* OptionsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* OptionsPanel.xib */; };
 		E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E07C0F2027BBA00000888456 /* MainViewController.storyboard */; };
 		E09183C127BD495500475D2B /* ColorsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C027BD495500475D2B /* ColorsToolViewController.swift */; };
-		E09183C327BD4C6A00475D2B /* SymbolsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C227BD4C6A00475D2B /* SymbolsToolViewController.swift */; };
 		E09183C527BD4CEF00475D2B /* SemanticsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */; };
 		E09183C727BD4D4500475D2B /* DynamicsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */; };
-		E09183C927BD4DBB00475D2B /* FontsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C827BD4DBB00475D2B /* FontsToolViewController.swift */; };
 		E095388D27B36E7800AAAAAA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095388C27B36E7800AAAAAA /* main.swift */; };
 		E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095389027B36E7800AAAAAA /* MainViewController.swift */; };
 		E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E095389527B36E7B00AAAAAA /* Assets.xcassets */; };
@@ -33,6 +32,8 @@
 		E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */; };
 		E0A3582227B960DA00472F95 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */; };
 		E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3582327B9611300472F95 /* DetailsViewController.swift */; };
+		E0A64E5827C22EA200276176 /* SystemColorsAdopted.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A64E5727C22EA200276176 /* SystemColorsAdopted.swift */; };
+		E0A64E5C27C22EDA00276176 /* SemanticColorsAdopted.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A64E5B27C22EDA00276176 /* SemanticColorsAdopted.swift */; };
 		E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */ = {isa = PBXBuildFile; fileRef = E0B3CA8127B81D6C00B8CE61 /* members.json */; };
 		E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8227B81D6C00B8CE61 /* Member.swift */; };
 		E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8327B81D6C00B8CE61 /* Race.swift */; };
@@ -51,21 +52,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E001A2AA27BE289D004FAEBF /* AppearanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceService.swift; sourceTree = "<group>"; };
-		E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSetupByDefault.swift; sourceTree = "<group>"; };
+		E001A2AE27BF7FC3004FAEBF /* SetupByDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupByDefault.swift; sourceTree = "<group>"; };
 		E001A2B027BF81E5004FAEBF /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
 		E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDecision.swift; sourceTree = "<group>"; };
 		E001A2B427BFAED0004FAEBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
+		E03450EF27C368F70071443E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		E03450F127C36F870071443E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E0761ADE27BB8BCD009E6AA5 /* OptionsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPanel.swift; sourceTree = "<group>"; };
 		E0761AE027BB8BF6009E6AA5 /* OptionsPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsPanel.xib; sourceTree = "<group>"; };
 		E07C0F2127BBA00000888456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		E09183C027BD495500475D2B /* ColorsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsToolViewController.swift; sourceTree = "<group>"; };
-		E09183C227BD4C6A00475D2B /* SymbolsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsToolViewController.swift; sourceTree = "<group>"; };
 		E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsToolViewController.swift; sourceTree = "<group>"; };
 		E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsToolViewController.swift; sourceTree = "<group>"; };
-		E09183C827BD4DBB00475D2B /* FontsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsToolViewController.swift; sourceTree = "<group>"; };
 		E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E095388C27B36E7800AAAAAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E095389027B36E7800AAAAAA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		E0A3582327B9611300472F95 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E0A64E5727C22EA200276176 /* SystemColorsAdopted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsAdopted.swift; sourceTree = "<group>"; };
+		E0A64E5B27C22EDA00276176 /* SemanticColorsAdopted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsAdopted.swift; sourceTree = "<group>"; };
 		E0B3CA8127B81D6C00B8CE61 /* members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = members.json; sourceTree = "<group>"; };
 		E0B3CA8227B81D6C00B8CE61 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		E0B3CA8327B81D6C00B8CE61 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -109,13 +111,10 @@
 		E02381E327BD2E03008A03CA /* AppearanceService */ = {
 			isa = PBXGroup;
 			children = (
-				E0F078D127BCD38000EB626E /* DarkModeOption.swift */,
+				E0A64E5D27C22FA300276176 /* DarkMode */,
+				E0A64E5127C22E4600276176 /* SystemTools */,
 				E0F078D327BCD62900EB626E /* AppearanceStyle.swift */,
-				E001A2AA27BE289D004FAEBF /* AppearanceService.swift */,
-				E001A2AE27BF7FC3004FAEBF /* ServiceSetupByDefault.swift */,
-				E001A2B027BF81E5004FAEBF /* DarkMode.swift */,
-				E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */,
-				E001A2B427BFAED0004FAEBF /* Constants.swift */,
+				E001A2AE27BF7FC3004FAEBF /* SetupByDefault.swift */,
 			);
 			path = AppearanceService;
 			sourceTree = "<group>";
@@ -174,12 +173,30 @@
 			isa = PBXGroup;
 			children = (
 				E09183C027BD495500475D2B /* ColorsToolViewController.swift */,
-				E09183C227BD4C6A00475D2B /* SymbolsToolViewController.swift */,
 				E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */,
 				E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */,
-				E09183C827BD4DBB00475D2B /* FontsToolViewController.swift */,
 			);
 			path = ToolsViewControllers;
+			sourceTree = "<group>";
+		};
+		E0A64E5127C22E4600276176 /* SystemTools */ = {
+			isa = PBXGroup;
+			children = (
+				E0A64E5727C22EA200276176 /* SystemColorsAdopted.swift */,
+				E0A64E5B27C22EDA00276176 /* SemanticColorsAdopted.swift */,
+			);
+			path = SystemTools;
+			sourceTree = "<group>";
+		};
+		E0A64E5D27C22FA300276176 /* DarkMode */ = {
+			isa = PBXGroup;
+			children = (
+				E001A2B427BFAED0004FAEBF /* Constants.swift */,
+				E0F078D127BCD38000EB626E /* DarkModeOption.swift */,
+				E001A2B027BF81E5004FAEBF /* DarkMode.swift */,
+				E001A2B227BFAE96004FAEBF /* DarkModeDecision.swift */,
+			);
+			path = DarkMode;
 			sourceTree = "<group>";
 		};
 		E0B3CA8027B81D4200B8CE61 /* Model */ = {
@@ -198,6 +215,8 @@
 				E095389727B36E7B00AAAAAA /* LaunchScreen.storyboard */,
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
+				E03450EF27C368F70071443E /* CustomColors.swift */,
+				E03450F127C36F870071443E /* Helpers.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -342,25 +361,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0761ADF27BB8BCD009E6AA5 /* OptionsPanel.swift in Sources */,
-				E001A2AF27BF7FC3004FAEBF /* ServiceSetupByDefault.swift in Sources */,
+				E001A2AF27BF7FC3004FAEBF /* SetupByDefault.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0F078D427BCD62900EB626E /* AppearanceStyle.swift in Sources */,
-				E001A2AB27BE289D004FAEBF /* AppearanceService.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticsToolViewController.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsToolViewController.swift in Sources */,
+				E0A64E5827C22EA200276176 /* SystemColorsAdopted.swift in Sources */,
+				E0A64E5C27C22EDA00276176 /* SemanticColorsAdopted.swift in Sources */,
 				E09183C127BD495500475D2B /* ColorsToolViewController.swift in Sources */,
 				E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */,
 				E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */,
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E001A2B127BF81E5004FAEBF /* DarkMode.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
+				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */,
 				E001A2B527BFAED0004FAEBF /* Constants.swift in Sources */,
 				E0F078D227BCD38000EB626E /* DarkModeOption.swift in Sources */,
-				E09183C327BD4C6A00475D2B /* SymbolsToolViewController.swift in Sources */,
 				E001A2B327BFAE96004FAEBF /* DarkModeDecision.swift in Sources */,
-				E09183C927BD4DBB00475D2B /* FontsToolViewController.swift in Sources */,
+				E03450F227C36F870071443E /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -553,7 +573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

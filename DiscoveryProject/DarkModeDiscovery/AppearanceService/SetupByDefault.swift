@@ -1,5 +1,5 @@
 //
-//  ServiceSetupByDefault.swift
+//  SetupByDefault.swift
 //  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin on 18.02.2022.
@@ -35,8 +35,26 @@ extension AppearanceService
     
     static func adoptToDarkMode()
     {
+        shared.isEnabled = true
+        
         guard adoptableElements.isEmpty != true else { return }
         
+        // Adopt system controls to DarkMode
+        if #available(iOS 13.0, *),
+           let keyWindow = UIApplication.shared.keyWindow
+        {
+            switch AppearanceService.shared.DarkModeUserChoice
+            {
+            case .auto:
+                keyWindow.overrideUserInterfaceStyle = .unspecified
+            case .on:
+                keyWindow.overrideUserInterfaceStyle = .dark
+            case .off:
+                keyWindow.overrideUserInterfaceStyle = .light
+            }
+        }
+        
+        // Adopt all other controls to DarkMode
         adoptableElements.forEach(
             { item in
                 
@@ -60,6 +78,8 @@ extension AppearanceService
         
         adoptableElements.remove(element)
     }
+    
+    
 }
 
 class UIWindowAdoptable: UIWindow
@@ -73,7 +93,7 @@ class UIWindowAdoptable: UIWindow
             let previousSystemStyle = previousTraitCollection?.userInterfaceStyle,
             previousSystemStyle.rawValue != DarkModeDecision.calculateSystemStyle().rawValue
         else { return }
-    
+        
         AppearanceService.adoptToDarkMode()
     }
 }

@@ -35,16 +35,8 @@ extension AppDelegate: UIApplicationDelegate
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
+        AppearanceService.adoptToDarkMode()
+        
         return true
-    }
-}
-
-// MARK: - Small helping functions
-
-extension UserDefaults
-{
-    func valueExists(forKey key: String) -> Bool
-    {
-        return object(forKey: key) != nil
     }
 }

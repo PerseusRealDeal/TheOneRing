@@ -27,7 +27,7 @@ class DarkModeDecision
     /// System style  .dark                         dark              dark              light
     /// — — — — — — — — — — — — — — — — — — — — — — — — —
     ///
-    class func calculateActualStyle(userChoice: DarkModeOption) -> AppearanceStyle
+    class func calculateActualStyle(_ userChoice: DarkModeOption) -> AppearanceStyle
     {
         // Inputs
         

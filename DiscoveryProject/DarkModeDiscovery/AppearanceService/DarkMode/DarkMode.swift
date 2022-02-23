@@ -13,8 +13,10 @@ class DarkMode
     
     var Style             : AppearanceStyle
     {
-        DarkModeDecision.calculateActualStyle(userChoice: DarkModeUserChoice)
+        DarkModeDecision.calculateActualStyle(DarkModeUserChoice)
     }
+    
+    var isEnabled         : Bool = false { willSet { if newValue == false { return } } }
     
     // MARK: - Dark Mode Style saved in UserDafaults
     
@@ -38,7 +40,12 @@ class DarkMode
             
             return DARK_MODE_USER_CHOICE_DEFAULT
         }
-        set { userDefaults?.setValue(newValue.rawValue,forKey: DARK_MODE_USER_CHOICE_OPTION_KEY) }
+        set
+        {
+            guard let ud = userDefaults else { return }
+            
+            ud.setValue(newValue.rawValue, forKey: DARK_MODE_USER_CHOICE_OPTION_KEY)
+        }
     }
 }
 

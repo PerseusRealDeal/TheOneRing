@@ -7,8 +7,10 @@
 
 import UIKit
 
-class MemberTableViewCell: UITableViewCell
+class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
 {
+    deinit { AppearanceService.unregister(self) }
+    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var memberIconBorder: UIView!
@@ -37,15 +39,23 @@ class MemberTableViewCell: UITableViewCell
     {
         super.awakeFromNib()
         
-        // Set background color for Icon border view
+        AppearanceService.register(self)
         
-        memberIconBorder.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        
-        // Create and set background view for selected ones
+        configure()
+        if DarkMode.isEnabled { makeUp() }
+    }
+    
+    // MARK: - AppearanceAdaptableElement protocol
+
+    func adoptAppearance() { makeUp() }
+    
+    // MARK: - Appearance matter methods
+    
+    private func configure()
+    {
+        // Create background view for selected ones
         
         let selected = UIView()
-        selected.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        
         selectedBackgroundView = selected
         
         // Make corners of the views rounded
@@ -58,5 +68,21 @@ class MemberTableViewCell: UITableViewCell
         
         selected.layer.cornerRadius = 45
         selected.layer.masksToBounds = true
+    }
+    
+    private func makeUp()
+    {
+        // Set background color for Icon border view up
+        
+        memberIconBorder.backgroundColor = ._customViewSelected
+        
+        // Set background view for selected ones up
+        
+        selectedBackgroundView?.backgroundColor = ._customViewSelected
+        
+        // Set text colors
+        
+        memberName.textColor = ._customLabel
+        memberRace.textColor = ._customSecondaryLabel
     }
 }
