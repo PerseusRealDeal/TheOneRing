@@ -224,14 +224,19 @@ Label</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ageLabel" destination="k0U-n2-4Hg" id="fDg-ed-dsR"/>
+                        <outlet property="birthLabel" destination="TXf-Nm-86O" id="P1E-NH-cRW"/>
                         <outlet property="bottomImage" destination="TQW-km-fM5" id="GPZ-Eh-UBF"/>
                         <outlet property="closeButton" destination="1P3-IL-NCg" id="Ybt-9x-bEn"/>
+                        <outlet property="fullNameLabel" destination="oWw-PA-HeF" id="aZf-od-tkT"/>
                         <outlet property="memberAge" destination="vyE-2e-h5e" id="1EH-IT-Qmz"/>
                         <outlet property="memberBirth" destination="BYv-ro-Xye" id="Ohy-Ef-unL"/>
                         <outlet property="memberFullName" destination="Xuw-Zt-lzt" id="ve3-hW-vBY"/>
                         <outlet property="memberIcon" destination="YsB-zR-Yce" id="Uhp-nX-nKg"/>
                         <outlet property="memberName" destination="kC4-Ii-D5O" id="eYP-ve-R3T"/>
                         <outlet property="memberRace" destination="BUH-nJ-Dvh" id="3hz-ym-NZE"/>
+                        <outlet property="nameLabel" destination="sEo-2u-iVk" id="RX3-eQ-2GY"/>
+                        <outlet property="raceLabel" destination="XZk-5T-qMe" id="JCO-vd-0cM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

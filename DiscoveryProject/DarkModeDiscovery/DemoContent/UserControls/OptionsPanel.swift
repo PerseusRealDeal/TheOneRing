@@ -7,8 +7,10 @@
 
 import UIKit
 
-class OptionsPanel: UIView
+class OptionsPanel: UIView, AppearanceAdaptableElement
 {
+    deinit { AppearanceService.unregister(self) }
+    
     // MARK: - Interface Builder connections
     
     @IBOutlet private weak var contentView     : UIView!
@@ -25,7 +27,7 @@ class OptionsPanel: UIView
     // MARK: - Variables
     
     private var segmentedControlValue: DarkModeOption = .auto
-    private var statusValue          : AppearanceStyle = .unspecified
+    private var statusValue          : AppearanceStyle = .light
     
     // MARK: - Closure for segmented control value changed event
     
@@ -48,7 +50,7 @@ class OptionsPanel: UIView
         super.init(frame: frame)
         
         commonInit()
-        configureConnectedIBElements()
+        configure()
     }
     
     required init?(coder aDecoder: NSCoder)
@@ -56,31 +58,35 @@ class OptionsPanel: UIView
         super.init(coder: aDecoder)
         
         commonInit()
-        configureConnectedIBElements()
+        configure()
     }
+    
+    // MARK: - AppearanceAdaptableElement protocol
+    
+    func adoptAppearance() { makeUp() }
     
     // MARK: - Setup user control
     
     private func commonInit()
     {
+        AppearanceService.register(self)
+        
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
         
         addSubview(contentView)
         
         contentView.frame = self.frame
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
-        backgroundColor = .clear
     }
     
     // MARK: - Configure connected Interface Builder elements
     
-    private func configureConnectedIBElements()
+    private func configure()
     {
         // Content border
         
-        contentView.layer.cornerRadius = 15
-        contentView.layer.masksToBounds = true
+        self.layer.cornerRadius = 15
+        self.layer.masksToBounds = true
         
         // Segmented control
         
@@ -97,6 +103,24 @@ class OptionsPanel: UIView
         // Action button
         
         updateActionButton()
+    }
+    
+    private func makeUp()
+    {
+        backgroundColor = ._customViewSelected
+        
+        status.textColor = ._label
+        actionButton.setTitleColor(._label, for: .normal)
+        
+        segmentedControl.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneNormalText
+            ], for: .normal)
+        
+        segmentedControl.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneSelectedText
+            ], for: .selected)
     }
     
     private func updateStatus()

@@ -7,17 +7,26 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController
+class DetailsViewController: UIViewController, AppearanceAdaptableElement
 {
+    deinit { AppearanceService.unregister(self) }
+    
     // MARK: - Interface Builder connections
     
+    @IBOutlet weak var nameLabel     : UILabel!
     @IBOutlet weak var memberName    : UILabel!
     @IBOutlet weak var memberIcon    : UIImageView!
     
+    @IBOutlet weak var fullNameLabel : UILabel!
     @IBOutlet weak var memberFullName: UILabel!
+    
+    @IBOutlet weak var ageLabel      : UILabel!
     @IBOutlet weak var memberAge     : UILabel!
     
+    @IBOutlet weak var birthLabel    : UILabel!
     @IBOutlet weak var memberBirth   : UITextView!
+    
+    @IBOutlet weak var raceLabel     : UILabel!
     @IBOutlet weak var memberRace    : UILabel!
     
     @IBOutlet weak var closeButton   : UIButton!
@@ -52,13 +61,55 @@ class DetailsViewController: UIViewController
     {
         super.viewDidLoad()
         
-        closeButton.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        AppearanceService.register(self)
+        configure()
+        if DarkMode.isEnabled { makeUp() }
+    }
+    
+    // MARK: - AppearanceAdaptableElement protocol
+    
+    func adoptAppearance() { makeUp() }
+    
+    // MARK: - Appearance matter methods
+    
+    private func configure()
+    {
         closeButton.layer.cornerRadius = 8
         closeButton.clipsToBounds = true
-        
-        bottomImage.image = UIImage(named: "Rivendell")
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
     }
+    
+    func makeUp()
+    {
+        view.backgroundColor = ._customPrimaryBackground
+        closeButton.backgroundColor = ._customSecondaryBackground
+        
+        nameLabel.textColor = ._customLabel
+        memberName.textColor = ._customSecondaryLabel
+        
+        fullNameLabel.textColor = ._customLabel
+        memberFullName.textColor = ._customSecondaryLabel
+        
+        ageLabel.textColor = ._customLabel
+        memberAge.textColor = ._customSecondaryLabel
+        
+        birthLabel.textColor = ._customLabel
+        memberBirth.textColor = ._customSecondaryLabel
+        
+        raceLabel.textColor = ._customLabel
+        memberRace.textColor = ._customSecondaryLabel
+        
+        bottomImage.image = DarkMode.Style == .light ?
+            UIImage(named: "Rivendell") :
+            UIImage(named: "RivendellDark")
+    }
 }
+
+/*
+ print("[\(type(of: self))]" +
+         " Dark Mode: \(DarkMode.DarkModeUserChoice)," +
+         " System Style: \(DarkModeDecision.calculateSystemStyle())," +
+         " Decision: \(DarkMode.Style)")
+ */

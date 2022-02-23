@@ -28,7 +28,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw7-jc-nVA">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="30.5"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -219,14 +219,21 @@
                                                 <rect key="frame" x="5" y="5" width="310" height="47"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="OptionsPanel" customModule="DarkModeDiscovery" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="47"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="258" height="47"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYV-xe-SjF" userLabel="Transparent Block">
+                                                        <rect key="frame" x="258" y="0.0" width="5" height="47"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="5" id="sa8-CF-Ofz"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-co-Q6E" userLabel="Transparent Block">
-                                                        <rect key="frame" x="253" y="0.0" width="57" height="47"/>
+                                                        <rect key="frame" x="263" y="0.0" width="47" height="47"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-XL-YJ8">
-                                                                <rect key="frame" x="5" y="0.0" width="47" height="47"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -239,7 +246,7 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="tYB-co-Q6E" firstAttribute="width" secondItem="qEH-cZ-4G4" secondAttribute="height" constant="10" id="qRa-bH-TAp"/>
+                                                    <constraint firstItem="tYB-co-Q6E" firstAttribute="width" secondItem="qEH-cZ-4G4" secondAttribute="height" id="qRa-bH-TAp"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>

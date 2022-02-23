@@ -7,8 +7,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class MainViewController: UIViewController, AppearanceAdaptableElement
 {
+    deinit { AppearanceService.unregister(self) }
+    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var titleTop    : UILabel!
@@ -30,7 +32,102 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
         }()
     
-    // MARK: - Details View Controller instance
+    // MARK: - Instance of the class
+    
+    class func storyboardInstance() -> MainViewController
+    {
+        let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
+        let screen = storyboard.instantiateInitialViewController() as! MainViewController
+        
+        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        
+        screen.modalTransitionStyle = UIModalTransitionStyle.partialCurl
+        
+        return screen
+    }
+    
+    // MARK: - The life cyrcle group of methods
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        AppearanceService.register(self)
+        configure()
+    }
+    
+    // MARK: - AppearanceAdaptableElement protocol
+    
+    func adoptAppearance() { makeUp() }
+    
+    // MARK: - Appearance matter methods
+    
+    private func configure()
+    {
+        titleTop.text = "The Fellowship of the Ring"
+        
+        titleImage.layer.cornerRadius = 40
+        titleImage.layer.masksToBounds = true
+        
+        optionsPanel.segmentedControlValueChangedClosure =
+            { actualValue in
+                // Value should be saved
+                
+                self.DarkMode.DarkModeUserChoice = actualValue
+                
+                // Value should be updated on screen after
+                
+                self.optionsPanel.setStatusValue(self.DarkMode.Style)
+                
+                // Customise appearance
+                
+                AppearanceService.adoptToDarkMode()
+            }
+        optionsPanel.actionButtonClosure =
+            {
+                self.present(self.semanticToolsViewController,
+                             animated  : true,
+                             completion: nil)
+            }
+        
+        optionsPanel.setSegmentedControlValue(DarkMode.DarkModeUserChoice)
+        optionsPanel.setStatusValue(DarkMode.Style)
+        
+        // Move to makeUp if changing
+        
+        bottomImage.image = UIImage(named: "OneRing")
+    }
+    
+    private func makeUp()
+    {
+        optionsPanel.setStatusValue(DarkMode.Style)
+        
+        view.backgroundColor = ._customPrimaryBackground
+        titleTop.textColor = ._customTitle
+        
+        titleImage.image = DarkMode.Style == .light ?
+            UIImage(named: "TheFellowship") :
+            UIImage(named: "FrodoWithTheRing")
+    }
+    
+    // MARK: - Dark Mode switched manually
+    
+    func userChoiceForDarkModeChanged(_ actualValue: DarkModeOption)
+    {
+        // Value should be saved
+        
+        DarkMode.DarkModeUserChoice = actualValue
+        
+        // Value should be updated on screen after
+        
+        optionsPanel.setStatusValue(DarkMode.Style)
+        
+        // Customise appearance
+        
+        AppearanceService.adoptToDarkMode()
+    }
+
+    // MARK: - Child View Controllers
     
     private lazy var detailsViewController =
         { () -> DetailsViewController in
@@ -41,13 +138,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
             
             /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            
-            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+            //screen.makeUp()
             
             return screen
         }()
-    
-    // MARK: - Details View Controller instance
     
     private lazy var semanticToolsViewController =
         { () -> SemanticsViewController in
@@ -63,61 +157,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             return screen
         }()
-    
-    // MARK: - Instance of the class
-    
-    class func storyboardInstance() -> MainViewController
-    {
-        let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
-        let screen = storyboard.instantiateInitialViewController() as! MainViewController
-        
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-        
-        screen.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-        screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-        
-        return screen
-    }
-    
-    // MARK: - The life cyrcle group of methods
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        titleTop.text = "The Fellowship of the Ring"
-        titleImage.image = UIImage(named: "TheFellowship")
-        
-        titleImage.layer.cornerRadius = 40
-        titleImage.layer.masksToBounds = true
-        
-        bottomImage.image = UIImage(named: "TheRingOfPower")
-        
-        optionsPanel.segmentedControlValueChangedClosure = darkModeValueChanged
-        optionsPanel.actionButtonClosure =
-            { self.present(self.semanticToolsViewController, animated: true, completion: nil) }
-    }
-    
-    // MARK: - Interacting with options panel controls
-    
-    func darkModeValueChanged(_ actualValue: DarkModeOption)
-    {
-        print("Dark Mode: " + actualValue.description)
-        
-        // Appearance should be calculated but for now these statements.
-        
-        switch actualValue
-        {
-        case .auto:
-            optionsPanel.setStatusValue(.unspecified)
-        case .on:
-            optionsPanel.setStatusValue(.dark)
-        case .off:
-            optionsPanel.setStatusValue(.light)
-        }
-    }
-    
-    // MARK: - Table view datasource
+}
+
+// MARK: - UITableView
+
+extension MainViewController: UITableViewDataSource, UITableViewDelegate
+{
+    // MARK: - UITableViewDataSource protocol
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -135,7 +181,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: - UITableViewDelegate protocol
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -144,8 +190,46 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.deselectRow(at: index, animated: false)
         }
         
+        present(detailsViewController, animated: true, completion: nil)
         detailsViewController.data = members[indexPath.row]
-        
-        self.present(detailsViewController, animated: true, completion: nil)
     }
 }
+
+// MARK: - Experiments
+
+extension MainViewController
+{
+    private func experiment()
+    {
+        print("[\(type(of: self))] " + #function)
+        
+        print("UserChoice: \(AppearanceService.shared.DarkModeUserChoice)")
+        print("System: \(DarkModeDecision.calculateSystemStyle())")
+        print("DarkMode: \(AppearanceService.shared.Style)")
+        
+        titleTop.isHidden = true
+        
+        if #available(iOS 13.0, *),
+           let view = titleTop.nextFirstResponder(where: { $0 is UIView }) as? UIView
+        {
+            view.backgroundColor = .label
+            print(UIColor.label.rgba)
+        }
+    }
+}
+
+/*
+ 
+ print("UserChoice: \(AppearanceService.shared.DarkModeUserChoice)")
+ print("System: \(DarkModeDecision.calculateSystemStyle())")
+ print("DarkMode: \(AppearanceService.shared.Style)")
+ 
+ print("[\(type(of: self))] " + #function)
+ 
+ //let _ = UIColor()
+ //let _ : UIColor = .systemRed
+ 
+ //if #available(iOS 13.0, *) { self.view.backgroundColor = ._systemBackground }
+ //if #available(iOS 13.0, *) { print(UIColor.systemBackground.rgba) }
+ 
+ */

@@ -30,10 +30,12 @@ extension AppDelegate: UIApplicationDelegate
         print(">> [\(type(of: self))]." + #function)
         #endif
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindowAdoptable(frame: UIScreen.main.bounds)
         
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
+        
+        AppearanceService.adoptToDarkMode()
         
         return true
     }

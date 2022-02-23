@@ -17,7 +17,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A8s-Z8-n14">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A8s-Z8-n14" userLabel="Transparent Block">
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -87,7 +87,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="CsY-CP-pni" secondAttribute="bottom" id="EKE-uE-4hB"/>
                 <constraint firstItem="CsY-CP-pni" firstAttribute="leading" secondItem="A8s-Z8-n14" secondAttribute="leading" id="Fu1-rH-TD5"/>

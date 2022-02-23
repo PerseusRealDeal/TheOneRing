@@ -9,20 +9,24 @@ import Foundation
 
 enum AppearanceStyle: Int, CustomStringConvertible
 {
-    case unspecified = 0
-    case light = 1
-    case dark = 2
+    case light = 0
+    case dark = 1
     
     var description: String
     {
         switch self
         {
-        case .unspecified:
-            return "Auto"
         case .light:
             return "Light"
         case .dark:
             return "Dark"
         }
     }
+}
+
+enum SystemStyle: Int
+{
+    case unspecified = 0
+    case light = 1
+    case dark = 2
 }
