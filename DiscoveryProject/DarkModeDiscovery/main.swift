@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PerseusDarkMode
 
 // MARK: - The Application Object Initiation
 
@@ -30,12 +31,12 @@ extension AppDelegate: UIApplicationDelegate
         print(">> [\(type(of: self))]." + #function)
         #endif
         
-        window = UIWindowAdoptable(frame: UIScreen.main.bounds)
+        window = UIWindowAdaptable(frame: UIScreen.main.bounds)
         
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
-        AppearanceService.adoptToDarkMode()
+        AppearanceService.adaptToDarkMode()
         
         return true
     }

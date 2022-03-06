@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PerseusDarkMode
 
 class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
 {
@@ -47,7 +48,7 @@ class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
     
     // MARK: - AppearanceAdaptableElement protocol
 
-    func adoptAppearance() { makeUp() }
+    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
