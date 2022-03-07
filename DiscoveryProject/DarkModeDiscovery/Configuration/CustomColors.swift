@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PerseusDarkMode
 
 protocol UICustomColors
 {

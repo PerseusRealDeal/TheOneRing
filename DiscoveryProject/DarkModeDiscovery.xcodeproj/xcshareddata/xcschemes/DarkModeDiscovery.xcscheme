@@ -38,6 +38,16 @@
                ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E085D9F027D1489B00C1AFDF"
+               BuildableName = "DarkModeDiscoveryUITests.xctest"
+               BlueprintName = "DarkModeDiscoveryUITests"
+               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

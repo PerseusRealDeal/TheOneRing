@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PerseusDarkMode
 
 class DetailsViewController: UIViewController, AppearanceAdaptableElement
 {
@@ -68,7 +69,7 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
     
     // MARK: - AppearanceAdaptableElement protocol
     
-    func adoptAppearance() { makeUp() }
+    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     

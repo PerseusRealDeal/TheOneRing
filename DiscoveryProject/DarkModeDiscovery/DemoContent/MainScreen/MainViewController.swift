@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PerseusDarkMode
+import AdaptedSystemUI
 
 class MainViewController: UIViewController, AppearanceAdaptableElement
 {
@@ -54,11 +56,16 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
         
         AppearanceService.register(self)
         configure()
+        
+        //let value = PerseusDarkMode.AppearanceService.shared.isEnabled
+        
+        //print(value.description)
+        //let color: UIColor = .label
     }
     
     // MARK: - AppearanceAdaptableElement protocol
     
-    func adoptAppearance() { makeUp() }
+    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
@@ -81,7 +88,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
                 
                 // Customise appearance
                 
-                AppearanceService.adoptToDarkMode()
+                AppearanceService.adaptToDarkMode()
             }
         optionsPanel.actionButtonClosure =
             {
@@ -124,7 +131,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
         
         // Customise appearance
         
-        AppearanceService.adoptToDarkMode()
+        AppearanceService.adaptToDarkMode()
     }
 
     // MARK: - Child View Controllers

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PerseusDarkMode
+import AdaptedSystemUI
 
 class OptionsPanel: UIView, AppearanceAdaptableElement
 {
@@ -63,7 +65,7 @@ class OptionsPanel: UIView, AppearanceAdaptableElement
     
     // MARK: - AppearanceAdaptableElement protocol
     
-    func adoptAppearance() { makeUp() }
+    func adaptAppearance() { makeUp() }
     
     // MARK: - Setup user control
     
@@ -109,8 +111,8 @@ class OptionsPanel: UIView, AppearanceAdaptableElement
     {
         backgroundColor = ._customViewSelected
         
-        status.textColor = ._label
-        actionButton.setTitleColor(._label, for: .normal)
+        status.textColor = .secondaryLabel_Adapted
+        actionButton.setTitleColor(.secondaryLabel_Adapted, for: .normal)
         
         segmentedControl.setTitleTextAttributes(
             [
