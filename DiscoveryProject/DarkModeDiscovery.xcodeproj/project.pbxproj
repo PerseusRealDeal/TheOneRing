@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
+		E023ADCF27DA05DC0048123E /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E023ADCE27DA05DC0048123E /* Adapted System UI */; };
+		E023ADD127DA05DC0048123E /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E023ADD027DA05DC0048123E /* Perseus Dark Mode */; };
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
 		E03450F227C36F870071443E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* Helpers.swift */; };
-		E06D94DC27D4FED900185405 /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E06D94DB27D4FED900185405 /* Adapted System UI */; };
-		E06D94DE27D4FED900185405 /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E06D94DD27D4FED900185405 /* Perseus Dark Mode */; };
+		E0471EA327DF4519001C7847 /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E0471EA227DF4519001C7847 /* Adapted System UI */; };
+		E0471EA527DF4519001C7847 /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E0471EA427DF4519001C7847 /* Perseus Dark Mode */; };
 		E0761ADF27BB8BCD009E6AA5 /* OptionsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* OptionsPanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* OptionsPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* OptionsPanel.xib */; };
 		E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E07C0F2027BBA00000888456 /* MainViewController.storyboard */; };
@@ -81,8 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E06D94DC27D4FED900185405 /* Adapted System UI in Frameworks */,
-				E06D94DE27D4FED900185405 /* Perseus Dark Mode in Frameworks */,
+				E023ADCF27DA05DC0048123E /* Adapted System UI in Frameworks */,
+				E0471EA327DF4519001C7847 /* Adapted System UI in Frameworks */,
+				E023ADD127DA05DC0048123E /* Perseus Dark Mode in Frameworks */,
+				E0471EA527DF4519001C7847 /* Perseus Dark Mode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +239,10 @@
 			);
 			name = DarkModeDiscovery;
 			packageProductDependencies = (
-				E06D94DB27D4FED900185405 /* Adapted System UI */,
-				E06D94DD27D4FED900185405 /* Perseus Dark Mode */,
+				E023ADCE27DA05DC0048123E /* Adapted System UI */,
+				E023ADD027DA05DC0048123E /* Perseus Dark Mode */,
+				E0471EA227DF4519001C7847 /* Adapted System UI */,
+				E0471EA427DF4519001C7847 /* Perseus Dark Mode */,
 			);
 			productName = darkmodediscovery;
 			productReference = E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */;
@@ -288,7 +294,7 @@
 			);
 			mainGroup = E095388027B36E7800AAAAAA;
 			packageReferences = (
-				E06D94DA27D4FED900185405 /* XCRemoteSwiftPackageReference "DarkMode" */,
+				E0471EA127DF4519001C7847 /* XCRemoteSwiftPackageReference "DarkMode" */,
 			);
 			productRefGroup = E095388A27B36E7800AAAAAA /* Products */;
 			projectDirPath = "";
@@ -617,25 +623,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E06D94DA27D4FED900185405 /* XCRemoteSwiftPackageReference "DarkMode" */ = {
+		E0471EA127DF4519001C7847 /* XCRemoteSwiftPackageReference "DarkMode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/DarkMode.git";
 			requirement = {
 				kind = exactVersion;
-				version = "1.0.0-alpha";
+				version = "1.0.0-beta";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E06D94DB27D4FED900185405 /* Adapted System UI */ = {
+		E023ADCE27DA05DC0048123E /* Adapted System UI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E06D94DA27D4FED900185405 /* XCRemoteSwiftPackageReference "DarkMode" */;
 			productName = "Adapted System UI";
 		};
-		E06D94DD27D4FED900185405 /* Perseus Dark Mode */ = {
+		E023ADD027DA05DC0048123E /* Perseus Dark Mode */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E06D94DA27D4FED900185405 /* XCRemoteSwiftPackageReference "DarkMode" */;
+			productName = "Perseus Dark Mode";
+		};
+		E0471EA227DF4519001C7847 /* Adapted System UI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0471EA127DF4519001C7847 /* XCRemoteSwiftPackageReference "DarkMode" */;
+			productName = "Adapted System UI";
+		};
+		E0471EA427DF4519001C7847 /* Perseus Dark Mode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0471EA127DF4519001C7847 /* XCRemoteSwiftPackageReference "DarkMode" */;
 			productName = "Perseus Dark Mode";
 		};
 /* End XCSwiftPackageProductDependency section */

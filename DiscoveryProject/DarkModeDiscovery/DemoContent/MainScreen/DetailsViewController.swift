@@ -8,10 +8,8 @@
 import UIKit
 import PerseusDarkMode
 
-class DetailsViewController: UIViewController, AppearanceAdaptableElement
+class DetailsViewController: UIViewController
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var nameLabel     : UILabel!
@@ -62,14 +60,11 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
     {
         super.viewDidLoad()
         
-        AppearanceService.register(self)
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
-        if DarkMode.isEnabled { makeUp() }
+        
+        if AppearanceService.isEnabled { makeUp() }
     }
-    
-    // MARK: - AppearanceAdaptableElement protocol
-    
-    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
@@ -82,7 +77,7 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
         memberIcon.clipsToBounds = true
     }
     
-    func makeUp()
+    @objc private func makeUp()
     {
         view.backgroundColor = ._customPrimaryBackground
         closeButton.backgroundColor = ._customSecondaryBackground

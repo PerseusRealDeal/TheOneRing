@@ -9,10 +9,8 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class MainViewController: UIViewController, AppearanceAdaptableElement
+class MainViewController: UIViewController
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var titleTop    : UILabel!
@@ -50,22 +48,21 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
     
     // MARK: - The life cyrcle group of methods
     
+    let darkModeObserver = DarkModeObserver(AppearanceService.shared)
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        AppearanceService.register(self)
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
         
-        //let value = PerseusDarkMode.AppearanceService.shared.isEnabled
-        
-        //print(value.description)
-        //let color: UIColor = .label
+        darkModeObserver.action =
+            { newStyle in
+                
+                print("\(newStyle), \(self.DarkMode.Style)")
+            }
     }
-    
-    // MARK: - AppearanceAdaptableElement protocol
-    
-    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
@@ -80,7 +77,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
             { actualValue in
                 // Value should be saved
                 
-                self.DarkMode.DarkModeUserChoice = actualValue
+                AppearanceService.DarkModeUserChoice = actualValue
                 
                 // Value should be updated on screen after
                 
@@ -88,7 +85,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
                 
                 // Customise appearance
                 
-                AppearanceService.adaptToDarkMode()
+                AppearanceService.makeUp()
             }
         optionsPanel.actionButtonClosure =
             {
@@ -97,7 +94,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
                              completion: nil)
             }
         
-        optionsPanel.setSegmentedControlValue(DarkMode.DarkModeUserChoice)
+        optionsPanel.setSegmentedControlValue(AppearanceService.DarkModeUserChoice)
         optionsPanel.setStatusValue(DarkMode.Style)
         
         // Move to makeUp if changing
@@ -105,7 +102,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
         bottomImage.image = UIImage(named: "OneRing")
     }
     
-    private func makeUp()
+    @objc private func makeUp()
     {
         optionsPanel.setStatusValue(DarkMode.Style)
         
@@ -123,7 +120,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
     {
         // Value should be saved
         
-        DarkMode.DarkModeUserChoice = actualValue
+        AppearanceService.DarkModeUserChoice = actualValue
         
         // Value should be updated on screen after
         
@@ -131,7 +128,7 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
         
         // Customise appearance
         
-        AppearanceService.adaptToDarkMode()
+        AppearanceService.makeUp()
     }
 
     // MARK: - Child View Controllers
@@ -210,8 +207,8 @@ extension MainViewController
     {
         print("[\(type(of: self))] " + #function)
         
-        print("UserChoice: \(AppearanceService.shared.DarkModeUserChoice)")
-        print("System: \(DarkModeDecision.calculateSystemStyle())")
+        print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
+        print("System: \(AppearanceService.shared.SystemStyle)")
         print("DarkMode: \(AppearanceService.shared.Style)")
         
         titleTop.isHidden = true

@@ -9,10 +9,8 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class OptionsPanel: UIView, AppearanceAdaptableElement
+class OptionsPanel: UIView
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
     @IBOutlet private weak var contentView     : UIView!
@@ -63,15 +61,11 @@ class OptionsPanel: UIView, AppearanceAdaptableElement
         configure()
     }
     
-    // MARK: - AppearanceAdaptableElement protocol
-    
-    func adaptAppearance() { makeUp() }
-    
     // MARK: - Setup user control
     
     private func commonInit()
     {
-        AppearanceService.register(self)
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
         
@@ -105,9 +99,10 @@ class OptionsPanel: UIView, AppearanceAdaptableElement
         // Action button
         
         updateActionButton()
+        
     }
     
-    private func makeUp()
+    @objc private func makeUp()
     {
         backgroundColor = ._customViewSelected
         
