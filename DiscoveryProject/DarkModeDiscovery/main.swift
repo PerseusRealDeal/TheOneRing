@@ -36,18 +36,8 @@ extension AppDelegate: UIApplicationDelegate
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
-        AppearanceService.makeUp()
-        
-        //_print("[\(type(of: self))]")
+        //AppearanceService.makeUp()
         
         return true
     }
-}
-
-func _print(_ type: String)
-{
-    print("[\(type)]" +
-            " Dark Mode: \(AppearanceService.DarkModeUserChoice)," +
-            " System Style: \(AppearanceService.shared.SystemStyle)," +
-            " Decision: \(AppearanceService.shared.Style)")
 }

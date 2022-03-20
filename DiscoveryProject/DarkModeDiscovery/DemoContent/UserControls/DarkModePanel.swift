@@ -9,7 +9,7 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class OptionsPanel: UIView
+class DarkModePanel: UIView
 {
     // MARK: - Interface Builder connections
     
@@ -17,12 +17,6 @@ class OptionsPanel: UIView
     
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var status          : UILabel!
-    @IBOutlet private weak var actionButton    : UIButton!
-    
-    @IBAction private func actionButtonTapped(_ sender: UIButton)
-    {
-        actionButtonClosure?()
-    }
     
     // MARK: - Variables
     
@@ -33,15 +27,9 @@ class OptionsPanel: UIView
     
     var segmentedControlValueChangedClosure: ((_ actualValue: DarkModeOption) -> Void)?
     
-    // MARK: - Closure for action button touchUp event
+    // MARK: - Dark Mode observer
     
-    var actionButtonClosure: (() -> Void)?
-    {
-        didSet
-        {
-            updateActionButton()
-        }
-    }
+    private let darkModeObserver = DarkModeObserver(AppearanceService.shared)
     
     // MARK: - Initiating
     
@@ -92,29 +80,22 @@ class OptionsPanel: UIView
             action: #selector(segmentedControlValueChanged(_:)),
             for: .valueChanged)
         
-        // Status label
+        // Dark Mode sensitive content
         
         updateStatus()
-        
-        // Action button
-        
-        updateActionButton()
-        
+        darkModeObserver.action = { _ in self.updateStatus() }
     }
     
     @objc private func makeUp()
     {
-        backgroundColor = ._customViewSelected
+        //backgroundColor = ._customViewSelected
         
-        status.textColor = .secondaryLabel_Adapted
-        actionButton.setTitleColor(.secondaryLabel_Adapted, for: .normal)
-        
-        segmentedControl.setTitleTextAttributes(
+        segmentedControl?.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneNormalText
             ], for: .normal)
         
-        segmentedControl.setTitleTextAttributes(
+        segmentedControl?.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneSelectedText
             ], for: .selected)
@@ -122,7 +103,10 @@ class OptionsPanel: UIView
     
     private func updateStatus()
     {
+        statusValue = DarkMode.Style
+        
         status?.text = statusValue.description
+        status?.textColor = .label_Adapted
     }
     
     private func updateSegmentedControl()
@@ -136,11 +120,6 @@ class OptionsPanel: UIView
         case .off:
             segmentedControl?.selectedSegmentIndex = 2
         }
-    }
-    
-    private func updateActionButton()
-    {
-        actionButton.isEnabled = actionButtonClosure == nil ? false : true
     }
     
     // MARK: - Segmented control value changed event
@@ -172,11 +151,4 @@ class OptionsPanel: UIView
         updateSegmentedControl()
     }
     
-    // MARK: - Setting status value
-    
-    func setStatusValue(_ status: AppearanceStyle)
-    {
-        statusValue = status
-        updateStatus()
-    }
 }

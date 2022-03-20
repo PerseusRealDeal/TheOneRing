@@ -54,6 +54,10 @@ class DetailsViewController: UIViewController
         }
     }
     
+    // MARK: - Dark Mode observer
+    
+    let darkModeObserver = DarkModeObserver(AppearanceService.shared)
+    
     // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
@@ -75,6 +79,16 @@ class DetailsViewController: UIViewController
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
+        
+        setUpBottomImage()
+        darkModeObserver.action = { _ in self.setUpBottomImage() }
+    }
+    
+    private func setUpBottomImage()
+    {
+        bottomImage.image = DarkMode.Style == .light ?
+            UIImage(named: "Rivendell") :
+            UIImage(named: "RivendellDark")
     }
     
     @objc private func makeUp()
@@ -96,10 +110,6 @@ class DetailsViewController: UIViewController
         
         raceLabel.textColor = ._customLabel
         memberRace.textColor = ._customSecondaryLabel
-        
-        bottomImage.image = DarkMode.Style == .light ?
-            UIImage(named: "Rivendell") :
-            UIImage(named: "RivendellDark")
     }
 }
 

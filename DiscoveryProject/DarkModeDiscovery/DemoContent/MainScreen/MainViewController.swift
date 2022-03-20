@@ -9,6 +9,8 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
+let TITLE = "The Fellowship of the Ring"
+
 class MainViewController: UIViewController
 {
     // MARK: - Interface Builder connections
@@ -19,8 +21,9 @@ class MainViewController: UIViewController
     @IBOutlet weak var tableView   : UITableView!
     @IBOutlet weak var bottomImage : UIImageView!
     
-    @IBOutlet weak var optionsPanel: OptionsPanel!
+    @IBOutlet weak var optionsPanel: DarkModePanel!
     
+    @IBOutlet weak var actionToolsButton: UIButton!
     // MARK: - The data to show on screen
     
     private lazy var members: [Member] =
@@ -56,62 +59,57 @@ class MainViewController: UIViewController
         
         AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
-        
-        darkModeObserver.action =
-            { newStyle in
-                
-                print("\(newStyle), \(self.DarkMode.Style)")
-            }
     }
     
     // MARK: - Appearance matter methods
     
     private func configure()
     {
-        titleTop.text = "The Fellowship of the Ring"
+        titleTop.text = TITLE
         
         titleImage.layer.cornerRadius = 40
         titleImage.layer.masksToBounds = true
         
+        actionToolsButton.layer.cornerRadius = 8
+        actionToolsButton.layer.masksToBounds = true
+        
         optionsPanel.segmentedControlValueChangedClosure =
             { actualValue in
+                
                 // Value should be saved
                 
                 AppearanceService.DarkModeUserChoice = actualValue
-                
-                // Value should be updated on screen after
-                
-                self.optionsPanel.setStatusValue(self.DarkMode.Style)
                 
                 // Customise appearance
                 
                 AppearanceService.makeUp()
             }
-        optionsPanel.actionButtonClosure =
-            {
-                self.present(self.semanticToolsViewController,
-                             animated  : true,
-                             completion: nil)
-            }
         
         optionsPanel.setSegmentedControlValue(AppearanceService.DarkModeUserChoice)
-        optionsPanel.setStatusValue(DarkMode.Style)
         
         // Move to makeUp if changing
         
         bottomImage.image = UIImage(named: "OneRing")
+        
+        setUpTitleImage()
+        darkModeObserver.action = { _ in self.setUpTitleImage() }
+    }
+    
+    private func setUpTitleImage()
+    {
+        titleImage.image = DarkMode.Style == .light ?
+            UIImage(named: "TheFellowship") :
+            UIImage(named: "FrodoWithTheRing")
     }
     
     @objc private func makeUp()
     {
-        optionsPanel.setStatusValue(DarkMode.Style)
+        actionToolsButton.backgroundColor = ._customViewSelected
         
         view.backgroundColor = ._customPrimaryBackground
         titleTop.textColor = ._customTitle
         
-        titleImage.image = DarkMode.Style == .light ?
-            UIImage(named: "TheFellowship") :
-            UIImage(named: "FrodoWithTheRing")
+        //actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
     }
     
     // MARK: - Dark Mode switched manually
@@ -122,15 +120,16 @@ class MainViewController: UIViewController
         
         AppearanceService.DarkModeUserChoice = actualValue
         
-        // Value should be updated on screen after
-        
-        optionsPanel.setStatusValue(DarkMode.Style)
-        
         // Customise appearance
         
         AppearanceService.makeUp()
     }
-
+    
+    @IBAction func actionToolsButtonTapped(_ sender: UIButton)
+    {
+        self.present(self.semanticToolsViewController, animated: true, completion: nil)
+    }
+    
     // MARK: - Child View Controllers
     
     private lazy var detailsViewController =
