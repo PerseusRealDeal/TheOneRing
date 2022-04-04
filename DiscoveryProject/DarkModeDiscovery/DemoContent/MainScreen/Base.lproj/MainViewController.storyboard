@@ -35,7 +35,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-qw-VER" userLabel="Transparent Block">
                                                         <rect key="frame" x="0.0" y="36" width="375" height="144"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-RV-cFq">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-RV-cFq" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                                 <rect key="frame" x="5" y="0.0" width="365" height="139"/>
                                                             </imageView>
                                                         </subviews>
@@ -218,47 +218,59 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEH-cZ-4G4">
                                                 <rect key="frame" x="15" y="5" width="345" height="56.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MwR-2m-6SI" userLabel="Transparent Block">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="56.5"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MwR-2m-6SI" userLabel="Tools Button Block">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="56.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf1-0D-Awt">
-                                                                <rect key="frame" x="-6" y="5" width="60" height="35"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="r0L-yi-G1J"/>
-                                                                    <constraint firstAttribute="height" constant="35" id="vti-kL-zC8"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <state key="normal" title="Tools">
-                                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="actionToolsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1e9-X0-wDi"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="tf1-0D-Awt" firstAttribute="centerX" secondItem="MwR-2m-6SI" secondAttribute="centerX" id="bEg-Sq-Idr"/>
-                                                            <constraint firstItem="tf1-0D-Awt" firstAttribute="top" secondItem="MwR-2m-6SI" secondAttribute="top" constant="5" id="h8O-GP-OgX"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md1-ck-gWd" userLabel="Transparent Block">
-                                                        <rect key="frame" x="48.5" y="0.0" width="240" height="56.5"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="235" height="41.5"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2c-W2-Key" userLabel="Transparent Block">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="41.5"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf1-0D-Awt">
+                                                                        <rect key="frame" x="6.5" y="3" width="44" height="35"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="r0L-yi-G1J"/>
+                                                                            <constraint firstAttribute="height" constant="35" id="vti-kL-zC8"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <state key="normal" title="Tools">
+                                                                            <color key="titleColor" systemColor="labelColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="actionToolsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1e9-X0-wDi"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="tf1-0D-Awt" firstAttribute="centerY" secondItem="a2c-W2-Key" secondAttribute="centerY" id="QAm-ej-kuy"/>
+                                                                    <constraint firstItem="tf1-0D-Awt" firstAttribute="centerX" secondItem="a2c-W2-Key" secondAttribute="centerX" id="SnH-gq-XQE"/>
+                                                                </constraints>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="mFc-iZ-fRe" firstAttribute="leading" secondItem="md1-ck-gWd" secondAttribute="leading" id="2GR-0W-jWM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="a2c-W2-Key" secondAttribute="trailing" id="N8a-xX-PKy"/>
+                                                            <constraint firstItem="a2c-W2-Key" firstAttribute="top" secondItem="MwR-2m-6SI" secondAttribute="top" id="PoW-bx-2sx"/>
+                                                            <constraint firstAttribute="bottom" secondItem="a2c-W2-Key" secondAttribute="bottom" constant="15" id="gVf-o5-s9o"/>
+                                                            <constraint firstItem="a2c-W2-Key" firstAttribute="leading" secondItem="MwR-2m-6SI" secondAttribute="leading" id="seW-19-VuY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md1-ck-gWd" userLabel="Dark Mode Panel Block">
+                                                        <rect key="frame" x="56.5" y="0.0" width="232" height="56.5"/>
+                                                        <subviews>
+                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="0.0" width="222" height="41.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="mFc-iZ-fRe" firstAttribute="leading" secondItem="md1-ck-gWd" secondAttribute="leading" constant="5" id="2GR-0W-jWM"/>
                                                             <constraint firstAttribute="bottom" secondItem="mFc-iZ-fRe" secondAttribute="bottom" constant="15" id="6Rn-Js-xRe"/>
                                                             <constraint firstAttribute="trailing" secondItem="mFc-iZ-fRe" secondAttribute="trailing" constant="5" id="9Xh-Wd-Aaa"/>
                                                             <constraint firstItem="mFc-iZ-fRe" firstAttribute="top" secondItem="md1-ck-gWd" secondAttribute="top" id="BaD-8Z-Vor"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-co-Q6E" userLabel="Transparent Block">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-co-Q6E" userLabel="Left Side Image Block">
                                                         <rect key="frame" x="288.5" y="0.0" width="56.5" height="56.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NyA-XL-YJ8">
@@ -275,8 +287,8 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="MwR-2m-6SI" firstAttribute="width" secondItem="tYB-co-Q6E" secondAttribute="width" id="jL9-nL-1jC"/>
                                                     <constraint firstItem="tYB-co-Q6E" firstAttribute="width" secondItem="qEH-cZ-4G4" secondAttribute="height" id="qRa-bH-TAp"/>
-                                                    <constraint firstItem="MwR-2m-6SI" firstAttribute="width" secondItem="qEH-cZ-4G4" secondAttribute="width" multiplier="0.14" id="yRH-ix-lBT"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>

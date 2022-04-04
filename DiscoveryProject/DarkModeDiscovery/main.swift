@@ -36,7 +36,7 @@ extension AppDelegate: UIApplicationDelegate
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
-        //AppearanceService.makeUp()
+        AppearanceService.makeUp()
         
         return true
     }

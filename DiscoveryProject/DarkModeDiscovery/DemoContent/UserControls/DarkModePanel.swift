@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import PerseusDarkMode
 import AdaptedSystemUI
 
@@ -14,22 +15,15 @@ class DarkModePanel: UIView
     // MARK: - Interface Builder connections
     
     @IBOutlet private weak var contentView     : UIView!
-    
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
-    @IBOutlet private weak var status          : UILabel!
     
     // MARK: - Variables
     
     private var segmentedControlValue: DarkModeOption = .auto
-    private var statusValue          : AppearanceStyle = .light
     
     // MARK: - Closure for segmented control value changed event
     
-    var segmentedControlValueChangedClosure: ((_ actualValue: DarkModeOption) -> Void)?
-    
-    // MARK: - Dark Mode observer
-    
-    private let darkModeObserver = DarkModeObserver(AppearanceService.shared)
+    var segmentedControlValueChangedClosure: ((_ selected: DarkModeOption) -> Void)?
     
     // MARK: - Initiating
     
@@ -53,14 +47,25 @@ class DarkModePanel: UIView
     
     private func commonInit()
     {
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
-        
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
         
         addSubview(contentView)
         
-        contentView.frame = self.frame
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        contentView.autoresizingMask =
+            [
+                UIView.AutoresizingMask.flexibleLeftMargin,
+                UIView.AutoresizingMask.flexibleRightMargin,
+                UIView.AutoresizingMask.flexibleTopMargin,
+                UIView.AutoresizingMask.flexibleBottomMargin
+            ]
+        
+        // Dark Mode setup
+        
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        if AppearanceService.isEnabled { makeUp() }
     }
     
     // MARK: - Configure connected Interface Builder elements
@@ -75,21 +80,13 @@ class DarkModePanel: UIView
         // Segmented control
         
         updateSegmentedControl()
-        segmentedControl?.addTarget(
-            self,
-            action: #selector(segmentedControlValueChanged(_:)),
-            for: .valueChanged)
-        
-        // Dark Mode sensitive content
-        
-        updateStatus()
-        darkModeObserver.action = { _ in self.updateStatus() }
+        segmentedControl?.addTarget(self,
+                                    action: #selector(segmentedControlValueChanged(_:)),
+                                    for: .valueChanged)
     }
     
     @objc private func makeUp()
     {
-        //backgroundColor = ._customViewSelected
-        
         segmentedControl?.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneNormalText
@@ -101,24 +98,16 @@ class DarkModePanel: UIView
             ], for: .selected)
     }
     
-    private func updateStatus()
-    {
-        statusValue = DarkMode.Style
-        
-        status?.text = statusValue.description
-        status?.textColor = .label_Adapted
-    }
-    
     private func updateSegmentedControl()
     {
         switch segmentedControlValue
         {
         case .auto:
-            segmentedControl?.selectedSegmentIndex = 0
+            segmentedControl?.selectedSegmentIndex = 2
         case .on:
             segmentedControl?.selectedSegmentIndex = 1
         case .off:
-            segmentedControl?.selectedSegmentIndex = 2
+            segmentedControl?.selectedSegmentIndex = 0
         }
     }
     
@@ -129,18 +118,16 @@ class DarkModePanel: UIView
         switch sender.selectedSegmentIndex
         {
         case 0:
-            segmentedControlValue = .auto
+            segmentedControlValue = .off
         case 1:
             segmentedControlValue = .on
         case 2:
-            segmentedControlValue = .off
+            segmentedControlValue = .auto
         default:
             return
         }
         
         segmentedControlValueChangedClosure?(segmentedControlValue)
-        
-        // After processing changed event, do not forget to call setStatusValue(_:) method.
     }
     
     // MARK: - Setting segmented control value
@@ -150,5 +137,4 @@ class DarkModePanel: UIView
         segmentedControlValue = darkMode
         updateSegmentedControl()
     }
-    
 }

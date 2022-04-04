@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController
     @IBOutlet weak var memberRace    : UILabel!
     
     @IBOutlet weak var closeButton   : UIButton!
-    @IBOutlet weak var bottomImage   : UIImageView!
+    @IBOutlet weak var bottomImage   : DarkModeImageView!
     
     @IBAction func closeButtonAction(_ sender: UIButton)
     {
@@ -74,21 +74,13 @@ class DetailsViewController: UIViewController
     
     private func configure()
     {
-        closeButton.layer.cornerRadius = 8
+        closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
         
-        setUpBottomImage()
-        darkModeObserver.action = { _ in self.setUpBottomImage() }
-    }
-    
-    private func setUpBottomImage()
-    {
-        bottomImage.image = DarkMode.Style == .light ?
-            UIImage(named: "Rivendell") :
-            UIImage(named: "RivendellDark")
+        bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
     
     @objc private func makeUp()

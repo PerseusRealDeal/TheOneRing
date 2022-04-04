@@ -61,7 +61,7 @@ extension UIColor: UICustomColors
     
     static var _customSecondaryBackground : UIColor
     {
-        AppearanceService.shared.Style == .light ? #colorLiteral(red: 1, green: 0.578, blue: 0, alpha: 1) : #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        AppearanceService.shared.Style == .light ? #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1) : #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
     }
     
     static var _customViewSelected        : UIColor

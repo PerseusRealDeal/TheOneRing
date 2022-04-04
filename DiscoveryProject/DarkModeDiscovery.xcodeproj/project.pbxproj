@@ -16,9 +16,9 @@
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */; };
 		E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E07C0F2027BBA00000888456 /* MainViewController.storyboard */; };
-		E09183C127BD495500475D2B /* ColorsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C027BD495500475D2B /* ColorsToolViewController.swift */; };
-		E09183C527BD4CEF00475D2B /* SemanticsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */; };
-		E09183C727BD4D4500475D2B /* DynamicsToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */; };
+		E09183C127BD495500475D2B /* SystemColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C027BD495500475D2B /* SystemColorsViewController.swift */; };
+		E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */; };
+		E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09183C627BD4D4500475D2B /* DynamicsViewController.swift */; };
 		E095388D27B36E7800AAAAAA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095388C27B36E7800AAAAAA /* main.swift */; };
 		E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095389027B36E7800AAAAAA /* MainViewController.swift */; };
 		E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E095389527B36E7B00AAAAAA /* Assets.xcassets */; };
@@ -27,6 +27,8 @@
 		E09538BE27B36E9400AAAAAA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E09538BC27B36E9400AAAAAA /* LICENSE */; };
 		E09538BF27B36E9400AAAAAA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E09538BD27B36E9400AAAAAA /* README.md */; };
 		E09538C127B36ECA00AAAAAA /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */; };
+		E0A0841627FAF4F50010A55D /* ColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0841527FAF4F50010A55D /* ColorConverter.swift */; };
+		E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */; };
 		E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */; };
 		E0A3582227B960DA00472F95 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */; };
 		E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3582327B9611300472F95 /* DetailsViewController.swift */; };
@@ -55,9 +57,9 @@
 		E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModePanel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DarkModePanel.xib; sourceTree = "<group>"; };
 		E07C0F2127BBA00000888456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
-		E09183C027BD495500475D2B /* ColorsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsToolViewController.swift; sourceTree = "<group>"; };
-		E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsToolViewController.swift; sourceTree = "<group>"; };
-		E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsToolViewController.swift; sourceTree = "<group>"; };
+		E09183C027BD495500475D2B /* SystemColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsViewController.swift; sourceTree = "<group>"; };
+		E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsViewController.swift; sourceTree = "<group>"; };
+		E09183C627BD4D4500475D2B /* DynamicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsViewController.swift; sourceTree = "<group>"; };
 		E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E095388C27B36E7800AAAAAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E095389027B36E7800AAAAAA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		E09538BC27B36E9400AAAAAA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E09538BD27B36E9400AAAAAA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		E0A0841527FAF4F50010A55D /* ColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverter.swift; sourceTree = "<group>"; };
+		E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverterViewController.swift; sourceTree = "<group>"; };
 		E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		E0A3582327B9611300472F95 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -160,11 +164,20 @@
 		E09932E727BD5B4D009D3564 /* ToolsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E09183C027BD495500475D2B /* ColorsToolViewController.swift */,
-				E09183C427BD4CEF00475D2B /* SemanticsToolViewController.swift */,
-				E09183C627BD4D4500475D2B /* DynamicsToolViewController.swift */,
+				E09183C027BD495500475D2B /* SystemColorsViewController.swift */,
+				E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */,
+				E09183C627BD4D4500475D2B /* DynamicsViewController.swift */,
+				E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */,
 			);
 			path = ToolsViewControllers;
+			sourceTree = "<group>";
+		};
+		E0A0841427FAF4BA0010A55D /* ThirdPartyCode */ = {
+			isa = PBXGroup;
+			children = (
+				E0A0841527FAF4F50010A55D /* ColorConverter.swift */,
+			);
+			path = ThirdPartyCode;
 			sourceTree = "<group>";
 		};
 		E0B3CA8027B81D4200B8CE61 /* Model */ = {
@@ -185,6 +198,7 @@
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
 				E03450EF27C368F70071443E /* CustomColors.swift */,
 				E03450F127C36F870071443E /* Helpers.swift */,
+				E0A0841427FAF4BA0010A55D /* ThirdPartyCode */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -340,15 +354,17 @@
 				E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
-				E09183C527BD4CEF00475D2B /* SemanticsToolViewController.swift in Sources */,
-				E09183C727BD4D4500475D2B /* DynamicsToolViewController.swift in Sources */,
-				E09183C127BD495500475D2B /* ColorsToolViewController.swift in Sources */,
+				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
+				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
+				E09183C127BD495500475D2B /* SystemColorsViewController.swift in Sources */,
 				E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */,
 				E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */,
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
+				E0A0841627FAF4F50010A55D /* ColorConverter.swift in Sources */,
 				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */,
+				E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */,
 				E03450F227C36F870071443E /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,7 +644,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/DarkMode.git";
 			requirement = {
 				kind = exactVersion;
-				version = "1.0.0-beta.1";
+				version = "1.0.0-beta.4";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

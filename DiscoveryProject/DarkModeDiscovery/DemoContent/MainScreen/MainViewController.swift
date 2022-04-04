@@ -15,15 +15,21 @@ class MainViewController: UIViewController
 {
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var titleTop    : UILabel!
-    @IBOutlet weak var titleImage  : UIImageView!
+    @IBOutlet weak var titleTop         : UILabel!
+    @IBOutlet weak var titleImage       : DarkModeImageView!
     
-    @IBOutlet weak var tableView   : UITableView!
-    @IBOutlet weak var bottomImage : UIImageView!
+    @IBOutlet weak var tableView        : UITableView!
+    @IBOutlet weak var bottomImage      : UIImageView!
     
-    @IBOutlet weak var optionsPanel: DarkModePanel!
+    @IBOutlet weak var optionsPanel     : DarkModePanel!
     
     @IBOutlet weak var actionToolsButton: UIButton!
+    
+    @IBAction func actionToolsButtonTapped(_ sender: UIButton)
+    {
+        present(self.semanticToolsViewController, animated: true, completion: nil)
+    }
+    
     // MARK: - The data to show on screen
     
     private lazy var members: [Member] =
@@ -33,6 +39,37 @@ class MainViewController: UIViewController
             else { return [] }
             
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Child View Controllers
+    
+    private lazy var detailsViewController =
+        { () -> DetailsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            return screen
+        }()
+    
+    private lazy var semanticToolsViewController =
+        { () -> SemanticsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.userChoiceChangedClosure =
+                { selected  in self.optionsPanel.setSegmentedControlValue(selected) }
+            
+            return screen
         }()
     
     // MARK: - Instance of the class
@@ -65,6 +102,8 @@ class MainViewController: UIViewController
     
     private func configure()
     {
+        // Static content
+        
         titleTop.text = TITLE
         
         titleImage.layer.cornerRadius = 40
@@ -73,93 +112,33 @@ class MainViewController: UIViewController
         actionToolsButton.layer.cornerRadius = 8
         actionToolsButton.layer.masksToBounds = true
         
+        bottomImage.image = UIImage(named: "OneRing")
+        
+        // Dark Mode panel
+        
         optionsPanel.segmentedControlValueChangedClosure =
-            { actualValue in
+            { selected in changeDarkMode(selected)
                 
-                // Value should be saved
-                
-                AppearanceService.DarkModeUserChoice = actualValue
-                
-                // Customise appearance
-                
-                AppearanceService.makeUp()
+                // Change a value of other one Dark Mode panel accordingly
+                self.semanticToolsViewController.optionsPanel?.setSegmentedControlValue(selected)
             }
         
         optionsPanel.setSegmentedControlValue(AppearanceService.DarkModeUserChoice)
         
-        // Move to makeUp if changing
+        optionsPanel.backgroundColor = .clear
         
-        bottomImage.image = UIImage(named: "OneRing")
+        // Images
         
-        setUpTitleImage()
-        darkModeObserver.action = { _ in self.setUpTitleImage() }
-    }
-    
-    private func setUpTitleImage()
-    {
-        titleImage.image = DarkMode.Style == .light ?
-            UIImage(named: "TheFellowship") :
-            UIImage(named: "FrodoWithTheRing")
+        titleImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
     }
     
     @objc private func makeUp()
     {
-        actionToolsButton.backgroundColor = ._customViewSelected
-        
         view.backgroundColor = ._customPrimaryBackground
         titleTop.textColor = ._customTitle
         
-        //actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
+        actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
     }
-    
-    // MARK: - Dark Mode switched manually
-    
-    func userChoiceForDarkModeChanged(_ actualValue: DarkModeOption)
-    {
-        // Value should be saved
-        
-        AppearanceService.DarkModeUserChoice = actualValue
-        
-        // Customise appearance
-        
-        AppearanceService.makeUp()
-    }
-    
-    @IBAction func actionToolsButtonTapped(_ sender: UIButton)
-    {
-        self.present(self.semanticToolsViewController, animated: true, completion: nil)
-    }
-    
-    // MARK: - Child View Controllers
-    
-    private lazy var detailsViewController =
-        { () -> DetailsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            //screen.makeUp()
-            
-            return screen
-        }()
-    
-    private lazy var semanticToolsViewController =
-        { () -> SemanticsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            
-            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-            
-            return screen
-        }()
 }
 
 // MARK: - UITableView

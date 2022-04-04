@@ -21,16 +21,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-GH-fqS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDZ-FR-pAi" userLabel="Transparent Block">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-3I-86I">
-                                                        <rect key="frame" x="110.5" y="12.5" width="99" height="20"/>
+                                                        <rect key="frame" x="110.5" y="10.5" width="99" height="7.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="3Mq-lG-sBD"/>
                                                             <constraint firstAttribute="width" constant="99" id="Vvt-8Z-nrT"/>
                                                         </constraints>
                                                         <connections>
@@ -42,19 +41,44 @@
                                                 <constraints>
                                                     <constraint firstItem="3gq-3I-86I" firstAttribute="centerY" secondItem="fDZ-FR-pAi" secondAttribute="centerY" id="bT8-UA-42o"/>
                                                     <constraint firstItem="3gq-3I-86I" firstAttribute="centerX" secondItem="fDZ-FR-pAi" secondAttribute="centerX" id="haP-BM-AR5"/>
+                                                    <constraint firstItem="3gq-3I-86I" firstAttribute="height" secondItem="fDZ-FR-pAi" secondAttribute="height" multiplier="0.25" id="qZX-f2-Ptm"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-DE-EmQ">
-                                        <rect key="frame" x="0.0" y="45.5" width="320" height="522.5"/>
-                                        <connections>
-                                            <segue destination="R8F-pI-iJ3" kind="embed" id="Luk-lN-ES3"/>
-                                        </connections>
-                                    </containerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-R3-1Yi">
+                                        <rect key="frame" x="0.0" y="28.5" width="320" height="539.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja6-zv-1aA" userLabel="Transparent Block">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                                <subviews>
+                                                    <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Bp-G4f" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                        <rect key="frame" x="48" y="5.5" width="224" height="43"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="rdM-Bp-G4f" firstAttribute="centerX" secondItem="ja6-zv-1aA" secondAttribute="centerX" id="2RB-0q-yu7"/>
+                                                    <constraint firstItem="rdM-Bp-G4f" firstAttribute="height" secondItem="ja6-zv-1aA" secondAttribute="height" multiplier="0.8" id="AaM-6X-X1E"/>
+                                                    <constraint firstItem="rdM-Bp-G4f" firstAttribute="width" secondItem="ja6-zv-1aA" secondAttribute="width" multiplier="0.7" id="adf-Yg-nW6"/>
+                                                    <constraint firstItem="rdM-Bp-G4f" firstAttribute="centerY" secondItem="ja6-zv-1aA" secondAttribute="centerY" id="ekk-Ns-E6k"/>
+                                                </constraints>
+                                            </view>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-DE-EmQ">
+                                                <rect key="frame" x="0.0" y="54" width="320" height="485.5"/>
+                                                <connections>
+                                                    <segue destination="R8F-pI-iJ3" kind="embed" id="Luk-lN-ES3"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ja6-zv-1aA" firstAttribute="height" secondItem="7SA-R3-1Yi" secondAttribute="height" multiplier="0.1" id="UaB-w9-4Fq"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DCk-GH-fqS" firstAttribute="height" secondItem="vig-SI-u99" secondAttribute="height" multiplier="0.08" id="efN-6T-3ew"/>
+                                    <constraint firstItem="DCk-GH-fqS" firstAttribute="height" secondItem="vig-SI-u99" secondAttribute="height" multiplier="0.05" id="efN-6T-3ew"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -64,64 +88,120 @@
                             <constraint firstAttribute="trailing" secondItem="vig-SI-u99" secondAttribute="trailing" id="DXE-1v-nu1"/>
                             <constraint firstItem="vig-SI-u99" firstAttribute="top" secondItem="mZf-cd-ueF" secondAttribute="top" id="Og2-qC-22l"/>
                             <constraint firstItem="vig-SI-u99" firstAttribute="leading" secondItem="mZf-cd-ueF" secondAttribute="leading" id="lU8-fr-WaU"/>
-                            <constraint firstItem="mZf-cd-ueF" firstAttribute="bottom" secondItem="vig-SI-u99" secondAttribute="bottom" id="nmm-BU-Wrx"/>
+                            <constraint firstItem="vig-SI-u99" firstAttribute="bottom" secondItem="hfM-qg-DGh" secondAttribute="bottom" id="nmm-BU-Wrx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="3gq-3I-86I" id="BzJ-OX-h3v"/>
+                        <outlet property="optionsPanel" destination="rdM-Bp-G4f" id="oHi-g5-sDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1153" y="-410"/>
+            <point key="canvasLocation" x="-1359" y="-412"/>
         </scene>
-        <!--Colors-->
+        <!--Color Converter-->
         <scene sceneID="sCZ-1Z-6LZ">
             <objects>
-                <viewController id="BSe-Jj-VE1" customClass="ColorsToolViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="522.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
+                                <rect key="frame" x="60" y="163" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FbN-2E-VZS"/>
+                                    <constraint firstAttribute="width" constant="200" id="a9Z-gL-d2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Output HEX color" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfb-ut-8c1" userLabel="HEX Output">
+                                <rect key="frame" x="60" y="223" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="41u-s4-qKa"/>
+                                    <constraint firstAttribute="height" constant="40" id="nut-kI-3XR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-v0-Cwh" userLabel="Convert Button">
+                                <rect key="frame" x="60" y="103" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BrW-HF-560"/>
+                                    <constraint firstAttribute="width" constant="200" id="h2b-kN-AUb"/>
+                                </constraints>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertTapped:" destination="BSe-Jj-VE1" eventType="touchUpInside" id="6f1-FZ-SGL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to RGBA from HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Ua-tb5">
+                                <rect key="frame" x="60" y="283" width="183.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="top" secondItem="UOa-uU-FZz" secondAttribute="bottom" constant="20" id="1ga-Qz-qjS"/>
+                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerX" secondItem="XF3-uP-U0D" secondAttribute="centerX" id="MsZ-ZH-Koy"/>
+                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="Qgk-IZ-DHy"/>
+                            <constraint firstItem="Q4h-Ua-tb5" firstAttribute="leading" secondItem="Lfb-ut-8c1" secondAttribute="leading" id="S8Q-oN-iwA"/>
+                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerY" secondItem="XF3-uP-U0D" secondAttribute="centerY" id="Uu3-up-7Qe"/>
+                            <constraint firstItem="sFQ-v0-Cwh" firstAttribute="bottom" secondItem="UOa-uU-FZz" secondAttribute="top" constant="-20" id="XQb-T0-oAQ"/>
+                            <constraint firstItem="sFQ-v0-Cwh" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="oX7-jy-sqs"/>
+                            <constraint firstItem="Q4h-Ua-tb5" firstAttribute="top" secondItem="Lfb-ut-8c1" secondAttribute="bottom" constant="20" id="woq-VW-793"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Colors" id="alh-GR-4Rg" userLabel="Tab Button"/>
+                    <tabBarItem key="tabBarItem" title="Converter" id="alh-GR-4Rg" userLabel="Tab Button"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="HEXOutput" destination="Lfb-ut-8c1" id="dxd-iN-BSf"/>
+                        <outlet property="HEXtoRGBA_Back" destination="Q4h-Ua-tb5" id="ilQ-xb-U8O"/>
+                        <outlet property="RGBAInput" destination="UOa-uU-FZz" id="uDs-8F-yOr"/>
+                        <outlet property="convertButton" destination="sFQ-v0-Cwh" id="Glf-Tm-DMt"/>
                         <outlet property="tabButton" destination="alh-GR-4Rg" id="oGu-RA-jzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-gl-nNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="651"/>
+            <point key="canvasLocation" x="574" y="-413"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cAZ-i4-2e9">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R8F-pI-iJ3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Hs-QK-EfP">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BSe-Jj-VE1" kind="relationship" relationship="viewControllers" id="H5H-8M-1wd"/>
-                        <segue destination="I6h-n8-cQC" kind="relationship" relationship="viewControllers" id="hP6-wZ-C99"/>
-                        <segue destination="eiK-Co-Twc" kind="relationship" relationship="viewControllers" id="rL4-dw-INd"/>
+                        <segue destination="aNC-0l-cVu" kind="relationship" relationship="viewControllers" id="9uk-dh-WxB"/>
+                        <segue destination="I6h-n8-cQC" kind="relationship" relationship="viewControllers" id="zeS-5u-yba"/>
+                        <segue destination="eiK-Co-Twc" kind="relationship" relationship="viewControllers" id="40n-3q-IwJ"/>
+                        <segue destination="BSe-Jj-VE1" kind="relationship" relationship="viewControllers" id="7wy-iS-twi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Leo-WT-kRq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="-409"/>
+            <point key="canvasLocation" x="-411" y="-411"/>
         </scene>
-        <!--Dynamics-->
+        <!--Dynamic Images-->
         <scene sceneID="FvT-XB-37F">
             <objects>
-                <viewController id="eiK-Co-Twc" customClass="DynamicsToolViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiK-Co-Twc" userLabel="Dynamic Images" customClass="DynamicsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HA5-Mq-BQX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="522.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,14 +214,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0X-Pz-z9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-908" y="651"/>
+            <point key="canvasLocation" x="574" y="533"/>
         </scene>
-        <!--Semantics-->
+        <!--System Colors-->
+        <scene sceneID="GR1-9p-opt">
+            <objects>
+                <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eHL-Qb-aJB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Vgd-yT-Z2v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Colors" id="pRE-0r-PLI"/>
+                    <connections>
+                        <outlet property="tabButton" destination="pRE-0r-PLI" id="HWk-6G-q2J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQn-k2-7iZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1359" y="533"/>
+        </scene>
+        <!--Semantic Colors-->
         <scene sceneID="h4n-ay-SdH">
             <objects>
-                <viewController id="I6h-n8-cQC" customClass="SemanticsToolViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cV0-bg-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="522.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fbg-ZI-h6f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jG-h3-97Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="651"/>
+            <point key="canvasLocation" x="-409" y="533"/>
         </scene>
     </scenes>
     <resources>
