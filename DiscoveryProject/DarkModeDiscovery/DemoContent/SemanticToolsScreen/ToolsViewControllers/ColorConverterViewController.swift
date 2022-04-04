@@ -28,12 +28,6 @@ class ConverterViewController: UIViewController
         
         HEXOutput.text = HEX
         HEXtoRGBA_Back.text = convert_HEX_to_RGBA(HEX)
-        
-        if #available(iOS 13.0, *) {
-            print(UIColor.label.RGBA255)
-        } else {
-            // Fallback on earlier versions
-        }
     }
     
     // MARK: - The life cyrcle group of methods

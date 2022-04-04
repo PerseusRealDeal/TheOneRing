@@ -27,7 +27,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-3I-86I">
-                                                        <rect key="frame" x="110.5" y="10.5" width="99" height="7.5"/>
+                                                        <rect key="frame" x="110.5" y="8.5" width="99" height="11.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="99" id="Vvt-8Z-nrT"/>
@@ -41,7 +41,7 @@
                                                 <constraints>
                                                     <constraint firstItem="3gq-3I-86I" firstAttribute="centerY" secondItem="fDZ-FR-pAi" secondAttribute="centerY" id="bT8-UA-42o"/>
                                                     <constraint firstItem="3gq-3I-86I" firstAttribute="centerX" secondItem="fDZ-FR-pAi" secondAttribute="centerX" id="haP-BM-AR5"/>
-                                                    <constraint firstItem="3gq-3I-86I" firstAttribute="height" secondItem="fDZ-FR-pAi" secondAttribute="height" multiplier="0.25" id="qZX-f2-Ptm"/>
+                                                    <constraint firstItem="3gq-3I-86I" firstAttribute="height" secondItem="fDZ-FR-pAi" secondAttribute="height" multiplier="0.4" id="qZX-f2-Ptm"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -54,7 +54,7 @@
                                                 <subviews>
                                                     <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Bp-G4f" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
                                                         <rect key="frame" x="48" y="5.5" width="224" height="43"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
