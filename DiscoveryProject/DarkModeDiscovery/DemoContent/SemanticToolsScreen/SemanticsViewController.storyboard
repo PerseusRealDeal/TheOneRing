@@ -203,13 +203,42 @@
                     <view key="view" contentMode="scaleToFill" id="HA5-Mq-BQX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-1q-uWx">
+                                <rect key="frame" x="16" y="43.5" width="288" height="305.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="137.5"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAM-LP-Kqk">
+                                        <rect key="frame" x="0.0" y="137.5" width="288" height="30.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                        <rect key="frame" x="0.0" y="168" width="288" height="137.5"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hEW-ge-WsJ" firstAttribute="height" secondItem="F8i-1q-uWx" secondAttribute="height" multiplier="0.45" id="o0e-oX-W7g"/>
+                                    <constraint firstItem="2oO-lS-Dkv" firstAttribute="height" secondItem="F8i-1q-uWx" secondAttribute="height" multiplier="0.45" id="v90-ag-cP3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="top" secondItem="Oor-7g-3JN" secondAttribute="bottom" multiplier="0.1" id="4Ie-K1-T2m"/>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="height" secondItem="Oor-7g-3JN" secondAttribute="height" multiplier="0.7" id="KNw-3j-vaI"/>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="width" secondItem="Oor-7g-3JN" secondAttribute="width" multiplier="0.9" id="rFK-am-YEe"/>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="centerX" secondItem="HA5-Mq-BQX" secondAttribute="centerX" id="yrm-25-zW8"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dynamics" id="Tug-gI-pgW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomImage" destination="2oO-lS-Dkv" id="7Jh-kq-ydG"/>
                         <outlet property="tabButton" destination="Tug-gI-pgW" id="6ou-9b-4kv"/>
+                        <outlet property="topImage" destination="hEW-ge-WsJ" id="H2Y-j9-jZh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0X-Pz-z9H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

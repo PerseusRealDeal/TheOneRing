@@ -13,7 +13,10 @@ class DynamicsViewController: UIViewController
 {
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var tabButton: UITabBarItem!
+    @IBOutlet weak var topImage   : DarkModeImageView!
+    @IBOutlet weak var bottomImage: DarkModeImageView!
+    
+    @IBOutlet weak var tabButton  : UITabBarItem!
     
     // MARK: - The life cyrcle group of methods
     
@@ -39,5 +42,17 @@ class DynamicsViewController: UIViewController
             for: .selected)
     }
     
-    private func configure() {}
+    private func configure()
+    {
+        // Images
+        
+        topImage.layer.cornerRadius = 40
+        topImage.layer.masksToBounds = true
+        
+        bottomImage.layer.cornerRadius = 40
+        bottomImage.layer.masksToBounds = true
+        
+        topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+    }
 }
