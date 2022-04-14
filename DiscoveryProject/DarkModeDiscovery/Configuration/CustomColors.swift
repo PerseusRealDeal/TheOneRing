@@ -31,6 +31,10 @@ protocol UICustomColors
     ///
     static var _customViewSelected        : UIColor { get }
     ///
+    /// UITabBarItem selected
+    ///
+    static var _customTabBarItemSelected  : UIColor { get }
+    ///
     /// UISegmentedControl
     ///
     static var _customSegmentedOneSelectedText: UIColor { get }
@@ -67,6 +71,17 @@ extension UIColor: UICustomColors
     static var _customViewSelected        : UIColor
     {
         AppearanceService.shared.Style == .light ? #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1) : #colorLiteral(red: 0.3201489481, green: 0.3111480434, blue: 0.438789345, alpha: 1)
+    }
+    
+    static var _customTabBarItemSelected  : UIColor
+    {
+        if #available(iOS 13.0, *)
+        {
+            return AppearanceService.shared.Style == .light ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+        
+        return .black
+        
     }
     
     static var _customSegmentedOneSelectedText: UIColor

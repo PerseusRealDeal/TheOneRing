@@ -1,5 +1,5 @@
 //
-//  ColorConverter.swift
+//  HexColorConverter.swift
 //  DarkModeDiscovery
 //
 //  Copied and edited by Mikhail Zhigulin on 04.04.2022.

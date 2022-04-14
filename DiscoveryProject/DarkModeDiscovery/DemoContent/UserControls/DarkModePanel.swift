@@ -19,7 +19,7 @@ class DarkModePanel: UIView
     
     // MARK: - Variables
     
-    private var segmentedControlValue: DarkModeOption = .auto
+    var segmentedControlValue: DarkModeOption = .auto { didSet { updateSegmentedControl() }}
     
     // MARK: - Closure for segmented control value changed event
     
@@ -128,13 +128,5 @@ class DarkModePanel: UIView
         }
         
         segmentedControlValueChangedClosure?(segmentedControlValue)
-    }
-    
-    // MARK: - Setting segmented control value
-    
-    func setSegmentedControlValue(_ darkMode: DarkModeOption)
-    {
-        segmentedControlValue = darkMode
-        updateSegmentedControl()
     }
 }

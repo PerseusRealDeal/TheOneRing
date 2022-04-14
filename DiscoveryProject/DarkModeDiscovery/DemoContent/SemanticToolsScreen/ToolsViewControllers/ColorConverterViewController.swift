@@ -50,7 +50,7 @@ class ConverterViewController: UIViewController
         
         tabButton.setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor.label_Adapted
+                NSAttributedString.Key.foregroundColor: UIColor._customTabBarItemSelected
             ],
             for: .selected)
     }

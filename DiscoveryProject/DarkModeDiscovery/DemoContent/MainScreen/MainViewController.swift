@@ -67,7 +67,7 @@ class MainViewController: UIViewController
             /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
             
             screen.userChoiceChangedClosure =
-                { selected  in self.optionsPanel.setSegmentedControlValue(selected) }
+                { selected  in self.optionsPanel.segmentedControlValue = selected }
             
             return screen
         }()
@@ -87,8 +87,6 @@ class MainViewController: UIViewController
     }
     
     // MARK: - The life cyrcle group of methods
-    
-    let darkModeObserver = DarkModeObserver(AppearanceService.shared)
     
     override func viewDidLoad()
     {
@@ -114,22 +112,23 @@ class MainViewController: UIViewController
         
         bottomImage.image = UIImage(named: "OneRing")
         
-        // Dark Mode panel
-        
-        optionsPanel.segmentedControlValueChangedClosure =
-            { selected in changeDarkMode(selected)
-                
-                // Change a value of other one Dark Mode panel accordingly
-                self.semanticToolsViewController.optionsPanel?.setSegmentedControlValue(selected)
-            }
-        
-        optionsPanel.setSegmentedControlValue(AppearanceService.DarkModeUserChoice)
-        
-        optionsPanel.backgroundColor = .clear
+        // Dynamic content
         
         // Images
         
         titleImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        
+        // Dark Mode panel
+        
+        optionsPanel.segmentedControlValueChangedClosure =
+            { chosenStyle in changeDarkModeManually(chosenStyle)
+                
+                // The value of other one Dark Mode panel should also be changed accordingly
+                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = chosenStyle
+            }
+        
+        optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        optionsPanel.backgroundColor = .clear
     }
     
     @objc private func makeUp()

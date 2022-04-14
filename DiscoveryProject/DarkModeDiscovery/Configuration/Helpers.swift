@@ -8,7 +8,7 @@
 import UIKit
 import PerseusDarkMode
 
-func changeDarkMode(_ userChoice: DarkModeOption)
+func changeDarkModeManually(_ userChoice: DarkModeOption)
 {
     AppearanceService.DarkModeUserChoice = userChoice
     AppearanceService.makeUp()
@@ -102,9 +102,9 @@ func convert_HEX_to_RGBA(_ input: String) -> String?
     else { return nil }
     
     return ""
-        + "\(colorFromHEX.RGBA255.red), "
-        + "\(colorFromHEX.RGBA255.green), "
-        + "\(colorFromHEX.RGBA255.blue), "
+        + "\(Int(colorFromHEX.RGBA255.red)), "
+        + "\(Int(colorFromHEX.RGBA255.green)), "
+        + "\(Int(colorFromHEX.RGBA255.blue)), "
         + "\(Double(round(100 * colorFromHEX.RGBA255.alpha) / 100))"
 }
 
