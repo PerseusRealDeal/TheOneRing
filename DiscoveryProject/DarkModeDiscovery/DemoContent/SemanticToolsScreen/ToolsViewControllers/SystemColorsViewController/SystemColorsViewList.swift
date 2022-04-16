@@ -1,5 +1,5 @@
 //
-//  SystemColorsList.swift
+//  SystemColorsViewList.swift
 //  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin on 06.04.2022.

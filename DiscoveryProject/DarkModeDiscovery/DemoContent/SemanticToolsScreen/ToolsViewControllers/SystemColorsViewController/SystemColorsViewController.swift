@@ -11,8 +11,10 @@ import AdaptedSystemUI
 
 class SystemColorsViewController: UIViewController
 {
-    @IBOutlet weak var tabButton: UITabBarItem!
+    // MARK: - Interface Builder connections
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tabButton: UITabBarItem!
     
     // MARK: - The life cyrcle group of methods
     
@@ -54,7 +56,7 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",
-                                                       for: indexPath) as? ColorTableViewCell,
+                                                       for: indexPath) as? SystemColorCell,
               let item = SystemColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
         
