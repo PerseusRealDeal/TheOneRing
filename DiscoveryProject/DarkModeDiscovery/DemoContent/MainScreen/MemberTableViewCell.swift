@@ -8,10 +8,8 @@
 import UIKit
 import PerseusDarkMode
 
-class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
+class MemberTableViewCell: UITableViewCell
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var memberIconBorder: UIView!
@@ -40,15 +38,11 @@ class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
     {
         super.awakeFromNib()
         
-        AppearanceService.register(self)
-        
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
-        if DarkMode.isEnabled { makeUp() }
+        
+        if AppearanceService.isEnabled { makeUp() }
     }
-    
-    // MARK: - AppearanceAdaptableElement protocol
-
-    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
@@ -71,7 +65,7 @@ class MemberTableViewCell: UITableViewCell, AppearanceAdaptableElement
         selected.layer.masksToBounds = true
     }
     
-    private func makeUp()
+    @objc private func makeUp()
     {
         // Set background color for Icon border view up
         

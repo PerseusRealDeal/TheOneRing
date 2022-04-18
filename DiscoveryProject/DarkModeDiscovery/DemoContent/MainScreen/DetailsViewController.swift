@@ -8,10 +8,8 @@
 import UIKit
 import PerseusDarkMode
 
-class DetailsViewController: UIViewController, AppearanceAdaptableElement
+class DetailsViewController: UIViewController
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
     @IBOutlet weak var nameLabel     : UILabel!
@@ -31,7 +29,7 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
     @IBOutlet weak var memberRace    : UILabel!
     
     @IBOutlet weak var closeButton   : UIButton!
-    @IBOutlet weak var bottomImage   : UIImageView!
+    @IBOutlet weak var bottomImage   : DarkModeImageView!
     
     @IBAction func closeButtonAction(_ sender: UIButton)
     {
@@ -56,33 +54,36 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
         }
     }
     
+    // MARK: - Dark Mode observer
+    
+    let darkModeObserver = DarkModeObserver(AppearanceService.shared)
+    
     // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        AppearanceService.register(self)
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
-        if DarkMode.isEnabled { makeUp() }
+        
+        if AppearanceService.isEnabled { makeUp() }
     }
-    
-    // MARK: - AppearanceAdaptableElement protocol
-    
-    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
     private func configure()
     {
-        closeButton.layer.cornerRadius = 8
+        closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
         
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
+        
+        bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
     
-    func makeUp()
+    @objc private func makeUp()
     {
         view.backgroundColor = ._customPrimaryBackground
         closeButton.backgroundColor = ._customSecondaryBackground
@@ -101,10 +102,6 @@ class DetailsViewController: UIViewController, AppearanceAdaptableElement
         
         raceLabel.textColor = ._customLabel
         memberRace.textColor = ._customSecondaryLabel
-        
-        bottomImage.image = DarkMode.Style == .light ?
-            UIImage(named: "Rivendell") :
-            UIImage(named: "RivendellDark")
     }
 }
 

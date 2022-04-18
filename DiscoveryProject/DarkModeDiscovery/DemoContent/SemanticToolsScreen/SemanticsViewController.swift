@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import PerseusDarkMode
+import AdaptedSystemUI
 
 class SemanticsViewController: UIViewController
 {
@@ -18,14 +20,49 @@ class SemanticsViewController: UIViewController
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var optionsPanel: DarkModePanel!
+    
+    // MARK: - Closure for Dark Mode usr choice changed event
+    
+    var userChoiceChangedClosure: ((_ selected: DarkModeOption) -> Void)?
+    
     // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.configure()
         
-        closeButton.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
-        closeButton.layer.cornerRadius = 8
+        // Dark Mode setup
+        
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        if AppearanceService.isEnabled { makeUp() }
+    }
+    
+    @objc private func makeUp()
+    {
+        view.backgroundColor = ._customPrimaryBackground
+        closeButton.backgroundColor = ._customSecondaryBackground
+        
+        optionsPanel.backgroundColor = ._customViewSelected
+    }
+    
+    private func configure()
+    {
+        closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
+        
+        // Dark Mode panel
+        
+        optionsPanel.segmentedControlValueChangedClosure =
+            { chosenStyle in changeDarkModeManually(chosenStyle)
+                
+                // Call to change the value of the other instance of Dark Mode panel
+                self.userChoiceChangedClosure?(chosenStyle)
+            }
+        
+        optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        optionsPanel.backgroundColor = .clear
+        
     }
 }

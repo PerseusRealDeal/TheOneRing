@@ -36,7 +36,7 @@ extension AppDelegate: UIApplicationDelegate
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
-        AppearanceService.adaptToDarkMode()
+        AppearanceService.makeUp()
         
         return true
     }

@@ -9,19 +9,26 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class MainViewController: UIViewController, AppearanceAdaptableElement
+let TITLE = "The Fellowship of the Ring"
+
+class MainViewController: UIViewController
 {
-    deinit { AppearanceService.unregister(self) }
-    
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var titleTop    : UILabel!
-    @IBOutlet weak var titleImage  : UIImageView!
+    @IBOutlet weak var titleTop         : UILabel!
+    @IBOutlet weak var titleImage       : DarkModeImageView!
     
-    @IBOutlet weak var tableView   : UITableView!
-    @IBOutlet weak var bottomImage : UIImageView!
+    @IBOutlet weak var tableView        : UITableView!
+    @IBOutlet weak var bottomImage      : UIImageView!
     
-    @IBOutlet weak var optionsPanel: OptionsPanel!
+    @IBOutlet weak var optionsPanel     : DarkModePanel!
+    
+    @IBOutlet weak var actionToolsButton: UIButton!
+    
+    @IBAction func actionToolsButtonTapped(_ sender: UIButton)
+    {
+        present(self.semanticToolsViewController, animated: true, completion: nil)
+    }
     
     // MARK: - The data to show on screen
     
@@ -32,6 +39,37 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
             else { return [] }
             
             return (try? JSONDecoder().decode([Member].self, from: data)) ?? []
+        }()
+    
+    // MARK: - Child View Controllers
+    
+    private lazy var detailsViewController =
+        { () -> DetailsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            return screen
+        }()
+    
+    private lazy var semanticToolsViewController =
+        { () -> SemanticsViewController in
+            
+            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
+                                          bundle: nil)
+            
+            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
+            
+            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+            
+            screen.userChoiceChangedClosure =
+                { selected  in self.optionsPanel.segmentedControlValue = selected }
+            
+            return screen
         }()
     
     // MARK: - Instance of the class
@@ -54,116 +92,52 @@ class MainViewController: UIViewController, AppearanceAdaptableElement
     {
         super.viewDidLoad()
         
-        AppearanceService.register(self)
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
-        
-        //let value = PerseusDarkMode.AppearanceService.shared.isEnabled
-        
-        //print(value.description)
-        //let color: UIColor = .label
     }
-    
-    // MARK: - AppearanceAdaptableElement protocol
-    
-    func adaptAppearance() { makeUp() }
     
     // MARK: - Appearance matter methods
     
     private func configure()
     {
-        titleTop.text = "The Fellowship of the Ring"
+        // Static content
+        
+        titleTop.text = TITLE
         
         titleImage.layer.cornerRadius = 40
         titleImage.layer.masksToBounds = true
         
-        optionsPanel.segmentedControlValueChangedClosure =
-            { actualValue in
-                // Value should be saved
-                
-                self.DarkMode.DarkModeUserChoice = actualValue
-                
-                // Value should be updated on screen after
-                
-                self.optionsPanel.setStatusValue(self.DarkMode.Style)
-                
-                // Customise appearance
-                
-                AppearanceService.adaptToDarkMode()
-            }
-        optionsPanel.actionButtonClosure =
-            {
-                self.present(self.semanticToolsViewController,
-                             animated  : true,
-                             completion: nil)
-            }
-        
-        optionsPanel.setSegmentedControlValue(DarkMode.DarkModeUserChoice)
-        optionsPanel.setStatusValue(DarkMode.Style)
-        
-        // Move to makeUp if changing
+        actionToolsButton.layer.cornerRadius = 8
+        actionToolsButton.layer.masksToBounds = true
         
         bottomImage.image = UIImage(named: "OneRing")
+        
+        // Dynamic content
+        
+        // Images
+        
+        titleImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        
+        // Dark Mode panel
+        
+        optionsPanel.segmentedControlValueChangedClosure =
+            { chosenStyle in changeDarkModeManually(chosenStyle)
+                
+                // The value of other one Dark Mode panel should also be changed accordingly
+                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = chosenStyle
+            }
+        
+        optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        optionsPanel.backgroundColor = .clear
     }
     
-    private func makeUp()
+    @objc private func makeUp()
     {
-        optionsPanel.setStatusValue(DarkMode.Style)
-        
         view.backgroundColor = ._customPrimaryBackground
         titleTop.textColor = ._customTitle
         
-        titleImage.image = DarkMode.Style == .light ?
-            UIImage(named: "TheFellowship") :
-            UIImage(named: "FrodoWithTheRing")
+        actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
     }
-    
-    // MARK: - Dark Mode switched manually
-    
-    func userChoiceForDarkModeChanged(_ actualValue: DarkModeOption)
-    {
-        // Value should be saved
-        
-        DarkMode.DarkModeUserChoice = actualValue
-        
-        // Value should be updated on screen after
-        
-        optionsPanel.setStatusValue(DarkMode.Style)
-        
-        // Customise appearance
-        
-        AppearanceService.adaptToDarkMode()
-    }
-
-    // MARK: - Child View Controllers
-    
-    private lazy var detailsViewController =
-        { () -> DetailsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: DetailsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! DetailsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            //screen.makeUp()
-            
-            return screen
-        }()
-    
-    private lazy var semanticToolsViewController =
-        { () -> SemanticsViewController in
-            
-            let storyboard = UIStoryboard(name  : String(describing: SemanticsViewController.self),
-                                          bundle: nil)
-            
-            let screen = storyboard.instantiateInitialViewController() as! SemanticsViewController
-            
-            /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-            
-            screen.view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-            
-            return screen
-        }()
 }
 
 // MARK: - UITableView
@@ -210,8 +184,8 @@ extension MainViewController
     {
         print("[\(type(of: self))] " + #function)
         
-        print("UserChoice: \(AppearanceService.shared.DarkModeUserChoice)")
-        print("System: \(DarkModeDecision.calculateSystemStyle())")
+        print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
+        print("System: \(AppearanceService.shared.SystemStyle)")
         print("DarkMode: \(AppearanceService.shared.Style)")
         
         titleTop.isHidden = true
