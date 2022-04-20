@@ -137,6 +137,8 @@ class MainViewController: UIViewController
         titleTop.textColor = ._customTitle
         
         actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
+        
+        //experiment()
     }
 }
 
@@ -182,7 +184,7 @@ extension MainViewController
 {
     private func experiment()
     {
-        print("[\(type(of: self))] " + #function)
+        print("[\(type(of: self))] " + #function + " BEGIN")
         
         print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
         print("System: \(AppearanceService.shared.SystemStyle)")
@@ -193,9 +195,20 @@ extension MainViewController
         if #available(iOS 13.0, *),
            let view = titleTop.nextFirstResponder(where: { $0 is UIView }) as? UIView
         {
-            view.backgroundColor = .label
-            print(UIColor.label.rgba)
+            // Contrast next one
+            
+            view.backgroundColor = .systemTeal
+            
+            // Get RGBA of the next one
+            
+            let rgba = view.backgroundColor!.resolvedColor(with: self.traitCollection).RGBA255
+            
+            // Let me see it
+            
+            print(rgba)
         }
+        
+        print("[\(type(of: self))] " + #function + " END")
     }
 }
 

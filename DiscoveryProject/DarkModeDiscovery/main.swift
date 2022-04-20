@@ -31,6 +31,12 @@ extension AppDelegate: UIApplicationDelegate
         print(">> [\(type(of: self))]." + #function)
         #endif
         
+        // Register Settings Bundle
+        UserDefaults.standard.register(defaults: [String:AnyObject]())
+        
+        // Print a Value from Settings
+        print(UserDefaults.standard.string(forKey: "dark_mode_preference") as Any)
+        
         window = UIWindowAdaptable(frame: UIScreen.main.bounds)
         
         window!.rootViewController = MainViewController.storyboardInstance()
