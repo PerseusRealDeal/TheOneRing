@@ -32,16 +32,16 @@ extension AppDelegate: UIApplicationDelegate
         #endif
         
         // Register Settings Bundle
-        UserDefaults.standard.register(defaults: [String:AnyObject]())
+        registerSettingsBundle()
         
-        // Print a Value from Settings
-        print(UserDefaults.standard.string(forKey: "dark_mode_preference") as Any)
-        
+        // Init the app's window
         window = UIWindowAdaptable(frame: UIScreen.main.bounds)
         
+        // Give it a root view for the first screen
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
+        // And, finally, apply a new style for all screens
         AppearanceService.makeUp()
         
         return true

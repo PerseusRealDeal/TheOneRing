@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>dark_mode_preference</string>
 			<key>DefaultValue</key>
-			<string>Auto</string>
+			<integer>0</integer>
 			<key>Titles</key>
 			<array>
 				<string>Light</string>
@@ -23,9 +23,9 @@
 			</array>
 			<key>Values</key>
 			<array>
-				<string>Off</string>
-				<string>On</string>
-				<string>Auto</string>
+				<integer>2</integer>
+				<integer>1</integer>
+				<integer>0</integer>
 			</array>
 		</dict>
 	</array>

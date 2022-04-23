@@ -8,10 +8,41 @@
 import UIKit
 import PerseusDarkMode
 
+public let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
+
 func changeDarkModeManually(_ userChoice: DarkModeOption)
 {
+    // Change Dark Mode value in settings bundle
+    UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
+    
+    // Change Dark Mode value in Perseus Dark Mode library
     AppearanceService.DarkModeUserChoice = userChoice
+    
+    // Update appearance in accoring with changed Dark Mode Style
     AppearanceService.makeUp()
+}
+
+func isDarkModeSettingsChanged() -> DarkModeOption?
+{
+    // Load enum int value from settings
+    
+    let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?
+        UserDefaults.standard.integer(forKey: DARK_MODE_SETTINGS_KEY) : -1
+    
+    // Try to cast int value to enum
+    
+    guard option != -1, let settingsDarkMode = DarkModeOption.init(rawValue: option)
+    else { return nil }
+    
+    // Report change
+    
+    return settingsDarkMode == AppearanceService.DarkModeUserChoice ? nil : settingsDarkMode
+}
+
+func registerSettingsBundle()
+{
+    // Make it easy just for the only one option
+    UserDefaults.standard.register(defaults: [DARK_MODE_SETTINGS_KEY: 0])
 }
 
 extension UserDefaults

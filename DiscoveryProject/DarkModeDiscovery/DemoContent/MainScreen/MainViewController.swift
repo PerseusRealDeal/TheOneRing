@@ -91,9 +91,28 @@ class MainViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        configure()
         
         AppearanceService.register(observer: self, selector: #selector(makeUp))
-        configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(theAppDidBecomeActive),
+                                               name    : UIApplication.didBecomeActiveNotification,
+                                               object  : nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                          name  : UIApplication.didBecomeActiveNotification,
+                                          object: nil)
     }
     
     // MARK: - Appearance matter methods
@@ -121,10 +140,10 @@ class MainViewController: UIViewController
         // Dark Mode panel
         
         optionsPanel.segmentedControlValueChangedClosure =
-            { chosenStyle in changeDarkModeManually(chosenStyle)
+            { option in changeDarkModeManually(option)
                 
                 // The value of other one Dark Mode panel should also be changed accordingly
-                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = chosenStyle
+                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
             }
         
         optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
@@ -139,6 +158,20 @@ class MainViewController: UIViewController
         actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
         
         //experiment()
+    }
+    
+    // MARK: - The App's Major Life Time Events
+    
+    @objc func theAppDidBecomeActive()
+    {
+        // Check Dark Mode in Settings
+        if let choice = isDarkModeSettingsChanged()
+        {
+            changeDarkModeManually(choice)
+            
+            optionsPanel.segmentedControlValue = choice
+            semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
+        }
     }
 }
 
@@ -195,7 +228,7 @@ extension MainViewController
         if #available(iOS 13.0, *),
            let view = titleTop.nextFirstResponder(where: { $0 is UIView }) as? UIView
         {
-            // Contrast next one
+            // Contrast the next one
             
             view.backgroundColor = .systemTeal
             
@@ -211,19 +244,3 @@ extension MainViewController
         print("[\(type(of: self))] " + #function + " END")
     }
 }
-
-/*
- 
- print("UserChoice: \(AppearanceService.shared.DarkModeUserChoice)")
- print("System: \(DarkModeDecision.calculateSystemStyle())")
- print("DarkMode: \(AppearanceService.shared.Style)")
- 
- print("[\(type(of: self))] " + #function)
- 
- //let _ = UIColor()
- //let _ : UIColor = .systemRed
- 
- //if #available(iOS 13.0, *) { self.view.backgroundColor = ._systemBackground }
- //if #available(iOS 13.0, *) { print(UIColor.systemBackground.rgba) }
- 
- */
