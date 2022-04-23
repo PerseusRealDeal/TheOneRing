@@ -55,14 +55,13 @@ class SemanticsViewController: UIViewController
         // Dark Mode panel
         
         optionsPanel.segmentedControlValueChangedClosure =
-            { chosenStyle in changeDarkModeManually(chosenStyle)
+            { option in changeDarkModeManually(option)
                 
                 // Call to change the value of the other instance of Dark Mode panel
-                self.userChoiceChangedClosure?(chosenStyle)
+                self.userChoiceChangedClosure?(option)
             }
         
         optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
         optionsPanel.backgroundColor = .clear
-        
     }
 }

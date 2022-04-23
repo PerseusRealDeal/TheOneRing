@@ -11,6 +11,7 @@
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
 		E03450F227C36F870071443E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* Helpers.swift */; };
+		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
 		E04B3E30280AB6C600C90B16 /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E04B3E2F280AB6C600C90B16 /* Adapted System UI */; };
 		E04B3E32280AB6C600C90B16 /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E04B3E31280AB6C600C90B16 /* Perseus Dark Mode */; };
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
@@ -56,6 +57,7 @@
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03450EF27C368F70071443E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		E03450F127C36F870071443E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E03786D3280E7BE200C6C1B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModePanel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DarkModePanel.xib; sourceTree = "<group>"; };
 		E07727C2280A7E4300D4A3A9 /* SemanticColorsViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsViewList.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				E03450EF27C368F70071443E /* CustomColors.swift */,
 				E03450F127C36F870071443E /* Helpers.swift */,
 				E0A0841427FAF4BA0010A55D /* ThirdPartyCode */,
+				E03786D3280E7BE200C6C1B8 /* Settings.bundle */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			files = (
 				E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */,
 				E095389927B36E7B00AAAAAA /* LaunchScreen.storyboard in Resources */,
+				E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */,
 				E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */,
 				E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */,
 				E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */,

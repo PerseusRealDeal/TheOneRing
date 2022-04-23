@@ -36,7 +36,7 @@ class DetailsViewController: UIViewController
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - Data to show details
+    // MARK: - Details to display on screen
     
     var data: Member?
     {
@@ -54,19 +54,14 @@ class DetailsViewController: UIViewController
         }
     }
     
-    // MARK: - Dark Mode observer
-    
-    let darkModeObserver = DarkModeObserver(AppearanceService.shared)
-    
     // MARK: - The life cyrcle group of methods
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
         
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     
@@ -104,10 +99,3 @@ class DetailsViewController: UIViewController
         memberRace.textColor = ._customSecondaryLabel
     }
 }
-
-/*
- print("[\(type(of: self))]" +
-         " Dark Mode: \(DarkMode.DarkModeUserChoice)," +
-         " System Style: \(DarkModeDecision.calculateSystemStyle())," +
-         " Decision: \(DarkMode.Style)")
- */

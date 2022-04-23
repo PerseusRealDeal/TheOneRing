@@ -31,11 +31,17 @@ extension AppDelegate: UIApplicationDelegate
         print(">> [\(type(of: self))]." + #function)
         #endif
         
+        // Register Settings Bundle
+        registerSettingsBundle()
+        
+        // Init the app's window
         window = UIWindowAdaptable(frame: UIScreen.main.bounds)
         
+        // Give it a root view for the first screen
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
         
+        // And, finally, apply a new style for all screens
         AppearanceService.makeUp()
         
         return true

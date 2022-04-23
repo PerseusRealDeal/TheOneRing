@@ -37,10 +37,9 @@ class MemberTableViewCell: UITableViewCell
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
         configure()
         
+        AppearanceService.register(observer: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     
