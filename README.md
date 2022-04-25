@@ -13,23 +13,25 @@ Discovery project for iOS Dark Mode with samples and demo content.
 
 ## Introductory remarks <a name="introductory"></a>
 
-Key points: Dark Mode, Custom Colors, Adapted Colors and Dynamic Images.
+Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images.
 
-TODO: Demo Content Screenshorts.
+| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
+| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
+| img | img | img | img |
 
 ## Releasing Dark Mode option <a name="darkmode"></a>
 
 `Sample Usage of Settings App`
 
-TODO: Screenshorts of Dark Mode Option Usage of Settings app. 
+TODO: Screenshots of Dark Mode Option Usage of Settings app. 
 
 They are Screen from Settings app, Info.plist, and sample code of switching Dark Mode.
 
 TODO: Sample Code.
 
-`Sample Usage form inside the App`
+`Sample Usage from inside the App`
 
-TODO: Screenshorts of Dark Mode Option Usage of The App. 
+TODO: Screenshots of Dark Mode Option Usage of The App. 
 
 TODO: Sample Code.
 
@@ -43,19 +45,19 @@ USE: Custom TEAL color based on the apple specification as a sample.
 
 `Adapted System Colors`
 
-TODO: Screenshort of System Colors tab.
+TODO: Screenshot of System Colors tab.
 
 TODO: Code Sample.
 
 `Adapted Semantic Colors`
 
-TODO: Screenshort of Semantic Colors tab.
+TODO: Screenshot of Semantic Colors tab.
 
 TODO: Code Sample
 
 ## Dynamic Image <a name="dynamicimage"></a>
 
-TODO: Screenshort of Dynamic Image.
+TODO: Screenshot of Dynamic Image.
 
 TODO: Code Sample.
 
