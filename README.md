@@ -17,7 +17,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images.
 
 | Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
 | :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| img | img | img | img |
+| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ## Releasing Dark Mode option <a name="darkmode"></a>
 
