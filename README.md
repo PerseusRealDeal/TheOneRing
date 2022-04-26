@@ -151,7 +151,7 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 
 | Dark Mode User Control Light | Dark Mode User Control Dark | 
 | :---------------------------------: | :---------------------------------: |
-| <img src="Images/DarkModeOptionLight.png" width="230" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="230" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+| <img src="Images/DarkModeOptionLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 `The second step:` give it a processing logic on change event.
 
@@ -165,7 +165,36 @@ optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
 
 ## Custom Colors <a name="customcolors"></a>
 
-TODO: Sample Code.
+The question is, how to have a color that is sensetive to Dark Mode.
+
+For instance, lets try to realese TEAL color using [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/).
+
+<img src="Images/systemTealSpecification.png" width="700" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+
+`The first step:` define a requirement.
+
+```swift
+
+protocol UICustomColors
+{
+    static var _customTeal                : UIColor { get }
+}
+```
+
+`The second step:` give it a conditional value using `AppearanceService.shared.Style` as a criteria.
+
+```swift
+import UIKit
+import PerseusDarkMode
+
+extension UIColor: UICustomColors
+{
+    static var _customTeal                : UIColor
+    {
+        AppearanceService.shared.Style == .light ? #colorLiteral(red: 0.1882352941, green: 0.6901960784, blue: 0.7803921568, alpha: 1) : #colorLiteral(red: 0.2509803921, green: 0.7843137254, blue: 0.8784313725, alpha: 1)
+    }
+}
+```
 
 USE: Custom TEAL color based on the apple specification as a sample.
 
