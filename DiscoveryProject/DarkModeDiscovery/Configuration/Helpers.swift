@@ -36,7 +36,7 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
     
     // Report change
     
-    return settingsDarkMode == AppearanceService.DarkModeUserChoice ? nil : settingsDarkMode
+    return settingsDarkMode != AppearanceService.DarkModeUserChoice ? settingsDarkMode : nil
 }
 
 func registerSettingsBundle()
