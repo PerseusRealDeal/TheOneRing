@@ -5,11 +5,13 @@ Discovery project for iOS Dark Mode with samples and demo content.
 ## Table of contents
 
 1. [Introductory remarks](#introductory)
-2. [Releasing Dark Mode option](#darkmode)
+2. [Releasing Dark Mode](#darkmode)
     + [Settings App for option Release](#darkmodesettingsapp)
     + [Using Dark Mode option in the App](#darkmodeinsidetheapp)
 3. [Custom Colors](#customcolors)
 4. [Adapted Colors](#adaptedcolors)
+    + [System Colors](#systemcolors)
+    + [Semantic Colors](#semanticcolors)
 5. [Dynamic Image](#dynamicimage)
 6. [Licenses](#licenses)
 
@@ -21,7 +23,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 | :--------------------: | :----------------------: | :-------------------: | :---------------------: |
 | <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-## Releasing Dark Mode option <a name="darkmode"></a>
+## Releasing Dark Mode <a name="darkmode"></a>
 
 ### Settings App for option Release <a name="darkmodesettingsapp"></a>
 
@@ -69,7 +71,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 
 `The second step:` make the option's business logic getting work.
 
-One of the most reliable way to make the option's business logic of Dark Mode Option from Settings App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
+One of the most reliable way to make the business logic of Dark Mode option of Setting App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
 
 ```swift
 override func viewWillAppear(_ animated: Bool)
@@ -123,7 +125,8 @@ func changeDarkModeManually(_ userChoice: DarkModeOption)
     // Update appearance in accoring with changed Dark Mode Style
     AppearanceService.makeUp()
 }
-
+```
+```swift
 func isDarkModeSettingsChanged() -> DarkModeOption?
 {
     // Load enum int value from settings
@@ -142,12 +145,23 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 }
 ```
 
-
 ### Using Dark Mode option in the App <a name="darkmodeinsidetheapp"></a>
 
-TODO: Screenshots of Dark Mode Option Usage of The App. 
+`The first step:` make a user control and place it on a screen.
 
-TODO: Sample Code.
+| Dark Mode User Control Light | Dark Mode User Control Dark | 
+| :---------------------------------: | :---------------------------------: |
+| <img src="Images/DarkModeOptionLight.png" width="230" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="230" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+
+`The second step:` give it a processing logic on change event.
+
+```swift
+
+// Configure Dark Mode user control
+
+optionsPanel.segmentedControlValueChangedClosure = { option in changeDarkModeManually(option) }
+optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+```
 
 ## Custom Colors <a name="customcolors"></a>
 
@@ -157,13 +171,13 @@ USE: Custom TEAL color based on the apple specification as a sample.
 
 ## Adapted Colors <a name="adaptedcolors"></a>
 
-`Adapted System Colors`
+### System Colors <a name="systemcolors"></a>
 
 TODO: Screenshot of System Colors tab.
 
 TODO: Code Sample.
 
-`Adapted Semantic Colors`
+### Semantic Colors <a name="semanticcolors"></a>
 
 TODO: Screenshot of Semantic Colors tab.
 
