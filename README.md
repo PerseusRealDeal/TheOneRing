@@ -174,6 +174,7 @@ For instance, lets try to realese TEAL color using [the apple specification](htt
 `The first step:` define a requirement.
 
 ```swift
+import UIKit
 
 protocol UICustomColors
 {
@@ -195,22 +196,39 @@ extension UIColor: UICustomColors
     }
 }
 ```
-
-USE: Custom TEAL color based on the apple specification as a sample.
-
 ## Adapted Colors <a name="adaptedcolors"></a>
 
 ### System Colors <a name="systemcolors"></a>
 
-TODO: Screenshot of System Colors tab.
+[Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) ensures that the system colors listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) gives the same look also and on early apple devices starting from iOS 9.
 
-TODO: Code Sample.
+| System Colors Light | System Colors Dark | 
+| :----------------------: | :---------------------: |
+| <img src="Images/SystemColorsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SystemColorsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+
+```swift
+import AdaptedSystemUI
+
+let view = UIView()
+view.backgroundColor = .systemRed_Adapted
+```
 
 ### Semantic Colors <a name="semanticcolors"></a>
 
-TODO: Screenshot of Semantic Colors tab.
+For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specification—Apple Inc. reserves the right to tweak a litle bit any semantic color later.
 
-TODO: Code Sample
+[Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
+
+| Semantic Colors Light | Semantic Colors Dark | 
+| :------------------------: | :------------------------: |
+| <img src="Images/SemanticColorsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SemanticColorsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+
+```swift
+import AdaptedSystemUI
+
+let view = UIView()
+view.backgroundColor = .label_Adapted
+```
 
 ## Dynamic Image <a name="dynamicimage"></a>
 
