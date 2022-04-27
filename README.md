@@ -2,6 +2,11 @@ ios.darkmode.discovery
 ======================
 Discovery project for iOS Dark Mode with samples and demo content.
 
+[![License](http://img.shields.io/:LICENSE-MIT-blue.svg)](http://doge.mit-license.org)
+![Platform](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)
+![Swift 5.3](https://img.shields.io/badge/Swift-5.3-red.svg)
+![SDK](https://img.shields.io/badge/SDK-UIKit%20-green.svg)
+
 ## Table of contents
 
 1. [Introductory remarks](#introductory)
@@ -232,16 +237,16 @@ view.backgroundColor = .label_Adapted
 
 ## Dynamic Image <a name="dynamicimage"></a>
 
-| Semantic Colors Light | Semantic Colors Dark | 
-| :------------------------: | :------------------------: |
+| Dynamic Image View Light | Dynamic Image View Dark | 
+| :-----------------------------: | :-----------------------------: |
 | <img src="Images/DynamicsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DynamicsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ```swift
 import UIKit
 import PerseusDarkMode
 
-topImage = DarkModeImageView()
-bottomImage = DarkModeImageView()
+var topImage = DarkModeImageView()
+var bottomImage = DarkModeImageView()
 
 topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
