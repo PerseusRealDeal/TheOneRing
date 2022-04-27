@@ -232,9 +232,20 @@ view.backgroundColor = .label_Adapted
 
 ## Dynamic Image <a name="dynamicimage"></a>
 
-TODO: Screenshot of Dynamic Image.
+| Semantic Colors Light | Semantic Colors Dark | 
+| :------------------------: | :------------------------: |
+| <img src="Images/DynamicsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DynamicsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-TODO: Code Sample.
+```swift
+import UIKit
+import PerseusDarkMode
+
+topImage = DarkModeImageView()
+bottomImage = DarkModeImageView()
+
+topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+```
 
 ## Licenses <a name="licenses"></a>
 
