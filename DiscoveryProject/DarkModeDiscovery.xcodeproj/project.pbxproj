@@ -674,7 +674,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/DarkMode.git";
 			requirement = {
 				kind = exactVersion;
-				version = "1.0.0-beta.4";
+				version = "1.0.0-RC";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
