@@ -4,21 +4,23 @@ Discovery project for iOS Dark Mode with samples and demo content.
 
 [![License](http://img.shields.io/:LICENSE-MIT-blue.svg)](http://doge.mit-license.org)
 ![Platform](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)
-![Swift 5.3](https://img.shields.io/badge/Swift-5.3-red.svg)
+![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)
 ![SDK](https://img.shields.io/badge/SDK-UIKit%20-green.svg)
+[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.0%20RC-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.0-RC)
 
 ## Table of contents
 
-1. [Introductory remarks](#introductory)
-2. [Releasing Dark Mode](#darkmode)
+[Introductory remarks](#introductory)
+1. [Releasing Dark Mode](#darkmode)
     + [Settings App for option Release](#darkmodesettingsapp)
     + [Using Dark Mode option in the App](#darkmodeinsidetheapp)
-3. [Custom Colors](#customcolors)
-4. [Adapted Colors](#adaptedcolors)
+2. [Custom Colors](#customcolors)
+3. [Adapted Colors](#adaptedcolors)
     + [System Colors](#systemcolors)
     + [Semantic Colors](#semanticcolors)
-5. [Dynamic Image](#dynamicimage)
-6. [Licenses](#licenses)
+4. [Dynamic Image](#dynamicimage)
+
+[Licenses](#licenses)
 
 ## Introductory remarks <a name="introductory"></a>
 
@@ -32,7 +34,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 
 ### Settings App for option Release <a name="darkmodesettingsapp"></a>
 
-`The first step:` describing user interface using settings bundle—screenshots and Root.plist are below.
+`The first step:` describe user interface using settings bundle—screenshots and Root.plist are below.
 
 | Settings App Screen: Option | Settings App Screen: Values |
 | :-------------------------------: | :-------------------------------: |
@@ -220,7 +222,7 @@ view.backgroundColor = .systemRed_Adapted
 
 ### Semantic Colors <a name="semanticcolors"></a>
 
-For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specification—Apple Inc. reserves the right to tweak a litle bit any semantic color later.
+For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics—Apple Inc. reserves the right to tweak a litle bit any semantic color later.
 
 [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
 

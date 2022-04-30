@@ -568,7 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.4;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -587,7 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.4;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -674,7 +674,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/DarkMode.git";
 			requirement = {
 				kind = exactVersion;
-				version = "1.0.0-beta.4";
+				version = "1.0.0-RC";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
