@@ -110,21 +110,9 @@ func convert_RGBA_to_HEX(_ input: String) -> String?
     let red = CGFloat(Int(array[0]) ?? 0)
     let green = CGFloat(Int(array[1]) ?? 0)
     let blue = CGFloat(Int(array[2]) ?? 0)
+    let alpha = CGFloat(Float(array[3]) ?? 1)
     
-    var alpha: CGFloat = 1
-    var color: UIColor
-    
-    if array.count == 4, let alphaNum = NumberFormatter().number(from: String(array[3]))
-    {
-        alpha = CGFloat(alphaNum.doubleValue)
-        color = rgba255(red, green, blue, alpha)
-    }
-    else
-    {
-        color = rgba255(red, green, blue)
-    }
-    
-    return color.hexString()
+    return rgba255(red, green, blue, alpha).hexString()
 }
 
 func convert_HEX_to_RGBA(_ input: String) -> String?
