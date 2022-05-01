@@ -4,6 +4,8 @@
 //
 //  Created by Mikhail Zhigulin on 15.02.2022.
 //
+//  Copyright © 2022 Mikhail Zhigulin. All rights reserved.
+//
 
 import UIKit
 

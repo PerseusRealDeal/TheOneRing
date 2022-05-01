@@ -4,6 +4,8 @@
 //
 //  Created by Mikhail Zhigulin on 21.02.2022.
 //
+//  Copyright © 2022 Mikhail Zhigulin. All rights reserved.
+//
 
 import UIKit
 import PerseusDarkMode

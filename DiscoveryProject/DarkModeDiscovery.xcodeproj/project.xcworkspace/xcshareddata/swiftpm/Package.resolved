@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Dark Mode",
-        "repositoryURL": "https://github.com/perseusrealdeal/DarkMode.git",
-        "state": {
-          "branch": null,
-          "revision": "88aa57ab6e9bf50cbcfd8727a398e9f9c9d075e8",
-          "version": "1.0.0-RC"
-        }
+  "pins" : [
+    {
+      "identity" : "darkmode",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/perseusrealdeal/DarkMode.git",
+      "state" : {
+        "revision" : "88aa57ab6e9bf50cbcfd8727a398e9f9c9d075e8",
+        "version" : "1.0.0-RC"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

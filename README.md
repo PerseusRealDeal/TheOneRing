@@ -259,7 +259,7 @@ bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
 `License for this app`
 
 ```
-Copyright (c) 2022 Mikhail Zhigulin
+Copyright © 2022 Mikhail Zhigulin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
