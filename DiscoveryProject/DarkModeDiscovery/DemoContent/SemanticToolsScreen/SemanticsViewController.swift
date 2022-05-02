@@ -51,6 +51,8 @@ class SemanticsViewController: UIViewController
     
     private func configure()
     {
+        setTappedAroundHandlerUp()
+        
         closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
         
@@ -66,4 +68,16 @@ class SemanticsViewController: UIViewController
         optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
         optionsPanel.backgroundColor = .clear
     }
+}
+
+extension UIViewController
+{
+    func setTappedAroundHandlerUp()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() { view.endEditing(true) }
 }

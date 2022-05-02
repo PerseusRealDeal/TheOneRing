@@ -11,7 +11,7 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class SemanticColorsViewController: UIViewController
+class SemanticColorsViewController: UIViewController, UITextFieldDelegate
 {
     // MARK: - Interface Builder connections
     
@@ -23,7 +23,6 @@ class SemanticColorsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.configure()
         
         // Dark Mode setup
         
@@ -43,8 +42,6 @@ class SemanticColorsViewController: UIViewController
         
         tableView.reloadData()
     }
-    
-    private func configure() { }
 }
 
 // MARK: - UITableView

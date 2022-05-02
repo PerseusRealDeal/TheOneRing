@@ -11,7 +11,7 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class SemanticColorCell: UITableViewCell
+class SemanticColorCell: UITableViewCell, UITextFieldDelegate
 {
     @IBOutlet weak var colorNameLabel    : UILabel!
     @IBOutlet weak var colorView         : UIView!
@@ -55,6 +55,15 @@ class SemanticColorCell: UITableViewCell
     {
         colorView.layer.cornerRadius = 25
         colorView.layer.masksToBounds = true
+        
+        colorHexTextField.delegate = self
+        colorRGBATextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
