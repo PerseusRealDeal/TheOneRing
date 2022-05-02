@@ -11,7 +11,7 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
-class ConverterViewController: UIViewController
+class ConverterViewController: UIViewController, UITextFieldDelegate
 {
     // MARK: - Interface Builder connections
     
@@ -61,5 +61,14 @@ class ConverterViewController: UIViewController
     {
         convertButton.layer.cornerRadius = 8
         convertButton.layer.masksToBounds = true
+        
+        RGBAInput.delegate = self
+        HEXOutput.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }

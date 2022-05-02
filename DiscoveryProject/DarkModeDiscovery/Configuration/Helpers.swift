@@ -112,7 +112,7 @@ func convert_RGBA_to_HEX(_ input: String) -> String?
     let red = CGFloat(Int(array[0]) ?? 0)
     let green = CGFloat(Int(array[1]) ?? 0)
     let blue = CGFloat(Int(array[2]) ?? 0)
-    let alpha = CGFloat(Float(array[3]) ?? 1)
+    let alpha = array.count == 4 ? CGFloat(Float(array[3]) ?? 1) : 1
     
     return rgba255(red, green, blue, alpha).hexString()
 }
