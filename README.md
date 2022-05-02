@@ -203,6 +203,13 @@ extension UIColor: UICustomColors
     }
 }
 ```
+
+`The third step:` almost is about how it's done.
+
+At this step the smart choice should be done, either use `AppearanceService.makeUp()` or create observer for getting change of `AppearanceService.shared.StyleObservable`.
+
+Look at README of [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) for details.
+
 ## Adapted Colors <a name="adaptedcolors"></a>
 
 ### System Colors <a name="systemcolors"></a>
