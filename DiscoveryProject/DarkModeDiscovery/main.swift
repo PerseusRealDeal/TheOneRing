@@ -44,7 +44,7 @@ extension AppDelegate: UIApplicationDelegate
         window!.makeKeyAndVisible()
         
         // And, finally, apply a new style for all screens
-        AppearanceService.makeUp()
+        //AppearanceService.makeUp()
         
         return true
     }

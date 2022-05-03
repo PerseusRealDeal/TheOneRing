@@ -19,18 +19,15 @@ class SemanticColorCell: UITableViewCell, UITextFieldDelegate
     @IBOutlet weak var colorRGBATextField: UITextField!
     
     public var colorName                 : String? { didSet { colorNameLabel?.text = colorName }}
-    public var colorRepresented          : UIColor? { didSet { makeUp() }}
+    public var colorRepresented          : UIColor?
+    {
+        didSet { if AppearanceService.isEnabled { makeUp() }}
+    }
     
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        
         configure()
-        
-        // Make the View sensitive to Dark Mode
-        
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
-        if AppearanceService.isEnabled { makeUp() }
     }
     
     @objc private func makeUp()
