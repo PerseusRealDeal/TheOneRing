@@ -24,6 +24,8 @@ class SystemColorsViewController: UIViewController
     {
         super.viewDidLoad()
         
+        tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
+        
         // Make the View sensitive to Dark Mode
         
         AppearanceService.register(observer: self, selector: #selector(makeUp))

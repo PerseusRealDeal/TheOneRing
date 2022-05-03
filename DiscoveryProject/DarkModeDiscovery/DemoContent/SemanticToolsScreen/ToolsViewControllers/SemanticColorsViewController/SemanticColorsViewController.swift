@@ -24,6 +24,8 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
         
+        tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
+        
         // Dark Mode setup
         
         AppearanceService.register(observer: self, selector: #selector(makeUp))
