@@ -2,11 +2,11 @@ ios.darkmode.discovery
 ======================
 Discovery project for iOS Dark Mode with samples and demo content.
 
-[![License](http://img.shields.io/:LICENSE-MIT-blue.svg)](http://doge.mit-license.org)
 ![Platform](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)
 ![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)
 ![SDK](https://img.shields.io/badge/SDK-UIKit%20-green.svg)
-[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.0%20RC-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.0-RC)
+[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.0-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.0)
+[![License](http://img.shields.io/:LICENSE-MIT-blue.svg)](http://doge.mit-license.org)
 
 ## Table of contents
 

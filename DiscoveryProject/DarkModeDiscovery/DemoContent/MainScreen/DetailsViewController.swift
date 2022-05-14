@@ -63,7 +63,7 @@ class DetailsViewController: UIViewController
         super.viewDidLoad()
         configure()
         
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     
@@ -77,7 +77,7 @@ class DetailsViewController: UIViewController
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
         
-        bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+        bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
     
     @objc private func makeUp()

@@ -37,7 +37,7 @@ extension AppDelegate: UIApplicationDelegate
         registerSettingsBundle()
         
         // Init the app's window
-        window = UIWindowAdaptable(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         
         // Give it a root view for the first screen
         window!.rootViewController = MainViewController.storyboardInstance()

@@ -29,7 +29,7 @@ class DynamicsViewController: UIViewController
         
         // Dark Mode setup
         
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     
@@ -54,7 +54,7 @@ class DynamicsViewController: UIViewController
         bottomImage.layer.cornerRadius = 40
         bottomImage.layer.masksToBounds = true
         
-        topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
-        bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+        topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
 }

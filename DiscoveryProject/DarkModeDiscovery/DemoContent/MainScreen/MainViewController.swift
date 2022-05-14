@@ -95,7 +95,17 @@ class MainViewController: UIViewController
         super.viewDidLoad()
         configure()
         
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if #available(iOS 13.0, *)
+        {
+            AppearanceService.processTraitCollectionDidChange(previousTraitCollection)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -137,7 +147,7 @@ class MainViewController: UIViewController
         
         // Images
         
-        titleImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
         
         // Dark Mode panel
         

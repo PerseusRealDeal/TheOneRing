@@ -41,7 +41,7 @@ class ConverterViewController: UIViewController, UITextFieldDelegate
         
         // Dark Mode setup
         
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     

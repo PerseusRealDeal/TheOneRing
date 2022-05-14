@@ -28,7 +28,7 @@ class SystemColorsViewController: UIViewController
         
         // Make the View sensitive to Dark Mode
         
-        AppearanceService.register(observer: self, selector: #selector(makeUp))
+        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
     }
     
