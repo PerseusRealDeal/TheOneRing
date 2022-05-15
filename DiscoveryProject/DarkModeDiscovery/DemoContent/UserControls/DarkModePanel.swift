@@ -1,10 +1,11 @@
 //
-//  OptionsPanel.swift
+//  DarkModePanel.swift, DarkModePanel.xib
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 15.02.2022.
+//  Created by Mikhail Zhigulin on 15.02.7530.
 //
-//  Copyright © 2022 Mikhail Zhigulin. All rights reserved.
+//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  All rights reserved.
 //
 
 import UIKit
