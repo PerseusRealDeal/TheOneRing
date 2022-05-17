@@ -266,7 +266,8 @@ bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
 `License for this app`
 
 ```
-Copyright © 2022 Mikhail Zhigulin
+Copyright © 7530 Mikhail Zhigulin of Novosibirsk, where 7530 is
+the year from the creation of the world according to a Slavic calendar.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -300,7 +301,7 @@ The top lines from the origin code used as the third party code:
 //  Created by Sergey Pugach on 2/2/18.
 //  Copyright © 2018 P.D.Q. All rights reserved.
 ```
-License from the root of [UIColor-Hex-Swift repository](https://github.com/SeRG1k17/UIColor-Hex-Swift.git):
+License from the root of [UIColor-Hex-Swift repository](https://github.com/SeRG1k17/UIColor-Hex-Swift/blob/3a65da534b71b3e6909f6ada6bfdd3b80ee43ca8/LICENSE):
 
 ```
 Copyright (c) 2014 R0CKSTAR
