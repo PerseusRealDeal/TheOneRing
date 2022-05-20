@@ -1,4 +1,4 @@
-name: Build
+name: Build & Tests
 
 on: 
   push:
@@ -19,12 +19,12 @@ jobs:
     - name: Show xcode embedded SDKs
       run: xcodebuild -showsdks
     - name: Show buildable schemes
-      run: xcodebuild -list
-    - uses: mxcl/xcodebuild@v1.9.2
+      run: xcodebuild -list -project ./DiscoveryProject/DarkModeDiscovery.xcodeproj
+    - uses: mxcl/xcodebuild@v1.9.2 
       with:
         platform: iOS
-        scheme: 'Dark Mode-Package'
+        scheme: 'DarkModeDiscovery'
         action: build
-        code-coverage: true
+        working-directory: ./DiscoveryProject
         verbosity: xcpretty
         upload-logs: always
