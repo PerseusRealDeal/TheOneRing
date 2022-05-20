@@ -2,6 +2,7 @@ ios.darkmode.discovery
 ======================
 Discovery project for iOS Dark Mode with samples and demo content.
 
+[![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
 ![Version](https://img.shields.io/badge/Version-1.0-green.svg)
 [![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
