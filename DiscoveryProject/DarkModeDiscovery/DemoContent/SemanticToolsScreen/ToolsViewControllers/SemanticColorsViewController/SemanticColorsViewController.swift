@@ -2,7 +2,7 @@
 //  SemanticColorsViewController.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 16.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -16,8 +16,11 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
 {
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var tableView: UITableView!
+    /// Section button for the screen in the bottom tab bar.
     @IBOutlet weak var tabButton: UITabBarItem!
+    
+    /// Table view for the list of colors.
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - The life cyrcle group of methods
     
@@ -33,6 +36,7 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
         if AppearanceService.isEnabled { makeUp() }
     }
     
+    /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
         view.backgroundColor = ._customPrimaryBackground
@@ -53,11 +57,13 @@ extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelega
 {
     // MARK: - UITableViewDataSource protocol
     
+    /// Calculates the total cells of the list of semantic colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         SemanticColorsViewList.allCases.count
     }
     
+    /// Creates a cell with a specific color of the list of semantic colors.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SemanticColorTableCell",

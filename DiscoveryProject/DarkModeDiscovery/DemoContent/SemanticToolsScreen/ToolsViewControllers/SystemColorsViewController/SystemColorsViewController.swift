@@ -2,7 +2,7 @@
 //  SystemColorsViewController.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 16.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -12,12 +12,16 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
+/// Represents the screen for the list of system colors.
 class SystemColorsViewController: UIViewController
 {
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var tableView: UITableView!
+    /// Section button for the screen in the bottom tab bar.
     @IBOutlet weak var tabButton: UITabBarItem!
+    
+    /// Table view for the list of colors.
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - The life cyrcle group of methods
     
@@ -33,6 +37,7 @@ class SystemColorsViewController: UIViewController
         if AppearanceService.isEnabled { makeUp() }
     }
     
+    /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
         view.backgroundColor = ._customPrimaryBackground
@@ -53,11 +58,13 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
 {
     // MARK: - UITableViewDataSource protocol
     
+    /// Calculates the total cells of the list of system colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         SystemColorsViewList.allCases.count
     }
     
+    /// Creates a cell with a specific color of the list of system colors.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",

@@ -2,7 +2,7 @@
 //  MemberTableViewCell.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 13.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -12,18 +12,26 @@
 import UIKit
 import PerseusDarkMode
 
+/// Represents a table view cell for a fellowship member.
 class MemberTableViewCell: UITableViewCell
 {
     // MARK: - Interface Builder connections
     
+    /// Border view for a table view cell.
     @IBOutlet weak var memberIconBorder: UIView!
+    
+    /// Image for a fellowship member.
     @IBOutlet weak var memberIcon      : UIImageView!
     
+    /// Title for a member name.
     @IBOutlet weak var memberName      : UILabel!
+    
+    /// Title for a member race.
     @IBOutlet weak var memberRace      : UILabel!
     
     // MARK: - Data to show by using the cell
     
+    /// Details about a fellowship member.
     var data: Member?
     {
         didSet
@@ -49,6 +57,7 @@ class MemberTableViewCell: UITableViewCell
     
     // MARK: - Appearance matter methods
     
+    /// Configures the table view cell.
     private func configure()
     {
         // Create background view for selected ones
@@ -68,6 +77,7 @@ class MemberTableViewCell: UITableViewCell
         selected.layer.masksToBounds = true
     }
     
+    /// Updates the appearance of the table view cell.
     @objc private func makeUp()
     {
         // Set background color for Icon border view up

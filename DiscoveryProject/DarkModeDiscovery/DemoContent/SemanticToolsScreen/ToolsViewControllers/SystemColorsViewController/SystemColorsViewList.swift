@@ -2,7 +2,7 @@
 //  SystemColorsViewList.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 06.04.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -11,6 +11,7 @@
 import UIKit
 import AdaptedSystemUI
 
+/// Represents the model of system colors for displaying on the screen.
 enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
 {
     case systemRed    = 0
@@ -33,6 +34,7 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
     case systemGray5  = 16
     case systemGray6  = 17
     
+    /// Color name.
     var description: String
     {
         switch self

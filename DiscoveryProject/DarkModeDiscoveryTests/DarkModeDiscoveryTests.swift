@@ -2,7 +2,7 @@
 //  DarkModeDiscoveryTests.swift
 //  DarkModeDiscoveryTests
 //
-//  Created by Mikhail Zhigulin on 09.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.

@@ -2,7 +2,7 @@
 //  DetailsViewController.swift, DetailsViewController.storyboard
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 13.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -11,29 +11,51 @@
 import UIKit
 import PerseusDarkMode
 
+/// Represents a screen for the details of a fellowship member.
 class DetailsViewController: UIViewController
 {
     // MARK: - Interface Builder connections
     
-    @IBOutlet weak var nameLabel     : UILabel!
-    @IBOutlet weak var memberName    : UILabel!
+    /// Button to close the view controller.
+    @IBOutlet weak var closeButton   : UIButton!
+    
+    /// Image for a fellowship member.
     @IBOutlet weak var memberIcon    : UIImageView!
     
+    /// Label for a member name.
+    @IBOutlet weak var nameLabel     : UILabel!
+    
+    /// Title for a member name.
+    @IBOutlet weak var memberName    : UILabel!
+    
+    /// Label for a member full name.
     @IBOutlet weak var fullNameLabel : UILabel!
+    
+    /// Title for a member full name.
     @IBOutlet weak var memberFullName: UILabel!
     
+    /// Label for a member age.
     @IBOutlet weak var ageLabel      : UILabel!
+    
+    /// Titile for a member age.
     @IBOutlet weak var memberAge     : UILabel!
     
+    /// Label for a member birth.
     @IBOutlet weak var birthLabel    : UILabel!
+    
+    /// Title for a member birth.
     @IBOutlet weak var memberBirth   : UITextView!
     
+    /// Label for a member race.
     @IBOutlet weak var raceLabel     : UILabel!
+    
+    /// Title for a member race.
     @IBOutlet weak var memberRace    : UILabel!
     
-    @IBOutlet weak var closeButton   : UIButton!
+    /// Dark Mode sensetive image at the screen bottom.
     @IBOutlet weak var bottomImage   : DarkModeImageView!
     
+    /// Closes the screen with return to the main screen.
     @IBAction func closeButtonAction(_ sender: UIButton)
     {
         dismiss(animated: true, completion: nil)
@@ -41,6 +63,7 @@ class DetailsViewController: UIViewController
     
     // MARK: - Details to display on screen
     
+    /// Details about a fellowship member.
     var data: Member?
     {
         didSet
@@ -70,6 +93,7 @@ class DetailsViewController: UIViewController
     
     // MARK: - Appearance matter methods
     
+    /// Configures the screen.
     private func configure()
     {
         closeButton.layer.cornerRadius = 5
@@ -81,6 +105,7 @@ class DetailsViewController: UIViewController
         bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
     
+    /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
         view.backgroundColor = ._customPrimaryBackground

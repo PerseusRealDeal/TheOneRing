@@ -1,63 +1,38 @@
 //
-//  Helpers.swift
+//  HelperFunctionsLocal.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 21.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusDarkMode
 
-public let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
-
-func changeDarkModeManually(_ userChoice: DarkModeOption)
-{
-    // Change Dark Mode value in settings bundle
-    UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
-    
-    // Change Dark Mode value in Perseus Dark Mode library
-    AppearanceService.DarkModeUserChoice = userChoice
-    
-    // Update appearance in accoring with changed Dark Mode Style
-    AppearanceService.makeUp()
-}
-
-func isDarkModeSettingsChanged() -> DarkModeOption?
-{
-    // Load enum int value from settings
-    
-    let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?
-        UserDefaults.standard.integer(forKey: DARK_MODE_SETTINGS_KEY) : -1
-    
-    // Try to cast int value to enum
-    
-    guard option != -1, let settingsDarkMode = DarkModeOption.init(rawValue: option)
-    else { return nil }
-    
-    // Report change
-    
-    return settingsDarkMode != AppearanceService.DarkModeUserChoice ? settingsDarkMode : nil
-}
-
+/// Registers settings bundle with Dark Mode option.
 func registerSettingsBundle()
 {
-    // Make it easy just for the only one option
+    // Easy way to register just only one option
     UserDefaults.standard.register(defaults: [DARK_MODE_SETTINGS_KEY: 0])
 }
 
 extension UserDefaults
 {
-    func valueExists(forKey key: String) -> Bool
-    {
-        return object(forKey: key) != nil
-    }
+    /// Checks the key's value existance.
+    /// - Parameter key: The key for checking.
+    /// - Returns: TRUE key exists, FALSE not.
+    func valueExists(forKey key: String) -> Bool { object(forKey: key) != nil }
 }
 
 extension UIResponder
 {
+    /// Finds parent UIResponder object that meets condition.
+    ///
+    /// It goes recursively through UIResponder hierarchy.
+    ///
+    /// - Parameter condition: The closure represents calculated condition as a parameter.
+    /// - Returns: Parent UIResponder or nil if not found.
     func nextFirstResponder(where condition: (UIResponder) -> Bool ) -> UIResponder?
     {
         guard let next = next else { return nil }
@@ -69,18 +44,12 @@ extension UIResponder
 
 extension UIColor
 {
-    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
-    {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        
-        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
-        return (red, green, blue, alpha)
-    }
-    
+    /// Returns red, green, and blue from 0 to 255, and alpha from 0.0 to 1.0.
+    ///
+    /// ```swift
+    /// let rgba = UIColor.red.RGBA255
+    /// print("red: \(rgba.red), green: \(rgba.green), blue: \(rgba.blue), alpha: \(rgba.alpha)")
+    /// ```
     var RGBA255: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
     {
         var red: CGFloat = 0
@@ -94,6 +63,13 @@ extension UIColor
     }
 }
 
+/// Creates UIColor instance using RGBA values of color required in format: 235, 235, 245, 0.6 or 235, 235, 245.
+/// - Parameters:
+///   - red: From 0 to 255.
+///   - green: From 0 to 255.
+///   - blue: From 0 to 255.
+///   - alpha: From 0 to 1.0.
+/// - Returns: The instance of UIColor.
 func rgba255(_ red  : CGFloat,
              _ green: CGFloat,
              _ blue : CGFloat,
@@ -102,6 +78,9 @@ func rgba255(_ red  : CGFloat,
     UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
 }
 
+/// Converts color represented with RGBA string to color represented with HEX string.
+/// - Parameter input: RGBA values of color in string. Should be in format: 235, 235, 245, 0.6 or  235, 235, 245.
+/// - Returns: nil if input string not in format, HEX value of color in format: #D1D1D6FF.
 func convert_RGBA_to_HEX(_ input: String) -> String?
 {
     guard input.isEmpty == false else { return nil }
@@ -118,6 +97,9 @@ func convert_RGBA_to_HEX(_ input: String) -> String?
     return rgba255(red, green, blue, alpha).hexString()
 }
 
+/// Converts color represented with HEX string to color represented with RGBA string.
+/// - Parameter input: HEX value should be in format: #D1D1D6FF.
+/// - Returns: nil if any problem to convert faced, RGBA in format: 235, 235, 245, 0.6.
 func convert_HEX_to_RGBA(_ input: String) -> String?
 {
     guard let colorFromHEX = try? UIColor(cgColor: UIColor(rgba_throws: input).cgColor)
@@ -132,16 +114,23 @@ func convert_HEX_to_RGBA(_ input: String) -> String?
 
 extension String
 {
-    func replace(string:String, replacement:String) -> String
+    /// Replaces all occurrences of substring with replacement value.
+    /// - Parameters:
+    ///   - string: Substring to be replaced.
+    ///   - replacement: String for replacing.
+    /// - Returns: String with replacements.
+    func replace(substring: String, replacement: String) -> String
     {
-        replacingOccurrences(of     : string,
+        replacingOccurrences(of     : substring,
                              with   : replacement,
                              options: NSString.CompareOptions.literal,
                              range  : nil)
     }
     
+    /// Removes white spaces.
+    /// - Returns: String without whitespaces.
     func removeWhitespace() -> String
     {
-        replace(string: " ", replacement: "")
+        replace(substring: " ", replacement: "")
     }
 }

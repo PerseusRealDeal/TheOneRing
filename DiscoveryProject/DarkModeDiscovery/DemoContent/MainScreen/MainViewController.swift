@@ -2,7 +2,7 @@
 //  MainViewController.swift, MainViewController.storyboard
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 09.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -12,22 +12,33 @@ import UIKit
 import PerseusDarkMode
 import AdaptedSystemUI
 
+/// Title of the main theme of the app.
 let TITLE = "The Fellowship of the Ring"
 
+/// Represents the main screen of the app.
 class MainViewController: UIViewController
 {
     // MARK: - Interface Builder connections
     
+    /// Title for the main theme of the app.
     @IBOutlet weak var titleTop         : UILabel!
+    
+    /// Dark Mode sensetive image veiw at the top of the screen.
     @IBOutlet weak var titleImage       : DarkModeImageView!
     
+    /// The list of the fellowship members.
     @IBOutlet weak var tableView        : UITableView!
+    
+    /// Image at the bottom of the screen.
     @IBOutlet weak var bottomImage      : UIImageView!
     
+    /// Dark Mode switcher.
     @IBOutlet weak var optionsPanel     : DarkModePanel!
     
+    /// Button to show the screen with semantic tools.
     @IBOutlet weak var actionToolsButton: UIButton!
     
+    /// Shows the screen with semantic tools.
     @IBAction func actionToolsButtonTapped(_ sender: UIButton)
     {
         present(self.semanticToolsViewController, animated: true, completion: nil)
@@ -35,6 +46,9 @@ class MainViewController: UIViewController
     
     // MARK: - The data to show on screen
     
+    /// The instance of the list of the fellowship members.
+    ///
+    /// The list is initialized with json data file.
     private lazy var members: [Member] =
         {
             guard let fileURL = Bundle.main.url(forResource: "members", withExtension: "json"),
@@ -46,6 +60,7 @@ class MainViewController: UIViewController
     
     // MARK: - Child View Controllers
     
+    /// The instance of the fellowship member details screen.
     private lazy var detailsViewController =
         { () -> DetailsViewController in
             
@@ -59,6 +74,7 @@ class MainViewController: UIViewController
             return screen
         }()
     
+    /// The instance of the semantic tools screen.
     private lazy var semanticToolsViewController =
         { () -> SemanticsViewController in
             
@@ -77,6 +93,7 @@ class MainViewController: UIViewController
     
     // MARK: - Instance of the class
     
+    /// Creates an instance of the main screen.
     class func storyboardInstance() -> MainViewController
     {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)

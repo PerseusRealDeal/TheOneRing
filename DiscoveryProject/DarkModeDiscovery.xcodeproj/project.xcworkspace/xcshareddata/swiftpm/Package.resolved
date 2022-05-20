@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/perseusrealdeal/DarkMode.git",
       "state" : {
-        "revision" : "fe60b93f3cdcc7c99cf98a46391483ab28fd5393",
-        "version" : "1.0.0"
+        "revision" : "cfda2f8d0813055cdfd704282689e0804830a374",
+        "version" : "1.0.1"
       }
     }
   ],

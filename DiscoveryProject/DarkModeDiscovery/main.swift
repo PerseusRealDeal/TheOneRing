@@ -2,7 +2,7 @@
 //  main.swift, LaunchScreen.storyboard
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 09.02.7530.
+//  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
 //  All rights reserved.
@@ -11,26 +11,24 @@
 import UIKit
 import PerseusDarkMode
 
-// MARK: - The Application Object Initiation
+/// Determine the app run purpose.
+let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
 
-let appDelegateClass: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
+/// Initialize the app object depending on the purpose.
+UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appPurpose))
 
-UIApplicationMain(CommandLine.argc,
-                  CommandLine.unsafeArgv,
-                  nil,
-                  NSStringFromClass(appDelegateClass))
-
-// MARK: - The Application Delegate
-
+/// The app delegate.
 class AppDelegate: UIResponder { var window: UIWindow? }
 
+/// Delegate behaviors.
 extension AppDelegate: UIApplicationDelegate
 {
+    /// Gives entry instructions on starting.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         #if DEBUG
-        print(">> Launching with real app delegate")
+        print(">> Launching with business matter purpose")
         print(">> [\(type(of: self))]." + #function)
         #endif
         

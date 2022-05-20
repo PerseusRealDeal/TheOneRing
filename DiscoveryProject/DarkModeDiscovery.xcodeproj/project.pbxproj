@@ -10,7 +10,7 @@
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
-		E03450F227C36F870071443E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* Helpers.swift */; };
+		E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelperFunctionsLocal.swift */; };
 		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */; };
@@ -36,6 +36,7 @@
 		E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */ = {isa = PBXBuildFile; fileRef = E0B3CA8127B81D6C00B8CE61 /* members.json */; };
 		E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8227B81D6C00B8CE61 /* Member.swift */; };
 		E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8327B81D6C00B8CE61 /* Race.swift */; };
+		E0CB98CE2833BE5800EAF403 /* DarkModeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */; };
 		E0DE8771282F7BFA00C993F3 /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E0DE8770282F7BFA00C993F3 /* Adapted System UI */; };
 		E0DE8773282F7BFA00C993F3 /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E0DE8772282F7BFA00C993F3 /* Perseus Dark Mode */; };
 		E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD2D3D27FD915800DC5405 /* SystemColorsViewList.swift */; };
@@ -56,7 +57,7 @@
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03450EF27C368F70071443E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		E03450F127C36F870071443E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E03450F127C36F870071443E /* HelperFunctionsLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctionsLocal.swift; sourceTree = "<group>"; };
 		E03786D3280E7BE200C6C1B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModePanel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DarkModePanel.xib; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		E0B3CA8127B81D6C00B8CE61 /* members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = members.json; sourceTree = "<group>"; };
 		E0B3CA8227B81D6C00B8CE61 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		E0B3CA8327B81D6C00B8CE61 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeFunctions.swift; sourceTree = "<group>"; };
 		E0FD2D3D27FD915800DC5405 /* SystemColorsViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsViewList.swift; sourceTree = "<group>"; };
 		E0FD2D3F27FD944800DC5405 /* SystemColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 		E0A0841427FAF4BA0010A55D /* ThirdPartyCode */ = {
 			isa = PBXGroup;
 			children = (
+				E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */,
 				E0A0841527FAF4F50010A55D /* HexColorConverter.swift */,
 			);
 			path = ThirdPartyCode;
@@ -213,7 +216,7 @@
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
 				E03450EF27C368F70071443E /* CustomColors.swift */,
-				E03450F127C36F870071443E /* Helpers.swift */,
+				E03450F127C36F870071443E /* HelperFunctionsLocal.swift */,
 				E0A0841427FAF4BA0010A55D /* ThirdPartyCode */,
 				E03786D3280E7BE200C6C1B8 /* Settings.bundle */,
 			);
@@ -393,9 +396,10 @@
 				E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */,
 				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */,
+				E0CB98CE2833BE5800EAF403 /* DarkModeFunctions.swift in Sources */,
 				E0FD2D4027FD944800DC5405 /* SystemColorCell.swift in Sources */,
 				E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */,
-				E03450F227C36F870071443E /* Helpers.swift in Sources */,
+				E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
