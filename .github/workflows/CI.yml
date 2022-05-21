@@ -9,7 +9,7 @@ on:
     - cron: '5 5 * * 5'
     
 jobs:
-  unit-testing: 
+  build: 
     runs-on: macos-latest
     steps:
     - name: Checkout the code
@@ -25,6 +25,26 @@ jobs:
         platform: iOS
         scheme: 'DarkModeDiscovery'
         action: build
+        working-directory: ./DiscoveryProject
+        verbosity: xcpretty
+        upload-logs: always
+  tests: 
+    runs-on: macos-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v2
+    - name: Show xcodebuild version
+      run: xcodebuild -version
+    - name: Show xcode embedded SDKs
+      run: xcodebuild -showsdks
+    - name: Show buildable schemes
+      run: xcodebuild -list -project ./DiscoveryProject/DarkModeDiscovery.xcodeproj
+    - uses: mxcl/xcodebuild@v1.9.2 
+      with:
+        platform: iOS
+        scheme: 'DarkModeDiscovery'
+        action: test
+        code-coverage: true
         working-directory: ./DiscoveryProject
         verbosity: xcpretty
         upload-logs: always
