@@ -14,8 +14,8 @@ Discovery project for iOS Dark Mode with samples and demo content.
 
 [Introductory remarks](#introductory)
 1. [Releasing Dark Mode](#darkmode)
-    + [Settings App for option Release](#darkmodesettingsapp)
-    + [Using Dark Mode option in the App](#darkmodeinsidetheapp)
+    + [The app's Dark Mode option in Settings app](#darkmodesettingsapp)
+    + [Dark Mode option inside the App](#darkmodeinsidetheapp)
 2. [Custom Colors](#customcolors)
 3. [Adapted Colors](#adaptedcolors)
     + [System Colors](#systemcolors)
@@ -34,7 +34,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 
 ## Releasing Dark Mode <a name="darkmode"></a>
 
-### Settings App for option Release <a name="darkmodesettingsapp"></a>
+### The app's Dark Mode option in Settings app <a name="darkmodesettingsapp"></a>
 
 `The first step:` describe user interface using settings bundle—screenshots and Root.plist are below.
 
@@ -108,7 +108,8 @@ override func viewWillDisappear(_ animated: Bool)
 ```swift
 @objc func theAppDidBecomeActive()
 {
-    // Check Dark Mode in Settings
+    // Check Settings Dark Mode option value
+    
     if let choice = isDarkModeSettingsChanged()
     {
         changeDarkModeManually(choice)
@@ -154,7 +155,7 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 }
 ```
 
-### Using Dark Mode option in the App <a name="darkmodeinsidetheapp"></a>
+### Dark Mode option inside the App <a name="darkmodeinsidetheapp"></a>
 
 `The first step:` make a user control and place it on a screen.
 
@@ -162,14 +163,25 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 | :---------------------------------: | :---------------------------------: |
 | <img src="Images/DarkModeOptionLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-`The second step:` give it a processing logic on change event.
+`The second step:` give it a processing logic for change event.
 
 ```swift
+override func viewDidLoad()
+{
+    super.viewDidLoad()
+    
+    optionsPanel.segmentedControlValueChangedClosure =
+        { option in changeDarkModeManually(option)
+        
+            // The value of other one Dark Mode panel should also be changed accordingly
+            self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
+        }
+        
+    optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+    
+    AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
+}
 
-// Configure Dark Mode user control
-
-optionsPanel.segmentedControlValueChangedClosure = { option in changeDarkModeManually(option) }
-optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
 ```
 
 ## Custom Colors <a name="customcolors"></a>
@@ -201,7 +213,7 @@ extension UIColor: UICustomColors
 {
     static var _customTeal                : UIColor
     {
-        AppearanceService.shared.Style == .light ? #colorLiteral(red: 0.1882352941, green: 0.6901960784, blue: 0.7803921568, alpha: 1) : #colorLiteral(red: 0.2509803921, green: 0.7843137254, blue: 0.8784313725, alpha: 1)
+        AppearanceService.shared.Style == .light ? rgba255(48, 176, 199) : rgba255(64, 200, 224)
     }
 }
 ```
@@ -213,6 +225,8 @@ At this step the smart choice should be done, either use `AppearanceService.make
 Look at README of [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) for details.
 
 ## Adapted Colors <a name="adaptedcolors"></a>
+
+Apple Inc. reserves the right to tweak a litle bit any system/semantic color.
 
 ### System Colors <a name="systemcolors"></a>
 
@@ -231,7 +245,7 @@ view.backgroundColor = .systemRed_Adapted
 
 ### Semantic Colors <a name="semanticcolors"></a>
 
-For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics—Apple Inc. reserves the right to tweak a litle bit any semantic color later.
+For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics.
 
 [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
 
@@ -252,12 +266,16 @@ view.backgroundColor = .label_Adapted
 | :-----------------------------: | :-----------------------------: |
 | <img src="Images/DynamicsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DynamicsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
+There are two way to configure dynamic image view. The first is using Interface Builder, preferable. Or coding:
+
 ```swift
 import UIKit
 import PerseusDarkMode
 
-var topImage = DarkModeImageView()
-var bottomImage = DarkModeImageView()
+let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 1, height: 1))
+
+var topImage = DarkModeImageView(frame: frame)
+var bottomImage = DarkModeImageView(frame: frame)
 
 topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
