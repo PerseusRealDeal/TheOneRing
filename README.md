@@ -277,8 +277,8 @@ let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 1, height: 1
 var topImage = DarkModeImageView(frame: frame)
 var bottomImage = DarkModeImageView(frame: frame)
 
-topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
-bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
 ```
 
 ## Licenses <a name="licenses"></a>
