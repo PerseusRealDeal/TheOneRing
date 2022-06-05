@@ -9,6 +9,7 @@ on:
     - cron: '30 5 * * 5'
     
 jobs:
+
   build: 
     runs-on: macos-latest
     steps:
@@ -28,6 +29,8 @@ jobs:
         working-directory: ./DiscoveryProject
         verbosity: xcpretty
         upload-logs: always
+        configuration: Release
+        
   tests: 
     runs-on: macos-latest
     steps:
@@ -48,3 +51,4 @@ jobs:
         working-directory: ./DiscoveryProject
         verbosity: xcpretty
         upload-logs: always
+        configuration: Release
