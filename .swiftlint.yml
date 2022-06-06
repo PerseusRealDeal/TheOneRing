@@ -1,12 +1,12 @@
 disabled_rules: # rule identifiers turned on by default to exclude from running
-  - large_tuple
-  - force_cast
-  - identifier_name
-  - opening_brace
-  - trailing_whitespace
-  - control_statement
-  - statement_position
-  - colon
-  - comment_spacing
-  - vertical_whitespace
-  - trailing_newline
+- large_tuple
+- force_cast
+- identifier_name
+- opening_brace
+- trailing_whitespace
+- control_statement
+- statement_position
+- colon
+- comment_spacing
+- vertical_whitespace
+- trailing_newline
