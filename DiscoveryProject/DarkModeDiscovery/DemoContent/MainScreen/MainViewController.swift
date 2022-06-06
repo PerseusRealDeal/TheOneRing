@@ -182,8 +182,8 @@ class MainViewController: UIViewController
     
     @objc private func makeUp()
     {
-        view.backgroundColor = ._customPrimaryBackground
-        titleTop.textColor = ._customTitle
+        view.backgroundColor = .customPrimaryBackground
+        titleTop.textColor = .customTitle
         
         actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
         

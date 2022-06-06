@@ -82,15 +82,15 @@ class MemberTableViewCell: UITableViewCell
     {
         // Set background color for Icon border view up
         
-        memberIconBorder.backgroundColor = ._customViewSelected
+        memberIconBorder.backgroundColor = .customViewSelected
         
         // Set background view for selected ones up
         
-        selectedBackgroundView?.backgroundColor = ._customViewSelected
+        selectedBackgroundView?.backgroundColor = .customViewSelected
         
         // Set text colors
         
-        memberName.textColor = ._customLabel
-        memberRace.textColor = ._customSecondaryLabel
+        memberName.textColor = .customLabel
+        memberRace.textColor = .customSecondaryLabel
     }
 }

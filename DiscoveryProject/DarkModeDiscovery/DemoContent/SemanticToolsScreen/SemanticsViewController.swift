@@ -54,10 +54,10 @@ class SemanticsViewController: UIViewController
     /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
-        view.backgroundColor = ._customPrimaryBackground
-        closeButton.backgroundColor = ._customSecondaryBackground
+        view.backgroundColor = .customPrimaryBackground
+        closeButton.backgroundColor = .customSecondaryBackground
         
-        optionsPanel.backgroundColor = ._customViewSelected
+        optionsPanel.backgroundColor = .customViewSelected
     }
     
     /// Configurates the screen.

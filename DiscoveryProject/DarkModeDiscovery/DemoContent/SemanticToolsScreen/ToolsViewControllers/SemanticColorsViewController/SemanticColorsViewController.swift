@@ -39,11 +39,11 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
     /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
-        view.backgroundColor = ._customPrimaryBackground
+        view.backgroundColor = .customPrimaryBackground
         
         tabButton.setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor._customTabBarItemSelected
+                NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemSelected
             ],
             for: .selected)
         

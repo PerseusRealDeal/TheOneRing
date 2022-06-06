@@ -57,12 +57,12 @@ class ConverterViewController: UIViewController, UITextFieldDelegate
     /// Updates the appearance of the instrument.
     @objc private func makeUp()
     {
-        view.backgroundColor = ._customPrimaryBackground
-        convertButton.backgroundColor = ._customSecondaryBackground
+        view.backgroundColor = .customPrimaryBackground
+        convertButton.backgroundColor = .customSecondaryBackground
         
         tabButton.setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor._customTabBarItemSelected
+                NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemSelected
             ],
             for: .selected)
     }

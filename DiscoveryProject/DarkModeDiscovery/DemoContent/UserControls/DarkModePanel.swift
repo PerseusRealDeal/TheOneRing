@@ -100,12 +100,12 @@ class DarkModePanel: UIView
     {
         segmentedControl?.setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneNormalText
+                NSAttributedString.Key.foregroundColor: UIColor.customSegmentedOneNormalText
             ], for: .normal)
         
         segmentedControl?.setTitleTextAttributes(
             [
-                NSAttributedString.Key.foregroundColor: UIColor._customSegmentedOneSelectedText
+                NSAttributedString.Key.foregroundColor: UIColor.customSegmentedOneSelectedText
             ], for: .selected)
     }
     

@@ -108,22 +108,22 @@ class DetailsViewController: UIViewController
     /// Updates the appearance of the screen.
     @objc private func makeUp()
     {
-        view.backgroundColor = ._customPrimaryBackground
-        closeButton.backgroundColor = ._customSecondaryBackground
+        view.backgroundColor = .customPrimaryBackground
+        closeButton.backgroundColor = .customSecondaryBackground
         
-        nameLabel.textColor = ._customLabel
-        memberName.textColor = ._customSecondaryLabel
+        nameLabel.textColor = .customLabel
+        memberName.textColor = .customSecondaryLabel
         
-        fullNameLabel.textColor = ._customLabel
-        memberFullName.textColor = ._customSecondaryLabel
+        fullNameLabel.textColor = .customLabel
+        memberFullName.textColor = .customSecondaryLabel
         
-        ageLabel.textColor = ._customLabel
-        memberAge.textColor = ._customSecondaryLabel
+        ageLabel.textColor = .customLabel
+        memberAge.textColor = .customSecondaryLabel
         
-        birthLabel.textColor = ._customLabel
-        memberBirth.textColor = ._customSecondaryLabel
+        birthLabel.textColor = .customLabel
+        memberBirth.textColor = .customSecondaryLabel
         
-        raceLabel.textColor = ._customLabel
-        memberRace.textColor = ._customSecondaryLabel
+        raceLabel.textColor = .customLabel
+        memberRace.textColor = .customSecondaryLabel
     }
 }
