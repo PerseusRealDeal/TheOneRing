@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
+		E03080322859125800E19E30 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03080312859125800E19E30 /* .gitignore */; };
+		E03080342859126100E19E30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E03080332859126100E19E30 /* .swiftlint.yml */; };
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
 		E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelperFunctionsLocal.swift */; };
 		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
+		E03080312859125800E19E30 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		E03080332859126100E19E30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		E03450EF27C368F70071443E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		E03450F127C36F870071443E /* HelperFunctionsLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctionsLocal.swift; sourceTree = "<group>"; };
 		E03786D3280E7BE200C6C1B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		E095388027B36E7800AAAAAA = {
 			isa = PBXGroup;
 			children = (
+				E03080312859125800E19E30 /* .gitignore */,
+				E03080332859126100E19E30 /* .swiftlint.yml */,
 				E09538BC27B36E9400AAAAAA /* LICENSE */,
 				E09538BD27B36E9400AAAAAA /* README.md */,
 				E095388B27B36E7800AAAAAA /* DarkModeDiscovery */,
@@ -354,10 +360,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03080342859126100E19E30 /* .swiftlint.yml in Resources */,
 				E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */,
 				E095389927B36E7B00AAAAAA /* LaunchScreen.storyboard in Resources */,
 				E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */,
 				E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */,
+				E03080322859125800E19E30 /* .gitignore in Resources */,
 				E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */,
 				E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */,
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
