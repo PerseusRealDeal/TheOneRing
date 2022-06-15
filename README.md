@@ -47,35 +47,43 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>StringsTable</key>
-    <string>Root</string>
-    <key>PreferenceSpecifiers</key>
-    <array>
-        <dict>
-            <key>Type</key>
-            <string>PSMultiValueSpecifier</string>
-            <key>Title</key>
-            <string>Appearance Mode</string>
-            <key>Key</key>
-            <string>dark_mode_preference</string>
-            <key>DefaultValue</key>
-            <integer>0</integer>
-            <key>Titles</key>
-            <array>
-                <string>Light</string>
-                <string>Dark</string>
-                <string>Auto</string>
-            </array>
-            <key>Values</key>
-            <array>
-                <integer>2</integer>
-                <integer>1</integer>
-                <integer>0</integer>
-            </array>
-        </dict>
-    </array>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Appearance Mode</string>
+			<key>Key</key>
+			<string>dark_mode_preference</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
+			<key>Titles</key>
+			<array>
+				<string>Light</string>
+				<string>Dark</string>
+				<string>Auto</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>2</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
+```
+
+Also, default values can be easily customised with Root.strings file like this:
+```
+"Appearance Mode" = "Appearance Mode";
+"Light" = "Light";
+"Dark" = "Dark";
+"Auto" = "System";
 ```
 
 `The second step:` make the option's business logic getting work.
@@ -83,38 +91,43 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 One of the most reliable way to make the business logic of Dark Mode option of Setting App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
 
 ```swift
-override func viewWillAppear(_ animated: Bool)
-{
-    super.viewWillAppear(animated)
-    
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(theAppDidBecomeActive),
-                                           name    : UIApplication.didBecomeActiveNotification,
-                                           object  : nil)
-}
 
-override func viewWillDisappear(_ animated: Bool)
-{
-    super.viewWillDisappear(animated)
-    
-    NotificationCenter.default.removeObserver(self,
-                                      name  : UIApplication.didBecomeActiveNotification,
-                                      object: nil)
-}
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(theAppDidBecomeActive),
+                                               name    : UIApplication.didBecomeActiveNotification,
+                                               object  : nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self,
+                                          name  : UIApplication.didBecomeActiveNotification,
+                                          object: nil)
+    }
+
 ```
 
-`The third step:` process Dark Mode Settings value on `UIApplication.didBecomeActiveNotification` event.
+`The third step:` process Dark Mode Settings value with `UIApplication.didBecomeActiveNotification` event.
 
 ```swift
-@objc func theAppDidBecomeActive()
-{
-    // Check Settings Dark Mode option value
-    
-    if let choice = isDarkModeSettingsChanged()
+
+    @objc func theAppDidBecomeActive()
     {
-        changeDarkModeManually(choice)
+        // Check Dark Mode in Settings
+        if let choice = isDarkModeSettingsChanged()
+        {
+            changeDarkModeManually(choice)
+
+            optionsPanel.segmentedControlValue = choice
+            semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
+        }
     }
-}
 ```
 `The fourth step:` change Appearance Style if Dark Mode option has changed.
 
@@ -122,16 +135,17 @@ override func viewWillDisappear(_ animated: Bool)
 import UIKit
 import PerseusDarkMode
 
-public let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
+/// Dark Mode option key used in Settings bundle.
+let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
 
 func changeDarkModeManually(_ userChoice: DarkModeOption)
 {
     // Change Dark Mode value in settings bundle
     UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
-    
+
     // Change Dark Mode value in Perseus Dark Mode library
     AppearanceService.DarkModeUserChoice = userChoice
-    
+
     // Update appearance in accoring with changed Dark Mode Style
     AppearanceService.makeUp()
 }
@@ -140,17 +154,17 @@ func changeDarkModeManually(_ userChoice: DarkModeOption)
 func isDarkModeSettingsChanged() -> DarkModeOption?
 {
     // Load enum int value from settings
-    
+
     let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?
         UserDefaults.standard.integer(forKey: DARK_MODE_SETTINGS_KEY) : -1
-    
+
     // Try to cast int value to enum
-    
+
     guard option != -1, let settingsDarkMode = DarkModeOption.init(rawValue: option)
-    else { return nil }
-    
+    else { return nil } // Should throw exception if init gives nil
+
     // Report change
-    
+
     return settingsDarkMode != AppearanceService.DarkModeUserChoice ? settingsDarkMode : nil
 }
 ```
@@ -163,7 +177,7 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 | :---------------------------------: | :---------------------------------: |
 | <img src="Images/DarkModeOptionLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-`The second step:` give it a processing logic for change event.
+`The second step:` give it a processing logic with a change event.
 
 ```swift
 override func viewDidLoad()
@@ -171,14 +185,14 @@ override func viewDidLoad()
     super.viewDidLoad()
     
     optionsPanel.segmentedControlValueChangedClosure =
-        { option in changeDarkModeManually(option)
-        
-            // The value of other one Dark Mode panel should also be changed accordingly
-            self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
-        }
-        
+            { option in changeDarkModeManually(option)
+
+                // The value of other one Dark Mode panel should also be changed accordingly
+                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
+            }
+
     optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
-    
+        
     AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
 }
 
@@ -199,7 +213,7 @@ import UIKit
 
 protocol UICustomColors
 {
-    static var _customTeal                : UIColor { get }
+    static var customTeal: UIColor { get }
 }
 ```
 
@@ -211,7 +225,7 @@ import PerseusDarkMode
 
 extension UIColor: UICustomColors
 {
-    static var _customTeal                : UIColor
+    static var customTeal: UIColor
     {
         AppearanceService.shared.Style == .light ? rgba255(48, 176, 199) : rgba255(64, 200, 224)
     }
@@ -280,6 +294,11 @@ var bottomImage = DarkModeImageView(frame: frame)
 topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
 ```
+But, Interface Builder is recomended to used for setting dynamic images up if logic not complex.
+
+| Dynamic Image: The Identity Inspector | Dynamic Image: The Attributes Inspector |
+| :-------------------------------: | :-------------------------------: |
+| <img src="Images/SettingDynamicImageModuleUp.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SettingDynamicImagePropertiesUp.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ## Licenses <a name="licenses"></a>
 
