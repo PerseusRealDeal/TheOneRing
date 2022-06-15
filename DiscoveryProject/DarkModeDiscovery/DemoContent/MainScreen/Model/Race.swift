@@ -18,7 +18,7 @@ enum Race: String, Decodable
     case Dwarves
     case Elves
     case Men
-    
+
     /// The one of the race.
     var single: String
     {

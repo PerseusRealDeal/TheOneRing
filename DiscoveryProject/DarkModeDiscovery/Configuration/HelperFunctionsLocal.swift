@@ -36,9 +36,11 @@ extension UIResponder
     func nextFirstResponder(where condition: (UIResponder) -> Bool ) -> UIResponder?
     {
         guard let next = next else { return nil }
-        
-        if condition(next) { return next }
-        else { return next.nextFirstResponder(where: condition) }
+
+        if condition(next) { return next } else
+        {
+            return next.nextFirstResponder(where: condition)
+        }
     }
 }
 
@@ -56,9 +58,9 @@ extension UIColor
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
-        
+
         getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        
+
         return (red*255, green*255, blue*255, alpha)
     }
 }
@@ -84,16 +86,16 @@ func rgba255(_ red  : CGFloat,
 func convert_RGBA_to_HEX(_ input: String) -> String?
 {
     guard input.isEmpty == false else { return nil }
-    
+
     let array = input.removeWhitespace().split(separator: ",")
-    
+
     guard array.count >= 3 else { return nil }
-    
+
     let red = CGFloat(Int(array[0]) ?? 0)
     let green = CGFloat(Int(array[1]) ?? 0)
     let blue = CGFloat(Int(array[2]) ?? 0)
     let alpha = array.count == 4 ? CGFloat(Float(array[3]) ?? 1) : 1
-    
+
     return rgba255(red, green, blue, alpha).hexString()
 }
 
@@ -104,7 +106,7 @@ func convert_HEX_to_RGBA(_ input: String) -> String?
 {
     guard let colorFromHEX = try? UIColor(cgColor: UIColor(rgba_throws: input).cgColor)
     else { return nil }
-    
+
     return ""
         + "\(Int(colorFromHEX.RGBA255.red)), "
         + "\(Int(colorFromHEX.RGBA255.green)), "
@@ -126,7 +128,7 @@ extension String
                              options: NSString.CompareOptions.literal,
                              range  : nil)
     }
-    
+
     /// Removes white spaces.
     /// - Returns: String without whitespaces.
     func removeWhitespace() -> String

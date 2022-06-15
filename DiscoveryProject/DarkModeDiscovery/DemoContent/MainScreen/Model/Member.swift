@@ -8,7 +8,6 @@
 //  All rights reserved.
 //
 
-
 import Foundation
 
 /// Represents a member of the fellowship.

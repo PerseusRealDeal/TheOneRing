@@ -8,7 +8,6 @@
 //  All rights reserved.
 //
 
-
 import UIKit
 import AdaptedSystemUI
 
@@ -16,49 +15,46 @@ import AdaptedSystemUI
 enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
 {
     // Label Colors
-    
+
     case label                            = 0
     case secondaryLabel                   = 1
     case tertiaryLabel                    = 2
     case quaternaryLabel                  = 3
-    
-    
+
     // Text Colors
-    
+
     case placeholderText                  = 4
-    
+
     // Separator Colors
-    
+
     case separator                        = 5
     case opaqueSeparator                  = 6
-    
+
     // Link Color
-    
+
     case link                             = 7
-    
-    
+
     // Fill Colors
-    
+
     case systemFill                       = 8
     case secondarySystemFill              = 9
     case tertiarySystemFill               = 10
     case quaternarySystemFill             = 11
-    
+
     // MARK: - For background content
-    
+
     // Standard Content Background Colors
-    
+
     case systemBackground                 = 12
     case secondarySystemBackground        = 13
     case tertiarySystemBackground         = 14
-    
-    
+
     // Grouped Content Background Colors
-    
+
     case systemGroupedBackground          = 15
     case secondarySystemGroupedBackground = 16
     case tertiarySystemGroupedBackground  = 17
-    
+
     /// Color name.
     var description: String
     {
@@ -102,7 +98,7 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
             return ".tertiarySystemGroupedBackground"
         }
     }
-    
+
     /// Color instance.
     var color: UIColor
     {

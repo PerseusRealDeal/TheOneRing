@@ -31,20 +31,20 @@ extension AppDelegate: UIApplicationDelegate
         print(">> Launching with business matter purpose")
         print(">> [\(type(of: self))]." + #function)
         #endif
-        
+
         // Register Settings Bundle
         registerSettingsBundle()
-        
+
         // Init the app's window
         window = UIWindow(frame: UIScreen.main.bounds)
-        
+
         // Give it a root view for the first screen
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
-        
+
         // And, finally, apply a new style for all screens
-        //AppearanceService.makeUp()
-        
+        // AppearanceService.makeUp()
+
         return true
     }
 }
