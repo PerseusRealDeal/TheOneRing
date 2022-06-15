@@ -91,7 +91,8 @@ Also, default values can be easily customised with Root.strings file like this:
 One of the most reliable way to make the business logic of Dark Mode option of Setting App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
 
 ```swift
-
+class MainViewController: UIViewController
+{
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -111,12 +112,15 @@ One of the most reliable way to make the business logic of Dark Mode option of S
                                           object: nil)
     }
 
+    // ...
+}
 ```
 
 `The third step:` process Dark Mode Settings value with `UIApplication.didBecomeActiveNotification` event.
 
 ```swift
-
+class MainViewController: UIViewController
+{
     @objc func theAppDidBecomeActive()
     {
         // Check Dark Mode in Settings
@@ -128,6 +132,9 @@ One of the most reliable way to make the business logic of Dark Mode option of S
             semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
         }
     }
+
+    // ...
+}
 ```
 `The fourth step:` change Appearance Style if Dark Mode option has changed.
 
