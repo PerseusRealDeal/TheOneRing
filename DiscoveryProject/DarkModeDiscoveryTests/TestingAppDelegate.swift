@@ -2,7 +2,10 @@
 //  TestingAppDelegate.swift
 //  DarkModeDiscoveryTests
 //
-//  Created by Mikhail Zhigulin on 09.02.2022.
+//  Created by Mikhail Zhigulin in 7530.
+//
+//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  All rights reserved.
 //
 
 import XCTest
@@ -17,7 +20,7 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate
     {
         print("<< Launching with testing app delegate")
         print("<< \(type(of: self)) " + #function)
-        
+
         return true
     }
 }

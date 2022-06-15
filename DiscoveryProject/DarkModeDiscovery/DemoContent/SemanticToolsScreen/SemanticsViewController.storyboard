@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -105,20 +105,20 @@
             <objects>
                 <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="513"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
-                                <rect key="frame" x="200" y="176.5" width="200" height="40"/>
+                                <rect key="frame" x="60" y="60" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FbN-2E-VZS"/>
                                     <constraint firstAttribute="width" constant="200" id="a9Z-gL-d2s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Output HEX color" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lfb-ut-8c1" userLabel="HEX Output">
-                                <rect key="frame" x="200" y="236.5" width="200" height="40"/>
+                                <rect key="frame" x="60" y="110" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="41u-s4-qKa"/>
                                     <constraint firstAttribute="height" constant="40" id="nut-kI-3XR"/>
@@ -127,7 +127,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-v0-Cwh" userLabel="Convert Button">
-                                <rect key="frame" x="200" y="116.5" width="200" height="40"/>
+                                <rect key="frame" x="60" y="10" width="200" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BrW-HF-560"/>
@@ -141,7 +141,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to RGBA from HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Ua-tb5">
-                                <rect key="frame" x="200" y="296.5" width="183.5" height="21"/>
+                                <rect key="frame" x="60" y="170" width="183.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,12 +150,12 @@
                         <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="top" secondItem="UOa-uU-FZz" secondAttribute="bottom" constant="20" id="1ga-Qz-qjS"/>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerX" secondItem="XF3-uP-U0D" secondAttribute="centerX" id="MsZ-ZH-Koy"/>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="Qgk-IZ-DHy"/>
                             <constraint firstItem="Q4h-Ua-tb5" firstAttribute="leading" secondItem="Lfb-ut-8c1" secondAttribute="leading" id="S8Q-oN-iwA"/>
-                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerY" secondItem="XF3-uP-U0D" secondAttribute="centerY" id="Uu3-up-7Qe"/>
-                            <constraint firstItem="sFQ-v0-Cwh" firstAttribute="bottom" secondItem="UOa-uU-FZz" secondAttribute="top" constant="-20" id="XQb-T0-oAQ"/>
+                            <constraint firstItem="sFQ-v0-Cwh" firstAttribute="top" secondItem="b9z-dC-Nnj" secondAttribute="top" constant="10" id="SIo-Jk-O1W"/>
+                            <constraint firstItem="Lfb-ut-8c1" firstAttribute="top" secondItem="UOa-uU-FZz" secondAttribute="bottom" constant="10" id="mKl-Ok-KGL"/>
+                            <constraint firstItem="UOa-uU-FZz" firstAttribute="top" secondItem="sFQ-v0-Cwh" secondAttribute="bottom" constant="10" id="o8T-Mm-H2g"/>
                             <constraint firstItem="sFQ-v0-Cwh" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="oX7-jy-sqs"/>
                             <constraint firstItem="Q4h-Ua-tb5" firstAttribute="top" secondItem="Lfb-ut-8c1" secondAttribute="bottom" constant="20" id="woq-VW-793"/>
                         </constraints>
@@ -259,7 +259,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SystemColorTableCell" id="KOs-0I-oE2" customClass="SystemColorCell" customModule="DarkModeDiscovery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="304" height="116.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="304" height="116.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KOs-0I-oE2" id="IPI-Ow-VGE">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="116.5"/>
@@ -415,7 +415,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SemanticColorTableCell" id="kg1-Oh-E7z" customClass="SemanticColorCell" customModule="DarkModeDiscovery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="304" height="116.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="304" height="116.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kg1-Oh-E7z" id="4SF-aZ-jyV">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="116.5"/>

@@ -1,12 +1,16 @@
 //
-//  Member.swift
+//  Member.swift, members.json
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 12.02.2022.
+//  Created by Mikhail Zhigulin in 7530.
+//
+//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  All rights reserved.
 //
 
 import Foundation
 
+/// Represents a member of the fellowship.
 struct Member: Decodable
 {
     let name    : String

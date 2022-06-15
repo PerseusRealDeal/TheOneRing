@@ -1,0 +1,8 @@
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - force_cast
+  - identifier_name
+  - opening_brace
+  - colon
+
+large_tuple:
+  warning: 5

@@ -2,61 +2,60 @@
 //  SemanticColorsViewList.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 16.04.2022.
+//  Created by Mikhail Zhigulin in 7530.
+//
+//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  All rights reserved.
 //
 
 import UIKit
 import AdaptedSystemUI
 
+/// Represents the model of semantic colors for displaying on the screen.
 enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
 {
-    ///
-    /// Label Colors
-    ///
+    // Label Colors
+
     case label                            = 0
     case secondaryLabel                   = 1
     case tertiaryLabel                    = 2
     case quaternaryLabel                  = 3
-    
-    ///
-    /// Text Colors
-    ///
+
+    // Text Colors
+
     case placeholderText                  = 4
-    
-    ///
-    /// Separator Colors
-    ///
+
+    // Separator Colors
+
     case separator                        = 5
     case opaqueSeparator                  = 6
-    
-    ///
-    /// Link Color
-    ///
+
+    // Link Color
+
     case link                             = 7
-    
-    ///
-    /// Fill Colors
-    ///
+
+    // Fill Colors
+
     case systemFill                       = 8
     case secondarySystemFill              = 9
     case tertiarySystemFill               = 10
     case quaternarySystemFill             = 11
-    
+
     // MARK: - For background content
-    ///
-    /// Standard Content Background Colors
-    ///
+
+    // Standard Content Background Colors
+
     case systemBackground                 = 12
     case secondarySystemBackground        = 13
     case tertiarySystemBackground         = 14
-    
-    ///
-    /// Grouped Content Background Colors
-    ///
+
+    // Grouped Content Background Colors
+
     case systemGroupedBackground          = 15
     case secondarySystemGroupedBackground = 16
     case tertiarySystemGroupedBackground  = 17
-    
+
+    /// Color name.
     var description: String
     {
         switch self
@@ -99,7 +98,8 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
             return ".tertiarySystemGroupedBackground"
         }
     }
-    
+
+    /// Color instance.
     var color: UIColor
     {
         switch self

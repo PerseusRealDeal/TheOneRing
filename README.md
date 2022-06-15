@@ -2,18 +2,20 @@ ios.darkmode.discovery
 ======================
 Discovery project for iOS Dark Mode with samples and demo content.
 
-[![License](http://img.shields.io/:LICENSE-MIT-blue.svg)](http://doge.mit-license.org)
-![Platform](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)
-![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)
-![SDK](https://img.shields.io/badge/SDK-UIKit%20-green.svg)
-[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.0%20RC-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.0-RC)
+[![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
+![Version](https://img.shields.io/badge/Version-1.0-green.svg)
+[![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
+[![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
+[![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.1-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.1)
+[![License](http://img.shields.io/:License-MIT-blue.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/blob/9249462c5c6c5403bd1ebe25979d333ef26345b4/LICENSE)
 
 ## Table of contents
 
 [Introductory remarks](#introductory)
 1. [Releasing Dark Mode](#darkmode)
-    + [Settings App for option Release](#darkmodesettingsapp)
-    + [Using Dark Mode option in the App](#darkmodeinsidetheapp)
+    + [The app's Dark Mode option in Settings app](#darkmodesettingsapp)
+    + [Dark Mode option inside the App](#darkmodeinsidetheapp)
 2. [Custom Colors](#customcolors)
 3. [Adapted Colors](#adaptedcolors)
     + [System Colors](#systemcolors)
@@ -32,7 +34,7 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 
 ## Releasing Dark Mode <a name="darkmode"></a>
 
-### Settings App for option Release <a name="darkmodesettingsapp"></a>
+### The app's Dark Mode option in Settings app <a name="darkmodesettingsapp"></a>
 
 `The first step:` describe user interface using settings bundle—screenshots and Root.plist are below.
 
@@ -45,35 +47,43 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>StringsTable</key>
-    <string>Root</string>
-    <key>PreferenceSpecifiers</key>
-    <array>
-        <dict>
-            <key>Type</key>
-            <string>PSMultiValueSpecifier</string>
-            <key>Title</key>
-            <string>Appearance Mode</string>
-            <key>Key</key>
-            <string>dark_mode_preference</string>
-            <key>DefaultValue</key>
-            <integer>0</integer>
-            <key>Titles</key>
-            <array>
-                <string>Light</string>
-                <string>Dark</string>
-                <string>Auto</string>
-            </array>
-            <key>Values</key>
-            <array>
-                <integer>2</integer>
-                <integer>1</integer>
-                <integer>0</integer>
-            </array>
-        </dict>
-    </array>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Appearance Mode</string>
+			<key>Key</key>
+			<string>dark_mode_preference</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
+			<key>Titles</key>
+			<array>
+				<string>Light</string>
+				<string>Dark</string>
+				<string>Auto</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>2</integer>
+				<integer>1</integer>
+				<integer>0</integer>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
+```
+
+Also, default values can be easily customised with Root.strings file like this:
+```
+"Appearance Mode" = "Appearance Mode";
+"Light" = "Light";
+"Dark" = "Dark";
+"Auto" = "System";
 ```
 
 `The second step:` make the option's business logic getting work.
@@ -81,36 +91,49 @@ Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—broug
 One of the most reliable way to make the business logic of Dark Mode option of Setting App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
 
 ```swift
-override func viewWillAppear(_ animated: Bool)
+class MainViewController: UIViewController
 {
-    super.viewWillAppear(animated)
-    
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(theAppDidBecomeActive),
-                                           name    : UIApplication.didBecomeActiveNotification,
-                                           object  : nil)
-}
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
 
-override func viewWillDisappear(_ animated: Bool)
-{
-    super.viewWillDisappear(animated)
-    
-    NotificationCenter.default.removeObserver(self,
-                                      name  : UIApplication.didBecomeActiveNotification,
-                                      object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(theAppDidBecomeActive),
+                                               name    : UIApplication.didBecomeActiveNotification,
+                                               object  : nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self,
+                                          name  : UIApplication.didBecomeActiveNotification,
+                                          object: nil)
+    }
+
+    // ...
 }
 ```
 
-`The third step:` process Dark Mode Settings value on `UIApplication.didBecomeActiveNotification` event.
+`The third step:` process Dark Mode Settings value with `UIApplication.didBecomeActiveNotification` event.
 
 ```swift
-@objc func theAppDidBecomeActive()
+class MainViewController: UIViewController
 {
-    // Check Dark Mode in Settings
-    if let choice = isDarkModeSettingsChanged()
+    @objc func theAppDidBecomeActive()
     {
-        changeDarkModeManually(choice)
+        // Check Dark Mode in Settings
+        if let choice = isDarkModeSettingsChanged()
+        {
+            changeDarkModeManually(choice)
+
+            optionsPanel.segmentedControlValue = choice
+            semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
+        }
     }
+
+    // ...
 }
 ```
 `The fourth step:` change Appearance Style if Dark Mode option has changed.
@@ -119,16 +142,17 @@ override func viewWillDisappear(_ animated: Bool)
 import UIKit
 import PerseusDarkMode
 
-public let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
+/// Dark Mode option key used in Settings bundle.
+let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
 
 func changeDarkModeManually(_ userChoice: DarkModeOption)
 {
     // Change Dark Mode value in settings bundle
     UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
-    
+
     // Change Dark Mode value in Perseus Dark Mode library
     AppearanceService.DarkModeUserChoice = userChoice
-    
+
     // Update appearance in accoring with changed Dark Mode Style
     AppearanceService.makeUp()
 }
@@ -137,22 +161,22 @@ func changeDarkModeManually(_ userChoice: DarkModeOption)
 func isDarkModeSettingsChanged() -> DarkModeOption?
 {
     // Load enum int value from settings
-    
+
     let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?
         UserDefaults.standard.integer(forKey: DARK_MODE_SETTINGS_KEY) : -1
-    
+
     // Try to cast int value to enum
-    
+
     guard option != -1, let settingsDarkMode = DarkModeOption.init(rawValue: option)
-    else { return nil }
-    
+    else { return nil } // Should throw exception if init gives nil
+
     // Report change
-    
+
     return settingsDarkMode != AppearanceService.DarkModeUserChoice ? settingsDarkMode : nil
 }
 ```
 
-### Using Dark Mode option in the App <a name="darkmodeinsidetheapp"></a>
+### Dark Mode option inside the App <a name="darkmodeinsidetheapp"></a>
 
 `The first step:` make a user control and place it on a screen.
 
@@ -160,14 +184,25 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 | :---------------------------------: | :---------------------------------: |
 | <img src="Images/DarkModeOptionLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DarkModeOptionDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-`The second step:` give it a processing logic on change event.
+`The second step:` give it a processing logic with a change event.
 
 ```swift
+override func viewDidLoad()
+{
+    super.viewDidLoad()
+    
+    optionsPanel.segmentedControlValueChangedClosure =
+            { option in changeDarkModeManually(option)
 
-// Configure Dark Mode user control
+                // The value of other one Dark Mode panel should also be changed accordingly
+                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
+            }
 
-optionsPanel.segmentedControlValueChangedClosure = { option in changeDarkModeManually(option) }
-optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+    optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        
+    AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
+}
+
 ```
 
 ## Custom Colors <a name="customcolors"></a>
@@ -185,7 +220,7 @@ import UIKit
 
 protocol UICustomColors
 {
-    static var _customTeal                : UIColor { get }
+    static var customTeal: UIColor { get }
 }
 ```
 
@@ -197,13 +232,22 @@ import PerseusDarkMode
 
 extension UIColor: UICustomColors
 {
-    static var _customTeal                : UIColor
+    static var customTeal: UIColor
     {
-        AppearanceService.shared.Style == .light ? #colorLiteral(red: 0.1882352941, green: 0.6901960784, blue: 0.7803921568, alpha: 1) : #colorLiteral(red: 0.2509803921, green: 0.7843137254, blue: 0.8784313725, alpha: 1)
+        AppearanceService.shared.Style == .light ? rgba255(48, 176, 199) : rgba255(64, 200, 224)
     }
 }
 ```
+
+`The third step:` almost is about how it's done.
+
+At this step the smart choice should be done, either use `AppearanceService.makeUp()` or create observer for getting change of `AppearanceService.shared.StyleObservable`.
+
+Look at README of [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) for details.
+
 ## Adapted Colors <a name="adaptedcolors"></a>
+
+Apple Inc. reserves the right to tweak a litle bit any system/semantic color.
 
 ### System Colors <a name="systemcolors"></a>
 
@@ -222,7 +266,7 @@ view.backgroundColor = .systemRed_Adapted
 
 ### Semantic Colors <a name="semanticcolors"></a>
 
-For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics—Apple Inc. reserves the right to tweak a litle bit any semantic color later.
+For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics.
 
 [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
 
@@ -243,23 +287,33 @@ view.backgroundColor = .label_Adapted
 | :-----------------------------: | :-----------------------------: |
 | <img src="Images/DynamicsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DynamicsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
+There are two way to configure dynamic image view. The first is using Interface Builder, preferable. Or coding:
+
 ```swift
 import UIKit
 import PerseusDarkMode
 
-var topImage = DarkModeImageView()
-var bottomImage = DarkModeImageView()
+let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 1, height: 1))
 
-topImage.setUp(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
-bottomImage.setUp(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+var topImage = DarkModeImageView(frame: frame)
+var bottomImage = DarkModeImageView(frame: frame)
+
+topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
 ```
+But, Interface Builder is recomended to used for setting dynamic images up if logic not complex.
+
+| Dynamic Image: The Identity Inspector | Dynamic Image: The Attributes Inspector |
+| :-------------------------------: | :-------------------------------: |
+| <img src="Images/SettingDynamicImageModuleUp.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SettingDynamicImagePropertiesUp.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ## Licenses <a name="licenses"></a>
 
 `License for this app`
 
 ```
-Copyright (c) 2022 Mikhail Zhigulin
+Copyright © 7530 Mikhail Zhigulin of Novosibirsk, where 7530 is
+the year from the creation of the world according to a Slavic calendar.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -293,7 +347,7 @@ The top lines from the origin code used as the third party code:
 //  Created by Sergey Pugach on 2/2/18.
 //  Copyright © 2018 P.D.Q. All rights reserved.
 ```
-License from the root of [UIColor-Hex-Swift repository](https://github.com/SeRG1k17/UIColor-Hex-Swift.git):
+License from the root of [UIColor-Hex-Swift repository](https://github.com/SeRG1k17/UIColor-Hex-Swift/blob/3a65da534b71b3e6909f6ada6bfdd3b80ee43ca8/LICENSE):
 
 ```
 Copyright (c) 2014 R0CKSTAR

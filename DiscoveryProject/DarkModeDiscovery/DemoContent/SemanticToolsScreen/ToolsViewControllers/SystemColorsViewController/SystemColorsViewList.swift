@@ -2,12 +2,16 @@
 //  SystemColorsViewList.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin on 06.04.2022.
+//  Created by Mikhail Zhigulin in 7530.
+//
+//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  All rights reserved.
 //
 
 import UIKit
 import AdaptedSystemUI
 
+/// Represents the model of system colors for displaying on the screen.
 enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
 {
     case systemRed    = 0
@@ -22,14 +26,15 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
     case systemPurple = 9
     case systemPink   = 10
     case systemBrown  = 11
-    
+
     case systemGray   = 12
     case systemGray2  = 13
     case systemGray3  = 14
     case systemGray4  = 15
     case systemGray5  = 16
     case systemGray6  = 17
-    
+
+    /// Color name.
     var description: String
     {
         switch self
@@ -58,7 +63,7 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
             return ".systemPink"
         case .systemBrown:
             return ".systemBrown"
-        
+
         case .systemGray:
             return ".systemGray"
         case .systemGray2:
@@ -73,7 +78,7 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
             return ".systemGray6"
         }
     }
-    
+
     var color: UIColor
     {
         switch self
@@ -102,7 +107,7 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
             return .systemPink_Adapted
         case .systemBrown:
             return .systemBrown_Adapted
-            
+
         case .systemGray:
             return .systemGray_Adapted
         case .systemGray2:
