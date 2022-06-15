@@ -102,7 +102,7 @@ class DetailsViewController: UIViewController
         memberIcon.layer.cornerRadius = 45
         memberIcon.clipsToBounds = true
 
-        bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+        // bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
 
     /// Updates the appearance of the screen.

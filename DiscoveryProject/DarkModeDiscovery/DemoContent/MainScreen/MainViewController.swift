@@ -165,7 +165,7 @@ class MainViewController: UIViewController
 
         // Images
 
-        titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        // titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 
         // Dark Mode panel
 
