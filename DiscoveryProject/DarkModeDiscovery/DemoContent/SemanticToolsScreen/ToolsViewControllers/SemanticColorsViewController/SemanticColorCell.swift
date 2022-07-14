@@ -10,7 +10,7 @@
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents a table view cell for semantic color.
 class SemanticColorCell: UITableViewCell, UITextFieldDelegate

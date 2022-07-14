@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents the model of system colors for displaying on the screen.
 enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible

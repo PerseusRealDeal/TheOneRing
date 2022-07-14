@@ -10,7 +10,7 @@
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents a host view controller for other view controllers.
 ///

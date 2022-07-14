@@ -10,7 +10,7 @@
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Title of the main theme of the app.
 let TITLE = "The Fellowship of the Ring"

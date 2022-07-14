@@ -14,6 +14,7 @@
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
 		E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelperFunctionsLocal.swift */; };
 		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
+		E04D53E3288011BE00033A31 /* PerseusUISystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = E04D53E2288011BE00033A31 /* PerseusUISystemKit */; };
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */; };
 		E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07727C2280A7E4300D4A3A9 /* SemanticColorsViewList.swift */; };
@@ -39,8 +40,6 @@
 		E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8227B81D6C00B8CE61 /* Member.swift */; };
 		E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8327B81D6C00B8CE61 /* Race.swift */; };
 		E0CB98CE2833BE5800EAF403 /* DarkModeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */; };
-		E0DE8771282F7BFA00C993F3 /* Adapted System UI in Frameworks */ = {isa = PBXBuildFile; productRef = E0DE8770282F7BFA00C993F3 /* Adapted System UI */; };
-		E0DE8773282F7BFA00C993F3 /* Perseus Dark Mode in Frameworks */ = {isa = PBXBuildFile; productRef = E0DE8772282F7BFA00C993F3 /* Perseus Dark Mode */; };
 		E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD2D3D27FD915800DC5405 /* SystemColorsViewList.swift */; };
 		E0FD2D4027FD944800DC5405 /* SystemColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD2D3F27FD944800DC5405 /* SystemColorCell.swift */; };
 /* End PBXBuildFile section */
@@ -101,8 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0DE8771282F7BFA00C993F3 /* Adapted System UI in Frameworks */,
-				E0DE8773282F7BFA00C993F3 /* Perseus Dark Mode in Frameworks */,
+				E04D53E3288011BE00033A31 /* PerseusUISystemKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +288,7 @@
 			);
 			name = DarkModeDiscovery;
 			packageProductDependencies = (
-				E0DE8770282F7BFA00C993F3 /* Adapted System UI */,
-				E0DE8772282F7BFA00C993F3 /* Perseus Dark Mode */,
+				E04D53E2288011BE00033A31 /* PerseusUISystemKit */,
 			);
 			productName = darkmodediscovery;
 			productReference = E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */;
@@ -343,7 +340,7 @@
 			);
 			mainGroup = E095388027B36E7800AAAAAA;
 			packageReferences = (
-				E0DE876F282F7BFA00C993F3 /* XCRemoteSwiftPackageReference "DarkMode" */,
+				E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */,
 			);
 			productRefGroup = E095388A27B36E7800AAAAAA /* Products */;
 			projectDirPath = "";
@@ -387,6 +384,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E030803028590F8B00E19E30 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -705,26 +703,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E0DE876F282F7BFA00C993F3 /* XCRemoteSwiftPackageReference "DarkMode" */ = {
+		E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/perseusrealdeal/DarkMode.git";
+			repositoryURL = "https://github.com/perseusrealdeal/PerseusUISystemKit";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.1;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E0DE8770282F7BFA00C993F3 /* Adapted System UI */ = {
+		E04D53E2288011BE00033A31 /* PerseusUISystemKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E0DE876F282F7BFA00C993F3 /* XCRemoteSwiftPackageReference "DarkMode" */;
-			productName = "Adapted System UI";
-		};
-		E0DE8772282F7BFA00C993F3 /* Perseus Dark Mode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E0DE876F282F7BFA00C993F3 /* XCRemoteSwiftPackageReference "DarkMode" */;
-			productName = "Perseus Dark Mode";
+			package = E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */;
+			productName = PerseusUISystemKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

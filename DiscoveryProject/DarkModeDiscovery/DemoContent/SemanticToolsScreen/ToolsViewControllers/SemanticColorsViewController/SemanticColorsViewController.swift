@@ -10,7 +10,7 @@
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 class SemanticColorsViewController: UIViewController, UITextFieldDelegate
 {

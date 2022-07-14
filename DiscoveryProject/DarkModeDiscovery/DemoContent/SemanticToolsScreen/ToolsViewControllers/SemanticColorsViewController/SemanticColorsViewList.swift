@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents the model of semantic colors for displaying on the screen.
 enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible

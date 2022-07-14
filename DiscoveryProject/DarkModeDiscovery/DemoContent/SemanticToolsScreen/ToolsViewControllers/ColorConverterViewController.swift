@@ -10,7 +10,7 @@
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents the UI instrument used for converting color from RGBA to HEX.
 class ConverterViewController: UIViewController, UITextFieldDelegate

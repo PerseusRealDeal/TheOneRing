@@ -258,7 +258,7 @@ Apple Inc. reserves the right to tweak a litle bit any system/semantic color.
 | <img src="Images/SystemColorsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SystemColorsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ```swift
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 let view = UIView()
 view.backgroundColor = .systemRed_Adapted
@@ -275,7 +275,7 @@ For semantic colors also listed in [the apple specification](https://developer.a
 | <img src="Images/SemanticColorsLight.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/SemanticColorsDark.png" width="400" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ```swift
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 let view = UIView()
 view.backgroundColor = .label_Adapted
