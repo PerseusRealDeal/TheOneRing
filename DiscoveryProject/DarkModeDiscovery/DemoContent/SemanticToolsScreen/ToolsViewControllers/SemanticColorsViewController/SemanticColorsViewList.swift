@@ -5,15 +5,15 @@
 //  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents the model of semantic colors for displaying on the screen.
-enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
-{
+enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
     // Label Colors
 
     case label                            = 0
@@ -56,10 +56,8 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
     case tertiarySystemGroupedBackground  = 17
 
     /// Color name.
-    var description: String
-    {
-        switch self
-        {
+    var description: String {
+        switch self {
         case .label:
             return ".label"
         case .secondaryLabel:
@@ -100,10 +98,8 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible
     }
 
     /// Color instance.
-    var color: UIColor
-    {
-        switch self
-        {
+    var color: UIColor {
+        switch self {
         case .label:
             return .label_Adapted
         case .secondaryLabel:

@@ -5,15 +5,15 @@
 //  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents the model of system colors for displaying on the screen.
-enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
-{
+enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible {
     case systemRed    = 0
     case systemOrange = 1
     case systemYellow = 2
@@ -35,10 +35,8 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
     case systemGray6  = 17
 
     /// Color name.
-    var description: String
-    {
-        switch self
-        {
+    var description: String {
+        switch self {
         case .systemRed:
             return ".systemRed"
         case .systemOrange:
@@ -79,10 +77,8 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible
         }
     }
 
-    var color: UIColor
-    {
-        switch self
-        {
+    var color: UIColor {
+        switch self {
         case .systemRed:
             return .systemRed_Adapted
         case .systemOrange:

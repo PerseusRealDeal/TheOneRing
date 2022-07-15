@@ -5,46 +5,43 @@
 //  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
 /// Represents a table view cell for semantic color.
-class SemanticColorCell: UITableViewCell, UITextFieldDelegate
-{
+class SemanticColorCell: UITableViewCell, UITextFieldDelegate {
     /// Title for a color.
-    @IBOutlet weak var colorNameLabel    : UILabel!
+    @IBOutlet weak var colorNameLabel: UILabel!
 
     /// Content view for color details.
-    @IBOutlet weak var colorView         : UIView!
+    @IBOutlet weak var colorView: UIView!
 
     /// HEX value of color.
-    @IBOutlet weak var colorHexTextField : UITextField!
+    @IBOutlet weak var colorHexTextField: UITextField!
 
     /// RGBA value of color.
     @IBOutlet weak var colorRGBATextField: UITextField!
 
     /// Color name.
-    public var colorName                 : String? { didSet { colorNameLabel?.text = colorName }}
+    public var colorName: String? { didSet { colorNameLabel?.text = colorName }}
 
     /// Color to be represented on the screen in details.
-    public var colorRepresented          : UIColor?
-    {
+    public var colorRepresented: UIColor? {
         didSet { if AppearanceService.isEnabled { makeUp() }}
     }
 
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
         configure()
     }
 
     /// Updates the appearance of the table view cell.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         guard let colorSelected = colorRepresented else { return }
 
         colorNameLabel.textColor = .label_Adapted
@@ -62,8 +59,7 @@ class SemanticColorCell: UITableViewCell, UITextFieldDelegate
     }
 
     /// Configures the table view cell.
-    private func configure()
-    {
+    private func configure() {
         colorView.layer.cornerRadius = 25
         colorView.layer.masksToBounds = true
 
@@ -72,8 +68,7 @@ class SemanticColorCell: UITableViewCell, UITextFieldDelegate
     }
 
     /// Hides keyboard.
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }

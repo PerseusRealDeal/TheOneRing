@@ -5,15 +5,15 @@
 //  Created by Mikhail Zhigulin in 7530.
 //
 //  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
+//  Licensed under the special license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
 import PerseusDarkMode
-import AdaptedSystemUI
+import PerseusUISystemKit
 
-class SemanticColorsViewController: UIViewController, UITextFieldDelegate
-{
+class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.
@@ -24,8 +24,7 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
@@ -37,8 +36,7 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
     }
 
     /// Updates the appearance of the screen.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         view.backgroundColor = .customPrimaryBackground
 
         tabButton.setTitleTextAttributes(
@@ -53,19 +51,16 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate
 
 // MARK: - UITableView
 
-extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelegate
-{
+extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource protocol
 
     /// Calculates the total cells of the list of semantic colors.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         SemanticColorsViewList.allCases.count
     }
 
     /// Creates a cell with a specific color of the list of semantic colors.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SemanticColorTableCell",
                                                        for: indexPath) as? SemanticColorCell,
               let item = SemanticColorsViewList(rawValue: indexPath.row)
