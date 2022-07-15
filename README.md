@@ -7,7 +7,7 @@ Discovery project for iOS Dark Mode with code samples and demo content.
 [![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
-[![Perseus UISystemKit](http://img.shields.io/:Perseus%20UISystemKit-1.0.0-blue.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/releases/tag/1.0.0)
+[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.0.0-blue.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/releases/tag/1.0.0)
 [![License](http://img.shields.io/:License-MIT-blue.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/blob/9249462c5c6c5403bd1ebe25979d333ef26345b4/LICENSE)
 
 ## Table of contents
@@ -99,15 +99,15 @@ class MainViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(theAppDidBecomeActive),
-                                               name    : UIApplication.didBecomeActiveNotification,
-                                               object  : nil)
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         NotificationCenter.default.removeObserver(self,
-                                          name  : UIApplication.didBecomeActiveNotification,
+                                          name: UIApplication.didBecomeActiveNotification,
                                           object: nil)
     }
 
@@ -232,7 +232,7 @@ extension UIColor: UICustomColors {
 
 `The third step:` almost is about how it's done.
 
-At this step the smart choice should be done, either use `AppearanceService.makeUp()` or create observer for getting change of `AppearanceService.shared.StyleObservable`.
+At this step the smart choice should be done, either use `AppearanceService.makeUp()` or create observer to catch the change of `AppearanceService.shared.StyleObservable`.
 
 Look at README of [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) for details.
 
@@ -259,7 +259,7 @@ view.backgroundColor = .systemRed_Adapted
 
 For semantic colors also listed in [the apple specification](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/) Apple Inc. doesn't give RGBA specifics.
 
-[Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
+[PerseusUISystemKit](https://github.com/perseusrealdeal/PerseusUISystemKit) takes RGBA from the semantic colors as it was released at the first time and brings it to early apple devices as adapted colors.
 
 | Semantic Colors Light | Semantic Colors Dark | 
 | :------------------------: | :------------------------: |
