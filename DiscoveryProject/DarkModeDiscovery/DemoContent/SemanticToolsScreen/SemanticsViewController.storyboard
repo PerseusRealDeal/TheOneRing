@@ -210,6 +210,10 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="PerseusUISystemKit">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="137.5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="TheFellowship"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAM-LP-Kqk">
                                         <rect key="frame" x="0.0" y="137.5" width="288" height="30.5"/>
@@ -217,6 +221,10 @@
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="PerseusUISystemKit">
                                         <rect key="frame" x="0.0" y="168" width="288" height="137.5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="Rivendell"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="RivendellDark"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -560,6 +568,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FrodoWithTheRing" width="960" height="500"/>
+        <image name="Rivendell" width="640" height="338"/>
+        <image name="RivendellDark" width="1600" height="667"/>
+        <image name="TheFellowship" width="1000" height="414"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

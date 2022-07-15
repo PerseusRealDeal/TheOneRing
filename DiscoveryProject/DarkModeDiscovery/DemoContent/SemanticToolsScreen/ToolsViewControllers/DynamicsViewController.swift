@@ -59,7 +59,7 @@ class DynamicsViewController: UIViewController {
         bottomImage.layer.cornerRadius = 40
         bottomImage.layer.masksToBounds = true
 
-        topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
-        bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
+        // topImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+        // bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
     }
 }
