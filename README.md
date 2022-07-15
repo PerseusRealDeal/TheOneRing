@@ -1,13 +1,13 @@
 ios.darkmode.discovery
 ======================
-Discovery project for iOS Dark Mode with samples and demo content.
+Discovery project for iOS Dark Mode with code samples and demo content.
 
 [![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/Version-1.1-green.svg)
+![Version](https://img.shields.io/badge/Version-1.2-green.svg)
 [![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
-[![Perseus Dark Mode](http://img.shields.io/:Perseus%20Dark%20Mode-1.0.1-critical.svg)](https://github.com/perseusrealdeal/DarkMode/releases/tag/1.0.1)
+[![Perseus UISystemKit](http://img.shields.io/:Perseus%20UISystemKit-1.0.0-blue.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/releases/tag/1.0.0)
 [![License](http://img.shields.io/:License-MIT-blue.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/blob/9249462c5c6c5403bd1ebe25979d333ef26345b4/LICENSE)
 
 ## Table of contents
@@ -26,7 +26,9 @@ Discovery project for iOS Dark Mode with samples and demo content.
 
 ## Introductory remarks <a name="introductory"></a>
 
-Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—brought to life with [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode.git).
+Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—brought to life with [Perseus UISystemKit](https://github.com/perseusrealdeal/PerseusUISystemKit) basing on [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
+
+Dark Mode can be used separately from UISystemKit, take a look at [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
 
 | Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
 | :--------------------: | :----------------------: | :-------------------: | :---------------------: |
@@ -91,10 +93,8 @@ Also, default values can be easily customised with Root.strings file like this:
 One of the most reliable way to make the business logic of Dark Mode option of Setting App getting work is processing `UIApplication.didBecomeActiveNotification` event when `viewWillAppear`/`viewWillDisappear` called.
 
 ```swift
-class MainViewController: UIViewController
-{
-    override func viewWillAppear(_ animated: Bool)
-    {
+class MainViewController: UIViewController {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         NotificationCenter.default.addObserver(self,
@@ -103,8 +103,7 @@ class MainViewController: UIViewController
                                                object  : nil)
     }
 
-    override func viewWillDisappear(_ animated: Bool)
-    {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         NotificationCenter.default.removeObserver(self,
@@ -119,13 +118,11 @@ class MainViewController: UIViewController
 `The third step:` process Dark Mode Settings value with `UIApplication.didBecomeActiveNotification` event.
 
 ```swift
-class MainViewController: UIViewController
-{
-    @objc func theAppDidBecomeActive()
-    {
+class MainViewController: UIViewController {
+    @objc func theAppDidBecomeActive() {
+
         // Check Dark Mode in Settings
-        if let choice = isDarkModeSettingsChanged()
-        {
+        if let choice = isDarkModeSettingsChanged() {
             changeDarkModeManually(choice)
 
             optionsPanel.segmentedControlValue = choice
@@ -145,8 +142,7 @@ import PerseusDarkMode
 /// Dark Mode option key used in Settings bundle.
 let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
 
-func changeDarkModeManually(_ userChoice: DarkModeOption)
-{
+func changeDarkModeManually(_ userChoice: DarkModeOption) {
     // Change Dark Mode value in settings bundle
     UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
 
@@ -158,8 +154,7 @@ func changeDarkModeManually(_ userChoice: DarkModeOption)
 }
 ```
 ```swift
-func isDarkModeSettingsChanged() -> DarkModeOption?
-{
+func isDarkModeSettingsChanged() -> DarkModeOption? {
     // Load enum int value from settings
 
     let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?
@@ -187,16 +182,15 @@ func isDarkModeSettingsChanged() -> DarkModeOption?
 `The second step:` give it a processing logic with a change event.
 
 ```swift
-override func viewDidLoad()
-{
+override func viewDidLoad() {
     super.viewDidLoad()
     
-    optionsPanel.segmentedControlValueChangedClosure =
-            { option in changeDarkModeManually(option)
+    optionsPanel.segmentedControlValueChangedClosure = { option in 
+        changeDarkModeManually(option)
 
-                // The value of other one Dark Mode panel should also be changed accordingly
-                self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
-            }
+        // The value of other one Dark Mode panel should also be changed accordingly
+        self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
+    }
 
     optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
         
@@ -218,8 +212,7 @@ For instance, lets try to realese TEAL color using [the apple specification](htt
 ```swift
 import UIKit
 
-protocol UICustomColors
-{
+protocol UICustomColors {
     static var customTeal: UIColor { get }
 }
 ```
@@ -230,10 +223,8 @@ protocol UICustomColors
 import UIKit
 import PerseusDarkMode
 
-extension UIColor: UICustomColors
-{
-    static var customTeal: UIColor
-    {
+extension UIColor: UICustomColors {
+    static var customTeal: UIColor {
         AppearanceService.shared.Style == .light ? rgba255(48, 176, 199) : rgba255(64, 200, 224)
     }
 }
@@ -291,7 +282,7 @@ There are two way to configure dynamic image view. The first is using Interface 
 
 ```swift
 import UIKit
-import PerseusDarkMode
+import PerseusUISystemKit
 
 let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 1, height: 1))
 
