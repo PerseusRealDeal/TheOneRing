@@ -11,12 +11,11 @@
 import Foundation
 
 /// Represents a member of the fellowship.
-struct Member: Decodable
-{
-    let name    : String
+struct Member: Decodable {
+    let name: String
     let fullName: String
-    let age     : String
-    let birth   : String
-    let race    : Race
+    let age: String
+    let birth: String
+    let race: Race
     let iconName: String
 }

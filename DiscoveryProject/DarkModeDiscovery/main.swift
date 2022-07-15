@@ -21,12 +21,10 @@ UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromCla
 class AppDelegate: UIResponder { var window: UIWindow? }
 
 /// Delegate behaviors.
-extension AppDelegate: UIApplicationDelegate
-{
+extension AppDelegate: UIApplicationDelegate {
     /// Gives entry instructions on starting.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
-                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
-    {
+                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
         print(">> Launching with business matter purpose")
         print(">> [\(type(of: self))]." + #function)

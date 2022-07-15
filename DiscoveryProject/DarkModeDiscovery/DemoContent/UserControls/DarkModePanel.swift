@@ -13,12 +13,11 @@ import UIKit
 import PerseusDarkMode
 import PerseusUISystemKit
 
-class DarkModePanel: UIView
-{
+class DarkModePanel: UIView {
     // MARK: - Interface Builder connections
 
     /// Outlet of the content view.
-    @IBOutlet private weak var contentView     : UIView!
+    @IBOutlet private weak var contentView: UIView!
 
     /// Outlet of the Dark Mode switcher.
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
@@ -35,16 +34,14 @@ class DarkModePanel: UIView
 
     // MARK: - Initiating
 
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
 
         commonInit()
         configure()
     }
 
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         commonInit()
@@ -54,8 +51,7 @@ class DarkModePanel: UIView
     // MARK: - Setup user control
 
     /// Constructs the user control.
-    private func commonInit()
-    {
+    private func commonInit() {
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
 
         addSubview(contentView)
@@ -80,8 +76,7 @@ class DarkModePanel: UIView
     // MARK: - Configure connected Interface Builder elements
 
     /// Configurates the user control.
-    private func configure()
-    {
+    private func configure() {
         // Content border
 
         self.layer.cornerRadius = 15
@@ -96,8 +91,7 @@ class DarkModePanel: UIView
     }
 
     /// Updates the appearance of the user control.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         segmentedControl?.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor.customSegmentedOneNormalText
@@ -110,10 +104,8 @@ class DarkModePanel: UIView
     }
 
     /// Puts Dark Mode switcher in line with Dark Mode user option.
-    private func updateSegmentedControl()
-    {
-        switch segmentedControlValue
-        {
+    private func updateSegmentedControl() {
+        switch segmentedControlValue {
         case .auto:
             segmentedControl?.selectedSegmentIndex = 2
         case .on:
@@ -127,10 +119,8 @@ class DarkModePanel: UIView
 
     /// Puts Dark Mode user option in line with Dark Mode switcher.
     /// - Parameter sender: Related Dark Mode swithcer.
-    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl)
-    {
-        switch sender.selectedSegmentIndex
-        {
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
         case 0:
             segmentedControlValue = .off
         case 1:

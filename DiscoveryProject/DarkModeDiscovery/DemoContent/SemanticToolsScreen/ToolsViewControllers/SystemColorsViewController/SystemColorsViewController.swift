@@ -13,8 +13,7 @@ import PerseusDarkMode
 import PerseusUISystemKit
 
 /// Represents the screen for the list of system colors.
-class SystemColorsViewController: UIViewController
-{
+class SystemColorsViewController: UIViewController {
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.
@@ -25,8 +24,7 @@ class SystemColorsViewController: UIViewController
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
@@ -38,8 +36,7 @@ class SystemColorsViewController: UIViewController
     }
 
     /// Updates the appearance of the screen.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         view.backgroundColor = .customPrimaryBackground
 
         tabButton.setTitleTextAttributes(
@@ -54,19 +51,16 @@ class SystemColorsViewController: UIViewController
 
 // MARK: - UITableView
 
-extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
-{
+extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource protocol
 
     /// Calculates the total cells of the list of system colors.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         SystemColorsViewList.allCases.count
     }
 
     /// Creates a cell with a specific color of the list of system colors.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",
                                                        for: indexPath) as? SystemColorCell,
               let item = SystemColorsViewList(rawValue: indexPath.row)

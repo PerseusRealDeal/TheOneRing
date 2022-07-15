@@ -44,8 +44,7 @@ let DARK_MODE_SETTINGS_KEY = "dark_mode_preference"
 /// Also, changes Dark Mode option value in settings bundle.
 ///
 /// - Parameter userChoice: The Dark Mode value required to be setted.
-func changeDarkModeManually(_ userChoice: DarkModeOption)
-{
+func changeDarkModeManually(_ userChoice: DarkModeOption) {
     // Change Dark Mode value in settings bundle
     UserDefaults.standard.setValue(userChoice.rawValue, forKey: DARK_MODE_SETTINGS_KEY)
 
@@ -62,8 +61,7 @@ func changeDarkModeManually(_ userChoice: DarkModeOption)
 /// and AppearanceService.DarkModeUserChoice takes place.
 ///
 /// - Returns: Nil if no changes or Dark Mode value that is different to AppearanceService.DarkModeUserChoice.
-func isDarkModeSettingsChanged() -> DarkModeOption?
-{
+func isDarkModeSettingsChanged() -> DarkModeOption? {
     // Load enum int value from settings
 
     let option = UserDefaults.standard.valueExists(forKey: DARK_MODE_SETTINGS_KEY) ?

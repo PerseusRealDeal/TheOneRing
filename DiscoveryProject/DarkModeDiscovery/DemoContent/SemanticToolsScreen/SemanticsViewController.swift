@@ -17,16 +17,14 @@ import PerseusUISystemKit
 ///  - Holds close button for early iOS versions.
 ///  - Holds Dark Mode panel with Dark Mode switcher.
 ///  - Hides keyboard in a correct way.
-class SemanticsViewController: UIViewController
-{
+class SemanticsViewController: UIViewController {
     // MARK: - Interface Builder connections
 
     /// Button to close the view controller.
     @IBOutlet weak var closeButton: UIButton!
 
     /// Returns to the main screen.
-    @IBAction func closeButtonAction(_ sender: UIButton)
-    {
+    @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
@@ -40,10 +38,10 @@ class SemanticsViewController: UIViewController
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        self.configure()
+        guard value(forKey: "storyboardIdentifier") != nil else { return }
+        configure()
 
         // Dark Mode setup
 
@@ -52,8 +50,7 @@ class SemanticsViewController: UIViewController
     }
 
     /// Updates the appearance of the screen.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         view.backgroundColor = .customPrimaryBackground
         closeButton.backgroundColor = .customSecondaryBackground
 
@@ -61,8 +58,7 @@ class SemanticsViewController: UIViewController
     }
 
     /// Configurates the screen.
-    private func configure()
-    {
+    private func configure() {
         setTappedAroundHandlerUp()
 
         closeButton.layer.cornerRadius = 5
@@ -70,23 +66,21 @@ class SemanticsViewController: UIViewController
 
         // Dark Mode panel
 
-        optionsPanel.segmentedControlValueChangedClosure =
-            { option in changeDarkModeManually(option)
+        optionsPanel.segmentedControlValueChangedClosure = { option in
+            changeDarkModeManually(option)
 
-                // Call to change the value of the other instance of Dark Mode panel
-                self.userChoiceChangedClosure?(option)
-            }
+            // Call to change the value of the other instance of Dark Mode panel
+            self.userChoiceChangedClosure?(option)
+        }
 
         optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
         optionsPanel.backgroundColor = .clear
     }
 }
 
-extension UIViewController
-{
+extension UIViewController {
     /// Adds recognizer for tap event to hide keyboard.
-    func setTappedAroundHandlerUp()
-    {
+    func setTappedAroundHandlerUp() {
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(UIViewController.hideKeyboard))
         tap.cancelsTouchesInView = false

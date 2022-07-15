@@ -13,23 +13,21 @@ import PerseusDarkMode
 import PerseusUISystemKit
 
 /// Represents the idea of dynamic image view with two samples.
-class DynamicsViewController: UIViewController
-{
+class DynamicsViewController: UIViewController {
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.
-    @IBOutlet weak var tabButton  : UITabBarItem!
+    @IBOutlet weak var tabButton: UITabBarItem!
 
     /// The first sample of dynamic image idea.
-    @IBOutlet weak var topImage   : DarkModeImageView!
+    @IBOutlet weak var topImage: DarkModeImageView!
 
     /// The second sample of dynamic image idea.
     @IBOutlet weak var bottomImage: DarkModeImageView!
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
 
@@ -40,8 +38,7 @@ class DynamicsViewController: UIViewController
     }
 
     /// Updates the appearance of the screen.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         view.backgroundColor = .customPrimaryBackground
 
         tabButton.setTitleTextAttributes(
@@ -52,8 +49,7 @@ class DynamicsViewController: UIViewController
     }
 
     /// Configures the screen.
-    private func configure()
-    {
+    private func configure() {
         // Images
 
         topImage.layer.cornerRadius = 40

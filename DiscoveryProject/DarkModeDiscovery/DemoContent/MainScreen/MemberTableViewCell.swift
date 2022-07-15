@@ -12,29 +12,26 @@ import UIKit
 import PerseusDarkMode
 
 /// Represents a table view cell for a fellowship member.
-class MemberTableViewCell: UITableViewCell
-{
+class MemberTableViewCell: UITableViewCell {
     // MARK: - Interface Builder connections
 
     /// Border view for a table view cell.
     @IBOutlet weak var memberIconBorder: UIView!
 
     /// Image for a fellowship member.
-    @IBOutlet weak var memberIcon      : UIImageView!
+    @IBOutlet weak var memberIcon: UIImageView!
 
     /// Title for a member name.
-    @IBOutlet weak var memberName      : UILabel!
+    @IBOutlet weak var memberName: UILabel!
 
     /// Title for a member race.
-    @IBOutlet weak var memberRace      : UILabel!
+    @IBOutlet weak var memberRace: UILabel!
 
     // MARK: - Data to show by using the cell
 
     /// Details about a fellowship member.
-    var data: Member?
-    {
-        didSet
-        {
+    var data: Member? {
+        didSet {
             guard let member = data else { return }
 
             memberName.text = member.fullName
@@ -45,8 +42,7 @@ class MemberTableViewCell: UITableViewCell
 
     // MARK: - The life cyrcle group of methods
 
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
         configure()
 
@@ -57,8 +53,7 @@ class MemberTableViewCell: UITableViewCell
     // MARK: - Appearance matter methods
 
     /// Configures the table view cell.
-    private func configure()
-    {
+    private func configure() {
         // Create background view for selected ones
 
         let selected = UIView()
@@ -77,8 +72,7 @@ class MemberTableViewCell: UITableViewCell
     }
 
     /// Updates the appearance of the table view cell.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         // Set background color for Icon border view up
 
         memberIconBorder.backgroundColor = .customViewSelected

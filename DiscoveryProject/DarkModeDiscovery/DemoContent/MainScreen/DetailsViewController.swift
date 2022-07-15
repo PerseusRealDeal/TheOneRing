@@ -13,62 +13,58 @@ import PerseusDarkMode
 import PerseusUISystemKit
 
 /// Represents a screen for the details of a fellowship member.
-class DetailsViewController: UIViewController
-{
+class DetailsViewController: UIViewController {
     // MARK: - Interface Builder connections
 
     /// Button to close the view controller.
-    @IBOutlet weak var closeButton   : UIButton!
+    @IBOutlet weak var closeButton: UIButton!
 
     /// Image for a fellowship member.
-    @IBOutlet weak var memberIcon    : UIImageView!
+    @IBOutlet weak var memberIcon: UIImageView!
 
     /// Label for a member name.
-    @IBOutlet weak var nameLabel     : UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
 
     /// Title for a member name.
-    @IBOutlet weak var memberName    : UILabel!
+    @IBOutlet weak var memberName: UILabel!
 
     /// Label for a member full name.
-    @IBOutlet weak var fullNameLabel : UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
 
     /// Title for a member full name.
     @IBOutlet weak var memberFullName: UILabel!
 
     /// Label for a member age.
-    @IBOutlet weak var ageLabel      : UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
 
     /// Titile for a member age.
-    @IBOutlet weak var memberAge     : UILabel!
+    @IBOutlet weak var memberAge: UILabel!
 
     /// Label for a member birth.
-    @IBOutlet weak var birthLabel    : UILabel!
+    @IBOutlet weak var birthLabel: UILabel!
 
     /// Title for a member birth.
-    @IBOutlet weak var memberBirth   : UITextView!
+    @IBOutlet weak var memberBirth: UITextView!
 
     /// Label for a member race.
-    @IBOutlet weak var raceLabel     : UILabel!
+    @IBOutlet weak var raceLabel: UILabel!
 
     /// Title for a member race.
-    @IBOutlet weak var memberRace    : UILabel!
+    @IBOutlet weak var memberRace: UILabel!
 
     /// Dark Mode sensetive image at the screen bottom.
-    @IBOutlet weak var bottomImage   : DarkModeImageView!
+    @IBOutlet weak var bottomImage: DarkModeImageView!
 
     /// Closes the screen with return to the main screen.
-    @IBAction func closeButtonAction(_ sender: UIButton)
-    {
+    @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Details to display on screen
 
     /// Details about a fellowship member.
-    var data: Member?
-    {
-        didSet
-        {
+    var data: Member? {
+        didSet {
             guard let member = data else { return }
 
             memberIcon.image = UIImage(named: member.iconName)
@@ -83,10 +79,12 @@ class DetailsViewController: UIViewController
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        guard value(forKey: "storyboardIdentifier") != nil else { return }
         configure()
+
+        // Dark Mode setup
 
         AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
         if AppearanceService.isEnabled { makeUp() }
@@ -95,8 +93,7 @@ class DetailsViewController: UIViewController
     // MARK: - Appearance matter methods
 
     /// Configures the screen.
-    private func configure()
-    {
+    private func configure() {
         closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
 
@@ -107,8 +104,7 @@ class DetailsViewController: UIViewController
     }
 
     /// Updates the appearance of the screen.
-    @objc private func makeUp()
-    {
+    @objc private func makeUp() {
         view.backgroundColor = .customPrimaryBackground
         closeButton.backgroundColor = .customSecondaryBackground
 

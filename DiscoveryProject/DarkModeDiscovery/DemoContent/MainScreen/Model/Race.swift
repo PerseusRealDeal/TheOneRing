@@ -11,8 +11,7 @@
 import Foundation
 
 /// Represents a set of races faced in the story of the middle-earth.
-enum Race: String, Decodable
-{
+enum Race: String, Decodable {
     case Hobbits
     case Ainur
     case Dwarves
@@ -20,10 +19,8 @@ enum Race: String, Decodable
     case Men
 
     /// The one of the race.
-    var single: String
-    {
-        switch self
-        {
+    var single: String {
+        switch self {
         case .Hobbits:
             return "hobbit"
         case .Ainur:
