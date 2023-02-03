@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents the screen for the list of system colors.
 class SystemColorsViewController: UIViewController {

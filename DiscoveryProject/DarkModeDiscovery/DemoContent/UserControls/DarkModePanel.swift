@@ -11,9 +11,6 @@
 
 import UIKit
 
-import PerseusDarkMode
-import PerseusUISystemKit
-
 class DarkModePanel: UIView {
     // MARK: - Interface Builder connections
 

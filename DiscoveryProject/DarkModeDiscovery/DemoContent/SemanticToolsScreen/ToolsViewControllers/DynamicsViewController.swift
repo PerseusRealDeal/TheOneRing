@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents the idea of dynamic image view with two samples.
 class DynamicsViewController: UIViewController {

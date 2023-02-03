@@ -10,7 +10,6 @@
 //
 
 import UIKit
-import PerseusUISystemKit
 
 /// Represents the model of semantic colors for displaying on the screen.
 enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
@@ -101,41 +100,41 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
     var color: UIColor {
         switch self {
         case .label:
-            return .label_Adapted
+            return .labelPerseus
         case .secondaryLabel:
-            return .secondaryLabel_Adapted
+            return .secondaryLabelPerseus
         case .tertiaryLabel:
-            return .tertiaryLabel_Adapted
+            return .tertiaryLabelPerseus
         case .quaternaryLabel:
-            return .quaternaryLabel_Adapted
+            return .quaternaryLabelPerseus
         case .placeholderText:
-            return .placeholderText_Adapted
+            return .placeholderTextPerseus
         case .separator:
-            return .separator_Adapted
+            return .separatorPerseus
         case .opaqueSeparator:
-            return .opaqueSeparator_Adapted
+            return .opaqueSeparatorPerseus
         case .link:
-            return .link_Adapted
+            return .linkPerseus
         case .systemFill:
-            return .systemFill_Adapted
+            return .systemFillPerseus
         case .secondarySystemFill:
-            return .secondarySystemFill_Adapted
+            return .secondarySystemFillPerseus
         case .tertiarySystemFill:
-            return .tertiarySystemFill_Adapted
+            return .tertiarySystemFillPerseus
         case .quaternarySystemFill:
-            return .quaternarySystemFill_Adapted
+            return .quaternarySystemFillPerseus
         case .systemBackground:
-            return .systemBackground_Adapted
+            return .systemBackgroundPerseus
         case .secondarySystemBackground:
-            return .secondarySystemBackground_Adapted
+            return .secondarySystemBackgroundPerseus
         case .tertiarySystemBackground:
-            return .tertiarySystemBackground_Adapted
+            return .tertiarySystemBackgroundPerseus
         case .systemGroupedBackground:
-            return .systemGroupedBackground_Adapted
+            return .systemGroupedBackgroundPerseus
         case .secondarySystemGroupedBackground:
-            return .secondarySystemGroupedBackground_Adapted
+            return .secondarySystemGroupedBackgroundPerseus
         case .tertiarySystemGroupedBackground:
-            return .tertiarySystemGroupedBackground_Adapted
+            return .tertiarySystemGroupedBackgroundPerseus
         }
     }
 }

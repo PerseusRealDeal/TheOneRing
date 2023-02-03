@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Interface Builder connections

@@ -16,14 +16,14 @@ func registerSettingsBundle() {
     // Easy way to register just only one option
     UserDefaults.standard.register(defaults: [DARK_MODE_SETTINGS_KEY: 0])
 }
-
+/*
 extension UserDefaults {
     /// Checks the key's value existance.
     /// - Parameter key: The key for checking.
     /// - Returns: TRUE key exists, FALSE not.
     func valueExists(forKey key: String) -> Bool { object(forKey: key) != nil }
 }
-
+*/
 extension UIResponder {
     /// Finds parent UIResponder object that meets condition.
     ///
@@ -58,7 +58,7 @@ extension UIColor {
         return (red*255, green*255, blue*255, alpha)
     }
 }
-
+/*
 /// Creates UIColor instance using RGBA values of color required in format: 235, 235, 245, 0.6 or 235, 235, 245.
 /// - Parameters:
 ///   - red: From 0 to 255.
@@ -72,7 +72,7 @@ func rgba255(_ red: CGFloat,
              _ alpha: CGFloat = 1.0) -> UIColor {
     UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
 }
-
+*/
 /// Converts color represented with RGBA string to color represented with HEX string.
 /// - Parameter input: RGBA values of color in string. Should be in format: 235, 235, 245, 0.6 or  235, 235, 245.
 /// - Returns: nil if input string not in format, HEX value of color in format: #D1D1D6FF.

@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Title of the main theme of the app.
 let TITLE = "The Fellowship of the Ring"
@@ -96,7 +94,7 @@ class MainViewController: UIViewController {
 
         let screen = storyboard.instantiateInitialViewController() as? MainViewController
 
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        // Do default setup; don't set any parameter causing loadView up, breaks unit tests
 
         screen?.modalTransitionStyle = UIModalTransitionStyle.partialCurl
 
@@ -179,7 +177,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .customPrimaryBackground
         titleTop.textColor = .customTitle
 
-        actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
+        actionToolsButton.setTitleColor(.labelPerseus, for: .normal)
 
         // experiment()
     }
@@ -235,8 +233,8 @@ extension MainViewController {
         print("[\(type(of: self))] " + #function + " BEGIN")
 
         print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
-        print("System: \(AppearanceService.shared.SystemStyle)")
-        print("DarkMode: \(AppearanceService.shared.Style)")
+        print("System: \(AppearanceService.shared.systemStyle)")
+        print("DarkMode: \(AppearanceService.shared.style)")
 
         titleTop.isHidden = true
 

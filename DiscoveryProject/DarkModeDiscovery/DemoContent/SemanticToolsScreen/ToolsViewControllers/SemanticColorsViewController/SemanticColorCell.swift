@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents a table view cell for semantic color.
 class SemanticColorCell: UITableViewCell, UITextFieldDelegate {
@@ -44,9 +42,9 @@ class SemanticColorCell: UITableViewCell, UITextFieldDelegate {
     @objc private func makeUp() {
         guard let colorSelected = colorRepresented else { return }
 
-        colorNameLabel.textColor = .label_Adapted
-        colorHexTextField.textColor = .label_Adapted
-        colorRGBATextField.textColor = .label_Adapted
+        colorNameLabel.textColor = .labelPerseus
+        colorHexTextField.textColor = .labelPerseus
+        colorRGBATextField.textColor = .labelPerseus
 
         let rgba = colorSelected.RGBA255
 

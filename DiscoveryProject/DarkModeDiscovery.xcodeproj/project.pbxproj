@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03080322859125800E19E30 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03080312859125800E19E30 /* .gitignore */; };
@@ -14,7 +15,6 @@
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
 		E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelperFunctionsLocal.swift */; };
 		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
-		E04D53E3288011BE00033A31 /* PerseusUISystemKit in Frameworks */ = {isa = PBXBuildFile; productRef = E04D53E2288011BE00033A31 /* PerseusUISystemKit */; };
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */; };
 		E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07727C2280A7E4300D4A3A9 /* SemanticColorsViewList.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusUISystemKitSingle.swift; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03080312859125800E19E30 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04D53E3288011BE00033A31 /* PerseusUISystemKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B7EABE8298CC13A0063172D /* FirstPartyCode */ = {
+			isa = PBXGroup;
+			children = (
+				E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */,
+				4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */,
+			);
+			path = FirstPartyCode;
+			sourceTree = "<group>";
+		};
 		E0761ADB27BB8960009E6AA5 /* UserControls */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +206,6 @@
 		E0A0841427FAF4BA0010A55D /* ThirdPartyCode */ = {
 			isa = PBXGroup;
 			children = (
-				E0CB98CD2833BE5800EAF403 /* DarkModeFunctions.swift */,
 				E0A0841527FAF4F50010A55D /* HexColorConverter.swift */,
 			);
 			path = ThirdPartyCode;
@@ -216,13 +224,14 @@
 		E0D0A73827B8012A006D46E8 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4B7EABE8298CC13A0063172D /* FirstPartyCode */,
+				E0A0841427FAF4BA0010A55D /* ThirdPartyCode */,
+				E03786D3280E7BE200C6C1B8 /* Settings.bundle */,
 				E095389727B36E7B00AAAAAA /* LaunchScreen.storyboard */,
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
 				E03450EF27C368F70071443E /* CustomColors.swift */,
 				E03450F127C36F870071443E /* HelperFunctionsLocal.swift */,
-				E0A0841427FAF4BA0010A55D /* ThirdPartyCode */,
-				E03786D3280E7BE200C6C1B8 /* Settings.bundle */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -288,7 +297,6 @@
 			);
 			name = DarkModeDiscovery;
 			packageProductDependencies = (
-				E04D53E2288011BE00033A31 /* PerseusUISystemKit */,
 			);
 			productName = darkmodediscovery;
 			productReference = E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */;
@@ -340,7 +348,6 @@
 			);
 			mainGroup = E095388027B36E7800AAAAAA;
 			packageReferences = (
-				E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */,
 			);
 			productRefGroup = E095388A27B36E7800AAAAAA /* Products */;
 			projectDirPath = "";
@@ -420,6 +427,7 @@
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
 				E0A0841627FAF4F50010A55D /* HexColorConverter.swift in Sources */,
+				4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */,
 				E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */,
 				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */,
@@ -520,7 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -576,7 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -599,6 +607,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.4;
@@ -619,6 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.4;
@@ -634,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				INFOPLIST_FILE = darkmodediscoveryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				INFOPLIST_FILE = darkmodediscoveryTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,25 +711,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/perseusrealdeal/PerseusUISystemKit";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E04D53E2288011BE00033A31 /* PerseusUISystemKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E04D53E1288011BE00033A31 /* XCRemoteSwiftPackageReference "PerseusUISystemKit" */;
-			productName = PerseusUISystemKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E095388127B36E7800AAAAAA /* Project object */;
 }

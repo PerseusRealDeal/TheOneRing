@@ -10,8 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents a screen for the details of a fellowship member.
 class DetailsViewController: UIViewController {

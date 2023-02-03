@@ -10,7 +10,6 @@
 //
 
 import UIKit
-import PerseusDarkMode
 
 /// Determine the app run purpose.
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
