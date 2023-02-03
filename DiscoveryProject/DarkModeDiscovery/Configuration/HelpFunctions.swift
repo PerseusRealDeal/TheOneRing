@@ -35,7 +35,7 @@ extension UIResponder {
 }
 
 /// Converts color represented with RGBA string to color represented with HEX string.
-/// - Parameter input: RGBA values of color in string. Should be in format: 235, 235, 245, 0.6 or  235, 235, 245.
+/// - Parameter input: Should be in format: 235, 235, 245, 0.6 or  235, 235, 245.
 /// - Returns: nil if input string not in format, HEX value of color in format: #D1D1D6FF.
 func convert_RGBA_to_HEX(_ input: String) -> String? {
     guard input.isEmpty == false else { return nil }
