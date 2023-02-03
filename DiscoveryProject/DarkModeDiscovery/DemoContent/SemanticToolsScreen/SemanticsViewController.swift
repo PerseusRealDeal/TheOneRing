@@ -33,7 +33,6 @@ class SemanticsViewController: UIViewController {
 
     // MARK: - Closure for Dark Mode usr choice changed event
 
-    /// Used to run code to make other Dark Mode switchesr to be in line with the selected value.
     var userChoiceChangedClosure: ((_ selected: DarkModeOption) -> Void)?
 
     // MARK: - The life cyrcle group of methods

@@ -59,9 +59,12 @@ extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelega
     }
 
     /// Creates a cell with a specific color of the list of semantic colors.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SemanticColorTableCell",
-                                                       for: indexPath) as? SemanticColorCell,
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell {
+
+        guard let cell =
+                tableView.dequeueReusableCell(withIdentifier: "SemanticColorTableCell",
+                                              for: indexPath) as? SemanticColorCell,
               let item = SemanticColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
 

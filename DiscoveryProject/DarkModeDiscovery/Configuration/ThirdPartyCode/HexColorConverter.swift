@@ -16,7 +16,7 @@ import UIKit
 public enum PlatformColorInputError: Error {
     case unableToScanHexValue
     case mismatchedHexStringLength
-    case unableToOutputHexStringForWideDisplayColor
+    case unableToOutputHexString
 }
 
 extension UIColor {
@@ -33,7 +33,7 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 
-    /// The rgba string representation of color with alpha of the form #RRGGBBAA/#RRGGBB, throws error.
+    /// The rgba in form #RRGGBBAA/#RRGGBB, throws error.
     /// - parameter rgba: String value.
     public convenience init(rgba_throws rgba: String) throws {
         var hexString = rgba
@@ -56,22 +56,22 @@ extension UIColor {
     /// Hex string of a PlatformColor instance, throws error.
     /// - parameter includeAlpha: Whether the alpha should be included.
     public func hexStringThrows(_ includeAlpha: Bool = true) throws -> String {
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        self.getRed(&r, green: &g, blue: &b, alpha: &a)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 
-        guard r >= 0 && r <= 1 && g >= 0 && g <= 1 && b >= 0 && b <= 1 else {
-            throw PlatformColorInputError.unableToOutputHexStringForWideDisplayColor
+        guard red >= 0 && red <= 1 && green >= 0 && green <= 1 && blue >= 0 && blue <= 1 else {
+            throw PlatformColorInputError.unableToOutputHexString
         }
 
         return includeAlpha ? String(format: "#%02X%02X%02X%02X",
-                                     Int(round(r * 255)), Int(round(g * 255)),
-                                     Int(round(b * 255)), Int(round(a * 255))) :
+                                     Int(round(red * 255)), Int(round(green * 255)),
+                                     Int(round(blue * 255)), Int(round(alpha * 255))) :
         String(format: "#%02X%02X%02X",
-               Int(round(r * 255)),
-               Int(round(g * 255)), Int(round(b * 255)))
+               Int(round(red * 255)),
+               Int(round(green * 255)), Int(round(blue * 255)))
     }
 
     /// Hex string of a PlatformColor instance, fails to empty string.

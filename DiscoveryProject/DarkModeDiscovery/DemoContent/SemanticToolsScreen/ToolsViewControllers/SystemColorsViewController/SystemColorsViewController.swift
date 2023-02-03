@@ -60,9 +60,12 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
     }
 
     /// Creates a cell with a specific color of the list of system colors.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",
-                                                       for: indexPath) as? SystemColorCell,
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell {
+
+        guard let cell =
+                tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",
+                                              for: indexPath) as? SystemColorCell,
               let item = SystemColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
 

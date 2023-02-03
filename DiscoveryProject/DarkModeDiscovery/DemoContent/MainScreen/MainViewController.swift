@@ -9,6 +9,8 @@
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
+// swiftlint:disable file_length
+//
 
 import UIKit
 
@@ -60,26 +62,21 @@ class MainViewController: UIViewController {
     /// The instance of the fellowship member details screen.
     private lazy var detailsViewController = { () -> DetailsViewController in
 
-        let storyboard = UIStoryboard(name: String(describing: DetailsViewController.self),
-                                      bundle: nil)
-
+        let storyboard =
+        UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? DetailsViewController
-
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
         return screen ?? DetailsViewController()
     }()
 
     /// The instance of the semantic tools screen.
     private lazy var semanticToolsViewController = { () -> SemanticsViewController in
 
-        let storyboard = UIStoryboard(name: String(describing: SemanticsViewController.self),
-                                      bundle: nil)
-
+        let storyboard =
+        UIStoryboard(name: String(describing: SemanticsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? SemanticsViewController
 
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
         screen?.userChoiceChangedClosure = { selected in
             self.optionsPanel.segmentedControlValue = selected
         }
@@ -92,13 +89,10 @@ class MainViewController: UIViewController {
     /// Creates an instance of the main screen.
     class func storyboardInstance() -> MainViewController {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
-
         let screen = storyboard.instantiateInitialViewController() as? MainViewController
 
         // Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
         screen?.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-
         return screen ?? MainViewController()
     }
 
@@ -111,7 +105,6 @@ class MainViewController: UIViewController {
         configure()
 
         // Dark Mode setup
-
         AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
     }
 
@@ -159,7 +152,7 @@ class MainViewController: UIViewController {
 
         // Images
 
-        // titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
+// titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 
         // Dark Mode panel
 
@@ -199,19 +192,21 @@ class MainViewController: UIViewController {
 // MARK: - UITableView
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+
     // MARK: - UITableViewDataSource protocol
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         members.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "MemberCell", for: indexPath) as? MemberTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
+                                                       for: indexPath) as? MemberTableViewCell
         else { return UITableViewCell() }
 
         cell.data = members[indexPath.row]
-
         return cell
     }
 
