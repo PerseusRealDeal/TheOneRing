@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */; };
+		4B7EABEC298CECEE0063172D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABEB298CECEE0063172D /* AppDelegate.swift */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03080322859125800E19E30 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03080312859125800E19E30 /* .gitignore */; };
 		E03080342859126100E19E30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E03080332859126100E19E30 /* .swiftlint.yml */; };
 		E03450F027C368F70071443E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450EF27C368F70071443E /* CustomColors.swift */; };
-		E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelperFunctionsLocal.swift */; };
+		E03450F227C36F870071443E /* HelpFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03450F127C36F870071443E /* HelpFunctions.swift */; };
 		E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E03786D3280E7BE200C6C1B8 /* Settings.bundle */; };
 		E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */; };
 		E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */; };
@@ -56,12 +57,13 @@
 
 /* Begin PBXFileReference section */
 		4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusUISystemKitSingle.swift; sourceTree = "<group>"; };
+		4B7EABEB298CECEE0063172D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../../../../.Trash/ios.darkmode.discovery 10-31-36-980.discovery/DiscoveryProject/DarkModeDiscovery/Configuration/AppDelegate.swift"; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03080312859125800E19E30 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		E03080332859126100E19E30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		E03450EF27C368F70071443E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		E03450F127C36F870071443E /* HelperFunctionsLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctionsLocal.swift; sourceTree = "<group>"; };
+		E03450F127C36F870071443E /* HelpFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFunctions.swift; sourceTree = "<group>"; };
 		E03786D3280E7BE200C6C1B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModePanel.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DarkModePanel.xib; sourceTree = "<group>"; };
@@ -142,13 +144,6 @@
 			path = SemanticColorsViewController;
 			sourceTree = "<group>";
 		};
-		E08DBA0827CD3F36006931BF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E095388027B36E7800AAAAAA = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +154,6 @@
 				E095388B27B36E7800AAAAAA /* DarkModeDiscovery */,
 				E09538A227B36E7B00AAAAAA /* DarkModeDiscoveryTests */,
 				E095388A27B36E7800AAAAAA /* Products */,
-				E08DBA0827CD3F36006931BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +225,8 @@
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
 				E03450EF27C368F70071443E /* CustomColors.swift */,
-				E03450F127C36F870071443E /* HelperFunctionsLocal.swift */,
+				E03450F127C36F870071443E /* HelpFunctions.swift */,
+				4B7EABEB298CECEE0063172D /* AppDelegate.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -414,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B7EABEC298CECEE0063172D /* AppDelegate.swift in Sources */,
 				E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E07727C5280A952000D4A3A9 /* SemanticColorCell.swift in Sources */,
@@ -434,7 +430,7 @@
 				E0CB98CE2833BE5800EAF403 /* DarkModeFunctions.swift in Sources */,
 				E0FD2D4027FD944800DC5405 /* SystemColorCell.swift in Sources */,
 				E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */,
-				E03450F227C36F870071443E /* HelperFunctionsLocal.swift in Sources */,
+				E03450F227C36F870071443E /* HelpFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -567,6 +567,14 @@
             <point key="canvasLocation" x="-409" y="533"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2oO-lS-Dkv">
+            <size key="intrinsicContentSize" width="640" height="338"/>
+        </designable>
+        <designable name="hEW-ge-WsJ">
+            <size key="intrinsicContentSize" width="1000" height="414"/>
+        </designable>
+    </designables>
     <resources>
         <image name="FrodoWithTheRing" width="960" height="500"/>
         <image name="Rivendell" width="640" height="338"/>

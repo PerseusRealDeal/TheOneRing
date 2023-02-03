@@ -248,6 +248,11 @@ Label</string>
             <point key="canvasLocation" x="-28" y="94"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="TQW-km-fM5">
+            <size key="intrinsicContentSize" width="640" height="338"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Rivendell" width="640" height="338"/>
         <image name="RivendellDark" width="1600" height="667"/>
