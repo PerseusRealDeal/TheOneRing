@@ -73,15 +73,15 @@ extension String {
     ///   - replacement: String for replacing.
     /// - Returns: String with replacements.
     func replace(substring: String, replacement: String) -> String {
-        replacingOccurrences(of: substring,
-                             with: replacement,
-                             options: NSString.CompareOptions.literal,
-                             range: nil)
+        return replacingOccurrences(of: substring,
+                                    with: replacement,
+                                    options: NSString.CompareOptions.literal,
+                                    range: nil)
     }
 
     /// Removes white spaces.
     /// - Returns: String without whitespaces.
     func removeWhitespace() -> String {
-        replace(substring: " ", replacement: "")
+        return replace(substring: " ", replacement: "")
     }
 }

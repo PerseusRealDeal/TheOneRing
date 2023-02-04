@@ -55,7 +55,7 @@ extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelega
 
     /// Calculates the total cells of the list of semantic colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SemanticColorsViewList.allCases.count
+        return SemanticColorsViewList.allCases.count
     }
 
     /// Creates a cell with a specific color of the list of semantic colors.

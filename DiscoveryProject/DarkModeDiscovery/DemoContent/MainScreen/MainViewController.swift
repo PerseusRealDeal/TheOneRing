@@ -196,7 +196,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource protocol
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        members.count
+        return members.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
@@ -223,7 +223,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: - Experiments
-
+/*
 extension MainViewController {
     private func experiment() {
         print("[\(type(of: self))] " + #function + " BEGIN")
@@ -252,3 +252,4 @@ extension MainViewController {
         print("[\(type(of: self))] " + #function + " END")
     }
 }
+*/

@@ -56,7 +56,7 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
 
     /// Calculates the total cells of the list of system colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SystemColorsViewList.allCases.count
+        return SystemColorsViewList.allCases.count
     }
 
     /// Creates a cell with a specific color of the list of system colors.
