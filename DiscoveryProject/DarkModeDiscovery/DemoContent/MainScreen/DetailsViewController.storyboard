@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -219,7 +218,7 @@ Label</string>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CaA-yC-qvQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QB5-oL-V04"/>
                             <constraint firstItem="CaA-yC-qvQ" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" constant="20" symbolic="YES" id="WeW-qe-eQh"/>
@@ -256,8 +255,5 @@ Label</string>
     <resources>
         <image name="Rivendell" width="640" height="338"/>
         <image name="RivendellDark" width="1600" height="667"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

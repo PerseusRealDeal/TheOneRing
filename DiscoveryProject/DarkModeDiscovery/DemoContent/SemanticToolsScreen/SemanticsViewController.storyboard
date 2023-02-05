@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -83,7 +82,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mZf-cd-ueF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vig-SI-u99" secondAttribute="trailing" id="DXE-1v-nu1"/>
                             <constraint firstItem="vig-SI-u99" firstAttribute="top" secondItem="mZf-cd-ueF" secondAttribute="top" id="Og2-qC-22l"/>
@@ -148,7 +147,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerX" secondItem="XF3-uP-U0D" secondAttribute="centerX" id="MsZ-ZH-Koy"/>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="Qgk-IZ-DHy"/>
@@ -234,7 +233,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="top" secondItem="Oor-7g-3JN" secondAttribute="bottom" multiplier="0.1" id="4Ie-K1-T2m"/>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="height" secondItem="Oor-7g-3JN" secondAttribute="height" multiplier="0.7" id="KNw-3j-vaI"/>
@@ -392,7 +391,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vgd-yT-Z2v"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ksz-wD-K8D" firstAttribute="centerY" secondItem="Vgd-yT-Z2v" secondAttribute="centerY" id="SwT-uw-nng"/>
                             <constraint firstItem="Ksz-wD-K8D" firstAttribute="height" secondItem="Vgd-yT-Z2v" secondAttribute="height" multiplier="0.95" id="j9M-bo-eXS"/>
@@ -547,7 +546,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fbg-ZI-h6f"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VPf-Rk-TXH" firstAttribute="width" secondItem="fbg-ZI-h6f" secondAttribute="width" multiplier="0.95" id="0PN-6V-qWe"/>
                             <constraint firstItem="VPf-Rk-TXH" firstAttribute="centerX" secondItem="fbg-ZI-h6f" secondAttribute="centerX" id="Pr1-Ig-rWn"/>
@@ -580,8 +579,5 @@
         <image name="Rivendell" width="640" height="338"/>
         <image name="RivendellDark" width="1600" height="667"/>
         <image name="TheFellowship" width="1000" height="414"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
