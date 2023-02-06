@@ -13,6 +13,7 @@
 import UIKit
 
 class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
+
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.
@@ -51,6 +52,7 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
 // MARK: - UITableView
 
 extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelegate {
+
     // MARK: - UITableViewDataSource protocol
 
     /// Calculates the total cells of the list of semantic colors.

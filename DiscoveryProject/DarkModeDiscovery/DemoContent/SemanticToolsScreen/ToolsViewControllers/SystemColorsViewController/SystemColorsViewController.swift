@@ -14,6 +14,7 @@ import UIKit
 
 /// Represents the screen for the list of system colors.
 class SystemColorsViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.

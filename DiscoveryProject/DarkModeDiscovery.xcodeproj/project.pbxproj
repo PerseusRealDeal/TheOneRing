@@ -10,6 +10,7 @@
 		4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B3742298E29B50003AF01 /* AppDelegate.swift */; };
 		4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */; };
 		4B7EABEE298D6DDF0063172D /* CI.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B7EABED298D6DDF0063172D /* CI.yml */; };
+		4B8275562990F70F00C84692 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275552990F70F00C84692 /* DetailsViewController.storyboard */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03080322859125800E19E30 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03080312859125800E19E30 /* .gitignore */; };
@@ -36,7 +37,6 @@
 		E0A0841627FAF4F50010A55D /* HexColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0841527FAF4F50010A55D /* HexColorConverter.swift */; };
 		E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */; };
 		E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */; };
-		E0A3582227B960DA00472F95 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */; };
 		E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3582327B9611300472F95 /* DetailsViewController.swift */; };
 		E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */ = {isa = PBXBuildFile; fileRef = E0B3CA8127B81D6C00B8CE61 /* members.json */; };
 		E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3CA8227B81D6C00B8CE61 /* Member.swift */; };
@@ -60,6 +60,7 @@
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusUISystemKitSingle.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* CI.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = CI.yml; path = ../.github/workflows/CI.yml; sourceTree = "<group>"; };
+		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03080312859125800E19E30 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		E0A0841527FAF4F50010A55D /* HexColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorConverter.swift; sourceTree = "<group>"; };
 		E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConverterViewController.swift; sourceTree = "<group>"; };
 		E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
-		E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		E0A3582327B9611300472F95 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E0B3CA8127B81D6C00B8CE61 /* members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = members.json; sourceTree = "<group>"; };
 		E0B3CA8227B81D6C00B8CE61 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				E07C0F2027BBA00000888456 /* MainViewController.storyboard */,
-				E0A3582127B960DA00472F95 /* DetailsViewController.storyboard */,
+				4B8275552990F70F00C84692 /* DetailsViewController.storyboard */,
 				E095389027B36E7800AAAAAA /* MainViewController.swift */,
 				E0A3582327B9611300472F95 /* DetailsViewController.swift */,
 				E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */,
@@ -368,13 +368,13 @@
 				E095389927B36E7B00AAAAAA /* LaunchScreen.storyboard in Resources */,
 				E03786D4280E7BE200C6C1B8 /* Settings.bundle in Resources */,
 				E0761AE127BB8BF6009E6AA5 /* DarkModePanel.xib in Resources */,
+				4B8275562990F70F00C84692 /* DetailsViewController.storyboard in Resources */,
 				E03080322859125800E19E30 /* .gitignore in Resources */,
 				E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */,
 				E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */,
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
 				E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */,
 				E09538BE27B36E9400AAAAAA /* LICENSE in Resources */,
-				E0A3582227B960DA00472F95 /* DetailsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

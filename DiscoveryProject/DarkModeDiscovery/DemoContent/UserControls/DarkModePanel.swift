@@ -119,6 +119,7 @@ class DarkModePanel: UIView {
     /// Puts Dark Mode user option in line with Dark Mode switcher.
     /// - Parameter sender: Related Dark Mode swithcer.
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+
         switch sender.selectedSegmentIndex {
         case 0:
             segmentedControlValue = .off

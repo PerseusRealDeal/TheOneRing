@@ -18,6 +18,7 @@ import UIKit
 ///  - Holds Dark Mode panel with Dark Mode switcher.
 ///  - Hides keyboard in a correct way.
 class SemanticsViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Button to close the view controller.
@@ -78,6 +79,7 @@ class SemanticsViewController: UIViewController {
 }
 
 extension UIViewController {
+
     /// Adds recognizer for tap event to hide keyboard.
     func setTappedAroundHandlerUp() {
         let tap = UITapGestureRecognizer(target: self,

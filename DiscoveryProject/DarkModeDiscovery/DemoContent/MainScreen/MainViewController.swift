@@ -14,11 +14,12 @@
 
 import UIKit
 
-/// Title of the main theme of the app.
+/// Title of the app's theme.
 let TITLE = "The Fellowship of the Ring"
 
 /// Represents the main screen of the app.
 class MainViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Title for the main theme of the app.
@@ -65,6 +66,7 @@ class MainViewController: UIViewController {
         let storyboard =
         UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? DetailsViewController
+
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
         return screen ?? DetailsViewController()
     }()

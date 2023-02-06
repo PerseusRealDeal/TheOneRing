@@ -14,6 +14,7 @@ import UIKit
 
 /// Represents custom colors requirements.
 public protocol UICustomColorsProtocol {
+
     // MARK: - Foreground colors
 
     /// Custom foreground color for the app's title.

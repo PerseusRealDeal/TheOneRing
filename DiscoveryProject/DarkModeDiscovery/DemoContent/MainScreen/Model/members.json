@@ -3,7 +3,7 @@
         "name"    : "Frodo",
         "fullName": "Frodo Baggins",
         "age"     : "50",
-        "birth"   : "September 22, TA 2968 (SR 1368)",
+        "birth"   : "Sep. 22, TA 2968 (SR 1368)",
         "race"    : "hobbits",
         "iconName": "Frodo"
     },

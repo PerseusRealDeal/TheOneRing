@@ -14,6 +14,7 @@ import UIKit
 
 /// Represents a table view cell for a fellowship member.
 class MemberTableViewCell: UITableViewCell {
+
     // MARK: - Interface Builder connections
 
     /// Border view for a table view cell.

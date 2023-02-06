@@ -14,6 +14,7 @@ import UIKit
 
 /// Represents a table view cell for system color.
 class SystemColorCell: UITableViewCell, UITextFieldDelegate {
+
     /// Title for a color.
     @IBOutlet weak var colorNameLabel: UILabel!
 

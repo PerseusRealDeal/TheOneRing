@@ -14,6 +14,7 @@ import UIKit
 
 /// Represents the idea of dynamic image view with two samples.
 class DynamicsViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Section button for the screen in the bottom tab bar.
