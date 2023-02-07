@@ -17,9 +17,11 @@ class AppDelegate: UIResponder { var window: UIWindow? }
 
 /// Delegate behaviors.
 extension AppDelegate: UIApplicationDelegate {
+
     /// Gives entry instructions on starting.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
         #if DEBUG
         print(">> Launching with business matter purpose")
         print(">> [\(type(of: self))]." + #function)
@@ -39,5 +41,19 @@ extension AppDelegate: UIApplicationDelegate {
         // AppearanceService.makeUp()
 
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        #if DEBUG
+        print(">> [\(type(of: self))]." + #function)
+        #endif
+
+        // Update Dark Mode from Settings
+        if let choice = isDarkModeSettingsChanged() {
+            // Change Dark Mode value in Perseus Dark Mode library
+            AppearanceService.DarkModeUserChoice = choice
+            // Update appearance in accoring with changed Dark Mode Style
+            AppearanceService.makeUp()
+        }
     }
 }

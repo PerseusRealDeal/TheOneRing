@@ -118,23 +118,6 @@ class MainViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(theAppDidBecomeActive),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        NotificationCenter.default.removeObserver(self,
-                                          name: UIApplication.didBecomeActiveNotification,
-                                          object: nil)
-    }
-
     // MARK: - Appearance matter methods
 
     private func configure() {
@@ -175,19 +158,10 @@ class MainViewController: UIViewController {
 
         actionToolsButton.setTitleColor(.labelPerseus, for: .normal)
 
-        // experiment()
-    }
+        let choice = AppearanceService.DarkModeUserChoice
 
-    // MARK: - The App's Major Life Time Events
-
-    @objc func theAppDidBecomeActive() {
-        // Check Dark Mode in Settings
-        if let choice = isDarkModeSettingsChanged() {
-            changeDarkModeManually(choice)
-
-            optionsPanel.segmentedControlValue = choice
-            semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
-        }
+        optionsPanel.segmentedControlValue = choice
+        semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
     }
 }
 
@@ -223,35 +197,3 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         detailsViewController.data = members[indexPath.row]
     }
 }
-
-// MARK: - Experiments
-/*
-extension MainViewController {
-    private func experiment() {
-        print("[\(type(of: self))] " + #function + " BEGIN")
-
-        print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
-        print("System: \(AppearanceService.shared.systemStyle)")
-        print("DarkMode: \(AppearanceService.shared.style)")
-
-        titleTop.isHidden = true
-
-        if #available(iOS 13.0, *),
-           let view = titleTop.nextFirstResponder(where: { $0 is UIView }) as? UIView {
-            // Contrast the next one
-
-            view.backgroundColor = .systemTeal
-
-            // Get RGBA of the next one
-
-            let rgba = view.backgroundColor!.resolvedColor(with: self.traitCollection).RGBA255
-
-            // Let me see it
-
-            print(rgba)
-        }
-
-        print("[\(type(of: self))] " + #function + " END")
-    }
-}
-*/
