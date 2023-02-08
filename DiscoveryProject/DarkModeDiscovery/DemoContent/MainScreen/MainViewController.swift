@@ -9,8 +9,6 @@
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
-// swiftlint:disable file_length
-//
 
 import UIKit
 
@@ -64,7 +62,7 @@ class MainViewController: UIViewController {
     private lazy var detailsViewController = { () -> DetailsViewController in
 
         let storyboard =
-        UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
+            UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? DetailsViewController
 
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
@@ -75,7 +73,7 @@ class MainViewController: UIViewController {
     private lazy var semanticToolsViewController = { () -> SemanticsViewController in
 
         let storyboard =
-        UIStoryboard(name: String(describing: SemanticsViewController.self), bundle: nil)
+            UIStoryboard(name: String(describing: SemanticsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? SemanticsViewController
 
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
@@ -121,7 +119,9 @@ class MainViewController: UIViewController {
     // MARK: - Appearance matter methods
 
     private func configure() {
-        // Static content
+
+        tableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MemberTableViewCell")
 
         titleTop.text = TITLE
 
@@ -132,12 +132,6 @@ class MainViewController: UIViewController {
         actionToolsButton.layer.masksToBounds = true
 
         bottomImage.image = UIImage(named: "OneRing")
-
-        // Dynamic content
-
-        // Images
-
-// titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 
         // Dark Mode panel
 
@@ -178,7 +172,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell",
                                                        for: indexPath) as? MemberTableViewCell
         else { return UITableViewCell() }
 

@@ -11,6 +11,7 @@
 		4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */; };
 		4B7EABEE298D6DDF0063172D /* CI.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B7EABED298D6DDF0063172D /* CI.yml */; };
 		4B8275562990F70F00C84692 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275552990F70F00C84692 /* DetailsViewController.storyboard */; };
+		4B82755A2992BB1600C84692 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275592992BB1600C84692 /* MemberTableViewCell.xib */; };
 		E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */; };
 		E02381E727BD367B008A03CA /* SemanticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02381E627BD367B008A03CA /* SemanticsViewController.swift */; };
 		E03080322859125800E19E30 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E03080312859125800E19E30 /* .gitignore */; };
@@ -61,6 +62,7 @@
 		4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusUISystemKitSingle.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* CI.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = CI.yml; path = ../.github/workflows/CI.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
+		4B8275592992BB1600C84692 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SemanticsViewController.storyboard; sourceTree = "<group>"; };
 		E02381E627BD367B008A03CA /* SemanticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticsViewController.swift; sourceTree = "<group>"; };
 		E03080312859125800E19E30 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				E07C0F2027BBA00000888456 /* MainViewController.storyboard */,
 				4B8275552990F70F00C84692 /* DetailsViewController.storyboard */,
+				4B8275592992BB1600C84692 /* MemberTableViewCell.xib */,
 				E095389027B36E7800AAAAAA /* MainViewController.swift */,
 				E0A3582327B9611300472F95 /* DetailsViewController.swift */,
 				E0A3581F27B93FA900472F95 /* MemberTableViewCell.swift */,
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B7EABEE298D6DDF0063172D /* CI.yml in Resources */,
+				4B82755A2992BB1600C84692 /* MemberTableViewCell.xib in Resources */,
 				E03080342859126100E19E30 /* .swiftlint.yml in Resources */,
 				E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */,
 				E095389927B36E7B00AAAAAA /* LaunchScreen.storyboard in Resources */,
