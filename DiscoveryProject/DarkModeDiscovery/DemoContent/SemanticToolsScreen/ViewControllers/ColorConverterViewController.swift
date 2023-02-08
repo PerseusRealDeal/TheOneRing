@@ -41,7 +41,7 @@ class ConverterViewController: UIViewController, UITextFieldDelegate {
         HEXtoRGBA_Back.text = convert_HEX_to_RGBA(HEX)
     }
 
-    // MARK: - The life cyrcle group of methods
+    // MARK: - The life cyrcle methods
 
     override func viewDidLoad() {
 
@@ -54,7 +54,6 @@ class ConverterViewController: UIViewController, UITextFieldDelegate {
         if AppearanceService.isEnabled { makeUp() }
     }
 
-    /// Updates the appearance of the instrument.
     @objc private func makeUp() {
 
         view.backgroundColor = .customPrimaryBackground
@@ -67,7 +66,6 @@ class ConverterViewController: UIViewController, UITextFieldDelegate {
             for: .selected)
     }
 
-    /// Configures UI of the instrument.
     private func configure() {
 
         convertButton.layer.cornerRadius = 8

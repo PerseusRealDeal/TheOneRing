@@ -13,6 +13,7 @@
 import UIKit
 
 class DarkModePanel: UIView {
+
     // MARK: - Interface Builder connections
 
     /// Outlet of the content view.

@@ -28,6 +28,9 @@ class SystemColorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UINib(nibName: "ColorTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "ColorTableViewCell")
+
         tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
 
         // Make the View sensitive to Dark Mode
@@ -53,6 +56,7 @@ class SystemColorsViewController: UIViewController {
 // MARK: - UITableView
 
 extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate {
+
     // MARK: - UITableViewDataSource protocol
 
     /// Calculates the total cells of the list of system colors.
@@ -65,8 +69,8 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
     -> UITableViewCell {
 
         guard let cell =
-                tableView.dequeueReusableCell(withIdentifier: "SystemColorTableCell",
-                                              for: indexPath) as? SystemColorCell,
+                tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell",
+                                              for: indexPath) as? ColorTableViewCell,
               let item = SystemColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
 

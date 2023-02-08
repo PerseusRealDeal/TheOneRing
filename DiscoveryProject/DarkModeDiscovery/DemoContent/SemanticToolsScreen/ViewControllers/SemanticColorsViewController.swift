@@ -27,6 +27,8 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(UINib(nibName: "ColorTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "ColorTableViewCell")
         tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
 
         // Dark Mode setup
@@ -65,8 +67,8 @@ extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelega
     -> UITableViewCell {
 
         guard let cell =
-                tableView.dequeueReusableCell(withIdentifier: "SemanticColorTableCell",
-                                              for: indexPath) as? SemanticColorCell,
+                tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell",
+                                              for: indexPath) as? ColorTableViewCell,
               let item = SemanticColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
 
