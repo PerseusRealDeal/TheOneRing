@@ -195,11 +195,11 @@
 		E09932E727BD5B4D009D3564 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4B82755B29939CD100C84692 /* ColorTableViewCell.swift */,
 				E09183C027BD495500475D2B /* SystemColorsViewController.swift */,
 				E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */,
 				E09183C627BD4D4500475D2B /* DynamicsViewController.swift */,
 				E0A0841727FAF68A0010A55D /* ColorConverterViewController.swift */,
+				4B82755B29939CD100C84692 /* ColorTableViewCell.swift */,
 				4B82755C29939CD100C84692 /* ColorTableViewCell.xib */,
 			);
 			path = ViewControllers;
