@@ -1,10 +1,11 @@
 //
-//  ColorTableViewCell.swift
+//  ColorTableViewCell.swift, ColorTableViewCell.xib
 //  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin in 7531.
 //
 //  Copyright © 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
 //
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
