@@ -1,14 +1,21 @@
-ios.darkmode.discovery
-======================
-Discovery project for iOS Dark Mode with code samples and demo content.
+# ios.darkmode.discovery
 
 [![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/Version-1.2-green.svg)
-[![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
+![Version](https://img.shields.io/badge/App_Version-1.3-green.svg)
+[![Platforms iOS 9](https://img.shields.io/badge/Platform-iOS%209.3+-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
-[![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
-[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.0.0-blue.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/releases/tag/1.0.0)
-[![License](http://img.shields.io/:License-MIT-blue.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/blob/9249462c5c6c5403bd1ebe25979d333ef26345b4/LICENSE)
+[![Xcode 10.1](https://img.shields.io/badge/Xcode-10.1+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![License](http://img.shields.io/:License-MIT-blue.svg)](/LICENSE)
+
+## Dependencies
+
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.3-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.3)
+[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.2-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.2)
+
+# In brief
+
+> This project is used to prove a set of Perseus Dark Mode capabilities.
 
 ## Table of contents
 
