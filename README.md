@@ -1,14 +1,42 @@
-ios.darkmode.discovery
-======================
-Discovery project for iOS Dark Mode with code samples and demo content.
+# ios.darkmode.discovery
 
 [![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/Version-1.2-green.svg)
-[![Platforms iOS 9](https://img.shields.io/badge/Platforms-iOS%209.0-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
+![Version](https://img.shields.io/badge/App_Version-1.3-green.svg)
+[![Platforms iOS 9](https://img.shields.io/badge/Platform-iOS%209.3+-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
-[![Swift 5.4](https://img.shields.io/badge/Swift-5.4-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
-[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.0.0-blue.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/releases/tag/1.0.0)
-[![License](http://img.shields.io/:License-MIT-blue.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/blob/9249462c5c6c5403bd1ebe25979d333ef26345b4/LICENSE)
+[![Xcode 10.1](https://img.shields.io/badge/Xcode-10.1+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![License](http://img.shields.io/:License-MIT-blue.svg)](/LICENSE)
+
+## Dependencies
+
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.3-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.3)
+[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.2-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.2)
+
+# In brief
+
+> This project is used to prove a set of Perseus Dark Mode capabilities.
+
+| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
+| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
+| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+
+# Requirements
+
+- Xcode 10.1+ (macOS High Sierra - 10.13.6)
+- Swift 4.2+
+- UIKit SDK
+
+# First-party software
+
+- [Perseus Dark Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git) / [1.1.3](https://github.com/perseusrealdeal/perseusdarkmode/releases/tag/1.1.3)
+- [Perseus UI System Kit](https://github.com/perseusrealdeal/PerseusUISystemKit.git) / [1.1.2](https://github.com/perseusrealdeal/perseusuisystemkit/releases/tag/1.1.2)
+- [Dark Mode switching functions](https://gist.github.com/perseusrealdeal/11b1bab47f13134832b859f49d9af706)
+
+# Third-party software
+
+- [SwiftLint](https://github.com/realm/SwiftLint) / [0.31.0: Busy Laundromat](https://github.com/realm/SwiftLint/releases/tag/0.31.0) for macOS High Sierra
+- Extracted, edited and integrated [the class](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift)
 
 ## Table of contents
 
@@ -23,16 +51,6 @@ Discovery project for iOS Dark Mode with code samples and demo content.
 4. [Dynamic Image](#dynamicimage)
 
 [Licenses](#licenses)
-
-## Introductory remarks <a name="introductory"></a>
-
-Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—brought to life with [Perseus UISystemKit](https://github.com/perseusrealdeal/PerseusUISystemKit) basing on [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
-
-Dark Mode can be used separately from UISystemKit, take a look at [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
-
-| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
-| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ## Releasing Dark Mode <a name="darkmode"></a>
 
