@@ -36,6 +36,7 @@
 # Third-party software
 
 - [SwiftLint](https://github.com/realm/SwiftLint) / [0.31.0: Busy Laundromat](https://github.com/realm/SwiftLint/releases/tag/0.31.0) for macOS High Sierra
+- Extracted, edited and integrated [the class](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift)
 
 ## Table of contents
 
