@@ -4,11 +4,11 @@
 //
 //  Copied and edited by Mikhail Zhigulin on 04.04.2022.
 //
-//  Origin code created by Sergey Pugach on 2/2/18.
+//  Firstly copied and edited by Sergey Pugach on 2/2/18.
 //  Copyright © 2018 P.D.Q. All rights reserved.
 //
-//  LINK: https://github.com/SeRG1k17/UIColor-Hex-Swift.git
-//
+//  LINK to copied one: https://github.com/SeRG1k17/UIColor-Hex-Swift.git
+//  LINK to origin one: https://github.com/yeahdongcn/UIColor-Hex-Swift
 
 import UIKit
 
