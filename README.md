@@ -17,6 +17,16 @@
 
 > This project is used to prove a set of Perseus Dark Mode capabilities.
 
+| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
+| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
+| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+
+# Requirements
+
+- Xcode 10.1+ (macOS High Sierra - 10.13.6)
+- Swift 4.2+
+- UIKit SDK
+
 ## Table of contents
 
 [Introductory remarks](#introductory)
@@ -30,16 +40,6 @@
 4. [Dynamic Image](#dynamicimage)
 
 [Licenses](#licenses)
-
-## Introductory remarks <a name="introductory"></a>
-
-Key points: Dark Mode, Custom Colors, Adapted Colors, and Dynamic Images—brought to life with [Perseus UISystemKit](https://github.com/perseusrealdeal/PerseusUISystemKit) basing on [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
-
-Dark Mode can be used separately from UISystemKit, take a look at [Perseus Dark Mode](https://github.com/perseusrealdeal/DarkMode).
-
-| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
-| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 ## Releasing Dark Mode <a name="darkmode"></a>
 
