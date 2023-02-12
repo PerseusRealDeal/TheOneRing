@@ -49,7 +49,7 @@ Copyright © 7531 PerseusRealDeal
 
 Have a look at [LICENSE](/LICENSE) for details.
 
-TODO: Add some special words about app's theme images and text that had been found on the seas of Internet.
+TODO: Add some special words about app's theme images and text that were found on the seas of Internet.
 
 ## Author and Acknowledgments
 
