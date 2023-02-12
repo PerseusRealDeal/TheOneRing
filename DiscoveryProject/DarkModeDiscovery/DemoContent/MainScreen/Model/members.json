@@ -3,8 +3,8 @@
         "name"    : "Frodo",
         "fullName": "Frodo Baggins",
         "age"     : "50",
-        "birth"   : "September 22, TA 2968 (SR 1368)",
-        "race"    : "Hobbits",
+        "birth"   : "Sep. 22, TA 2968 (SR 1368)",
+        "race"    : "hobbits",
         "iconName": "Frodo"
     },
     {
@@ -12,7 +12,7 @@
         "fullName": "Gandalf the Grey",
         "age"     : "2000+",
         "birth"   : "Before the Shaping of Arda",
-        "race"    : "Ainur",
+        "race"    : "ainur",
         "iconName": "Gandalf"
     },
     {
@@ -20,7 +20,7 @@
         "fullName": "Gimli",
         "age"     : "139",
         "birth"   : "TA 2879",
-        "race"    : "Dwarves",
+        "race"    : "dwarves",
         "iconName": "Gimli"
     },
     {
@@ -28,7 +28,7 @@
         "fullName": "Peregrin Took",
         "age"     : "28",
         "birth"   : "Spring TA 2990 (SR 1390)",
-        "race"    : "Hobbits",
+        "race"    : "hobbits",
         "iconName": "Pippin"
     },
     {
@@ -36,7 +36,7 @@
         "fullName": "Meriadoc Brandybuck",
         "age"     : "36",
         "birth"   : "TA 2982 (SR 1382)",
-        "race"    : "Hobbits",
+        "race"    : "hobbits",
         "iconName": "Merry"
     },
     {
@@ -44,7 +44,7 @@
         "fullName": "Legolas Greenleaf",
         "age"     : "2000+",
         "birth"   : "",
-        "race"    : "Elves",
+        "race"    : "elves",
         "iconName": "Legolas"
     },
     {
@@ -52,7 +52,7 @@
         "fullName": "Samwise Gamgee",
         "age"     : "38",
         "birth"   : "April 6, TA 2980 (SR 1380)",
-        "race"    : "Hobbits",
+        "race"    : "hobbits",
         "iconName": "Sam"
     },
     {
@@ -60,7 +60,7 @@
         "fullName": "Boromir",
         "age"     : "41",
         "birth"   : "TA 2978",
-        "race"    : "Men",
+        "race"    : "men",
         "iconName": "Boromir"
     },
     {
@@ -68,7 +68,7 @@
         "fullName": "Aragorn II Elessar",
         "age"     : "87",
         "birth"   : "March 1, TA 2931",
-        "race"    : "Men",
+        "race"    : "men",
         "iconName": "Aragorn"
     }
 ]

@@ -4,20 +4,21 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
-//  Licensed under the special license. See LICENSE file.
+//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
+//
+//  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
-/// Title of the main theme of the app.
+/// Title of the app's theme.
 let TITLE = "The Fellowship of the Ring"
 
 /// Represents the main screen of the app.
 class MainViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Title for the main theme of the app.
@@ -61,26 +62,22 @@ class MainViewController: UIViewController {
     /// The instance of the fellowship member details screen.
     private lazy var detailsViewController = { () -> DetailsViewController in
 
-        let storyboard = UIStoryboard(name: String(describing: DetailsViewController.self),
-                                      bundle: nil)
-
+        let storyboard =
+            UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? DetailsViewController
 
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
         return screen ?? DetailsViewController()
     }()
 
     /// The instance of the semantic tools screen.
     private lazy var semanticToolsViewController = { () -> SemanticsViewController in
 
-        let storyboard = UIStoryboard(name: String(describing: SemanticsViewController.self),
-                                      bundle: nil)
-
+        let storyboard =
+            UIStoryboard(name: String(describing: SemanticsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? SemanticsViewController
 
         /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
         screen?.userChoiceChangedClosure = { selected in
             self.optionsPanel.segmentedControlValue = selected
         }
@@ -93,13 +90,10 @@ class MainViewController: UIViewController {
     /// Creates an instance of the main screen.
     class func storyboardInstance() -> MainViewController {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
-
         let screen = storyboard.instantiateInitialViewController() as? MainViewController
 
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
-
+        // Do default setup; don't set any parameter causing loadView up, breaks unit tests
         screen?.modalTransitionStyle = UIModalTransitionStyle.partialCurl
-
         return screen ?? MainViewController()
     }
 
@@ -112,7 +106,6 @@ class MainViewController: UIViewController {
         configure()
 
         // Dark Mode setup
-
         AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
     }
 
@@ -124,27 +117,12 @@ class MainViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(theAppDidBecomeActive),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        NotificationCenter.default.removeObserver(self,
-                                          name: UIApplication.didBecomeActiveNotification,
-                                          object: nil)
-    }
-
     // MARK: - Appearance matter methods
 
     private func configure() {
-        // Static content
+
+        tableView.register(UINib(nibName: "MemberTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "MemberTableViewCell")
 
         titleTop.text = TITLE
 
@@ -155,12 +133,6 @@ class MainViewController: UIViewController {
         actionToolsButton.layer.masksToBounds = true
 
         bottomImage.image = UIImage(named: "OneRing")
-
-        // Dynamic content
-
-        // Images
-
-        // titleImage.configure(UIImage(named: "TheFellowship"), UIImage(named: "FrodoWithTheRing"))
 
         // Dark Mode panel
 
@@ -179,40 +151,33 @@ class MainViewController: UIViewController {
         view.backgroundColor = .customPrimaryBackground
         titleTop.textColor = .customTitle
 
-        actionToolsButton.setTitleColor(.label_Adapted, for: .normal)
+        actionToolsButton.setTitleColor(.labelPerseus, for: .normal)
 
-        // experiment()
-    }
+        let choice = AppearanceService.DarkModeUserChoice
 
-    // MARK: - The App's Major Life Time Events
-
-    @objc func theAppDidBecomeActive() {
-        // Check Dark Mode in Settings
-        if let choice = isDarkModeSettingsChanged() {
-            changeDarkModeManually(choice)
-
-            optionsPanel.segmentedControlValue = choice
-            semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
-        }
+        optionsPanel.segmentedControlValue = choice
+        semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
     }
 }
 
 // MARK: - UITableView
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+
     // MARK: - UITableViewDataSource protocol
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        members.count
+        return members.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "MemberCell", for: indexPath) as? MemberTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+    -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableViewCell",
+                                                       for: indexPath) as? MemberTableViewCell
         else { return UITableViewCell() }
 
         cell.data = members[indexPath.row]
-
         return cell
     }
 
@@ -225,36 +190,5 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
         present(detailsViewController, animated: true, completion: nil)
         detailsViewController.data = members[indexPath.row]
-    }
-}
-
-// MARK: - Experiments
-
-extension MainViewController {
-    private func experiment() {
-        print("[\(type(of: self))] " + #function + " BEGIN")
-
-        print("UserChoice: \(AppearanceService.DarkModeUserChoice)")
-        print("System: \(AppearanceService.shared.SystemStyle)")
-        print("DarkMode: \(AppearanceService.shared.Style)")
-
-        titleTop.isHidden = true
-
-        if #available(iOS 13.0, *),
-           let view = titleTop.nextFirstResponder(where: { $0 is UIView }) as? UIView {
-            // Contrast the next one
-
-            view.backgroundColor = .systemTeal
-
-            // Get RGBA of the next one
-
-            let rgba = view.backgroundColor!.resolvedColor(with: self.traitCollection).RGBA255
-
-            // Let me see it
-
-            print(rgba)
-        }
-
-        print("[\(type(of: self))] " + #function + " END")
     }
 }

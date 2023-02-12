@@ -1,19 +1,21 @@
 //
-//  MemberTableViewCell.swift
+//  MemberTableViewCell.swift, MemeberTableViewCell.xib
 //  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
-//  Licensed under the special license. See LICENSE file.
+//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
+//
+//  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusDarkMode
 
 /// Represents a table view cell for a fellowship member.
 class MemberTableViewCell: UITableViewCell {
+
     // MARK: - Interface Builder connections
 
     /// Border view for a table view cell.

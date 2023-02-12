@@ -4,13 +4,14 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
-//  Licensed under the special license. See LICENSE file.
+//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
+//
+//  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusUISystemKit
 
 /// Represents the model of system colors for displaying on the screen.
 enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible {
@@ -80,42 +81,42 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible {
     var color: UIColor {
         switch self {
         case .systemRed:
-            return .systemRed_Adapted
+            return .perseusRed
         case .systemOrange:
-            return .systemOrange_Adapted
+            return .perseusOrange
         case .systemYellow:
-            return .systemYellow_Adapted
+            return .perseusYellow
         case .systemGreen:
-            return .systemGreen_Adapted
+            return .perseusGreen
         case .systemMint:
-            return .systemMint_Adapted
+            return .perseusMint
         case .systemTeal:
-            return .systemTeal_Adapted
+            return .perseusTeal
         case .systemCyan:
-            return .systemCyan_Adapted
+            return .perseusCyan
         case .systemBlue:
-            return .systemBlue_Adapted
+            return .perseusBlue
         case .systemIndigo:
-            return .systemIndigo_Adapted
+            return .perseusIndigo
         case .systemPurple:
-            return .systemPurple_Adapted
+            return .perseusPurple
         case .systemPink:
-            return .systemPink_Adapted
+            return .perseusPink
         case .systemBrown:
-            return .systemBrown_Adapted
+            return .perseusBrown
 
         case .systemGray:
-            return .systemGray_Adapted
+            return .perseusGray
         case .systemGray2:
-            return .systemGray2_Adapted
+            return .perseusGray2
         case .systemGray3:
-            return .systemGray3_Adapted
+            return .perseusGray3
         case .systemGray4:
-            return .systemGray4_Adapted
+            return .perseusGray4
         case .systemGray5:
-            return .systemGray5_Adapted
+            return .perseusGray5
         case .systemGray6:
-            return .systemGray6_Adapted
+            return .perseusGray6
         }
     }
 }

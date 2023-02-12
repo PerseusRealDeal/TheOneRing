@@ -4,14 +4,14 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
-//  Licensed under the special license. See LICENSE file.
+//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
+//
+//  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents a host view controller for other view controllers.
 ///
@@ -19,6 +19,7 @@ import PerseusUISystemKit
 ///  - Holds Dark Mode panel with Dark Mode switcher.
 ///  - Hides keyboard in a correct way.
 class SemanticsViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Button to close the view controller.
@@ -34,7 +35,6 @@ class SemanticsViewController: UIViewController {
 
     // MARK: - Closure for Dark Mode usr choice changed event
 
-    /// Used to run code to make other Dark Mode switchesr to be in line with the selected value.
     var userChoiceChangedClosure: ((_ selected: DarkModeOption) -> Void)?
 
     // MARK: - The life cyrcle group of methods
@@ -80,6 +80,7 @@ class SemanticsViewController: UIViewController {
 }
 
 extension UIViewController {
+
     /// Adds recognizer for tap event to hide keyboard.
     func setTappedAroundHandlerUp() {
         let tap = UITapGestureRecognizer(target: self,

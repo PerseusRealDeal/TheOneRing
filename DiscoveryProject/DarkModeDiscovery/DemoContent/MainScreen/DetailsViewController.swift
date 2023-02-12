@@ -4,17 +4,18 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 Mikhail Zhigulin of Novosibirsk.
-//  Licensed under the special license. See LICENSE file.
+//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+//  Copyright © 7531 PerseusRealDeal.
+//
+//  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
-import PerseusDarkMode
-import PerseusUISystemKit
 
 /// Represents a screen for the details of a fellowship member.
 class DetailsViewController: UIViewController {
+
     // MARK: - Interface Builder connections
 
     /// Button to close the view controller.
@@ -38,14 +39,14 @@ class DetailsViewController: UIViewController {
     /// Label for a member age.
     @IBOutlet weak var ageLabel: UILabel!
 
-    /// Titile for a member age.
+    /// Title for a member age.
     @IBOutlet weak var memberAge: UILabel!
 
     /// Label for a member birth.
     @IBOutlet weak var birthLabel: UILabel!
 
     /// Title for a member birth.
-    @IBOutlet weak var memberBirth: UITextView!
+    @IBOutlet weak var memberBirth: UILabel!
 
     /// Label for a member race.
     @IBOutlet weak var raceLabel: UILabel!
@@ -98,7 +99,7 @@ class DetailsViewController: UIViewController {
         closeButton.layer.cornerRadius = 5
         closeButton.clipsToBounds = true
 
-        memberIcon.layer.cornerRadius = 45
+        memberIcon.layer.cornerRadius = 40
         memberIcon.clipsToBounds = true
 
         // bottomImage.configure(UIImage(named: "Rivendell"), UIImage(named: "RivendellDark"))
