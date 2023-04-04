@@ -23,10 +23,8 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        #if DEBUG
-        print(">> Launching with business matter purpose")
-        print(">> [\(type(of: self))]." + #function)
-        #endif
+        PerseusLogger.message("Launching with business matter purpose", .info)
+        PerseusLogger.message("[\(type(of: self))].\(#function)")
 
         // Register Settings Bundle
         registerSettingsBundle()
@@ -45,9 +43,7 @@ extension AppDelegate: UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        #if DEBUG
-        print(">> [\(type(of: self))]." + #function)
-        #endif
+        PerseusLogger.message("[\(type(of: self))].\(#function)")
 
         // Update Dark Mode from Settings
         if let choice = isDarkModeSettingsChanged() {

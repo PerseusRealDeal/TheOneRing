@@ -13,6 +13,12 @@
 
 import UIKit
 
+// MARK: - Logger
+
+PerseusLogger.level = .info
+
+// MARK: - Run the app
+
 /// Determine the app run purpose.
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
 
