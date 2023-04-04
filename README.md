@@ -1,7 +1,7 @@
 # ios.darkmode.discovery
 
 [![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/App_Version-1.3-green.svg)
+![Version](https://img.shields.io/badge/App_Version-1.4-green.svg)
 [![Platforms iOS 9](https://img.shields.io/badge/Platform-iOS%209.3+-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![Xcode 10.1](https://img.shields.io/badge/Xcode-10.1+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
@@ -10,8 +10,8 @@
 
 ## Dependencies
 
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.3-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.3)
-[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.2-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.2)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.4-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.4)
+[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.3-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.3)
 
 # In brief
 
@@ -29,8 +29,8 @@
 
 # First-party software
 
-- [Perseus Dark Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git) / [1.1.3](https://github.com/perseusrealdeal/perseusdarkmode/releases/tag/1.1.3)
-- [Perseus UI System Kit](https://github.com/perseusrealdeal/PerseusUISystemKit.git) / [1.1.2](https://github.com/perseusrealdeal/perseusuisystemkit/releases/tag/1.1.2)
+- [Perseus Dark Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git) / [1.1.4](https://github.com/perseusrealdeal/perseusdarkmode/releases/tag/1.1.4)
+- [Perseus UI System Kit](https://github.com/perseusrealdeal/PerseusUISystemKit.git) / [1.1.3](https://github.com/perseusrealdeal/perseusuisystemkit/releases/tag/1.1.3)
 - [Dark Mode switching functions](https://gist.github.com/perseusrealdeal/11b1bab47f13134832b859f49d9af706)
 
 # Third-party software
