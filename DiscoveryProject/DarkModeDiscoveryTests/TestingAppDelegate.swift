@@ -12,6 +12,7 @@
 //
 
 import XCTest
+@testable import DarkModeDiscovery
 
 // MARK: - The Testing Application Delegate
 
@@ -21,8 +22,8 @@ class TestingAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        print("<< Launching with testing app delegate")
-        print("<< \(type(of: self)) " + #function)
+        PerseusLogger.message("Launching with testing matter purpose", .info)
+        PerseusLogger.message("[\(type(of: self))].\(#function)")
 
         return true
     }
