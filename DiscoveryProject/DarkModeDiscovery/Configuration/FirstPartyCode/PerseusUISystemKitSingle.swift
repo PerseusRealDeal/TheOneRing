@@ -54,15 +54,18 @@ public typealias Color = NSColor
 
 // MARK: - PerseusDarkModeSingle v1.1.4
 
-// MARK: - Constants
+// MARK: - Notifications
 
 public extension Notification.Name {
-    static let MakeAppearanceUpNotification = Notification.Name("MakeAppearanceUpNotification")
+    static let MakeAppearanceUpNotification =
+        Notification.Name("MakeAppearanceUpNotification")
     #if os(macOS)
     static let AppleInterfaceThemeChangedNotification =
         Notification.Name("AppleInterfaceThemeChangedNotification")
     #endif
 }
+
+// MARK: - Constants
 
 public let DARK_MODE_USER_CHOICE_KEY = "DarkModeUserChoiceOptionKey"
 public let DARK_MODE_USER_CHOICE_DEFAULT = DarkModeOption.auto
