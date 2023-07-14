@@ -10,7 +10,7 @@
 		4B62FA7A29DC48BE00DF6B85 /* PerseusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62FA7929DC48BE00DF6B85 /* PerseusLogger.swift */; };
 		4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B3742298E29B50003AF01 /* AppDelegate.swift */; };
 		4B7EABEA298CC2210063172D /* PerseusUISystemKitSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */; };
-		4B7EABEE298D6DDF0063172D /* CI.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B7EABED298D6DDF0063172D /* CI.yml */; };
+		4B7EABEE298D6DDF0063172D /* main.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B7EABED298D6DDF0063172D /* main.yml */; };
 		4B8275562990F70F00C84692 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275552990F70F00C84692 /* DetailsViewController.storyboard */; };
 		4B82755A2992BB1600C84692 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275592992BB1600C84692 /* MemberTableViewCell.xib */; };
 		4B82755D29939CD100C84692 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82755B29939CD100C84692 /* ColorTableViewCell.swift */; };
@@ -62,7 +62,7 @@
 		4B62FA7929DC48BE00DF6B85 /* PerseusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusLogger.swift; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABE9298CC2210063172D /* PerseusUISystemKitSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseusUISystemKitSingle.swift; sourceTree = "<group>"; };
-		4B7EABED298D6DDF0063172D /* CI.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = CI.yml; path = ../.github/workflows/CI.yml; sourceTree = "<group>"; };
+		4B7EABED298D6DDF0063172D /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
 		4B8275592992BB1600C84692 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		4B82755B29939CD100C84692 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		E095388027B36E7800AAAAAA = {
 			isa = PBXGroup;
 			children = (
-				4B7EABED298D6DDF0063172D /* CI.yml */,
+				4B7EABED298D6DDF0063172D /* main.yml */,
 				E03080312859125800E19E30 /* .gitignore */,
 				E03080332859126100E19E30 /* .swiftlint.yml */,
 				E09538BC27B36E9400AAAAAA /* LICENSE */,
@@ -360,7 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B7EABEE298D6DDF0063172D /* CI.yml in Resources */,
+				4B7EABEE298D6DDF0063172D /* main.yml in Resources */,
 				4B82755A2992BB1600C84692 /* MemberTableViewCell.xib in Resources */,
 				E03080342859126100E19E30 /* .swiftlint.yml in Resources */,
 				E07C0F2227BBA00000888456 /* MainViewController.storyboard in Resources */,
