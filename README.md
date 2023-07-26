@@ -1,6 +1,6 @@
 # ios.darkmode.discovery
 
-[![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/CI.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
+[![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
 ![Version](https://img.shields.io/badge/App_Version-1.5-green.svg)
 [![Platforms iOS 9](https://img.shields.io/badge/Platform-iOS%209.3+-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
 [![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
