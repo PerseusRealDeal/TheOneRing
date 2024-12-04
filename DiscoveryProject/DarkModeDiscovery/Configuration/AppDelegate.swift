@@ -4,14 +4,16 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
-//  Copyright © 7531 PerseusRealDeal.
+//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
+//  Copyright © 7531 - 7533 PerseusRealDeal
 //
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
+import ConsolePerseusLogger
+import PerseusDarkMode
 
 /// The app delegate.
 class AppDelegate: UIResponder { var window: UIWindow? }
@@ -23,8 +25,8 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        PerseusLogger.message("Launching with business matter purpose", .info)
-        PerseusLogger.message("[\(type(of: self))].\(#function)")
+        log.message("Launching with business matter purpose", .info)
+        log.message("[\(type(of: self))].\(#function)")
 
         // Register Settings Bundle
         registerSettingsBundle()
@@ -43,7 +45,7 @@ extension AppDelegate: UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        PerseusLogger.message("[\(type(of: self))].\(#function)")
+        log.message("[\(type(of: self))].\(#function)")
 
         // Update Dark Mode from Settings
         if let choice = isDarkModeSettingsChanged() {

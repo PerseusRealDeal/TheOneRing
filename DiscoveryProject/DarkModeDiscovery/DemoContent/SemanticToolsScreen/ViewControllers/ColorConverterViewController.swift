@@ -4,14 +4,15 @@
 //
 //  Created by Mikhail Zhigulin in 7530.
 //
-//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
-//  Copyright © 7531 PerseusRealDeal.
+//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
+//  Copyright © 7531 - 7533 PerseusRealDeal
 //
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
 
 import UIKit
+import PerseusDarkMode
 
 /// Represents the UI instrument used for converting color from RGBA to HEX.
 class ConverterViewController: UIViewController, UITextFieldDelegate {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vig-SI-u99">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-GH-fqS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDZ-FR-pAi" userLabel="Transparent Block">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-3I-86I">
-                                                        <rect key="frame" x="112" y="8" width="96" height="11"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gq-3I-86I">
+                                                        <rect key="frame" x="112" y="8.5" width="96" height="11.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="closeButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WUa-ib-Buw"/>
@@ -46,13 +44,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-R3-1Yi">
-                                        <rect key="frame" x="0.0" y="27.5" width="320" height="520.5"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="320" height="539.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja6-zv-1aA" userLabel="Transparent Block">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                                 <subviews>
                                                     <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Bp-G4f" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
-                                                        <rect key="frame" x="48" y="5" width="224" height="42"/>
+                                                        <rect key="frame" x="48" y="5.5" width="224" height="43"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -65,7 +63,7 @@
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-DE-EmQ">
-                                                <rect key="frame" x="0.0" y="52" width="320" height="468.5"/>
+                                                <rect key="frame" x="0.0" y="54" width="320" height="485.5"/>
                                                 <connections>
                                                     <segue destination="R8F-pI-iJ3" kind="embed" id="Luk-lN-ES3"/>
                                                 </connections>
@@ -81,6 +79,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mZf-cd-ueF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vig-SI-u99" secondAttribute="trailing" id="DXE-1v-nu1"/>
@@ -88,7 +87,6 @@
                             <constraint firstItem="vig-SI-u99" firstAttribute="leading" secondItem="mZf-cd-ueF" secondAttribute="leading" id="lU8-fr-WaU"/>
                             <constraint firstItem="vig-SI-u99" firstAttribute="bottom" secondItem="hfM-qg-DGh" secondAttribute="bottom" id="nmm-BU-Wrx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mZf-cd-ueF"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="3gq-3I-86I" id="BzJ-OX-h3v"/>
@@ -104,7 +102,7 @@
             <objects>
                 <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="468.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
@@ -125,7 +123,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-v0-Cwh" userLabel="Convert Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-v0-Cwh" userLabel="Convert Button">
                                 <rect key="frame" x="60" y="10" width="200" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -140,12 +138,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to RGBA from HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Ua-tb5">
-                                <rect key="frame" x="60" y="170" width="184.5" height="21"/>
+                                <rect key="frame" x="60" y="170" width="183.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="centerX" secondItem="XF3-uP-U0D" secondAttribute="centerX" id="MsZ-ZH-Koy"/>
@@ -157,7 +156,6 @@
                             <constraint firstItem="sFQ-v0-Cwh" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="oX7-jy-sqs"/>
                             <constraint firstItem="Q4h-Ua-tb5" firstAttribute="top" secondItem="Lfb-ut-8c1" secondAttribute="bottom" constant="20" id="woq-VW-793"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Converter" id="alh-GR-4Rg" userLabel="Tab Button"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -201,25 +199,25 @@
             <objects>
                 <viewController id="eiK-Co-Twc" userLabel="Dynamic Images" customClass="DynamicsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HA5-Mq-BQX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="468.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-1q-uWx">
-                                <rect key="frame" x="16" y="42" width="288" height="293.5"/>
+                                <rect key="frame" x="16" y="43.5" width="288" height="305.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="DarkModeDiscovery">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="132"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="137.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="TheFellowship"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAM-LP-Kqk">
-                                        <rect key="frame" x="0.0" y="132" width="288" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="137.5" width="288" height="30.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="DarkModeDiscovery">
-                                        <rect key="frame" x="0.0" y="161.5" width="288" height="132"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                        <rect key="frame" x="0.0" y="168" width="288" height="137.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="Rivendell"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="RivendellDark"/>
@@ -232,6 +230,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="top" secondItem="Oor-7g-3JN" secondAttribute="bottom" multiplier="0.1" id="4Ie-K1-T2m"/>
@@ -239,7 +238,6 @@
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="width" secondItem="Oor-7g-3JN" secondAttribute="width" multiplier="0.9" id="rFK-am-YEe"/>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="centerX" secondItem="HA5-Mq-BQX" secondAttribute="centerX" id="yrm-25-zW8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dynamics" id="Tug-gI-pgW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -258,11 +256,11 @@
             <objects>
                 <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHL-Qb-aJB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="468.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-wD-K8D">
-                                <rect key="frame" x="8" y="10.5" width="304" height="398.5"/>
+                                <rect key="frame" x="8" y="11" width="304" height="414.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aNC-0l-cVu" id="RCx-df-VW2"/>
@@ -270,6 +268,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vgd-yT-Z2v"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ksz-wD-K8D" firstAttribute="centerY" secondItem="Vgd-yT-Z2v" secondAttribute="centerY" id="SwT-uw-nng"/>
@@ -277,7 +276,6 @@
                             <constraint firstItem="Ksz-wD-K8D" firstAttribute="centerX" secondItem="Vgd-yT-Z2v" secondAttribute="centerX" id="khp-Su-1VA"/>
                             <constraint firstItem="Ksz-wD-K8D" firstAttribute="width" secondItem="Vgd-yT-Z2v" secondAttribute="width" multiplier="0.95" id="oUa-hf-5vX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Vgd-yT-Z2v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Colors" id="pRE-0r-PLI"/>
                     <connections>
@@ -294,11 +292,11 @@
             <objects>
                 <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cV0-bg-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="468.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-Rk-TXH">
-                                <rect key="frame" x="8" y="10.5" width="304" height="398.5"/>
+                                <rect key="frame" x="8" y="11" width="304" height="414.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="I6h-n8-cQC" id="nZY-di-Jjc"/>
@@ -306,6 +304,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fbg-ZI-h6f"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VPf-Rk-TXH" firstAttribute="width" secondItem="fbg-ZI-h6f" secondAttribute="width" multiplier="0.95" id="0PN-6V-qWe"/>
@@ -313,7 +312,6 @@
                             <constraint firstItem="VPf-Rk-TXH" firstAttribute="height" secondItem="fbg-ZI-h6f" secondAttribute="height" multiplier="0.95" id="mLb-tu-JRn"/>
                             <constraint firstItem="VPf-Rk-TXH" firstAttribute="centerY" secondItem="fbg-ZI-h6f" secondAttribute="centerY" id="rJe-si-eZD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fbg-ZI-h6f"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Semantics" id="NT7-4e-Unb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
