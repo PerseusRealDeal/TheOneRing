@@ -17,14 +17,23 @@ import ConsolePerseusLogger
 import class PerseusDarkMode.PerseusLogger
 import class PerseusGeoLocationKit.PerseusLogger
 
-typealias PerseusDarkModeLogger = PerseusDarkMode.PerseusLogger
-typealias PerseusGeoLocationKitLogger = PerseusGeoLocationKit.PerseusLogger
+// swiftlint:disable type_name
+typealias dmlog = PerseusDarkMode.PerseusLogger
+typealias geolog = PerseusGeoLocationKit.PerseusLogger
+// swiftlint:enable type_name
 
 // MARK: - Logger
 
-log.level = .info
+// log.level = .info
+
+dmlog.level = .debug
+geolog.level = .debug
 
 // MARK: - Run the app
+
+log.message("The app's start point...", .info)
+
+let globals = AppGlobals()
 
 /// Determine the app run purpose.
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self

@@ -45,7 +45,6 @@
 | Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/releases/tag/v1.0.0) | MIT                                | Copyright GitHub              |
 | Class  | [HexColorConverter](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) -  extracted, edited from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift) | MIT | Copyright (c) 2014 R0CKSTAR |
 
-
 # License MIT
 
 Copyright © 7530 - 7533 Mikhail Zhigulin of Novosibirsk

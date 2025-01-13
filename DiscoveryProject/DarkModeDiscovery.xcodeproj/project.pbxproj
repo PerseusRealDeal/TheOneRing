@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8262142D1FE7EE00E912F4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */; };
+		2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */; };
+		2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */; };
 		2EA10A982CFE124D00535E5A /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A972CFE124D00535E5A /* ConsolePerseusLogger */; };
 		2EA10A9B2CFE14C200535E5A /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A9A2CFE14C200535E5A /* PerseusDarkMode */; };
 		2EA10A9E2CFE1E1600535E5A /* PerseusGeoLocationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A9D2CFE1E1600535E5A /* PerseusGeoLocationKit */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
+		2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentLocationPanel.xib; sourceTree = "<group>"; };
+		2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationPanel.swift; sourceTree = "<group>"; };
 		2EA10AA52CFE211500535E5A /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA72CFE220F00535E5A /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = ../.github/workflows/swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA92CFE233B00535E5A /* APPROBATION.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = APPROBATION.md; path = ../APPROBATION.md; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			children = (
 				E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */,
 				E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */,
+				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
+				2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */,
 			);
 			path = UserControls;
 			sourceTree = "<group>";
@@ -182,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				E095388C27B36E7800AAAAAA /* main.swift */,
+				2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */,
+				4B6B3742298E29B50003AF01 /* AppDelegate.swift */,
 				E0D0A73827B8012A006D46E8 /* Configuration */,
 				E0D0A73927B801DE006D46E8 /* DemoContent */,
 			);
@@ -238,7 +248,6 @@
 				E095389727B36E7B00AAAAAA /* LaunchScreen.storyboard */,
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
-				4B6B3742298E29B50003AF01 /* AppDelegate.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
 				2EA10AAA2CFE233C00535E5A /* APPROBATION.md in Resources */,
 				E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */,
+				2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */,
 				E09538BE27B36E9400AAAAAA /* LICENSE in Resources */,
 				4B82755E29939CD100C84692 /* ColorTableViewCell.xib in Resources */,
 			);
@@ -427,6 +437,7 @@
 				E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
+				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
 				E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
@@ -436,6 +447,7 @@
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
 				E0A0841627FAF4F50010A55D /* HexColorConverter.swift in Sources */,
+				2E8262142D1FE7EE00E912F4 /* AppGlobals.swift in Sources */,
 				E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */,
 				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				4B82755D29939CD100C84692 /* ColorTableViewCell.swift in Sources */,

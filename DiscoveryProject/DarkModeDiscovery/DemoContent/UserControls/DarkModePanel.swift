@@ -58,21 +58,25 @@ class DarkModePanel: UIView {
 
         addSubview(contentView)
 
-        translatesAutoresizingMaskIntoConstraints = false
+        layer.masksToBounds = true
+        contentView.translatesAutoresizingMaskIntoConstraints = false
 
         contentView.center = CGPoint(x: bounds.midX, y: bounds.midY)
-        contentView.autoresizingMask =
-            [
-                UIView.AutoresizingMask.flexibleLeftMargin,
-                UIView.AutoresizingMask.flexibleRightMargin,
-                UIView.AutoresizingMask.flexibleTopMargin,
-                UIView.AutoresizingMask.flexibleBottomMargin
-            ]
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(
+                equalTo: widthAnchor,
+                constant: .zero
+            ),
+            contentView.heightAnchor.constraint(
+                equalTo: heightAnchor,
+                constant: .zero
+            )
+        ])
 
         // Dark Mode setup
 
-        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
-        if AppearanceService.isEnabled { makeUp() }
+        DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
+        if DarkModeAgent.isEnabled { makeUp() }
     }
 
     // MARK: - Configure connected Interface Builder elements
@@ -82,7 +86,6 @@ class DarkModePanel: UIView {
         // Content border
 
         self.layer.cornerRadius = 15
-        self.layer.masksToBounds = true
 
         // Segmented control
 

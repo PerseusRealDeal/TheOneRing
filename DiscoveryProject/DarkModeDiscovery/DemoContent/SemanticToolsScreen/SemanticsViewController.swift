@@ -47,8 +47,8 @@ class SemanticsViewController: UIViewController {
 
         // Dark Mode setup
 
-        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
-        if AppearanceService.isEnabled { makeUp() }
+        DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
+        if DarkModeAgent.isEnabled { makeUp() }
     }
 
     /// Updates the appearance of the screen.
@@ -69,13 +69,13 @@ class SemanticsViewController: UIViewController {
         // Dark Mode panel
 
         optionsPanel.segmentedControlValueChangedClosure = { option in
-            changeDarkModeManually(option)
+            DarkModeAgent.forceDarkMode(option)
 
             // Call to change the value of the other instance of Dark Mode panel
             self.userChoiceChangedClosure?(option)
         }
 
-        optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        optionsPanel.segmentedControlValue = DarkModeAgent.DarkModeUserChoice
         optionsPanel.backgroundColor = .clear
     }
 }

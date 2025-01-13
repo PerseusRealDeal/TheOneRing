@@ -107,14 +107,14 @@ class MainViewController: UIViewController {
         configure()
 
         // Dark Mode setup
-        AppearanceService.register(stakeholder: self, selector: #selector(makeUp))
+        DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
         if #available(iOS 13.0, *) {
-            AppearanceService.processTraitCollectionDidChange(previousTraitCollection)
+            DarkModeAgent.processTraitCollectionDidChange(previousTraitCollection)
         }
     }
 
@@ -138,13 +138,13 @@ class MainViewController: UIViewController {
         // Dark Mode panel
 
         optionsPanel.segmentedControlValueChangedClosure = { option in
-            changeDarkModeManually(option)
+            DarkModeAgent.forceDarkMode(option)
 
             // The value of other one Dark Mode panel should also be changed accordingly
             self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option
         }
 
-        optionsPanel.segmentedControlValue = AppearanceService.DarkModeUserChoice
+        optionsPanel.segmentedControlValue = DarkModeAgent.DarkModeUserChoice
         optionsPanel.backgroundColor = .clear
     }
 
@@ -154,7 +154,7 @@ class MainViewController: UIViewController {
 
         actionToolsButton.setTitleColor(.labelPerseus, for: .normal)
 
-        let choice = AppearanceService.DarkModeUserChoice
+        let choice = DarkModeAgent.DarkModeUserChoice
 
         optionsPanel.segmentedControlValue = choice
         semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
