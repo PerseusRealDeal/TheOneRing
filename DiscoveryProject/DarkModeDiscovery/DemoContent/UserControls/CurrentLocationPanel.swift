@@ -38,7 +38,7 @@ class CurrentLocationPanel: UIView {
 
         if permit == .notDetermined {
             // Allow geo service action.
-            globals.locationDealer.askForAuthorization()
+            globals.locationDealer.requestPermission()
         }
     }
 
@@ -47,10 +47,10 @@ class CurrentLocationPanel: UIView {
 
         if permit == .notDetermined {
             // Allow geo service action.
-            globals.locationDealer.askForAuthorization()
+            globals.locationDealer.requestPermission()
         } else if permit == .allowed {
             // Refresh geo data action.
-            try? globals.locationDealer.askForCurrentLocation()
+            try? globals.locationDealer.requestCurrentLocation()
         } else {
             // Open system options action.
             // AppGlobals.openTheApp(name: AppGlobals.systemApp)
@@ -151,7 +151,7 @@ extension CurrentLocationPanel {
         log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)")
 
         guard
-            let result = notification.object as? Result<PerseusLocation, LocationDealerError>
+            let result = notification.object as? Result<PerseusLocation, LocationError>
         else {
             log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
             return

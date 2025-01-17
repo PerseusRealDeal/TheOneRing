@@ -34,14 +34,14 @@ struct AppGlobals {
 
     // MARK: - Custom Services
 
-    public let locationDealer: PerseusLocationDealer
+    public let locationDealer: LocationAgent
 
     // MARK: - Initializer
 
     init() {
         log.message("[\(type(of: self))].\(#function)", .info)
 
-        locationDealer = PerseusLocationDealer.shared
+        locationDealer = LocationAgent.shared
     }
 
     // MARK: - Contract
