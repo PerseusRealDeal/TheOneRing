@@ -27,6 +27,10 @@ struct AppGlobals {
         }
     }
 
+    // MARK: - Constants
+
+    static let preferedAccuracy = LocationAccuracy.threeKilometers
+
     // MARK: - System Services
 
     static let userDefaults = UserDefaults.standard
@@ -42,10 +46,17 @@ struct AppGlobals {
         log.message("[\(type(of: self))].\(#function)", .info)
 
         locationDealer = LocationAgent.shared
-    }
 
-    // MARK: - Contract
+        // Configure accuracy
+        var lm = locationDealer.locationManager
+        lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
 
-    static func openTheApp(name: String) {
+        // Configure GoTo Settings alert
+        let text = OneFunctionAlertText(title: "Custom Title",
+                                        message: "Custom Message",
+                                        buttonCancel: "MyCancel",
+                                        buttonFunction: "MyAction")
+
+        locationDealer.alert.titles = text
     }
 }

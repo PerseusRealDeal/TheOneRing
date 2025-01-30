@@ -51,10 +51,9 @@ class CurrentLocationPanel: UIView {
         } else if permit == .allowed {
             // Refresh geo data action.
             try? globals.locationDealer.requestCurrentLocation()
-        } else {
+        } else if let vc = self.parentViewController() {
             // Open system options action.
-            // AppGlobals.openTheApp(name: AppGlobals.systemApp)
-
+            globals.locationDealer.alert.show(parent: vc)
         }
     }
 
