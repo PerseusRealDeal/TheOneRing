@@ -36,24 +36,32 @@ class CurrentLocationPanel: UIView {
 
         log.message("Location access \(permit)")
 
+        guard permit != .allowed else { return }
+
+        let dealer = globals.locationDealer
+
         if permit == .notDetermined {
-            // Allow geo service action.
-            globals.locationDealer.requestPermission()
+            // Deal with permission
+            dealer.requestPermission()
+        } else if let vc = self.parentViewController() {
+            // Show GoTo Settings alert
+            dealer.alert.show(using: vc)
         }
     }
 
     @IBAction func buttonRefreshLocationTapped(_ sender: UIButton) {
-        let permit = globals.locationDealer.locationPermit
+        let dealer = globals.locationDealer
+        let permit = dealer.locationPermit
 
         if permit == .notDetermined {
             // Allow geo service action.
-            globals.locationDealer.requestPermission()
+            dealer.requestPermission()
         } else if permit == .allowed {
             // Refresh geo data action.
-            try? globals.locationDealer.requestCurrentLocation()
+            try? dealer.requestCurrentLocation()
         } else if let vc = self.parentViewController() {
             // Open system options action.
-            globals.locationDealer.alert.show(parent: vc)
+            dealer.alert.show(using: vc)
         }
     }
 
