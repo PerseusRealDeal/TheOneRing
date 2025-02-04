@@ -22,8 +22,8 @@ struct AppGlobals {
 
     static var currentLocation: PerseusLocation? {
         didSet {
-            let location = currentLocation?.description ?? "current location is cleared"
-            log.message("\(location) [\(type(of: self))].\(#function)", .info)
+            let location = currentLocation?.description ?? "current location is erased"
+            log.message("\(location)", .info)
         }
     }
 

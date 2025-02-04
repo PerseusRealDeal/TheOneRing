@@ -10,6 +10,8 @@
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
+// swiftlint:disable file_length
+//
 
 import UIKit
 import ConsolePerseusLogger
@@ -112,12 +114,16 @@ class CurrentLocationPanel: UIView {
                        name: .locationDealerCurrentNotification,
                        object: nil)
 
-        nc.addObserver(self, selector: #selector(locationDealerStatusChangedHandler),
+        nc.addObserver(self, selector: #selector(locationDealerStatusChangedHandler(_:)),
                        name: .locationDealerStatusChangedNotification,
                        object: nil)
 
-        nc.addObserver(self, selector: #selector(locationDealerErrorHandler),
+        nc.addObserver(self, selector: #selector(locationDealerErrorHandler(_:)),
                        name: .locationDealerErrorNotification,
+                       object: nil)
+
+        nc.addObserver(self, selector: #selector(locationDealerUpdatesHandler(_:)),
+                       name: .locationDealerUpdatesNotification,
                        object: nil)
 
         // Dark Mode setup
@@ -155,10 +161,9 @@ extension CurrentLocationPanel {
     }
 
     @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)")
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
 
-        guard
-            let result = notification.object as? Result<PerseusLocation, LocationError>
+        guard let result = notification.object as? Result<PerseusLocation, LocationError>
         else {
             log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
             return
@@ -174,13 +179,33 @@ extension CurrentLocationPanel {
         refresh()
     }
 
-    @objc private func locationDealerStatusChangedHandler() {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)")
+    @objc private func locationDealerStatusChangedHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
         refresh()
     }
 
-    @objc private func locationDealerErrorHandler() {
+    @objc private func locationDealerErrorHandler(_ notification: Notification) {
         log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+    }
+
+    @objc private func locationDealerUpdatesHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+
+        guard
+            let result = notification.object as? Result<[PerseusLocation], LocationError>
+        else {
+            log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+            return
+        }
+
+        switch result {
+        case .success(let data):
+            AppGlobals.currentLocation = data.last
+        case .failure(let error):
+            log.message("\(error)", .error)
+        }
+
+        refresh()
     }
 
     private func refresh() {
