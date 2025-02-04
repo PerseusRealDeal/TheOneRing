@@ -759,7 +759,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoLocationKit";
 			requirement = {
-				branch = prepare/v1.0.0;
+				branch = develop;
 				kind = branch;
 			};
 		};
