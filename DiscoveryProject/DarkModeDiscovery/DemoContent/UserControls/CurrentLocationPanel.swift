@@ -33,37 +33,34 @@ class CurrentLocationPanel: UIView {
     @IBOutlet private weak var labelGeoCoupleValue: UILabel!
 
     @IBAction func buttonRefreshStatusTapped(_ sender: UIButton) {
-        let permit = globals.locationDealer.locationPermit
-        labelPermissionValue.text = "\(permit)".capitalized
-
-        log.message("Location access \(permit)")
-
-        guard permit != .allowed else { return }
-
         let dealer = globals.locationDealer
 
-        if permit == .notDetermined {
-            // Deal with permission
-            dealer.requestPermission()
-        } else if let vc = self.parentViewController() {
-            // Show GoTo Settings alert
-            dealer.alert.show(using: vc)
+        labelPermissionValue.text = "\(dealer.locationPermit)".capitalized
+
+        dealer.requestPermission { permit in
+            if permit != .allowed, let vc = self.parentViewController() {
+                dealer.alert.show(using: vc)
+            }
         }
     }
 
-    @IBAction func buttonRefreshLocationTapped(_ sender: UIButton) {
+    @IBAction func buttonRefreshCurrentTapped(_ sender: UIButton) {
         let dealer = globals.locationDealer
-        let permit = dealer.locationPermit
 
-        if permit == .notDetermined {
-            // Allow geo service action.
-            dealer.requestPermission()
-        } else if permit == .allowed {
-            // Refresh geo data action.
-            try? dealer.requestCurrentLocation()
-        } else if let vc = self.parentViewController() {
-            // Open system options action.
-            dealer.alert.show(using: vc)
+        do {
+            try dealer.requestCurrentLocation()
+        } catch LocationError.permissionRequired(let permit) {
+
+            log.message("[\(type(of: self))].\(#function) - permission required", .notice)
+
+            if permit == .notDetermined {
+                dealer.requestPermission()
+            } else if let vc = self.parentViewController() {
+                dealer.alert.show(using: vc)
+            }
+
+        } catch {
+            log.message("[\(type(of: self))].\(#function) - something totally wrong", .error)
         }
     }
 
@@ -108,23 +105,21 @@ class CurrentLocationPanel: UIView {
 
         // Setup location event handlers.
 
-        let nc = AppGlobals.notificationCenter
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerCurrentHandler(_:)),
+                                  name: .locationDealerCurrentNotification)
 
-        nc.addObserver(self, selector: #selector(locationDealerCurrentHandler(_:)),
-                       name: .locationDealerCurrentNotification,
-                       object: nil)
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerStatusChangedHandler(_:)),
+                                  name: .locationDealerStatusChangedNotification)
 
-        nc.addObserver(self, selector: #selector(locationDealerStatusChangedHandler(_:)),
-                       name: .locationDealerStatusChangedNotification,
-                       object: nil)
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerErrorHandler(_:)),
+                                  name: .locationDealerErrorNotification)
 
-        nc.addObserver(self, selector: #selector(locationDealerErrorHandler(_:)),
-                       name: .locationDealerErrorNotification,
-                       object: nil)
-
-        nc.addObserver(self, selector: #selector(locationDealerUpdatesHandler(_:)),
-                       name: .locationDealerUpdatesNotification,
-                       object: nil)
+        LocationAgent.getNotified(with: self,
+                                  selector: #selector(locationDealerUpdatesHandler(_:)),
+                                  name: .locationDealerUpdatesNotification)
 
         // Dark Mode setup
 
@@ -185,7 +180,22 @@ extension CurrentLocationPanel {
     }
 
     @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+
+        guard
+            let result = notification.object as? LocationError,
+            let failedRequestDetails = result.failedRequestDetails
+        else {
+            log.message("[\(type(of: self))].\(#function) - no error details", .error)
+            return
+        }
+
+        switch failedRequestDetails.code {
+        case 0: log.message("Connection issue takes place.", .notice)
+        case 1: log.message("Deal with permission required.", .notice)
+        default:
+            break
+        }
     }
 
     @objc private func locationDealerUpdatesHandler(_ notification: Notification) {

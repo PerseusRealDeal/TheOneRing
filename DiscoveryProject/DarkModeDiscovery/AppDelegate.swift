@@ -50,7 +50,7 @@ extension AppDelegate: UIApplicationDelegate {
         log.message("[\(type(of: self))].\(#function)")
 
         // Update Dark Mode from Settings
-        if let choice = DarkModeAgent.isDarkModeChanged() {
+        if let choice = DarkModeAgent.isDarkModeSettingsKeyChanged() {
             // Change Dark Mode value in Perseus Dark Mode library
             DarkModeAgent.DarkModeUserChoice = choice
             // Update appearance in accoring with changed Dark Mode Style

@@ -46,7 +46,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="buttonRefreshLocationTapped:" destination="-1" eventType="touchUpInside" id="dID-pK-sfY"/>
+                        <action selector="buttonRefreshCurrentTapped:" destination="-1" eventType="touchUpInside" id="r1M-sE-MYt"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Permission Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-Ki-AhQ">
