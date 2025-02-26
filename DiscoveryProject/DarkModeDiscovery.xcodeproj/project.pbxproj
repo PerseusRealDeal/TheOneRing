@@ -751,7 +751,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
-				branch = develop;
+				branch = hotfix/approbation;
 				kind = branch;
 			};
 		};
@@ -759,7 +759,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoLocationKit";
 			requirement = {
-				branch = develop;
+				branch = hotfix/approbation;
 				kind = branch;
 			};
 		};
