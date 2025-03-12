@@ -89,7 +89,7 @@
 		E09183C027BD495500475D2B /* SystemColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsViewController.swift; sourceTree = "<group>"; };
 		E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsViewController.swift; sourceTree = "<group>"; };
 		E09183C627BD4D4500475D2B /* DynamicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsViewController.swift; sourceTree = "<group>"; };
-		E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E095388927B36E7800AAAAAA /* TheOneRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheOneRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E095388C27B36E7800AAAAAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E095389027B36E7800AAAAAA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E095389527B36E7B00AAAAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		E095388A27B36E7800AAAAAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */,
+				E095388927B36E7800AAAAAA /* TheOneRing.app */,
 				E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */,
 			);
 			name = Products;
@@ -310,7 +310,7 @@
 				2EA10A9D2CFE1E1600535E5A /* PerseusGeoLocationKit */,
 			);
 			productName = darkmodediscovery;
-			productReference = E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */;
+			productReference = E095388927B36E7800AAAAAA /* TheOneRing.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E095389E27B36E7B00AAAAAA /* DarkModeDiscoveryTests */ = {
@@ -630,7 +630,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheOneRing;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -654,7 +655,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheOneRing;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -680,7 +682,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeDiscovery.app/DarkModeDiscovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheOneRing.app/TheOneRing";
 			};
 			name = Debug;
 		};
@@ -702,7 +704,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeDiscovery.app/DarkModeDiscovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheOneRing.app/TheOneRing";
 			};
 			name = Release;
 		};

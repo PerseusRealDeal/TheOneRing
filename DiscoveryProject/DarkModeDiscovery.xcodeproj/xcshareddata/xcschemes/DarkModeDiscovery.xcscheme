@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E095388827B36E7800AAAAAA"
-               BuildableName = "DarkModeDiscovery.app"
+               BuildableName = "TheOneRing.app"
                BlueprintName = "DarkModeDiscovery"
                ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E095388827B36E7800AAAAAA"
-            BuildableName = "DarkModeDiscovery.app"
+            BuildableName = "TheOneRing.app"
             BlueprintName = "DarkModeDiscovery"
             ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
          </BuildableReference>
@@ -93,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E095388827B36E7800AAAAAA"
-            BuildableName = "DarkModeDiscovery.app"
+            BuildableName = "TheOneRing.app"
             BlueprintName = "DarkModeDiscovery"
             ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
          </BuildableReference>
