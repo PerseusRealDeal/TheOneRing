@@ -95,7 +95,7 @@
 		E095389527B36E7B00AAAAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E095389827B36E7B00AAAAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E095389A27B36E7B00AAAAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeDiscoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOneRingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09538A327B36E7B00AAAAAA /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		E09538A527B36E7B00AAAAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E09538BC27B36E9400AAAAAA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E095388927B36E7800AAAAAA /* TheOneRing.app */,
-				E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */,
+				E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,9 +290,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E095388827B36E7800AAAAAA /* DarkModeDiscovery */ = {
+		E095388827B36E7800AAAAAA /* TheOneRing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscovery" */;
+			buildConfigurationList = E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRing" */;
 			buildPhases = (
 				E095388527B36E7800AAAAAA /* Sources */,
 				E095388627B36E7800AAAAAA /* Frameworks */,
@@ -303,7 +303,7 @@
 			);
 			dependencies = (
 			);
-			name = DarkModeDiscovery;
+			name = TheOneRing;
 			packageProductDependencies = (
 				2EA10A972CFE124D00535E5A /* ConsolePerseusLogger */,
 				2EA10A9A2CFE14C200535E5A /* PerseusDarkMode */,
@@ -313,9 +313,9 @@
 			productReference = E095388927B36E7800AAAAAA /* TheOneRing.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E095389E27B36E7B00AAAAAA /* DarkModeDiscoveryTests */ = {
+		E095389E27B36E7B00AAAAAA /* TheOneRingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscoveryTests" */;
+			buildConfigurationList = E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRingTests" */;
 			buildPhases = (
 				E095389B27B36E7B00AAAAAA /* Sources */,
 				E095389C27B36E7B00AAAAAA /* Frameworks */,
@@ -326,9 +326,9 @@
 			dependencies = (
 				E09538A127B36E7B00AAAAAA /* PBXTargetDependency */,
 			);
-			name = DarkModeDiscoveryTests;
+			name = TheOneRingTests;
 			productName = darkmodediscoveryTests;
-			productReference = E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */;
+			productReference = E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -349,7 +349,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */;
+			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "TheOneRing" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -367,8 +367,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E095388827B36E7800AAAAAA /* DarkModeDiscovery */,
-				E095389E27B36E7B00AAAAAA /* DarkModeDiscoveryTests */,
+				E095388827B36E7800AAAAAA /* TheOneRing */,
+				E095389E27B36E7B00AAAAAA /* TheOneRingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -472,7 +472,7 @@
 /* Begin PBXTargetDependency section */
 		E09538A127B36E7B00AAAAAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E095388827B36E7800AAAAAA /* DarkModeDiscovery */;
+			target = E095388827B36E7800AAAAAA /* TheOneRing */;
 			targetProxy = E09538A027B36E7B00AAAAAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -713,7 +713,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */ = {
+		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "TheOneRing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B127B36E7B00AAAAAA /* Debug */,
@@ -722,7 +722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscovery" */ = {
+		E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B427B36E7B00AAAAAA /* Debug */,
@@ -731,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscoveryTests" */ = {
+		E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B727B36E7B00AAAAAA /* Debug */,

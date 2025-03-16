@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E095388827B36E7800AAAAAA"
                BuildableName = "TheOneRing.app"
-               BlueprintName = "DarkModeDiscovery"
-               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+               BlueprintName = "TheOneRing"
+               ReferencedContainer = "container:TheOneRing.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E095389E27B36E7B00AAAAAA"
-               BuildableName = "DarkModeDiscoveryTests.xctest"
-               BlueprintName = "DarkModeDiscoveryTests"
-               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+               BuildableName = "TheOneRingTests.xctest"
+               BlueprintName = "TheOneRingTests"
+               ReferencedContainer = "container:TheOneRing.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "E085D9F027D1489B00C1AFDF"
                BuildableName = "DarkModeDiscoveryUITests.xctest"
                BlueprintName = "DarkModeDiscoveryUITests"
-               ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+               ReferencedContainer = "container:TheOneRing.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E095388827B36E7800AAAAAA"
             BuildableName = "TheOneRing.app"
-            BlueprintName = "DarkModeDiscovery"
-            ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+            BlueprintName = "TheOneRing"
+            ReferencedContainer = "container:TheOneRing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -94,8 +94,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E095388827B36E7800AAAAAA"
             BuildableName = "TheOneRing.app"
-            BlueprintName = "DarkModeDiscovery"
-            ReferencedContainer = "container:DarkModeDiscovery.xcodeproj">
+            BlueprintName = "TheOneRing"
+            ReferencedContainer = "container:TheOneRing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
