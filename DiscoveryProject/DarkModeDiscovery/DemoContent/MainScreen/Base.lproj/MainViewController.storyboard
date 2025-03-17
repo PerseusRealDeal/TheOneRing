@@ -40,10 +40,18 @@
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
+                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-ch-y8h" userLabel="Location Panel" customClass="CurrentLocationPanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="PDa-ch-y8h" firstAttribute="top" secondItem="Cwi-qw-VER" secondAttribute="top" id="2UD-eo-ban"/>
+                                                            <constraint firstItem="PDa-ch-y8h" firstAttribute="leading" secondItem="Cwi-qw-VER" secondAttribute="leading" id="GM8-vG-Vht"/>
+                                                            <constraint firstAttribute="bottom" secondItem="PDa-ch-y8h" secondAttribute="bottom" id="Mrb-cy-OkB"/>
                                                             <constraint firstAttribute="trailing" secondItem="YlS-RV-cFq" secondAttribute="trailing" constant="5" id="dD8-bK-dew"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PDa-ch-y8h" secondAttribute="trailing" id="dwM-MV-32J"/>
                                                             <constraint firstItem="YlS-RV-cFq" firstAttribute="top" secondItem="Cwi-qw-VER" secondAttribute="top" id="hSE-Ou-CvS"/>
                                                             <constraint firstItem="YlS-RV-cFq" firstAttribute="leading" secondItem="Cwi-qw-VER" secondAttribute="leading" constant="5" id="tux-dT-ee1"/>
                                                             <constraint firstAttribute="bottom" secondItem="YlS-RV-cFq" secondAttribute="bottom" constant="5" id="uSH-8a-CIv"/>

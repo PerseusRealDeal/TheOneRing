@@ -13,6 +13,8 @@
 
 import UIKit
 import ConsolePerseusLogger
+import PerseusGeoLocationKit
+
 import PerseusDarkMode
 
 /// The app delegate.
@@ -39,7 +41,7 @@ extension AppDelegate: UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         // And, finally, apply a new style for all screens
-        // AppearanceService.makeUp()
+        // DarkModeAgent.makeUp()
 
         return true
     }
@@ -48,11 +50,11 @@ extension AppDelegate: UIApplicationDelegate {
         log.message("[\(type(of: self))].\(#function)")
 
         // Update Dark Mode from Settings
-        if let choice = isDarkModeSettingsChanged() {
+        if let choice = DarkModeAgent.isDarkModeSettingsKeyChanged() {
             // Change Dark Mode value in Perseus Dark Mode library
-            AppearanceService.DarkModeUserChoice = choice
+            DarkModeAgent.DarkModeUserChoice = choice
             // Update appearance in accoring with changed Dark Mode Style
-            AppearanceService.makeUp()
+            DarkModeAgent.makeUp()
         }
     }
 }

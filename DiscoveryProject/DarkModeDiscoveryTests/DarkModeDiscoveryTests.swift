@@ -12,7 +12,7 @@
 //
 
 import XCTest
-@testable import DarkModeDiscovery
+@testable import TheOneRing
 
 class DarkModeDiscoveryTests: XCTestCase {
 

@@ -14,7 +14,7 @@
 import XCTest
 import ConsolePerseusLogger
 
-@testable import DarkModeDiscovery
+@testable import TheOneRing
 
 // MARK: - The Testing Application Delegate
 

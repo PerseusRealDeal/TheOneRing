@@ -26,7 +26,7 @@ class ColorTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     public var colorRepresented: UIColor? {
-        didSet { if AppearanceService.isEnabled { makeUp() } }
+        didSet { if DarkModeAgent.isEnabled { makeUp() } }
     }
 
     override func awakeFromNib() {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8262142D1FE7EE00E912F4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */; };
+		2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */; };
+		2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */; };
 		2EA10A982CFE124D00535E5A /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A972CFE124D00535E5A /* ConsolePerseusLogger */; };
 		2EA10A9B2CFE14C200535E5A /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A9A2CFE14C200535E5A /* PerseusDarkMode */; };
 		2EA10A9E2CFE1E1600535E5A /* PerseusGeoLocationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A9D2CFE1E1600535E5A /* PerseusGeoLocationKit */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
+		2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentLocationPanel.xib; sourceTree = "<group>"; };
+		2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationPanel.swift; sourceTree = "<group>"; };
 		2EA10AA52CFE211500535E5A /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA72CFE220F00535E5A /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = ../.github/workflows/swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA92CFE233B00535E5A /* APPROBATION.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = APPROBATION.md; path = ../APPROBATION.md; sourceTree = "<group>"; };
@@ -83,13 +89,13 @@
 		E09183C027BD495500475D2B /* SystemColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColorsViewController.swift; sourceTree = "<group>"; };
 		E09183C427BD4CEF00475D2B /* SemanticColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsViewController.swift; sourceTree = "<group>"; };
 		E09183C627BD4D4500475D2B /* DynamicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsViewController.swift; sourceTree = "<group>"; };
-		E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E095388927B36E7800AAAAAA /* TheOneRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheOneRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E095388C27B36E7800AAAAAA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E095389027B36E7800AAAAAA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E095389527B36E7B00AAAAAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E095389827B36E7B00AAAAAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E095389A27B36E7B00AAAAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeDiscoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOneRingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09538A327B36E7B00AAAAAA /* DarkModeDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeDiscoveryTests.swift; sourceTree = "<group>"; };
 		E09538A527B36E7B00AAAAAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E09538BC27B36E9400AAAAAA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			children = (
 				E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */,
 				E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */,
+				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
+				2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */,
 			);
 			path = UserControls;
 			sourceTree = "<group>";
@@ -172,8 +180,8 @@
 		E095388A27B36E7800AAAAAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */,
-				E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */,
+				E095388927B36E7800AAAAAA /* TheOneRing.app */,
+				E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				E095388C27B36E7800AAAAAA /* main.swift */,
+				2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */,
+				4B6B3742298E29B50003AF01 /* AppDelegate.swift */,
 				E0D0A73827B8012A006D46E8 /* Configuration */,
 				E0D0A73927B801DE006D46E8 /* DemoContent */,
 			);
@@ -238,7 +248,6 @@
 				E095389727B36E7B00AAAAAA /* LaunchScreen.storyboard */,
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
-				4B6B3742298E29B50003AF01 /* AppDelegate.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -281,9 +290,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E095388827B36E7800AAAAAA /* DarkModeDiscovery */ = {
+		E095388827B36E7800AAAAAA /* TheOneRing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscovery" */;
+			buildConfigurationList = E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRing" */;
 			buildPhases = (
 				E095388527B36E7800AAAAAA /* Sources */,
 				E095388627B36E7800AAAAAA /* Frameworks */,
@@ -294,19 +303,19 @@
 			);
 			dependencies = (
 			);
-			name = DarkModeDiscovery;
+			name = TheOneRing;
 			packageProductDependencies = (
 				2EA10A972CFE124D00535E5A /* ConsolePerseusLogger */,
 				2EA10A9A2CFE14C200535E5A /* PerseusDarkMode */,
 				2EA10A9D2CFE1E1600535E5A /* PerseusGeoLocationKit */,
 			);
 			productName = darkmodediscovery;
-			productReference = E095388927B36E7800AAAAAA /* DarkModeDiscovery.app */;
+			productReference = E095388927B36E7800AAAAAA /* TheOneRing.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E095389E27B36E7B00AAAAAA /* DarkModeDiscoveryTests */ = {
+		E095389E27B36E7B00AAAAAA /* TheOneRingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscoveryTests" */;
+			buildConfigurationList = E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRingTests" */;
 			buildPhases = (
 				E095389B27B36E7B00AAAAAA /* Sources */,
 				E095389C27B36E7B00AAAAAA /* Frameworks */,
@@ -317,9 +326,9 @@
 			dependencies = (
 				E09538A127B36E7B00AAAAAA /* PBXTargetDependency */,
 			);
-			name = DarkModeDiscoveryTests;
+			name = TheOneRingTests;
 			productName = darkmodediscoveryTests;
-			productReference = E095389F27B36E7B00AAAAAA /* DarkModeDiscoveryTests.xctest */;
+			productReference = E095389F27B36E7B00AAAAAA /* TheOneRingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -340,7 +349,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */;
+			buildConfigurationList = E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "TheOneRing" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -358,8 +367,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E095388827B36E7800AAAAAA /* DarkModeDiscovery */,
-				E095389E27B36E7B00AAAAAA /* DarkModeDiscoveryTests */,
+				E095388827B36E7800AAAAAA /* TheOneRing */,
+				E095389E27B36E7B00AAAAAA /* TheOneRingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,6 +393,7 @@
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
 				2EA10AAA2CFE233C00535E5A /* APPROBATION.md in Resources */,
 				E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */,
+				2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */,
 				E09538BE27B36E9400AAAAAA /* LICENSE in Resources */,
 				4B82755E29939CD100C84692 /* ColorTableViewCell.xib in Resources */,
 			);
@@ -427,6 +437,7 @@
 				E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
+				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
 				E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
@@ -436,6 +447,7 @@
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
 				E0A0841627FAF4F50010A55D /* HexColorConverter.swift in Sources */,
+				2E8262142D1FE7EE00E912F4 /* AppGlobals.swift in Sources */,
 				E07727C3280A7E4300D4A3A9 /* SemanticColorsViewList.swift in Sources */,
 				E03450F027C368F70071443E /* CustomColors.swift in Sources */,
 				4B82755D29939CD100C84692 /* ColorTableViewCell.swift in Sources */,
@@ -460,7 +472,7 @@
 /* Begin PBXTargetDependency section */
 		E09538A127B36E7B00AAAAAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E095388827B36E7800AAAAAA /* DarkModeDiscovery */;
+			target = E095388827B36E7800AAAAAA /* TheOneRing */;
 			targetProxy = E09538A027B36E7B00AAAAAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -608,17 +620,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				INFOPLIST_FILE = darkmodediscovery/configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheOneRing;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -631,18 +645,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = darkmodediscovery/configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.perseus.lab.darkmodediscovery;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheOneRing;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -668,7 +684,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeDiscovery.app/DarkModeDiscovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheOneRing.app/TheOneRing";
 			};
 			name = Debug;
 		};
@@ -690,14 +706,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkModeDiscovery.app/DarkModeDiscovery";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheOneRing.app/TheOneRing";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "DarkModeDiscovery" */ = {
+		E095388427B36E7800AAAAAA /* Build configuration list for PBXProject "TheOneRing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B127B36E7B00AAAAAA /* Debug */,
@@ -706,7 +722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscovery" */ = {
+		E09538B327B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B427B36E7B00AAAAAA /* Debug */,
@@ -715,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "DarkModeDiscoveryTests" */ = {
+		E09538B627B36E7B00AAAAAA /* Build configuration list for PBXNativeTarget "TheOneRingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E09538B727B36E7B00AAAAAA /* Debug */,
@@ -739,7 +755,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
-				branch = prepare/v2.0.0;
+				branch = hotfix/approbation;
 				kind = branch;
 			};
 		};
@@ -747,7 +763,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoLocationKit";
 			requirement = {
-				branch = prepare/v1.0.0;
+				branch = hotfix/approbation;
 				kind = branch;
 			};
 		};
