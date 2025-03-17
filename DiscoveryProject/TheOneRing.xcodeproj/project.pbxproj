@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5742D02D887D2C00D43674 /* CurrentLocationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5742CF2D887D2C00D43674 /* CurrentLocationPanel.xib */; };
 		2E8262142D1FE7EE00E912F4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */; };
-		2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */; };
 		2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */; };
 		2EA10A982CFE124D00535E5A /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A972CFE124D00535E5A /* ConsolePerseusLogger */; };
 		2EA10A9B2CFE14C200535E5A /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA10A9A2CFE14C200535E5A /* PerseusDarkMode */; };
@@ -16,6 +16,8 @@
 		2EA10AA62CFE211500535E5A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10AA52CFE211500535E5A /* .swiftlint.yml */; };
 		2EA10AA82CFE221000535E5A /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10AA72CFE220F00535E5A /* swiftlint.yml */; };
 		2EA10AAA2CFE233C00535E5A /* APPROBATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10AA92CFE233B00535E5A /* APPROBATION.md */; };
+		2EA971BB2D88790C00E564CA /* LocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */; };
+		2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA971BC2D88798000E564CA /* LocationViewController.swift */; };
 		4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B3742298E29B50003AF01 /* AppDelegate.swift */; };
 		4B7EABEE298D6DDF0063172D /* main.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B7EABED298D6DDF0063172D /* main.yml */; };
 		4B8275562990F70F00C84692 /* DetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8275552990F70F00C84692 /* DetailsViewController.storyboard */; };
@@ -64,12 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E5742CF2D887D2C00D43674 /* CurrentLocationPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentLocationPanel.xib; sourceTree = "<group>"; };
 		2E8262132D1FE7EE00E912F4 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
-		2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentLocationPanel.xib; sourceTree = "<group>"; };
 		2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationPanel.swift; sourceTree = "<group>"; };
 		2EA10AA52CFE211500535E5A /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA72CFE220F00535E5A /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftlint.yml; path = ../.github/workflows/swiftlint.yml; sourceTree = "<group>"; };
 		2EA10AA92CFE233B00535E5A /* APPROBATION.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = APPROBATION.md; path = ../APPROBATION.md; sourceTree = "<group>"; };
+		2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationViewController.storyboard; sourceTree = "<group>"; };
+		2EA971BC2D88798000E564CA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EA971B92D88650B00E564CA /* CurrentLocation */ = {
+			isa = PBXGroup;
+			children = (
+				2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */,
+				2EA971BC2D88798000E564CA /* LocationViewController.swift */,
+				2E5742CF2D887D2C00D43674 /* CurrentLocationPanel.xib */,
+				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
+			);
+			path = CurrentLocation;
+			sourceTree = "<group>";
+		};
 		4B7EABE8298CC13A0063172D /* FirstPartyCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,15 +165,13 @@
 			path = ColoursLists;
 			sourceTree = "<group>";
 		};
-		E0761ADB27BB8960009E6AA5 /* UserControls */ = {
+		E0761ADB27BB8960009E6AA5 /* DarkMode */ = {
 			isa = PBXGroup;
 			children = (
 				E0761ADE27BB8BCD009E6AA5 /* DarkModePanel.swift */,
 				E0761AE027BB8BF6009E6AA5 /* DarkModePanel.xib */,
-				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
-				2E8501D42D265F7D00C60CD2 /* CurrentLocationPanel.xib */,
 			);
-			path = UserControls;
+			path = DarkMode;
 			sourceTree = "<group>";
 		};
 		E095388027B36E7800AAAAAA = {
@@ -256,13 +269,14 @@
 			isa = PBXGroup;
 			children = (
 				E0EC065727BD173D007F5E2B /* MainScreen */,
-				E0EC065627BD172E007F5E2B /* SemanticToolsScreen */,
-				E0761ADB27BB8960009E6AA5 /* UserControls */,
+				E0EC065627BD172E007F5E2B /* SemanticTools */,
+				2EA971B92D88650B00E564CA /* CurrentLocation */,
+				E0761ADB27BB8960009E6AA5 /* DarkMode */,
 			);
 			path = DemoContent;
 			sourceTree = "<group>";
 		};
-		E0EC065627BD172E007F5E2B /* SemanticToolsScreen */ = {
+		E0EC065627BD172E007F5E2B /* SemanticTools */ = {
 			isa = PBXGroup;
 			children = (
 				4B82755F299428F200C84692 /* ColoursLists */,
@@ -270,7 +284,7 @@
 				E02381E427BD3661008A03CA /* SemanticsViewController.storyboard */,
 				E02381E627BD367B008A03CA /* SemanticsViewController.swift */,
 			);
-			path = SemanticToolsScreen;
+			path = SemanticTools;
 			sourceTree = "<group>";
 		};
 		E0EC065727BD173D007F5E2B /* MainScreen */ = {
@@ -391,9 +405,10 @@
 				E02381E527BD3661008A03CA /* SemanticsViewController.storyboard in Resources */,
 				E095389627B36E7B00AAAAAA /* Assets.xcassets in Resources */,
 				E09538BF27B36E9400AAAAAA /* README.md in Resources */,
+				2EA971BB2D88790C00E564CA /* LocationViewController.storyboard in Resources */,
 				2EA10AAA2CFE233C00535E5A /* APPROBATION.md in Resources */,
 				E0B3CA8427B81D6C00B8CE61 /* members.json in Resources */,
-				2E8501D52D265F7D00C60CD2 /* CurrentLocationPanel.xib in Resources */,
+				2E5742D02D887D2C00D43674 /* CurrentLocationPanel.xib in Resources */,
 				E09538BE27B36E9400AAAAAA /* LICENSE in Resources */,
 				4B82755E29939CD100C84692 /* ColorTableViewCell.xib in Resources */,
 			);
@@ -439,6 +454,7 @@
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
 				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
+				2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */,
 				E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
 				E09183C127BD495500475D2B /* SystemColorsViewController.swift in Sources */,

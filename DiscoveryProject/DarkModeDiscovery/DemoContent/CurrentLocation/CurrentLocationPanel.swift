@@ -21,11 +21,27 @@ import PerseusDarkMode
 
 class CurrentLocationPanel: UIView {
 
+    private lazy var locationViewController = { () -> LocationViewController in
+
+        let storyboard =
+            UIStoryboard(name: String(describing: LocationViewController.self), bundle: nil)
+        let screen = storyboard.instantiateInitialViewController() as? LocationViewController
+
+        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        return screen ?? LocationViewController()
+    }()
+
+    @IBAction func actionOpenMap(_ sender: UIButton) {
+        guard let vc = self.parentViewController() else { return }
+
+        vc.present(self.locationViewController, animated: true, completion: nil)
+    }
     // MARK: - Interface Builder connections
 
     /// Outlet of the content view.
     @IBOutlet private weak var contentView: UIView!
 
+    @IBOutlet private weak var buttonOpenMap: UIButton!
     @IBOutlet private weak var buttonRefreshStatus: UIButton!
     @IBOutlet private weak var buttonCurrentLocation: UIButton!
 
@@ -135,6 +151,8 @@ class CurrentLocationPanel: UIView {
         buttonRefreshStatus.layer.masksToBounds = true
         buttonCurrentLocation.layer.cornerRadius = 8
         buttonCurrentLocation.layer.masksToBounds = true
+        buttonOpenMap.layer.cornerRadius = 8
+        buttonOpenMap.layer.masksToBounds = true
     }
 
     /// Updates the appearance of the user control.

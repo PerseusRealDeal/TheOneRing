@@ -11,7 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-ch-y8h" userLabel="Location Panel" customClass="CurrentLocationPanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-ch-y8h" userLabel="Location Panel" customClass="CurrentLocationPanel" customModule="TheOneRing" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
@@ -134,7 +134,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md1-ck-gWd" userLabel="Dark Mode Panel Block">
                                                         <rect key="frame" x="56.5" y="0.0" width="232" height="56.5"/>
                                                         <subviews>
-                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFc-iZ-fRe" customClass="DarkModePanel" customModule="TheOneRing" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="0.0" width="222" height="41.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
