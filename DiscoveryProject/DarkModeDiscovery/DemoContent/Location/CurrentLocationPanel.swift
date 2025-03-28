@@ -159,6 +159,7 @@ class CurrentLocationPanel: UIView {
     @objc private func makeUp() {
         buttonRefreshStatus.backgroundColor = .customSecondaryBackground
         buttonCurrentLocation.backgroundColor = .customSecondaryBackground
+        buttonOpenMap.backgroundColor = .customSecondaryBackground
     }
 }
 

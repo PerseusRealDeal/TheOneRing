@@ -136,7 +136,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EA971B92D88650B00E564CA /* CurrentLocation */ = {
+		2EA971B92D88650B00E564CA /* Location */ = {
 			isa = PBXGroup;
 			children = (
 				2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */,
@@ -144,7 +144,7 @@
 				2E5742CF2D887D2C00D43674 /* CurrentLocationPanel.xib */,
 				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
 			);
-			path = CurrentLocation;
+			path = Location;
 			sourceTree = "<group>";
 		};
 		4B7EABE8298CC13A0063172D /* FirstPartyCode */ = {
@@ -270,7 +270,7 @@
 			children = (
 				E0EC065727BD173D007F5E2B /* MainScreen */,
 				E0EC065627BD172E007F5E2B /* SemanticTools */,
-				2EA971B92D88650B00E564CA /* CurrentLocation */,
+				2EA971B92D88650B00E564CA /* Location */,
 				E0761ADB27BB8960009E6AA5 /* DarkMode */,
 			);
 			path = DemoContent;

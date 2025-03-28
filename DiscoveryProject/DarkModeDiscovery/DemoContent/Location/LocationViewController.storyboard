@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="LocationViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg0-cw-6nR" userLabel="Map View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-uC-oqc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Wv7-uC-oqc" secondAttribute="bottom" id="4To-Sy-q3z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wv7-uC-oqc" secondAttribute="trailing" id="QQq-gj-5wZ"/>
+                                    <constraint firstItem="Wv7-uC-oqc" firstAttribute="leading" secondItem="kg0-cw-6nR" secondAttribute="leading" id="QdJ-6B-jt8"/>
+                                    <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" id="Xw3-Xq-xzf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-U2-YXR" userLabel="Close Button View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCE-k2-gD9">
+                                        <rect key="frame" x="131.5" y="10" width="112.5" height="13.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="actionButtonCloseTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dKH-e7-SlY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RCE-k2-gD9" firstAttribute="height" secondItem="G2Z-U2-YXR" secondAttribute="height" multiplier="0.4" id="6qH-wu-F6F"/>
+                                    <constraint firstItem="RCE-k2-gD9" firstAttribute="centerX" secondItem="G2Z-U2-YXR" secondAttribute="centerX" id="9mH-D6-O1K"/>
+                                    <constraint firstItem="RCE-k2-gD9" firstAttribute="width" secondItem="G2Z-U2-YXR" secondAttribute="width" multiplier="0.3" id="KOR-gh-bXi"/>
+                                    <constraint firstItem="RCE-k2-gD9" firstAttribute="centerY" secondItem="G2Z-U2-YXR" secondAttribute="centerY" id="kIU-4F-OY2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G2Z-U2-YXR" secondAttribute="trailing" id="0qW-GX-Fsx"/>
+                            <constraint firstItem="G2Z-U2-YXR" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.05" id="PTf-fW-9ya"/>
+                            <constraint firstItem="kg0-cw-6nR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="az1-6N-HXI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kg0-cw-6nR" secondAttribute="bottom" id="d2N-c4-cDS"/>
+                            <constraint firstItem="kg0-cw-6nR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dAy-0Z-uPU"/>
+                            <constraint firstItem="G2Z-U2-YXR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kZh-iy-dbc"/>
+                            <constraint firstItem="G2Z-U2-YXR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sNh-tt-4gf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kg0-cw-6nR" secondAttribute="trailing" id="xbc-dD-o95"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonClose" destination="RCE-k2-gD9" id="TVA-9C-GPT"/>
+                        <outlet property="mapView" destination="Wv7-uC-oqc" id="cli-ua-Hgs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
