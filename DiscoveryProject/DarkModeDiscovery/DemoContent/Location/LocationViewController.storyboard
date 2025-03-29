@@ -18,20 +18,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg0-cw-6nR" userLabel="Map View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg0-cw-6nR" userLabel="Map View Container">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-uC-oqc">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <standardMapConfiguration key="preferredConfiguration"/>
                                     </mapView>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVm-QJ-mwF">
+                                        <rect key="frame" x="213" y="442" width="152" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Refresh Status"/>
+                                        <connections>
+                                            <action selector="actionButtonStatusTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dFW-K1-w4Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibT-or-RWB">
+                                        <rect key="frame" x="213" y="487" width="152" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Go To Point"/>
+                                        <connections>
+                                            <action selector="actionButtonGoToPointTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="14d-hm-iBQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npD-Rz-AZP">
+                                        <rect key="frame" x="213" y="532" width="152" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start Updating"/>
+                                        <connections>
+                                            <action selector="actionButtonStartUpdatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="z2o-80-GOU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOn-CT-VqF">
+                                        <rect key="frame" x="213" y="577" width="152" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Stop Updating" titleAlignment="automatic"/>
+                                        <connections>
+                                            <action selector="actionButtonStopUpdatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SPS-be-eW8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrJ-sc-EYX">
+                                        <rect key="frame" x="213" y="622" width="152" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Current Location"/>
+                                        <connections>
+                                            <action selector="actionButtonCrurrentLocationTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="85x-LN-n3N"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjW-eU-RsO">
+                                        <rect key="frame" x="119" y="75" width="137" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude, Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odp-GW-zGY">
+                                        <rect key="frame" x="113.5" y="100" width="148" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="LVm-QJ-mwF" firstAttribute="width" secondItem="rrJ-sc-EYX" secondAttribute="width" id="0kP-J0-ztO"/>
+                                    <constraint firstItem="LVm-QJ-mwF" firstAttribute="leading" secondItem="ibT-or-RWB" secondAttribute="leading" id="3fA-9K-BN9"/>
                                     <constraint firstAttribute="bottom" secondItem="Wv7-uC-oqc" secondAttribute="bottom" id="4To-Sy-q3z"/>
+                                    <constraint firstItem="npD-Rz-AZP" firstAttribute="width" secondItem="rrJ-sc-EYX" secondAttribute="width" id="7VZ-Zg-yKW"/>
+                                    <constraint firstItem="iOn-CT-VqF" firstAttribute="width" secondItem="rrJ-sc-EYX" secondAttribute="width" id="AUh-p6-uT1"/>
+                                    <constraint firstItem="npD-Rz-AZP" firstAttribute="bottom" secondItem="iOn-CT-VqF" secondAttribute="top" constant="-10" id="Esd-FF-k6Q"/>
+                                    <constraint firstItem="odp-GW-zGY" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" id="Kfm-Zt-Th2"/>
                                     <constraint firstAttribute="trailing" secondItem="Wv7-uC-oqc" secondAttribute="trailing" id="QQq-gj-5wZ"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="leading" secondItem="kg0-cw-6nR" secondAttribute="leading" id="QdJ-6B-jt8"/>
+                                    <constraint firstItem="EjW-eU-RsO" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" constant="75" id="R2c-MW-YcU"/>
+                                    <constraint firstItem="odp-GW-zGY" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" constant="100" id="SkH-eL-1R7"/>
+                                    <constraint firstItem="EjW-eU-RsO" firstAttribute="centerX" secondItem="kg0-cw-6nR" secondAttribute="centerX" id="XcI-I7-rOu"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" id="Xw3-Xq-xzf"/>
+                                    <constraint firstItem="ibT-or-RWB" firstAttribute="bottom" secondItem="npD-Rz-AZP" secondAttribute="top" constant="-10" id="Yt4-1I-Xqd"/>
+                                    <constraint firstItem="ibT-or-RWB" firstAttribute="width" secondItem="rrJ-sc-EYX" secondAttribute="width" id="aJK-nN-jVJ"/>
+                                    <constraint firstItem="npD-Rz-AZP" firstAttribute="leading" secondItem="rrJ-sc-EYX" secondAttribute="leading" id="cYW-w1-oJ0"/>
+                                    <constraint firstItem="iOn-CT-VqF" firstAttribute="bottom" secondItem="rrJ-sc-EYX" secondAttribute="top" constant="-10" id="ihJ-eE-i4V"/>
+                                    <constraint firstAttribute="trailing" secondItem="rrJ-sc-EYX" secondAttribute="trailing" constant="10" id="mcv-0K-C78"/>
+                                    <constraint firstItem="LVm-QJ-mwF" firstAttribute="bottom" secondItem="ibT-or-RWB" secondAttribute="top" constant="-10" id="ra0-wK-jcN"/>
+                                    <constraint firstItem="iOn-CT-VqF" firstAttribute="leading" secondItem="rrJ-sc-EYX" secondAttribute="leading" id="wNK-q4-XIg"/>
+                                    <constraint firstAttribute="bottom" secondItem="rrJ-sc-EYX" secondAttribute="bottom" constant="10" id="wrb-UI-B1L"/>
+                                    <constraint firstItem="ibT-or-RWB" firstAttribute="leading" secondItem="rrJ-sc-EYX" secondAttribute="leading" id="yCs-MR-6QO"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-U2-YXR" userLabel="Close Button View">
@@ -70,6 +150,13 @@
                     </view>
                     <connections>
                         <outlet property="buttonClose" destination="RCE-k2-gD9" id="TVA-9C-GPT"/>
+                        <outlet property="buttonCrurrentLocation" destination="rrJ-sc-EYX" id="Q4b-38-m8Q"/>
+                        <outlet property="buttonGoToPoint" destination="ibT-or-RWB" id="O3o-mO-WNu"/>
+                        <outlet property="buttonRefreshPermissionStatus" destination="LVm-QJ-mwF" id="xHH-nz-ZRq"/>
+                        <outlet property="buttonStartUpdating" destination="npD-Rz-AZP" id="nE1-9J-uhf"/>
+                        <outlet property="buttonStopUpdating" destination="iOn-CT-VqF" id="r7u-oL-aa6"/>
+                        <outlet property="labelCoordinate" destination="odp-GW-zGY" id="YLf-Tx-y4Z"/>
+                        <outlet property="labelPermissionStatus" destination="EjW-eU-RsO" id="h7o-72-WuI"/>
                         <outlet property="mapView" destination="Wv7-uC-oqc" id="cli-ua-Hgs"/>
                     </connections>
                 </viewController>
