@@ -17,7 +17,7 @@ import UIKit
 import ConsolePerseusLogger
 
 import PerseusGeoLocationKit
-import PerseusDarkMode
+// import PerseusDarkMode
 
 class CurrentLocationPanel: UIView {
 

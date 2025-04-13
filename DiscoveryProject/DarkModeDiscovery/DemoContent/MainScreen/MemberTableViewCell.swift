@@ -12,7 +12,7 @@
 //
 
 import UIKit
-import PerseusDarkMode
+// import PerseusDarkMode
 
 /// Represents a table view cell for a fellowship member.
 class MemberTableViewCell: UITableViewCell {

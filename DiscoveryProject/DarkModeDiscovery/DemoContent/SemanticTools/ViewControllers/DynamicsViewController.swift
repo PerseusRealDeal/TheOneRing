@@ -13,7 +13,7 @@
 
 import UIKit
 import ConsolePerseusLogger
-import PerseusDarkMode
+// import PerseusDarkMode
 
 /// Represents the idea of dynamic image view with two samples.
 class DynamicsViewController: UIViewController {
@@ -37,7 +37,8 @@ class DynamicsViewController: UIViewController {
     }
 
     @IBAction func buttonPDMSystemStyleTapped(_ sender: UIButton) {
-        log.message("2 = \(DarkModeAgent.shared.systemStyle)")
+        let text = "2 = tapped"
+        log.message(text)
     }
 
     // MARK: - The life cyrcle methods

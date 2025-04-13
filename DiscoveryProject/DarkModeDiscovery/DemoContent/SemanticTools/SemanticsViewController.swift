@@ -12,7 +12,7 @@
 //
 
 import UIKit
-import PerseusDarkMode
+// import PerseusDarkMode
 
 /// Represents a host view controller for other view controllers.
 ///
@@ -69,7 +69,7 @@ class SemanticsViewController: UIViewController {
         // Dark Mode panel
 
         optionsPanel.segmentedControlValueChangedClosure = { option in
-            DarkModeAgent.forceDarkMode(option)
+            DarkModeAgent.force(option)
 
             // Call to change the value of the other instance of Dark Mode panel
             self.userChoiceChangedClosure?(option)

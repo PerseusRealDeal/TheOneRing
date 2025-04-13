@@ -15,7 +15,7 @@ import UIKit
 import ConsolePerseusLogger
 import PerseusGeoLocationKit
 
-import PerseusDarkMode
+// import PerseusDarkMode
 
 /// The app delegate.
 class AppDelegate: UIResponder { var window: UIWindow? }
@@ -51,10 +51,7 @@ extension AppDelegate: UIApplicationDelegate {
 
         // Update Dark Mode from Settings
         if let choice = DarkModeAgent.isDarkModeSettingsKeyChanged() {
-            // Change Dark Mode value in Perseus Dark Mode library
-            DarkModeAgent.DarkModeUserChoice = choice
-            // Update appearance in accoring with changed Dark Mode Style
-            DarkModeAgent.makeUp()
+            DarkModeAgent.force(choice)
         }
     }
 }

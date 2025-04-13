@@ -102,7 +102,7 @@
             <objects>
                 <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
@@ -205,7 +205,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-1q-uWx" userLabel="Stack Images View">
                                 <rect key="frame" x="16" y="4.5" width="288" height="262"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="117.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="TheFellowship"/>
@@ -216,7 +216,7 @@
                                         <rect key="frame" x="0.0" y="117.5" width="288" height="26.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="PerseusDarkMode">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="288" height="118"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="Rivendell"/>
@@ -288,7 +288,7 @@
             <objects>
                 <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHL-Qb-aJB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-wD-K8D">
@@ -324,7 +324,7 @@
             <objects>
                 <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cV0-bg-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-Rk-TXH">
@@ -357,6 +357,14 @@
             <point key="canvasLocation" x="-409" y="533"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2oO-lS-Dkv">
+            <size key="intrinsicContentSize" width="640" height="338"/>
+        </designable>
+        <designable name="hEW-ge-WsJ">
+            <size key="intrinsicContentSize" width="1000" height="414"/>
+        </designable>
+    </designables>
     <resources>
         <image name="FrodoWithTheRing" width="960" height="500"/>
         <image name="Rivendell" width="640" height="338"/>
