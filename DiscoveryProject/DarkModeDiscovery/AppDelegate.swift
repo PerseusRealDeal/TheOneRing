@@ -41,7 +41,7 @@ extension AppDelegate: UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         // And, finally, apply a new style for all screens
-        // DarkModeAgent.makeUp()
+        DarkModeAgent.makeUp()
 
         return true
     }

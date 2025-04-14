@@ -38,7 +38,7 @@ class SystemColorsViewController: UIViewController {
         // Make the View sensitive to Dark Mode
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     /// Updates the appearance of the screen.

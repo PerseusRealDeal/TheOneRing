@@ -36,7 +36,7 @@ class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
         // Dark Mode setup
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     /// Updates the appearance of the screen.
