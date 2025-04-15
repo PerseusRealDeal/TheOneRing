@@ -14,10 +14,10 @@
 //
 
 import UIKit
-import ConsolePerseusLogger
 
-import PerseusGeoLocationKit
-// import PerseusDarkMode
+import ConsolePerseusLogger
+import PerseusDarkMode
+import PerseusGeoKit
 
 class CurrentLocationPanel: UIView {
 

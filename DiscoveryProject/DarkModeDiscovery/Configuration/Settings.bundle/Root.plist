@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Appearance Mode</string>
 			<key>Key</key>
-			<string>dark_mode_preference</string>
+			<string>DarkModeSettingsKey</string>
 			<key>DefaultValue</key>
 			<integer>0</integer>
 			<key>Titles</key>

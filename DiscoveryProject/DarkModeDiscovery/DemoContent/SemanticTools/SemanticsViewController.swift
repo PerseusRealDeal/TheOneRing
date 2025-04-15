@@ -12,7 +12,7 @@
 //
 
 import UIKit
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Represents a host view controller for other view controllers.
 ///

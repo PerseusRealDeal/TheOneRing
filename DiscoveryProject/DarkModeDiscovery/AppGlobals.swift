@@ -12,9 +12,9 @@
 //
 
 import Foundation
-import ConsolePerseusLogger
 
-import PerseusGeoLocationKit
+import ConsolePerseusLogger
+import PerseusGeoKit
 
 struct AppGlobals {
 

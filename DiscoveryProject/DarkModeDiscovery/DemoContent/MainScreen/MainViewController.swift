@@ -12,7 +12,7 @@
 //
 
 import UIKit
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Title of the app's theme.
 let TITLE = "The Fellowship of the Ring"

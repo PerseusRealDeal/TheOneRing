@@ -14,12 +14,12 @@
 import UIKit
 import ConsolePerseusLogger
 
-// import class PerseusDarkMode.PerseusLogger
-import class PerseusGeoLocationKit.PerseusLogger
+import class PerseusDarkMode.PerseusLogger
+import class PerseusGeoKit.PerseusLogger
 
 // swiftlint:disable type_name
-// typealias dmlog = PerseusDarkMode.PerseusLogger
-typealias geolog = PerseusGeoLocationKit.PerseusLogger
+typealias dmlog = PerseusDarkMode.PerseusLogger
+typealias geolog = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
 
 // MARK: - Logger
@@ -30,9 +30,9 @@ typealias geolog = PerseusGeoLocationKit.PerseusLogger
 
 geolog.turned = .off
 
-// MARK: - Run the app
-
 log.message("The app's start point...", .info)
+
+// MARK: - Run the app
 
 let globals = AppGlobals()
 

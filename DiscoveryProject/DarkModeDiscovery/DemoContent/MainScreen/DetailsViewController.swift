@@ -12,7 +12,7 @@
 //
 
 import UIKit
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Represents a screen for the details of a fellowship member.
 class DetailsViewController: UIViewController {

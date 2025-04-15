@@ -12,7 +12,7 @@
 //
 
 import UIKit
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Represents custom colors requirements.
 public protocol UICustomColorsProtocol {

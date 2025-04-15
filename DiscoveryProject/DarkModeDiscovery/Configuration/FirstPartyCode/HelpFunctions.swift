@@ -12,7 +12,7 @@
 //
 
 import UIKit
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Registers settings bundle with Dark Mode option.
 func registerSettingsBundle() {

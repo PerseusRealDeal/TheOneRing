@@ -12,8 +12,9 @@
 //
 
 import UIKit
+
 import ConsolePerseusLogger
-// import PerseusDarkMode
+import PerseusDarkMode
 
 /// Represents the idea of dynamic image view with two samples.
 class DynamicsViewController: UIViewController {
