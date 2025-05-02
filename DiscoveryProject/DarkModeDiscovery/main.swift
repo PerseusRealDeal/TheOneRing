@@ -28,7 +28,9 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 // dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-geolog.turned = .off
+dmlog.turned = .off
+// geolog.turned = .off
+// log.turned = .off
 
 log.message("The app's start point...", .info)
 

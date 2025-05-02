@@ -20,16 +20,12 @@ struct AppGlobals {
 
     // MARK: - Business Data
 
-    static var currentLocation: PerseusLocation? {
+    static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
             log.message("\(location)", .info)
         }
     }
-
-    // MARK: - Constants
-
-    static let preferedAccuracy = LocationAccuracy.threeKilometers
 
     // MARK: - System Services
 
@@ -38,25 +34,15 @@ struct AppGlobals {
 
     // MARK: - Custom Services
 
-    public let locationDealer: LocationAgent
+    public let locationDealer: GeoAgent
 
     // MARK: - Initializer
 
     init() {
         log.message("[\(type(of: self))].\(#function)", .info)
 
-        locationDealer = LocationAgent.shared
+        locationDealer = GeoAgent.shared
 
-        // Configure accuracy
-        var lm = locationDealer.locationManager
-        lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
-
-        // Configure GoTo Settings alert
-        let text = ActionAlertText(title: "Custom Title",
-                                   message: "Custom Message",
-                                   buttonCancel: "MyCancel",
-                                   buttonFunction: "MyAction")
-
-        locationDealer.alert.titles = text
+        GeoAgent.currentAccuracy = PREFERED_ACCURACY
     }
 }

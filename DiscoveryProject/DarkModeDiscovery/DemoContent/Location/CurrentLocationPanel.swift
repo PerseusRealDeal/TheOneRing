@@ -49,34 +49,31 @@ class CurrentLocationPanel: UIView {
     @IBOutlet private weak var labelGeoCoupleValue: UILabel!
 
     @IBAction func buttonRefreshStatusTapped(_ sender: UIButton) {
-        let dealer = globals.locationDealer
 
-        labelPermissionValue.text = "\(dealer.locationPermit)".capitalized
+        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
 
-        dealer.requestPermission { permit in
+        GeoAgent.shared.requestPermission { permit in
             if permit != .allowed, let vc = self.parentViewController() {
-                dealer.alert.show(using: vc)
+                GeoAgent.showRedirectAlert(vc, REDIRECT_ALERT_TITLES)
             }
         }
     }
 
     @IBAction func buttonRefreshCurrentTapped(_ sender: UIButton) {
-        let dealer = globals.locationDealer
-
         do {
-            try dealer.requestCurrentLocation()
+            try GeoAgent.shared.requestCurrentLocation()
         } catch LocationError.permissionRequired(let permit) {
 
-            log.message("[\(type(of: self))].\(#function) - permission required", .notice)
+            log.message("[\(type(of: self))].\(#function) permission required", .notice)
 
             if permit == .notDetermined {
-                dealer.requestPermission()
+                GeoAgent.shared.requestPermission()
             } else if let vc = self.parentViewController() {
-                dealer.alert.show(using: vc)
+                GeoAgent.showRedirectAlert(vc, REDIRECT_ALERT_TITLES)
             }
 
         } catch {
-            log.message("[\(type(of: self))].\(#function) - something totally wrong", .error)
+            log.message("[\(type(of: self))].\(#function) something totally wrong", .error)
         }
     }
 
@@ -121,21 +118,10 @@ class CurrentLocationPanel: UIView {
 
         // Setup location event handlers.
 
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerCurrentHandler(_:)),
-                                  name: .locationDealerCurrentNotification)
-
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerStatusChangedHandler(_:)),
-                                  name: .locationDealerStatusChangedNotification)
-
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerErrorHandler(_:)),
-                                  name: .locationDealerErrorNotification)
-
-        LocationAgent.getNotified(with: self,
-                                  selector: #selector(locationDealerUpdatesHandler(_:)),
-                                  name: .locationDealerUpdatesNotification)
+        GeoAgent.register(self, #selector(currentLocationHandler(_:)), .currentLocation)
+        GeoAgent.register(self, #selector(locationStatusHandler(_:)), .locationStatus)
+        GeoAgent.register(self, #selector(locationErrorHandler(_:)), .locationError)
+        GeoAgent.register(self, #selector(locationUpdatesHandler(_:)), .locationUpdates)
 
         // Dark Mode setup
 
@@ -174,12 +160,12 @@ extension CurrentLocationPanel {
         return "\(location.latitude.cut(.four)), \(location.longitude.cut(.four))"
     }
 
-    @objc private func locationDealerCurrentHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+    @objc private func currentLocationHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
 
-        guard let result = notification.object as? Result<PerseusLocation, LocationError>
+        guard let result = notification.object as? Result<GeoPoint, LocationError>
         else {
-            log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+            log.message("[\(type(of: self))].\(#function) [EVENT]", .error)
             return
         }
 
@@ -193,19 +179,19 @@ extension CurrentLocationPanel {
         refresh()
     }
 
-    @objc private func locationDealerStatusChangedHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+    @objc private func locationStatusHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
         refresh()
     }
 
-    @objc private func locationDealerErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+    @objc private func locationErrorHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
 
         guard
             let result = notification.object as? LocationError,
             let failedRequestDetails = result.failedRequestDetails
         else {
-            log.message("[\(type(of: self))].\(#function) - no error details", .error)
+            log.message("[\(type(of: self))].\(#function) no error details", .error)
             return
         }
 
@@ -217,13 +203,13 @@ extension CurrentLocationPanel {
         }
     }
 
-    @objc private func locationDealerUpdatesHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .info)
+    @objc private func locationUpdatesHandler(_ notification: Notification) {
+        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
 
         guard
-            let result = notification.object as? Result<[PerseusLocation], LocationError>
+            let result = notification.object as? Result<[GeoPoint], LocationError>
         else {
-            log.message("[\(type(of: self))]:[NOTIFICATION].\(#function)", .error)
+            log.message("[\(type(of: self))].\(#function) [EVENT]", .error)
             return
         }
 
@@ -238,9 +224,7 @@ extension CurrentLocationPanel {
     }
 
     private func refresh() {
-        let permit = "\(globals.locationDealer.locationPermit)".capitalized
-
-        labelPermissionValue.text = permit
+        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
         labelGeoCoupleValue.text = geoCouple
     }
 
