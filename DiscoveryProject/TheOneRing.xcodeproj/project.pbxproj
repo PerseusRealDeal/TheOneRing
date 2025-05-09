@@ -17,9 +17,7 @@
 		2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA971BC2D88798000E564CA /* LocationViewController.swift */; };
 		2EB296A32DBC16DA000D7A3F /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB296A22DBC16DA000D7A3F /* PerseusGeoKit */; };
 		2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */; };
-		2EDC4D482DCD2782001626DD /* GeoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */; };
-		2EDC4D4A2DCD2793001626DD /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC4D492DCD2793001626DD /* GeoConstants.swift */; };
-		2EE0A1262DCDFA2A00C95C17 /* LocationDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */; };
+		2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */; };
 		2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77A2DBE21D400375792 /* PerseusDarkMode */; };
 		2EE1B77E2DBE21E600375792 /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77D2DBE21E600375792 /* ConsolePerseusLogger */; };
 		4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B3742298E29B50003AF01 /* AppDelegate.swift */; };
@@ -79,9 +77,7 @@
 		2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationViewController.storyboard; sourceTree = "<group>"; };
 		2EA971BC2D88798000E564CA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
-		2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoordinator.swift; sourceTree = "<group>"; };
-		2EDC4D492DCD2793001626DD /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
-		2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDealer.swift; sourceTree = "<group>"; };
+		2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
@@ -151,9 +147,6 @@
 				2EA971BC2D88798000E564CA /* LocationViewController.swift */,
 				2E5742CF2D887D2C00D43674 /* CurrentLocationPanel.xib */,
 				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
-				2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */,
-				2EDC4D492DCD2793001626DD /* GeoConstants.swift */,
-				2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -164,6 +157,7 @@
 				E03450EF27C368F70071443E /* CustomColors.swift */,
 				E03450F127C36F870071443E /* HelpFunctions.swift */,
 				2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */,
+				2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */,
 			);
 			path = FirstPartyCode;
 			sourceTree = "<group>";
@@ -464,9 +458,7 @@
 				E0761ADF27BB8BCD009E6AA5 /* DarkModePanel.swift in Sources */,
 				E0A3582027B93FA900472F95 /* MemberTableViewCell.swift in Sources */,
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
-				2EDC4D4A2DCD2793001626DD /* GeoConstants.swift in Sources */,
 				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
-				2EE0A1262DCDFA2A00C95C17 /* LocationDealer.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
 				2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */,
 				2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */,
@@ -474,7 +466,6 @@
 				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
 				E09183C127BD495500475D2B /* SystemColorsViewController.swift in Sources */,
 				E095389127B36E7800AAAAAA /* MainViewController.swift in Sources */,
-				2EDC4D482DCD2782001626DD /* GeoCoordinator.swift in Sources */,
 				E0B3CA8527B81D6C00B8CE61 /* Member.swift in Sources */,
 				E095388D27B36E7800AAAAAA /* main.swift in Sources */,
 				E0A3582427B9611300472F95 /* DetailsViewController.swift in Sources */,
@@ -487,6 +478,7 @@
 				E0A0841827FAF68A0010A55D /* ColorConverterViewController.swift in Sources */,
 				E03450F227C36F870071443E /* HelpFunctions.swift in Sources */,
 				4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */,
+				2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,8 +71,8 @@ class LocationViewController: UIViewController {
         // Set the defualt visible area
         mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
 
-        // Connect to Geo coordinator
-        AppGlobals.geoCoordinator.mapViewController = self
+        // Connect to Geo Coordinator
+        GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
 
         // Connect to Dark Mode explicitly
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
@@ -105,19 +105,13 @@ class LocationViewController: UIViewController {
         buttonCrurrentLocation.layer.cornerRadius = 5
         buttonCrurrentLocation.clipsToBounds = true
     }
-
-    // MARK: - Contract
-
-    public func reloadData() {
-        reload()
-    }
 }
 
 // MARK: - Implementation
 
 extension LocationViewController {
 
-    private func reload() {
+    @objc private func reload() {
         labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
         labelCoordinate.text = CURRENT_LOCATION
     }

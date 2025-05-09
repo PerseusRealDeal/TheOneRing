@@ -94,8 +94,8 @@ class CurrentLocationPanel: UIView {
             )
         ])
 
-        // Connect to Geo coordinator
-        AppGlobals.geoCoordinator.locationView = self
+        // Connect to Geo Coordinator
+        GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
 
         // Connect to Dark Mode explicitly
         theDarknessTrigger.action = { _ in self.makeUp() }
@@ -109,19 +109,13 @@ class CurrentLocationPanel: UIView {
         buttonOpenMap.layer.cornerRadius = 8
         buttonOpenMap.layer.masksToBounds = true
     }
-
-    // MARK: - Contract
-
-    public func reloadData() {
-        reload()
-    }
 }
 
 // MARK: - Implementation
 
 extension CurrentLocationPanel {
 
-    private func reload() {
+    @objc private func reload() {
         labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
         labelGeoCoupleValue.text = CURRENT_GEO_POINT
     }
