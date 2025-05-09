@@ -10,8 +10,6 @@
 //  Licensed under the MIT license. See LICENSE file.
 //  All rights reserved.
 //
-// swiftlint:disable file_length
-//
 
 import UIKit
 
@@ -20,6 +18,8 @@ import PerseusDarkMode
 import PerseusGeoKit
 
 class CurrentLocationPanel: UIView {
+
+    private let theDarknessTrigger = DarkModeObserver()
 
     private lazy var locationViewController = { () -> LocationViewController in
 
@@ -36,6 +36,7 @@ class CurrentLocationPanel: UIView {
 
         vc.present(self.locationViewController, animated: true, completion: nil)
     }
+
     // MARK: - Interface Builder connections
 
     /// Outlet of the content view.
@@ -77,7 +78,7 @@ class CurrentLocationPanel: UIView {
         }
     }
 
-    // MARK: - Initiating
+    // MARK: - Start
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -93,9 +94,6 @@ class CurrentLocationPanel: UIView {
         configure()
     }
 
-    // MARK: - Setup user control
-
-    /// Constructs the user control.
     private func commonInit() {
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
 
@@ -116,22 +114,13 @@ class CurrentLocationPanel: UIView {
             )
         ])
 
-        // Setup location event handlers.
+        // Connect to Geo coordinator
+        globals.geoCoordinator.locationView = self
 
-        GeoAgent.register(self, #selector(currentLocationHandler(_:)), .currentLocation)
-        GeoAgent.register(self, #selector(locationStatusHandler(_:)), .locationStatus)
-        GeoAgent.register(self, #selector(locationErrorHandler(_:)), .locationError)
-        GeoAgent.register(self, #selector(locationUpdatesHandler(_:)), .locationUpdates)
-
-        // Dark Mode setup
-
-        DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        makeUp()
+        // Connect to Dark Mode explicitly
+        theDarknessTrigger.action = { _ in self.makeUp() }
     }
 
-    // MARK: - Configure connected Interface Builder elements
-
-    /// Configurates the user control.
     private func configure() {
         buttonRefreshStatus.layer.cornerRadius = 8
         buttonRefreshStatus.layer.masksToBounds = true
@@ -141,94 +130,26 @@ class CurrentLocationPanel: UIView {
         buttonOpenMap.layer.masksToBounds = true
     }
 
-    /// Updates the appearance of the user control.
+    // MARK: - Contract
+
+    public func reloadData() {
+        reload()
+    }
+}
+
+// MARK: - Implementation
+
+extension CurrentLocationPanel {
+
+    private func reload() {
+        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
+        labelGeoCoupleValue.text = CURRENT_GEO_POINT
+    }
+
     @objc private func makeUp() {
         buttonRefreshStatus.backgroundColor = .customSecondaryBackground
         buttonCurrentLocation.backgroundColor = .customSecondaryBackground
         buttonOpenMap.backgroundColor = .customSecondaryBackground
-    }
-}
-
-extension CurrentLocationPanel {
-
-    private var geoCouple: String {
-        guard let location = AppGlobals.currentLocation
-        else {
-            return "Latitude, Longitude"
-        }
-
-        return "\(location.latitude.cut(.four)), \(location.longitude.cut(.four))"
-    }
-
-    @objc private func currentLocationHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
-
-        guard let result = notification.object as? Result<GeoPoint, LocationError>
-        else {
-            log.message("[\(type(of: self))].\(#function) [EVENT]", .error)
-            return
-        }
-
-        switch result {
-        case .success(let data):
-            AppGlobals.currentLocation = data
-        case .failure(let error):
-            log.message("\(error)", .error)
-        }
-
-        refresh()
-    }
-
-    @objc private func locationStatusHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
-        refresh()
-    }
-
-    @objc private func locationErrorHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
-
-        guard
-            let result = notification.object as? LocationError,
-            let failedRequestDetails = result.failedRequestDetails
-        else {
-            log.message("[\(type(of: self))].\(#function) no error details", .error)
-            return
-        }
-
-        switch failedRequestDetails.code {
-        case 0: log.message("Connection issue takes place.", .notice)
-        case 1: log.message("Deal with permission required.", .notice)
-        default:
-            break
-        }
-    }
-
-    @objc private func locationUpdatesHandler(_ notification: Notification) {
-        log.message("[\(type(of: self))].\(#function) [EVENT]", .info)
-
-        guard
-            let result = notification.object as? Result<[GeoPoint], LocationError>
-        else {
-            log.message("[\(type(of: self))].\(#function) [EVENT]", .error)
-            return
-        }
-
-        switch result {
-        case .success(let data):
-            AppGlobals.currentLocation = data.last
-        case .failure(let error):
-            log.message("\(error)", .error)
-        }
-
-        refresh()
-    }
-
-    private func refresh() {
-        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
-        labelGeoCoupleValue.text = geoCouple
-    }
-
-    private func callDarkModeSensitiveColours() {
         labelPermissionValue.textColor = .customLabel
         labelGeoCoupleValue.textColor = .customLabel
     }

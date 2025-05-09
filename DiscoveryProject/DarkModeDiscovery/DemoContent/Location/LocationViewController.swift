@@ -19,6 +19,8 @@ import ConsolePerseusLogger
 
 class LocationViewController: UIViewController {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var mapView: MKMapView!
 
@@ -30,6 +32,8 @@ class LocationViewController: UIViewController {
 
     @IBOutlet weak var labelCoordinate: UILabel!
     @IBOutlet weak var labelPermissionStatus: UILabel!
+
+    // MARK: - Actions
 
     @IBAction func actionButtonCloseTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -55,18 +59,24 @@ class LocationViewController: UIViewController {
         log.message("\(#function)")
     }
 
+    // MARK: - Start
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard value(forKey: "storyboardIdentifier") != nil else { return }
 
         configure()
 
-        // Dark Mode setup
+        // Connect to Geo coordinator
+        globals.geoCoordinator.mapViewController = self
+
+        // Connect to Dark Mode explicitly
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        makeUp()
+        makeUp() // That's for now, call if not the first, main, screen.
     }
 
     private func configure() {
+
         buttonClose.layer.cornerRadius = 5
         buttonClose.clipsToBounds = true
 
@@ -95,6 +105,21 @@ class LocationViewController: UIViewController {
                                         longitudinalMeters: radius)
 
         mapView.setRegion(region, animated: true)
+    }
+
+    // MARK: - Contract
+
+    public func reloadData() {
+        reload()
+    }
+}
+
+// MARK: - Implementation
+
+extension LocationViewController {
+
+    private func reload() {
+
     }
 
     @objc private func makeUp() {

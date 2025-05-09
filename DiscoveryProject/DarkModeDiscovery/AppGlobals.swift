@@ -23,7 +23,7 @@ struct AppGlobals {
     static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
-            log.message("\(location)", .info)
+            log.message("\(location) [\(type(of: self))].\(#function)", .info)
         }
     }
 
@@ -35,6 +35,7 @@ struct AppGlobals {
     // MARK: - Custom Services
 
     public let locationDealer: GeoAgent
+    public let geoCoordinator: GeoCoordinator
 
     // MARK: - Initializer
 
@@ -42,6 +43,7 @@ struct AppGlobals {
         log.message("[\(type(of: self))].\(#function)", .info)
 
         locationDealer = GeoAgent.shared
+        geoCoordinator = GeoCoordinator.shared
 
         GeoAgent.currentAccuracy = PREFERED_ACCURACY
     }

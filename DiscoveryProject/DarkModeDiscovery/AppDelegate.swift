@@ -41,6 +41,7 @@ extension AppDelegate: UIApplicationDelegate {
         window!.makeKeyAndVisible()
 
         DarkModeAgent.force(DarkModeUserChoice)
+        globals.geoCoordinator.reloadGeoComponents()
 
         return true
     }
