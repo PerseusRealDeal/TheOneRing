@@ -27,19 +27,12 @@ class CurrentLocationPanel: UIView {
             UIStoryboard(name: String(describing: LocationViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? LocationViewController
 
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        // Do default setup; don't set any parameter causing loadView up, breaks unit tests
         return screen ?? LocationViewController()
     }()
 
-    @IBAction func actionOpenMap(_ sender: UIButton) {
-        guard let vc = self.parentViewController() else { return }
+    // MARK: - Outlets
 
-        vc.present(self.locationViewController, animated: true, completion: nil)
-    }
-
-    // MARK: - Interface Builder connections
-
-    /// Outlet of the content view.
     @IBOutlet private weak var contentView: UIView!
 
     @IBOutlet private weak var buttonOpenMap: UIButton!
@@ -49,33 +42,20 @@ class CurrentLocationPanel: UIView {
     @IBOutlet private weak var labelPermissionValue: UILabel!
     @IBOutlet private weak var labelGeoCoupleValue: UILabel!
 
+    // MARK: - Actions
+
+    @IBAction func actionOpenMap(_ sender: UIButton) {
+        guard let vc = self.parentViewController() else { return }
+        vc.present(self.locationViewController, animated: true, completion: nil)
+    }
+
     @IBAction func buttonRefreshStatusTapped(_ sender: UIButton) {
-
         labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
-
-        GeoAgent.shared.requestPermission { permit in
-            if permit != .allowed, let vc = self.parentViewController() {
-                GeoAgent.showRedirectAlert(vc, REDIRECT_ALERT_TITLES)
-            }
-        }
+        LocationDealer.requestPermission(self.parentViewController())
     }
 
     @IBAction func buttonRefreshCurrentTapped(_ sender: UIButton) {
-        do {
-            try GeoAgent.shared.requestCurrentLocation()
-        } catch LocationError.permissionRequired(let permit) {
-
-            log.message("[\(type(of: self))].\(#function) permission required", .notice)
-
-            if permit == .notDetermined {
-                GeoAgent.shared.requestPermission()
-            } else if let vc = self.parentViewController() {
-                GeoAgent.showRedirectAlert(vc, REDIRECT_ALERT_TITLES)
-            }
-
-        } catch {
-            log.message("[\(type(of: self))].\(#function) something totally wrong", .error)
-        }
+        LocationDealer.requestCurrent(self.parentViewController())
     }
 
     // MARK: - Start
@@ -115,7 +95,7 @@ class CurrentLocationPanel: UIView {
         ])
 
         // Connect to Geo coordinator
-        globals.geoCoordinator.locationView = self
+        AppGlobals.geoCoordinator.locationView = self
 
         // Connect to Dark Mode explicitly
         theDarknessTrigger.action = { _ in self.makeUp() }

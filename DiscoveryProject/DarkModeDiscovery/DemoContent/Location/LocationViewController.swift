@@ -14,8 +14,9 @@
 import UIKit
 import MapKit
 
-import PerseusDarkMode
 import ConsolePerseusLogger
+import PerseusDarkMode
+import PerseusGeoKit
 
 class LocationViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var buttonCrurrentLocation: UIButton!
 
     @IBOutlet weak var labelCoordinate: UILabel!
-    @IBOutlet weak var labelPermissionStatus: UILabel!
+    @IBOutlet weak var labelGeoStatus: UILabel!
 
     // MARK: - Actions
 
@@ -67,12 +68,21 @@ class LocationViewController: UIViewController {
 
         configure()
 
+        // Set the defualt visible area
+        mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+
         // Connect to Geo coordinator
-        globals.geoCoordinator.mapViewController = self
+        AppGlobals.geoCoordinator.mapViewController = self
 
         // Connect to Dark Mode explicitly
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
         makeUp() // That's for now, call if not the first, main, screen.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        reload()
     }
 
     private func configure() {
@@ -94,17 +104,6 @@ class LocationViewController: UIViewController {
 
         buttonCrurrentLocation.layer.cornerRadius = 5
         buttonCrurrentLocation.clipsToBounds = true
-
-        // Set the defualt visible area
-
-        let point = CLLocation(latitude: 55.036857, longitude: 82.914063)
-        let radius: CLLocationDistance = 1000
-
-        let region = MKCoordinateRegion(center: point.coordinate,
-                                        latitudinalMeters: radius,
-                                        longitudinalMeters: radius)
-
-        mapView.setRegion(region, animated: true)
     }
 
     // MARK: - Contract
@@ -119,7 +118,8 @@ class LocationViewController: UIViewController {
 extension LocationViewController {
 
     private func reload() {
-
+        labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
+        labelCoordinate.text = CURRENT_LOCATION
     }
 
     @objc private func makeUp() {
@@ -134,6 +134,6 @@ extension LocationViewController {
         buttonCrurrentLocation.backgroundColor = .customSecondaryBackground
 
         labelCoordinate.textColor = .customLabel
-        labelPermissionStatus.textColor = .customLabel
+        labelGeoStatus.textColor = .customLabel
     }
 }

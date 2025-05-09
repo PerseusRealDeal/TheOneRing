@@ -19,6 +19,7 @@
 		2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */; };
 		2EDC4D482DCD2782001626DD /* GeoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */; };
 		2EDC4D4A2DCD2793001626DD /* GeoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC4D492DCD2793001626DD /* GeoConstants.swift */; };
+		2EE0A1262DCDFA2A00C95C17 /* LocationDealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */; };
 		2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77A2DBE21D400375792 /* PerseusDarkMode */; };
 		2EE1B77E2DBE21E600375792 /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77D2DBE21E600375792 /* ConsolePerseusLogger */; };
 		4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B3742298E29B50003AF01 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoordinator.swift; sourceTree = "<group>"; };
 		2EDC4D492DCD2793001626DD /* GeoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConstants.swift; sourceTree = "<group>"; };
+		2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDealer.swift; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2E8501D62D2660E800C60CD2 /* CurrentLocationPanel.swift */,
 				2EDC4D472DCD2781001626DD /* GeoCoordinator.swift */,
 				2EDC4D492DCD2793001626DD /* GeoConstants.swift */,
+				2EE0A1252DCDFA2A00C95C17 /* LocationDealer.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				E0B3CA8627B81D6C00B8CE61 /* Race.swift in Sources */,
 				2EDC4D4A2DCD2793001626DD /* GeoConstants.swift in Sources */,
 				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
+				2EE0A1262DCDFA2A00C95C17 /* LocationDealer.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
 				2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */,
 				2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */,
