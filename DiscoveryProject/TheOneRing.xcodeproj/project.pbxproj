@@ -78,6 +78,7 @@
 		2EA971BC2D88798000E564CA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
+		2EE5FCCF2DD0941E000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7EABED298D6DDF0063172D /* main.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = main.yml; path = ../.github/workflows/main.yml; sourceTree = "<group>"; };
 		4B8275552990F70F00C84692 /* DetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsViewController.storyboard; sourceTree = "<group>"; };
@@ -267,6 +268,7 @@
 				E095389727B36E7B00AAAAAA /* LaunchScreen.storyboard */,
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
+				2EE5FCCF2DD0941E000AC9CD /* UpdatingLocation.gpx */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";

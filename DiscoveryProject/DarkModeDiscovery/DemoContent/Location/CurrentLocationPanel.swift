@@ -39,8 +39,8 @@ class CurrentLocationPanel: UIView {
     @IBOutlet private weak var buttonRefreshStatus: UIButton!
     @IBOutlet private weak var buttonCurrentLocation: UIButton!
 
-    @IBOutlet private weak var labelPermissionValue: UILabel!
-    @IBOutlet private weak var labelGeoCoupleValue: UILabel!
+    @IBOutlet private weak var labelGeoStatus: UILabel!
+    @IBOutlet private weak var labelCoordinate: UILabel!
 
     // MARK: - Actions
 
@@ -50,7 +50,7 @@ class CurrentLocationPanel: UIView {
     }
 
     @IBAction func buttonRefreshStatusTapped(_ sender: UIButton) {
-        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
+        labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
         LocationDealer.requestPermission(self.parentViewController())
     }
 
@@ -116,15 +116,15 @@ class CurrentLocationPanel: UIView {
 extension CurrentLocationPanel {
 
     @objc private func reload() {
-        labelPermissionValue.text = "\(GeoAgent.currentStatus)".capitalized
-        labelGeoCoupleValue.text = CURRENT_GEO_POINT
+        labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
+        labelCoordinate.text = CURRENT_GEO_POINT
     }
 
     @objc private func makeUp() {
         buttonRefreshStatus.backgroundColor = .customSecondaryBackground
         buttonCurrentLocation.backgroundColor = .customSecondaryBackground
         buttonOpenMap.backgroundColor = .customSecondaryBackground
-        labelPermissionValue.textColor = .customLabel
-        labelGeoCoupleValue.textColor = .customLabel
+        labelGeoStatus.textColor = .customLabel
+        labelCoordinate.textColor = .customLabel
     }
 }

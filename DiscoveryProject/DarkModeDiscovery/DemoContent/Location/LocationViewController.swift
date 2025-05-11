@@ -41,23 +41,24 @@ class LocationViewController: UIViewController {
     }
 
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
-        log.message("\(#function)")
+        labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
+        LocationDealer.requestPermission()
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: UIButton) {
-        log.message("\(#function)")
+        mapToCurrent()
     }
 
     @IBAction func actionButtonStartUpdatingTapped(_ sender: UIButton) {
-        log.message("\(#function)")
+        LocationDealer.requestUpdatingLocation()
     }
 
     @IBAction func actionButtonStopUpdatingTapped(_ sender: UIButton) {
-        log.message("\(#function)")
+        GeoAgent.shared.stopUpdatingLocation()
     }
 
     @IBAction func actionButtonCrurrentLocationTapped(_ sender: UIButton) {
-        log.message("\(#function)")
+        LocationDealer.requestCurrent()
     }
 
     // MARK: - Start
@@ -67,9 +68,6 @@ class LocationViewController: UIViewController {
         guard value(forKey: "storyboardIdentifier") != nil else { return }
 
         configure()
-
-        // Set the defualt visible area
-        mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
 
         // Connect to Geo Coordinator
         GeoCoordinator.register(stakeholder: self, selector: #selector(reload))
@@ -82,7 +80,12 @@ class LocationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        reload()
+        if AppGlobals.currentLocation == nil {
+            labelCoordinate.text = "Default: \(DEFAULT_GEO_POINT)"
+            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+        } else {
+            reload()
+        }
     }
 
     private func configure() {
@@ -114,6 +117,20 @@ extension LocationViewController {
     @objc private func reload() {
         labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
         labelCoordinate.text = CURRENT_LOCATION
+
+        mapToCurrent()
+    }
+
+    private func mapToCurrent() {
+        guard let location = AppGlobals.currentLocation else { return }
+
+        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        let region = MKCoordinateRegion(center: point.coordinate,
+                                        latitudinalMeters: DEFAULT_MAP_RADIUS,
+                                        longitudinalMeters: DEFAULT_MAP_RADIUS)
+
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
 
     @objc private func makeUp() {

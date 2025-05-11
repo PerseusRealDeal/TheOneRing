@@ -28,18 +28,18 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 // dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-dmlog.turned = .off
+// dmlog.turned = .off
 // geolog.turned = .off
 // log.turned = .off
 
 log.message("The app's start point...", .info)
 
-// MARK: - Run the app
-
 let globals = AppGlobals()
 
-/// Determine the app run purpose.
+// MARK: - Run the app
+
+// Determine the app run purpose
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
 
-/// Initialize the app object depending on the purpose.
+// Initialize the app object from the purpose
 UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appPurpose))
