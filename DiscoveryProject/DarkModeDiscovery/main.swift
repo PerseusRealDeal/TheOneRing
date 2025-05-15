@@ -22,15 +22,31 @@ typealias dmlog = PerseusDarkMode.PerseusLogger
 typealias geolog = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
 
+typealias GeologLevel = PerseusGeoKit.PerseusLogger.Level
+
 // MARK: - Logger
 
-// log.output = .consoleapp
-// dmlog.output = .consoleapp
-// geolog.output = .consoleapp
-
+// log.turned = .off
 // dmlog.turned = .off
 // geolog.turned = .off
-// log.turned = .off
+
+log.output = .consoleapp
+dmlog.output = .consoleapp
+// geolog.output = .consoleapp
+
+var locationServicesReport = ""
+
+func customPrint(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
+    locationServicesReport.append("[\(localTime.time)]\r\n\(text)" + "\r\n" + "--" + "\r\n")
+}
+
+geolog.format = .textonly
+geolog.output = .custom
+
+geolog.customActionOnMessage = customPrint(_:_:_:)
+
+dmlog.time = true
+log.time = true
 
 log.message("The app's start point...", .info)
 

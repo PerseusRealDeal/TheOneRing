@@ -34,6 +34,8 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var labelCoordinate: UILabel!
     @IBOutlet weak var labelGeoStatus: UILabel!
 
+    @IBOutlet weak var textViewLog: UITextView!
+
     // MARK: - Actions
 
     @IBAction func actionButtonCloseTapped(_ sender: UIButton) {
@@ -42,7 +44,8 @@ class LocationViewController: UIViewController {
 
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
         labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
-        LocationDealer.requestPermission()
+        LocationDealer.requestPermission(self)
+        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: UIButton) {
@@ -51,14 +54,17 @@ class LocationViewController: UIViewController {
 
     @IBAction func actionButtonStartUpdatingTapped(_ sender: UIButton) {
         LocationDealer.requestUpdatingLocation()
+        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonStopUpdatingTapped(_ sender: UIButton) {
         GeoAgent.shared.stopUpdatingLocation()
+        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonCrurrentLocationTapped(_ sender: UIButton) {
-        LocationDealer.requestCurrent()
+        LocationDealer.requestCurrent(self)
+        refreshLogReportTextView()
     }
 
     // MARK: - Start
@@ -80,12 +86,7 @@ class LocationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if AppGlobals.currentLocation == nil {
-            labelCoordinate.text = "Default: \(DEFAULT_GEO_POINT)"
-            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
-        } else {
-            reload()
-        }
+        reload()
     }
 
     private func configure() {
@@ -115,10 +116,24 @@ class LocationViewController: UIViewController {
 extension LocationViewController {
 
     @objc private func reload() {
-        labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
-        labelCoordinate.text = CURRENT_LOCATION
 
+        labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
+        refreshLogReportTextView()
+
+        if AppGlobals.currentLocation == nil {
+            labelCoordinate.text = "Default: \(DEFAULT_GEO_POINT)"
+            mapView.setRegion(DEFAULT_VISIBLE_REGION, animated: true)
+
+            return
+        }
+
+        labelCoordinate.text = CURRENT_LOCATION
         mapToCurrent()
+    }
+
+    public func refreshLogReportTextView() {
+        textViewLog.text = locationServicesReport
+        textViewLog.scrollToBottom()
     }
 
     private func mapToCurrent() {
@@ -146,5 +161,12 @@ extension LocationViewController {
 
         labelCoordinate.textColor = .customLabel
         labelGeoStatus.textColor = .customLabel
+    }
+}
+
+extension UITextView {
+    func scrollToBottom() {
+        guard text.count >= 1 else { return }
+        scrollRangeToVisible(NSRange(location: text.count - 1, length: 1))
     }
 }
