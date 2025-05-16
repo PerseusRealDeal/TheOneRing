@@ -35,6 +35,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var labelGeoStatus: UILabel!
 
     @IBOutlet weak var textViewLog: UITextView!
+    private var observation: NSKeyValueObservation?
 
     // MARK: - Actions
 
@@ -45,7 +46,6 @@ class LocationViewController: UIViewController {
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
         labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
         LocationDealer.requestPermission(self)
-        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: UIButton) {
@@ -54,17 +54,14 @@ class LocationViewController: UIViewController {
 
     @IBAction func actionButtonStartUpdatingTapped(_ sender: UIButton) {
         LocationDealer.requestUpdatingLocation()
-        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonStopUpdatingTapped(_ sender: UIButton) {
         GeoAgent.shared.stopUpdatingLocation()
-        refreshLogReportTextView()
     }
 
     @IBAction func actionButtonCrurrentLocationTapped(_ sender: UIButton) {
         LocationDealer.requestCurrent(self)
-        refreshLogReportTextView()
     }
 
     // MARK: - Start
@@ -81,6 +78,13 @@ class LocationViewController: UIViewController {
         // Connect to Dark Mode explicitly
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
         makeUp() // That's for now, call if not the first, main, screen.
+
+        // Connect to Log Reporting
+        observation = geoReport.observe(\.text) { _, _ in
+            self.refreshLogReportTextView()
+        }
+
+        refreshLogReportTextView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -118,7 +122,6 @@ extension LocationViewController {
     @objc private func reload() {
 
         labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
-        refreshLogReportTextView()
 
         if AppGlobals.currentLocation == nil {
             labelCoordinate.text = "Default: \(DEFAULT_GEO_POINT)"
@@ -131,8 +134,8 @@ extension LocationViewController {
         mapToCurrent()
     }
 
-    public func refreshLogReportTextView() {
-        textViewLog.text = locationServicesReport
+    private func refreshLogReportTextView() {
+        textViewLog.text = geoReport.text
         textViewLog.scrollToBottom()
     }
 
@@ -161,12 +164,14 @@ extension LocationViewController {
 
         labelCoordinate.textColor = .customLabel
         labelGeoStatus.textColor = .customLabel
+
+        textViewLog.textColor = .customLabel
     }
 }
 
 extension UITextView {
     func scrollToBottom() {
         guard text.count >= 1 else { return }
-        scrollRangeToVisible(NSRange(location: text.count - 1, length: 1))
+        scrollRangeToVisible(NSRange(location: text.count - 1, length: 0))
     }
 }

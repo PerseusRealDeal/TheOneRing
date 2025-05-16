@@ -131,9 +131,9 @@
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" id="Xw3-Xq-xzf"/>
                                     <constraint firstItem="ScI-x4-wlf" firstAttribute="height" secondItem="Wv7-uC-oqc" secondAttribute="height" multiplier="0.35" id="dTY-V6-94h"/>
                                     <constraint firstItem="ScI-x4-wlf" firstAttribute="leading" secondItem="kg0-cw-6nR" secondAttribute="leading" id="eRs-ya-QhV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ScI-x4-wlf" secondAttribute="trailing" id="g14-c4-Jy1"/>
                                     <constraint firstItem="rrJ-sc-EYX" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" id="jxc-Fa-ekD"/>
                                     <constraint firstAttribute="bottom" secondItem="ScI-x4-wlf" secondAttribute="bottom" id="k6X-1l-Lqu"/>
-                                    <constraint firstAttribute="trailing" secondItem="ScI-x4-wlf" secondAttribute="trailing" id="kox-su-SWi"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="rrJ-sc-EYX" secondAttribute="top" constant="-100" id="lML-rN-ETp"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="leading" secondItem="npD-Rz-AZP" secondAttribute="leading" constant="-20" id="mim-gN-lQn"/>
                                     <constraint firstItem="iOn-CT-VqF" firstAttribute="trailing" secondItem="Wv7-uC-oqc" secondAttribute="trailing" constant="-20" id="u1S-or-bew"/>

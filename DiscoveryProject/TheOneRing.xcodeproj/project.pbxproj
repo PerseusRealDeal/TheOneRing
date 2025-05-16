@@ -781,8 +781,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
-				kind = exactVersion;
-				version = 2.0.0;
+				branch = hotfix/2.0.1;
+				kind = branch;
 			};
 		};
 		2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {

@@ -22,7 +22,23 @@ typealias dmlog = PerseusDarkMode.PerseusLogger
 typealias geolog = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
 
+// MARK: - Log Reports
+
 typealias GeologLevel = PerseusGeoKit.PerseusLogger.Level
+
+class LocationServicesReport: NSObject {
+    @objc dynamic var text: String = ""
+}
+
+func reportGeoEvent(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
+
+    let newline = "\r\n" + "--" + "\r\n"
+    let message = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)" + newline
+
+    geoReport.text.append(message)
+}
+
+let geoReport = LocationServicesReport()
 
 // MARK: - Logger
 
@@ -34,16 +50,10 @@ log.output = .consoleapp
 dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-var locationServicesReport = ""
-
-func customPrint(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
-    locationServicesReport.append("[\(localTime.time)]\r\n\(text)" + "\r\n" + "--" + "\r\n")
-}
-
 geolog.format = .textonly
 geolog.output = .custom
 
-geolog.customActionOnMessage = customPrint(_:_:_:)
+geolog.customActionOnMessage = reportGeoEvent(_:_:_:)
 
 dmlog.time = true
 log.time = true
