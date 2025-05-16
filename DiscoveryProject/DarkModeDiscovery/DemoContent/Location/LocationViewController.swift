@@ -80,11 +80,13 @@ class LocationViewController: UIViewController {
         makeUp() // That's for now, call if not the first, main, screen.
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.text) { _, _ in
-            self.refreshLogReportTextView()
+        observation = geoReport.observe(\.lastMessage, options: .new) { _, observered in
+            if let message = observered.newValue {
+                self.refreshLogReportTextView(message)
+            }
         }
 
-        refreshLogReportTextView()
+        refreshLogReportTextView(geoReport.text)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -134,11 +136,6 @@ extension LocationViewController {
         mapToCurrent()
     }
 
-    private func refreshLogReportTextView() {
-        textViewLog.text = geoReport.text
-        textViewLog.scrollToBottom()
-    }
-
     private func mapToCurrent() {
         guard let location = AppGlobals.currentLocation else { return }
 
@@ -167,11 +164,16 @@ extension LocationViewController {
 
         textViewLog.textColor = .customLabel
     }
+
+    private func refreshLogReportTextView() {
+        textViewLog.text = geoReport.text
+        textViewLog.scrollToBottom()
+    }
 }
 
 extension UITextView {
     func scrollToBottom() {
-        guard text.count >= 1 else { return }
+        if text.isEmpty { return }
         scrollRangeToVisible(NSRange(location: text.count - 1, length: 0))
     }
 }
