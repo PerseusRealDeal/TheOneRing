@@ -80,13 +80,11 @@ class LocationViewController: UIViewController {
         makeUp() // That's for now, call if not the first, main, screen.
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.lastMessage, options: .new) { _, observered in
-            if let message = observered.newValue {
-                self.refreshLogReportTextView(message)
-            }
+        observation = geoReport.observe(\.lastMessage) { _, _ in
+            self.refreshLogReportTextView()
         }
 
-        refreshLogReportTextView(geoReport.text)
+        refreshLogReportTextView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
