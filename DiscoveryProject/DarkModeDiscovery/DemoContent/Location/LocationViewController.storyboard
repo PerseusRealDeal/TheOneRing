@@ -26,11 +26,11 @@
                                         <standardMapConfiguration key="preferredConfiguration"/>
                                     </mapView>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVm-QJ-mwF">
-                                        <rect key="frame" x="34" y="40" width="155" height="30"/>
+                                        <rect key="frame" x="16.666666666666671" y="40" width="150" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="POq-9m-sQR"/>
-                                            <constraint firstAttribute="width" constant="155" id="UsN-Mh-4L5"/>
+                                            <constraint firstAttribute="width" constant="150" id="UsN-Mh-4L5"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -40,10 +40,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibT-or-RWB">
-                                        <rect key="frame" x="204" y="40" width="155" height="30"/>
+                                        <rect key="frame" x="226.66666666666663" y="40" width="150" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="155" id="Rmj-yo-oaj"/>
+                                            <constraint firstAttribute="width" constant="150" id="Rmj-yo-oaj"/>
                                             <constraint firstAttribute="height" constant="30" id="qLD-KX-x6K"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,11 +54,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npD-Rz-AZP">
-                                        <rect key="frame" x="20" y="100" width="70" height="30"/>
+                                        <rect key="frame" x="15" y="100" width="75" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="sAC-zU-Pvf"/>
-                                            <constraint firstAttribute="width" constant="70" id="sAH-bg-tQP"/>
+                                            <constraint firstAttribute="width" constant="75" id="sAH-bg-tQP"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -101,11 +101,11 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOn-CT-VqF">
-                                        <rect key="frame" x="303" y="100" width="70" height="30"/>
+                                        <rect key="frame" x="303" y="100" width="75" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="59A-3X-oYZ"/>
-                                            <constraint firstAttribute="width" constant="70" id="qCp-06-bAE"/>
+                                            <constraint firstAttribute="width" constant="75" id="qCp-06-bAE"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -114,12 +114,18 @@
                                             <action selector="actionButtonStopUpdatingTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SPS-be-eW8"/>
                                         </connections>
                                     </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GyT-4W-vC7">
+                                        <rect key="frame" x="172" y="39.666666666666671" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="actionSwitchAutoMapToCurrentTapped:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Mko-lv-ncw"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="ibT-or-RWB" secondAttribute="top" constant="-40" id="0Fq-Z0-u4B"/>
-                                    <constraint firstItem="ibT-or-RWB" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" constant="85" id="0mK-2O-72b"/>
-                                    <constraint firstItem="LVm-QJ-mwF" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" constant="-85" id="32O-q0-CFv"/>
+                                    <constraint firstItem="ibT-or-RWB" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" constant="105" id="0mK-2O-72b"/>
+                                    <constraint firstItem="LVm-QJ-mwF" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" constant="-105" id="32O-q0-CFv"/>
                                     <constraint firstAttribute="bottom" secondItem="Wv7-uC-oqc" secondAttribute="bottom" id="4To-Sy-q3z"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="LVm-QJ-mwF" secondAttribute="top" constant="-40" id="FHt-oR-DRK"/>
                                     <constraint firstItem="odp-GW-zGY" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" id="Kfm-Zt-Th2"/>
@@ -131,14 +137,16 @@
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="kg0-cw-6nR" secondAttribute="top" id="Xw3-Xq-xzf"/>
                                     <constraint firstItem="ScI-x4-wlf" firstAttribute="height" secondItem="Wv7-uC-oqc" secondAttribute="height" multiplier="0.35" id="dTY-V6-94h"/>
                                     <constraint firstItem="ScI-x4-wlf" firstAttribute="leading" secondItem="kg0-cw-6nR" secondAttribute="leading" id="eRs-ya-QhV"/>
+                                    <constraint firstItem="GyT-4W-vC7" firstAttribute="centerY" secondItem="ibT-or-RWB" secondAttribute="centerY" id="fYV-IG-0Sr"/>
                                     <constraint firstAttribute="trailing" secondItem="ScI-x4-wlf" secondAttribute="trailing" id="g14-c4-Jy1"/>
                                     <constraint firstItem="rrJ-sc-EYX" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" id="jxc-Fa-ekD"/>
                                     <constraint firstAttribute="bottom" secondItem="ScI-x4-wlf" secondAttribute="bottom" id="k6X-1l-Lqu"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="rrJ-sc-EYX" secondAttribute="top" constant="-100" id="lML-rN-ETp"/>
-                                    <constraint firstItem="Wv7-uC-oqc" firstAttribute="leading" secondItem="npD-Rz-AZP" secondAttribute="leading" constant="-20" id="mim-gN-lQn"/>
-                                    <constraint firstItem="iOn-CT-VqF" firstAttribute="trailing" secondItem="Wv7-uC-oqc" secondAttribute="trailing" constant="-20" id="u1S-or-bew"/>
+                                    <constraint firstItem="Wv7-uC-oqc" firstAttribute="leading" secondItem="npD-Rz-AZP" secondAttribute="leading" constant="-15" id="mim-gN-lQn"/>
+                                    <constraint firstItem="iOn-CT-VqF" firstAttribute="trailing" secondItem="Wv7-uC-oqc" secondAttribute="trailing" constant="-15" id="u1S-or-bew"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="iOn-CT-VqF" secondAttribute="top" constant="-100" id="vEf-GH-ydS"/>
                                     <constraint firstItem="Wv7-uC-oqc" firstAttribute="top" secondItem="npD-Rz-AZP" secondAttribute="top" constant="-100" id="yE3-Vo-m9w"/>
+                                    <constraint firstItem="GyT-4W-vC7" firstAttribute="centerX" secondItem="Wv7-uC-oqc" secondAttribute="centerX" id="yda-es-lz3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2Z-U2-YXR" userLabel="Close Button View">
@@ -185,6 +193,7 @@
                         <outlet property="labelCoordinate" destination="odp-GW-zGY" id="YLf-Tx-y4Z"/>
                         <outlet property="labelGeoStatus" destination="EjW-eU-RsO" id="h7o-72-WuI"/>
                         <outlet property="mapView" destination="Wv7-uC-oqc" id="cli-ua-Hgs"/>
+                        <outlet property="switchAutoMapToCurrent" destination="GyT-4W-vC7" id="yXp-OT-2Xq"/>
                         <outlet property="textViewLog" destination="ScI-x4-wlf" id="fwy-Vn-UTj"/>
                     </connections>
                 </viewController>

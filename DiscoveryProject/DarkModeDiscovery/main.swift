@@ -59,8 +59,8 @@ let geoReport = LocationServicesReport()
 
 // MARK: - Logger
 
-// log.turned = .off
-// dmlog.turned = .off
+log.turned = .off
+dmlog.turned = .off
 // geolog.turned = .off
 
 // log.output = .consoleapp
@@ -72,9 +72,7 @@ geolog.output = .custom
 
 geolog.customActionOnMessage = reportGeoEvent(_:_:_:)
 
-dmlog.time = true
 log.time = true
-
 log.message("The app's start point...", .info)
 
 let globals = AppGlobals()

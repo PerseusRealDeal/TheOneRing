@@ -30,12 +30,15 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var buttonStartUpdating: UIButton!
     @IBOutlet weak var buttonStopUpdating: UIButton!
     @IBOutlet weak var buttonCrurrentLocation: UIButton!
+    @IBOutlet weak var switchAutoMapToCurrent: UISwitch!
 
     @IBOutlet weak var labelCoordinate: UILabel!
     @IBOutlet weak var labelGeoStatus: UILabel!
 
     @IBOutlet weak var textViewLog: UITextView!
+
     private var observation: NSKeyValueObservation?
+    private var autoMapToCurrent = true
 
     // MARK: - Actions
 
@@ -64,6 +67,10 @@ class LocationViewController: UIViewController {
         LocationDealer.requestCurrent(self)
     }
 
+    @IBAction func actionSwitchAutoMapToCurrentTapped(_ sender: UISwitch) {
+        autoMapToCurrent = sender.isOn ? true : false
+    }
+
     // MARK: - Start
 
     override func viewDidLoad() {
@@ -83,14 +90,13 @@ class LocationViewController: UIViewController {
         observation = geoReport.observe(\.lastMessage) { _, _ in
             self.refreshLogReportTextView()
         }
-
-        refreshLogReportTextView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         reload()
+        refreshLogReportTextView()
     }
 
     private func configure() {
@@ -112,6 +118,8 @@ class LocationViewController: UIViewController {
 
         buttonCrurrentLocation.layer.cornerRadius = 5
         buttonCrurrentLocation.clipsToBounds = true
+
+        switchAutoMapToCurrent.setOn(autoMapToCurrent, animated: false)
     }
 }
 
@@ -131,7 +139,10 @@ extension LocationViewController {
         }
 
         labelCoordinate.text = CURRENT_LOCATION
-        mapToCurrent()
+
+        if autoMapToCurrent {
+            mapToCurrent()
+        }
     }
 
     private func mapToCurrent() {
