@@ -52,6 +52,13 @@ class CurrentLocationPanel: UIView {
     @IBAction func buttonRefreshStatusTapped(_ sender: UIButton) {
         labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
         LocationDealer.requestPermission(self.parentViewController())
+
+        if GeoAgent.currentStatus == .allowed, let vc = self.parentViewController() {
+            REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
+            GeoAgent.showRedirectAlert(vc, REDIRECT_ALERT_TITLES)  // Offer redirect.
+        } else {
+            LocationDealer.requestPermission(self.parentViewController())
+        }
     }
 
     @IBAction func buttonRefreshCurrentTapped(_ sender: UIButton) {

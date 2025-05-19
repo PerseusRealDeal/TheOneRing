@@ -48,7 +48,13 @@ class LocationViewController: UIViewController {
 
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
         labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
-        LocationDealer.requestPermission(self)
+
+        if GeoAgent.currentStatus == .allowed {
+            REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
+            GeoAgent.showRedirectAlert(self, REDIRECT_ALERT_TITLES)  // Offer redirect.
+        } else {
+            LocationDealer.requestPermission(self)
+        }
     }
 
     @IBAction func actionButtonGoToPointTapped(_ sender: UIButton) {

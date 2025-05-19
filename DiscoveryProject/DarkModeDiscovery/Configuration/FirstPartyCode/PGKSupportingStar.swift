@@ -64,7 +64,7 @@ let DEFAULT_VISIBLE_REGION = MKCoordinateRegion(center: DEFAULT_MAP_POINT.coordi
 
 var REDIRECT_ALERT_TITLES = ActionAlertText(
     title: "Location Services.",
-    message: "It's possible to grant the app for the Location Services in System Services.",
+    message: "The Current Location Services Status can be changed in System Services.",
     buttonCancel: "OK",
     buttonFunction: "System Services")
 
