@@ -24,9 +24,7 @@ typealias geolog = PerseusGeoKit.PerseusLogger
 
 // MARK: - Log Reports
 
-typealias GeologLevel = PerseusGeoKit.PerseusLogger.Level
-
-class LocationServicesReport: NSObject {
+class LogReport: NSObject {
 
     public var text: String { report }
 
@@ -51,15 +49,17 @@ class LocationServicesReport: NSObject {
     private let newline = "\r\n--\r\n"
 }
 
-func reportGeoEvent(_ text: String, _ type: GeologLevel, _ localTime: LocalTime) {
+typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
+
+func reportGeoEvent(_ text: String, _ type: LogLevel, _ localTime: LocalTime) {
     geoReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
-let geoReport = LocationServicesReport()
+let geoReport = LogReport()
 
 // MARK: - Logger
 
-log.turned = .off
+// log.turned = .off
 dmlog.turned = .off
 // geolog.turned = .off
 
@@ -67,12 +67,12 @@ dmlog.turned = .off
 // dmlog.output = .consoleapp
 // geolog.output = .consoleapp
 
-geolog.format = .textonly
-geolog.output = .custom
+// geolog.format = .textonly
+// geolog.output = .custom
 
-geolog.customActionOnMessage = reportGeoEvent(_:_:_:)
+log.customActionOnMessage = reportGeoEvent(_:_:_:)
 
-log.time = true
+// log.time = true
 log.message("The app's start point...", .info)
 
 let globals = AppGlobals()

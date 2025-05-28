@@ -15,7 +15,7 @@
 		2EA10AAA2CFE233C00535E5A /* APPROBATION.md in Resources */ = {isa = PBXBuildFile; fileRef = 2EA10AA92CFE233B00535E5A /* APPROBATION.md */; };
 		2EA971BB2D88790C00E564CA /* LocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */; };
 		2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA971BC2D88798000E564CA /* LocationViewController.swift */; };
-		2EB296A32DBC16DA000D7A3F /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EB296A22DBC16DA000D7A3F /* PerseusGeoKit */; };
+		2EAB12312DEB6B9A002DDA8E /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAB12302DEB6B9A002DDA8E /* PerseusGeoKit */; };
 		2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */; };
 		2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */; };
 		2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77A2DBE21D400375792 /* PerseusDarkMode */; };
@@ -126,8 +126,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EE1B77E2DBE21E600375792 /* ConsolePerseusLogger in Frameworks */,
-				2EB296A32DBC16DA000D7A3F /* PerseusGeoKit in Frameworks */,
 				2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */,
+				2EAB12312DEB6B9A002DDA8E /* PerseusGeoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +327,9 @@
 			);
 			name = TheOneRing;
 			packageProductDependencies = (
-				2EB296A22DBC16DA000D7A3F /* PerseusGeoKit */,
 				2EE1B77A2DBE21D400375792 /* PerseusDarkMode */,
 				2EE1B77D2DBE21E600375792 /* ConsolePerseusLogger */,
+				2EAB12302DEB6B9A002DDA8E /* PerseusGeoKit */,
 			);
 			productName = darkmodediscovery;
 			productReference = E095388927B36E7800AAAAAA /* TheOneRing.app */;
@@ -381,9 +381,9 @@
 			);
 			mainGroup = E095388027B36E7800AAAAAA;
 			packageReferences = (
-				2EB296A12DBC16DA000D7A3F /* XCRemoteSwiftPackageReference "PerseusGeoKit" */,
 				2EE1B7792DBE21D400375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */,
 				2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */,
+				2EAB122F2DEB6B9A002DDA8E /* XCRemoteSwiftPackageReference "PerseusGeoKit" */,
 			);
 			productRefGroup = E095388A27B36E7800AAAAAA /* Products */;
 			projectDirPath = "";
@@ -769,20 +769,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2EB296A12DBC16DA000D7A3F /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
+		2EAB122F2DEB6B9A002DDA8E /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit";
+			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit/";
 			requirement = {
-				branch = hotfix/approbation;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.1;
 			};
 		};
 		2EE1B7792DBE21D400375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
-				branch = hotfix/2.0.1;
-				kind = branch;
+				kind = exactVersion;
+				version = 2.0.1;
 			};
 		};
 		2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -796,9 +796,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2EB296A22DBC16DA000D7A3F /* PerseusGeoKit */ = {
+		2EAB12302DEB6B9A002DDA8E /* PerseusGeoKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2EB296A12DBC16DA000D7A3F /* XCRemoteSwiftPackageReference "PerseusGeoKit" */;
+			package = 2EAB122F2DEB6B9A002DDA8E /* XCRemoteSwiftPackageReference "PerseusGeoKit" */;
 			productName = PerseusGeoKit;
 		};
 		2EE1B77A2DBE21D400375792 /* PerseusDarkMode */ = {

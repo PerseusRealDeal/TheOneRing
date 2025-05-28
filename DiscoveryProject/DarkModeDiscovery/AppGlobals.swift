@@ -41,8 +41,7 @@ struct AppGlobals {
     static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
-            log.message("\(location) [\(type(of: self))].\(#function)", .info)
-            geolog.message("\(location)")
+            log.message("[\(type(of: self))] \(location)")
         }
     }
 
@@ -70,8 +69,7 @@ struct AppGlobals {
 
         GeoCoordinator.shared.locationUpdatesRecieved = { updates in
             if let lastone = updates.last {
-                log.message("recieved location updates: \(updates.count)")
-                geolog.message("recieved location updates: \(updates.count)")
+                log.message("Location Updates: \(updates.count)")
                 AppGlobals.currentLocation = lastone
             }
         }

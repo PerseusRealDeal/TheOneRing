@@ -47,7 +47,7 @@ class LocationViewController: UIViewController {
     }
 
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
-        labelGeoStatus.text = "\(GeoAgent.currentStatus)".capitalized
+        labelGeoStatus.text = "\(GeoAgent.aboutLocationServices().inDetail)".capitalized
 
         if GeoAgent.currentStatus == .allowed {
             REDIRECT_ALERT_TITLES.title = REDIRECT_ALERT_TITLES.titleWithStatus
@@ -135,7 +135,7 @@ extension LocationViewController {
 
     @objc private func reload() {
 
-        labelGeoStatus.text = "Status: \(GeoAgent.currentStatus)".capitalized
+        labelGeoStatus.text = "\(GeoAgent.aboutLocationServices().inDetail)".capitalized
 
         if AppGlobals.currentLocation == nil {
             labelCoordinate.text = "Default: \(DEFAULT_GEO_POINT)"

@@ -1,6 +1,6 @@
 //
 //  PGKSupportingStar.swift
-//  Version: 1.0.0
+//  Version: 1.0.1
 //
 //  PerseusGeoKit Support Code
 //
@@ -43,13 +43,13 @@
 // swiftlint:disable file_length
 //
 
+import ConsolePerseusLogger
+import PerseusGeoKit
+
 #if os(iOS)
 import UIKit
 #endif
 import MapKit
-
-import ConsolePerseusLogger
-import PerseusGeoKit
 
 // MARK: - Geo Constants
 
@@ -70,13 +70,33 @@ var REDIRECT_ALERT_TITLES = ActionAlertText(
 
 extension ActionAlertText {
     var titleWithStatus: String {
-        return "Location Services: \(GeoAgent.currentStatus)."
+        return "Location Services: \(GeoAgent.currentStatus.description.capitalized)."
     }
 }
 
 extension Notification.Name {
     static let ReloadGeoDataNotification = Notification.Name("ReloadGeoDataNotification")
 }
+
+#if os(iOS)
+
+extension UIView {
+
+    func parentViewController() -> UIViewController? {
+
+        guard let responder = self.next as? UIViewController else {
+            guard let responder = self.next as? UIView else {
+                return nil
+            }
+
+            return responder.parentViewController()
+        }
+
+        return responder
+    }
+}
+
+#endif
 
 // MARK: - LocationDealer class
 
@@ -248,15 +268,19 @@ class GeoCoordinator: NSObject {
         }
 
         switch error {
-        case .failedRequest(_, let domain, let code):
-            let domaincode = "domain: \(domain), code: \(code)"
-            switch code {
-            case 0:
-                errtext = "hardware issue: try to tap Wi-Fi in system tray, \(domaincode)"
-            case 1:
-                errtext = "permission required, \(domaincode)"
-            default:
-                break
+        case .failedRequest(let desc, let domain, let code):
+            if desc.contains("[NOTKNOWN]") {
+                errtext = "\(desc), domain: \(domain), code: \(code)"
+            } else {
+                let domaincode = "domain: \(domain), code: \(code)"
+                switch code {
+                case 0:
+                    errtext = "hardware issue: try to tap Wi-Fi in system tray, \(domaincode)"
+                case 1:
+                    errtext = "permission required, \(domaincode)"
+                default:
+                    break
+                }
             }
         default:
             break
@@ -267,8 +291,22 @@ class GeoCoordinator: NSObject {
 
     @objc private func locationStatusHandler(_ notification: Notification) {
 
+        guard let sysStatus = notification.object as? CLAuthorizationStatus else {
+            let errtext = "nothing is about status event"
+            log.message("[\(type(of: self))].\(#function) \(errtext)", .error)
+            return
+        }
+
+        let lmStatus = GeoAgent.aboutLocationServices().auth
+
+        if lmStatus != sysStatus {
+            let statues = "lm status: \(lmStatus), system status: \(sysStatus)"
+            log.message("[\(type(of: self))].\(#function) \(statues)", .error)
+        }
+
         let status = GeoAgent.currentStatus
-        log.message("[\(type(of: self))].\(#function) status: \(status) [EVENT]")
+
+        log.message("[\(type(of: self))].\(#function) currentStatus: \(status) [EVENT]")
 
         updateGeoComponents()
 
