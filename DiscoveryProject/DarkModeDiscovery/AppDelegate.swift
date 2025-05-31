@@ -12,10 +12,10 @@
 //
 
 import UIKit
-import ConsolePerseusLogger
-import PerseusGeoLocationKit
 
+import ConsolePerseusLogger
 import PerseusDarkMode
+import PerseusGeoKit
 
 /// The app delegate.
 class AppDelegate: UIResponder { var window: UIWindow? }
@@ -28,7 +28,7 @@ extension AppDelegate: UIApplicationDelegate {
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         log.message("Launching with business matter purpose", .info)
-        log.message("[\(type(of: self))].\(#function)")
+        log.message("[\(type(of: self))].\(#function)", .info)
 
         // Register Settings Bundle
         registerSettingsBundle()
@@ -40,21 +40,18 @@ extension AppDelegate: UIApplicationDelegate {
         window!.rootViewController = MainViewController.storyboardInstance()
         window!.makeKeyAndVisible()
 
-        // And, finally, apply a new style for all screens
-        // DarkModeAgent.makeUp()
+        DarkModeAgent.force(DarkModeUserChoice)
+        GeoCoordinator.reloadGeoComponents()
 
         return true
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        log.message("[\(type(of: self))].\(#function)")
+        log.message("[\(type(of: self))].\(#function)", .info)
 
-        // Update Dark Mode from Settings
+        // Actualize Dark Mode style to Settings Bundle
         if let choice = DarkModeAgent.isDarkModeSettingsKeyChanged() {
-            // Change Dark Mode value in Perseus Dark Mode library
-            DarkModeAgent.DarkModeUserChoice = choice
-            // Update appearance in accoring with changed Dark Mode Style
-            DarkModeAgent.makeUp()
+            DarkModeAgent.force(choice)
         }
     }
 }

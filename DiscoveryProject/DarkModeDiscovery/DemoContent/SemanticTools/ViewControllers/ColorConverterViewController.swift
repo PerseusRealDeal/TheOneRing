@@ -53,7 +53,7 @@ class ConverterViewController: UIViewController, UITextFieldDelegate {
         // Dark Mode setup
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     @objc private func makeUp() {

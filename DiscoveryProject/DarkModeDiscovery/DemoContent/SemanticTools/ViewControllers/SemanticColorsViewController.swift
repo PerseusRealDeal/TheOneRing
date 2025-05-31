@@ -1,5 +1,5 @@
 //
-//  SystemColorsViewController.swift
+//  SemanticColorsViewController.swift
 //  DarkModeDiscovery
 //
 //  Created by Mikhail Zhigulin in 7530.
@@ -14,8 +14,7 @@
 import UIKit
 import PerseusDarkMode
 
-/// Represents the screen for the list of system colors.
-class SystemColorsViewController: UIViewController {
+class SemanticColorsViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Interface Builder connections
 
@@ -32,13 +31,12 @@ class SystemColorsViewController: UIViewController {
 
         tableView.register(UINib(nibName: "ColorTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "ColorTableViewCell")
-
         tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
 
-        // Make the View sensitive to Dark Mode
+        // Dark Mode setup
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     /// Updates the appearance of the screen.
@@ -57,23 +55,23 @@ class SystemColorsViewController: UIViewController {
 
 // MARK: - UITableView
 
-extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate {
+extension SemanticColorsViewController: UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - UITableViewDataSource protocol
 
-    /// Calculates the total cells of the list of system colors.
+    /// Calculates the total cells of the list of semantic colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SystemColorsViewList.allCases.count
+        return SemanticColorsViewList.allCases.count
     }
 
-    /// Creates a cell with a specific color of the list of system colors.
+    /// Creates a cell with a specific color of the list of semantic colors.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
 
         guard let cell =
                 tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell",
                                               for: indexPath) as? ColorTableViewCell,
-              let item = SystemColorsViewList(rawValue: indexPath.row)
+              let item = SemanticColorsViewList(rawValue: indexPath.row)
         else { return UITableViewCell() }
 
         cell.colorName = item.description

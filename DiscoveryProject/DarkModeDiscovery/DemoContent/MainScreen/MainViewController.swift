@@ -138,7 +138,7 @@ class MainViewController: UIViewController {
         // Dark Mode panel
 
         optionsPanel.segmentedControlValueChangedClosure = { option in
-            DarkModeAgent.forceDarkMode(option)
+            DarkModeAgent.force(option)
 
             // The value of other one Dark Mode panel should also be changed accordingly
             self.semanticToolsViewController.optionsPanel?.segmentedControlValue = option

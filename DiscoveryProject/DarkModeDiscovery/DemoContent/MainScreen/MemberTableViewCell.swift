@@ -51,7 +51,7 @@ class MemberTableViewCell: UITableViewCell {
         configure()
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     // MARK: - Appearance matter methods

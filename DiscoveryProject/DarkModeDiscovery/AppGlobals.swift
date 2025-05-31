@@ -12,51 +12,66 @@
 //
 
 import Foundation
-import ConsolePerseusLogger
 
-import PerseusGeoLocationKit
+import ConsolePerseusLogger
+import PerseusGeoKit
+
+// MARK: - Geo Constants
+
+var DEFAULT_GEO_POINT: String { "\(DEFAULT_MAP_POINT.point)" }
+var CURRENT_GEO_POINT: String {
+
+    guard let point = AppGlobals.currentLocation else {
+        return "Latitude, Longitude"
+    }
+
+    return "\(point)"
+}
+
+var CURRENT_LOCATION: String {
+    return AppGlobals.currentLocation == nil ? DEFAULT_GEO_POINT : CURRENT_GEO_POINT
+}
+
+// MARK: - App Globals
 
 struct AppGlobals {
 
     // MARK: - Business Data
 
-    static var currentLocation: PerseusLocation? {
+    static var currentLocation: GeoPoint? {
         didSet {
             let location = currentLocation?.description ?? "current location is erased"
-            log.message("\(location)", .info)
+            log.message("[\(type(of: self))] \(location)")
         }
     }
-
-    // MARK: - Constants
-
-    static let preferedAccuracy = LocationAccuracy.threeKilometers
 
     // MARK: - System Services
 
     static let userDefaults = UserDefaults.standard
     static let notificationCenter = NotificationCenter.default
 
-    // MARK: - Custom Services
-
-    public let locationDealer: LocationAgent
-
     // MARK: - Initializer
 
     init() {
         log.message("[\(type(of: self))].\(#function)", .info)
 
-        locationDealer = LocationAgent.shared
+        GeoAgent.currentAccuracy = .best
 
-        // Configure accuracy
-        var lm = locationDealer.locationManager
-        lm?.desiredAccuracy = AppGlobals.preferedAccuracy.rawValue
+        GeoCoordinator.shared.onStatusAllowed = {
+            // LocationDealer.requestCurrent()
+            LocationDealer.requestUpdatingLocation()
+        }
+        GeoCoordinator.shared.notifier = AppGlobals.notificationCenter
 
-        // Configure GoTo Settings alert
-        let text = ActionAlertText(title: "Custom Title",
-                                   message: "Custom Message",
-                                   buttonCancel: "MyCancel",
-                                   buttonFunction: "MyAction")
+        GeoCoordinator.shared.locationRecieved = { point in
+            AppGlobals.currentLocation = point
+        }
 
-        locationDealer.alert.titles = text
+        GeoCoordinator.shared.locationUpdatesRecieved = { updates in
+            if let lastone = updates.last {
+                log.message("Location Updates: \(updates.count)")
+                AppGlobals.currentLocation = lastone
+            }
+        }
     }
 }

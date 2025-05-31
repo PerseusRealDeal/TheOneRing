@@ -87,21 +87,3 @@ extension String {
         return replace(substring: " ", replacement: "")
     }
 }
-
-extension UIView {
-
-    /// Calculates the first UIResponder that is the UIViewController (parent) for the UIView.
-    /// - Returns: parent view controller or nil.
-    func parentViewController() -> UIViewController? {
-
-        guard let responder = self.next as? UIViewController else {
-            guard let responder = self.next as? UIView else {
-                return nil
-            }
-
-            return responder.parentViewController()
-        }
-
-        return responder
-    }
-}

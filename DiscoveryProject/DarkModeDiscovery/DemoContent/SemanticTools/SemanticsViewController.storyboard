@@ -11,7 +11,7 @@
         <!--Semantics View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SemanticsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SemanticsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfM-qg-DGh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -49,7 +49,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ja6-zv-1aA" userLabel="Transparent Block">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                                 <subviews>
-                                                    <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Bp-G4f" customClass="DarkModePanel" customModule="DarkModeDiscovery" customModuleProvider="target">
+                                                    <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Bp-G4f" customClass="DarkModePanel" customModule="TheOneRing" customModuleProvider="target">
                                                         <rect key="frame" x="48" y="5.5" width="224" height="43"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
@@ -100,9 +100,9 @@
         <!--Color Converter-->
         <scene sceneID="sCZ-1Z-6LZ">
             <objects>
-                <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
@@ -197,44 +197,74 @@
         <!--Dynamic Images-->
         <scene sceneID="FvT-XB-37F">
             <objects>
-                <viewController id="eiK-Co-Twc" userLabel="Dynamic Images" customClass="DynamicsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiK-Co-Twc" userLabel="Dynamic Images" customClass="DynamicsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HA5-Mq-BQX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-1q-uWx">
-                                <rect key="frame" x="16" y="43.5" width="288" height="305.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-1q-uWx" userLabel="Stack Images View">
+                                <rect key="frame" x="16" y="4.5" width="288" height="262"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="PerseusDarkMode">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="137.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEW-ge-WsJ" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="117.5"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="TheFellowship"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAM-LP-Kqk">
-                                        <rect key="frame" x="0.0" y="137.5" width="288" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="117.5" width="288" height="26.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="PerseusDarkMode">
-                                        <rect key="frame" x="0.0" y="168" width="288" height="137.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-lS-Dkv" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="288" height="118"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="Rivendell"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="RivendellDark"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hEW-ge-WsJ" firstAttribute="height" secondItem="F8i-1q-uWx" secondAttribute="height" multiplier="0.45" id="o0e-oX-W7g"/>
                                     <constraint firstItem="2oO-lS-Dkv" firstAttribute="height" secondItem="F8i-1q-uWx" secondAttribute="height" multiplier="0.45" id="v90-ag-cP3"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfN-ai-eBy">
+                                <rect key="frame" x="72" y="276.5" width="176" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="1 = PDM Style">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPDMStyleTapped:" destination="eiK-Co-Twc" eventType="touchUpInside" id="xgp-Or-85y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2p-YL-jeM">
+                                <rect key="frame" x="72" y="318.5" width="176" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="2 = PDM System Style">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonPDMSystemStyleTapped:" destination="eiK-Co-Twc" eventType="touchUpInside" id="lFf-GX-NVx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oor-7g-3JN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="F8i-1q-uWx" firstAttribute="top" secondItem="Oor-7g-3JN" secondAttribute="bottom" multiplier="0.1" id="4Ie-K1-T2m"/>
-                            <constraint firstItem="F8i-1q-uWx" firstAttribute="height" secondItem="Oor-7g-3JN" secondAttribute="height" multiplier="0.7" id="KNw-3j-vaI"/>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="top" secondItem="Oor-7g-3JN" secondAttribute="bottom" multiplier="0.01" id="4Ie-K1-T2m"/>
+                            <constraint firstItem="F8i-1q-uWx" firstAttribute="height" secondItem="Oor-7g-3JN" secondAttribute="height" multiplier="0.6" id="KNw-3j-vaI"/>
+                            <constraint firstItem="wfN-ai-eBy" firstAttribute="width" secondItem="i2p-YL-jeM" secondAttribute="width" id="PPA-Xn-VCd"/>
+                            <constraint firstItem="wfN-ai-eBy" firstAttribute="top" secondItem="F8i-1q-uWx" secondAttribute="bottom" constant="10" id="Tn5-KV-iND"/>
+                            <constraint firstItem="wfN-ai-eBy" firstAttribute="centerX" secondItem="F8i-1q-uWx" secondAttribute="centerX" id="cIq-vY-xdi"/>
+                            <constraint firstItem="i2p-YL-jeM" firstAttribute="centerX" secondItem="F8i-1q-uWx" secondAttribute="centerX" id="gs5-dV-Wrw"/>
+                            <constraint firstItem="i2p-YL-jeM" firstAttribute="top" secondItem="wfN-ai-eBy" secondAttribute="bottom" constant="10" id="hXl-OA-TwE"/>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="width" secondItem="Oor-7g-3JN" secondAttribute="width" multiplier="0.9" id="rFK-am-YEe"/>
                             <constraint firstItem="F8i-1q-uWx" firstAttribute="centerX" secondItem="HA5-Mq-BQX" secondAttribute="centerX" id="yrm-25-zW8"/>
                         </constraints>
@@ -243,6 +273,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomImage" destination="2oO-lS-Dkv" id="7Jh-kq-ydG"/>
+                        <outlet property="buttonPDMStyle" destination="wfN-ai-eBy" id="h76-VV-KDZ"/>
+                        <outlet property="buttonPDMSystemStyle" destination="i2p-YL-jeM" id="vyr-gd-CIt"/>
                         <outlet property="tabButton" destination="Tug-gI-pgW" id="6ou-9b-4kv"/>
                         <outlet property="topImage" destination="hEW-ge-WsJ" id="H2Y-j9-jZh"/>
                     </connections>
@@ -254,9 +286,9 @@
         <!--System Colors-->
         <scene sceneID="GR1-9p-opt">
             <objects>
-                <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHL-Qb-aJB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-wD-K8D">
@@ -290,9 +322,9 @@
         <!--Semantic Colors-->
         <scene sceneID="h4n-ay-SdH">
             <objects>
-                <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="DarkModeDiscovery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cV0-bg-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-Rk-TXH">
@@ -325,6 +357,14 @@
             <point key="canvasLocation" x="-409" y="533"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2oO-lS-Dkv">
+            <size key="intrinsicContentSize" width="640" height="338"/>
+        </designable>
+        <designable name="hEW-ge-WsJ">
+            <size key="intrinsicContentSize" width="1000" height="414"/>
+        </designable>
+    </designables>
     <resources>
         <image name="FrodoWithTheRing" width="960" height="500"/>
         <image name="Rivendell" width="640" height="338"/>

@@ -90,7 +90,7 @@ class DetailsViewController: UIViewController {
         // Dark Mode setup
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     // MARK: - Appearance matter methods

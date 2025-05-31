@@ -12,6 +12,8 @@
 //
 
 import UIKit
+
+import ConsolePerseusLogger
 import PerseusDarkMode
 
 /// Represents the idea of dynamic image view with two samples.
@@ -28,6 +30,18 @@ class DynamicsViewController: UIViewController {
     /// The second sample of dynamic image idea.
     @IBOutlet weak var bottomImage: DarkModeImageView!
 
+    @IBOutlet weak var buttonPDMStyle: UIButton!
+    @IBOutlet weak var buttonPDMSystemStyle: UIButton!
+
+    @IBAction func buttonPDMStyleTapped(_ sender: UIButton) {
+        log.message("1 = \(DarkModeAgent.shared.style)")
+    }
+
+    @IBAction func buttonPDMSystemStyleTapped(_ sender: UIButton) {
+        let text = "2 = tapped"
+        log.message(text)
+    }
+
     // MARK: - The life cyrcle methods
 
     override func viewDidLoad() {
@@ -36,7 +50,7 @@ class DynamicsViewController: UIViewController {
 
         // Dark Mode setup
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
-        if DarkModeAgent.isEnabled { makeUp() }
+        makeUp()
     }
 
     @objc private func makeUp() {
@@ -47,14 +61,22 @@ class DynamicsViewController: UIViewController {
                 NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemSelected
             ],
             for: .selected)
+
+        buttonPDMStyle.backgroundColor = .customSecondaryBackground
+        buttonPDMSystemStyle.backgroundColor = .customSecondaryBackground
     }
 
     private func configure() {
-
         topImage.layer.cornerRadius = 40
         topImage.layer.masksToBounds = true
 
         bottomImage.layer.cornerRadius = 40
         bottomImage.layer.masksToBounds = true
+
+        buttonPDMStyle.layer.cornerRadius = 8
+        buttonPDMStyle.layer.masksToBounds = true
+
+        buttonPDMSystemStyle.layer.cornerRadius = 8
+        buttonPDMSystemStyle.layer.masksToBounds = true
     }
 }
