@@ -2,31 +2,20 @@
 //  HelpFunctions.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
 import PerseusDarkMode
 
-/// Registers settings bundle with Dark Mode option.
 func registerSettingsBundle() {
     // Easy way to register just only one option
     UserDefaults.standard.register(defaults: [DARK_MODE_SETTINGS_KEY: 0])
 }
 
 extension UIResponder {
-    /// Finds parent UIResponder object that meets condition.
-    ///
-    /// It goes recursively through UIResponder hierarchy.
-    ///
-    /// - Parameter condition: The closure represents calculated condition as a parameter.
-    /// - Returns: Parent UIResponder or nil if not found.
     func nextFirstResponder(where condition: (UIResponder) -> Bool ) -> UIResponder? {
         guard let next = next else { return nil }
 

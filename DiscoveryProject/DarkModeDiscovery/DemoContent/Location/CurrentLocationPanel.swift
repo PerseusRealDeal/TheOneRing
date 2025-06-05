@@ -2,13 +2,9 @@
 //  CurrentLocationPanel.swift, CurrentLocationPanel.xib
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7533 (02.01.2025).
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
@@ -131,7 +127,7 @@ extension CurrentLocationPanel {
         buttonRefreshStatus.backgroundColor = .customSecondaryBackground
         buttonCurrentLocation.backgroundColor = .customSecondaryBackground
         buttonOpenMap.backgroundColor = .customSecondaryBackground
-        labelGeoStatus.textColor = .customLabel
-        labelCoordinate.textColor = .customLabel
+        labelGeoStatus.textColor = .customGeoLabel
+        labelCoordinate.textColor = .customGeoLabel
     }
 }

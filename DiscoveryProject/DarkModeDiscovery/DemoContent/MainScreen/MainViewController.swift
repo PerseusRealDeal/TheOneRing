@@ -2,54 +2,33 @@
 //  MainViewController.swift, MainViewController.storyboard
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
 import PerseusDarkMode
 
-/// Title of the app's theme.
 let TITLE = "The Fellowship of the Ring"
 
-/// Represents the main screen of the app.
 class MainViewController: UIViewController {
 
     // MARK: - Interface Builder connections
 
-    /// Title for the main theme of the app.
     @IBOutlet weak var titleTop: UILabel!
-
-    /// Dark Mode sensetive image veiw at the top of the screen.
     @IBOutlet weak var titleImage: DarkModeImageView!
-
-    /// The list of the fellowship members.
     @IBOutlet weak var tableView: UITableView!
-
-    /// Image at the bottom of the screen.
     @IBOutlet weak var bottomImage: UIImageView!
-
-    /// Dark Mode switcher.
     @IBOutlet weak var optionsPanel: DarkModePanel!
-
-    /// Button to show the screen with semantic tools.
     @IBOutlet weak var actionToolsButton: UIButton!
 
-    /// Shows the screen with semantic tools.
     @IBAction func actionToolsButtonTapped(_ sender: UIButton) {
         present(self.semanticToolsViewController, animated: true, completion: nil)
     }
 
     // MARK: - The data to show on screen
 
-    /// The instance of the list of the fellowship members.
-    ///
-    /// The list is initialized with json data file.
     private lazy var members: [Member] = {
         guard let fileURL = Bundle.main.url(forResource: "members", withExtension: "json"),
               let data = try? Data(contentsOf: fileURL)
@@ -60,25 +39,23 @@ class MainViewController: UIViewController {
 
     // MARK: - Child View Controllers
 
-    /// The instance of the fellowship member details screen.
     private lazy var detailsViewController = { () -> DetailsViewController in
 
         let storyboard =
             UIStoryboard(name: String(describing: DetailsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? DetailsViewController
 
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        // Do default setup; don't set any parameter causing loadView up, breaks unit tests
         return screen ?? DetailsViewController()
     }()
 
-    /// The instance of the semantic tools screen.
     private lazy var semanticToolsViewController = { () -> SemanticsViewController in
 
         let storyboard =
             UIStoryboard(name: String(describing: SemanticsViewController.self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? SemanticsViewController
 
-        /// Do default setup; don't set any parameter causing loadView up, breaks unit tests
+        // Do default setup; don't set any parameter causing loadView up, breaks unit tests
         screen?.userChoiceChangedClosure = { selected in
             self.optionsPanel.segmentedControlValue = selected
         }
@@ -88,7 +65,6 @@ class MainViewController: UIViewController {
 
     // MARK: - Instance of the class
 
-    /// Creates an instance of the main screen.
     class func storyboardInstance() -> MainViewController {
         let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
         let screen = storyboard.instantiateInitialViewController() as? MainViewController

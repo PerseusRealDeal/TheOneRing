@@ -2,13 +2,9 @@
 //  DarkModePanel.swift, DarkModePanel.xib
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
@@ -18,20 +14,15 @@ class DarkModePanel: UIView {
 
     // MARK: - Interface Builder connections
 
-    /// Outlet of the content view.
     @IBOutlet private weak var contentView: UIView!
-
-    /// Outlet of the Dark Mode switcher.
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
 
     // MARK: - Variables
 
-    /// The value of the Dark Mode switcher.
     var segmentedControlValue: DarkModeOption = .auto { didSet { updateSegmentedControl() }}
 
     // MARK: - Closure for segmented control value changed event
 
-    /// Runs any related code to Dark Mode switching.
     var segmentedControlValueChangedClosure: ((_ selected: DarkModeOption) -> Void)?
 
     // MARK: - Initiating
@@ -52,7 +43,6 @@ class DarkModePanel: UIView {
 
     // MARK: - Setup user control
 
-    /// Constructs the user control.
     private func commonInit() {
         Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
 
@@ -81,21 +71,14 @@ class DarkModePanel: UIView {
 
     // MARK: - Configure connected Interface Builder elements
 
-    /// Configurates the user control.
     private func configure() {
-        // Content border
-
         self.layer.cornerRadius = 15
-
-        // Segmented control
-
         updateSegmentedControl()
         segmentedControl?.addTarget(self,
                                     action: #selector(segmentedControlValueChanged(_:)),
                                     for: .valueChanged)
     }
 
-    /// Updates the appearance of the user control.
     @objc private func makeUp() {
         segmentedControl?.setTitleTextAttributes(
             [
@@ -108,7 +91,6 @@ class DarkModePanel: UIView {
             ], for: .selected)
     }
 
-    /// Puts Dark Mode switcher in line with Dark Mode user option.
     private func updateSegmentedControl() {
         switch segmentedControlValue {
         case .auto:
@@ -122,8 +104,6 @@ class DarkModePanel: UIView {
 
     // MARK: - Segmented control value changed event
 
-    /// Puts Dark Mode user option in line with Dark Mode switcher.
-    /// - Parameter sender: Related Dark Mode swithcer.
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
 
         switch sender.selectedSegmentIndex {

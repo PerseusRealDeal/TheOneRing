@@ -2,54 +2,60 @@
 //  SystemColorsViewController.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
+
+import ConsolePerseusLogger
 import PerseusDarkMode
 
-/// Represents the screen for the list of system colors.
 class SystemColorsViewController: UIViewController {
 
     // MARK: - Interface Builder connections
 
-    /// Section button for the screen in the bottom tab bar.
     @IBOutlet weak var tabButton: UITabBarItem!
-
-    /// Table view for the list of colors.
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - The life cyrcle group of methods
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
-        tableView.register(UINib(nibName: "ColorTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "ColorTableViewCell")
-
-        tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
-
-        // Make the View sensitive to Dark Mode
+        // Dark Mode setup
 
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
         makeUp()
     }
 
-    /// Updates the appearance of the screen.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        log.message("[\(type(of: self))].\(#function)")
+
+        tableView.register(UINib(nibName: "ColorTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "ColorTableViewCell")
+
+        tableView.contentInset.bottom = UIScreen.main.bounds.height / 3
+    }
+
     @objc private func makeUp() {
-        view.backgroundColor = .customPrimaryBackground
+
+        view.backgroundColor = .customColorBackground
 
         tabButton.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemSelected
             ],
             for: .selected)
+
+        tabButton.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemNormal
+            ],
+            for: .normal)
 
         tableView.reloadData()
     }
@@ -61,12 +67,10 @@ extension SystemColorsViewController: UITableViewDataSource, UITableViewDelegate
 
     // MARK: - UITableViewDataSource protocol
 
-    /// Calculates the total cells of the list of system colors.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SystemColorsViewList.allCases.count
     }
 
-    /// Creates a cell with a specific color of the list of system colors.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
 

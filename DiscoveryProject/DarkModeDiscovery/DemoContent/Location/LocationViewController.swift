@@ -2,13 +2,9 @@
 //  LocationViewController.swift, LocationViewController.storyboard
 //  TheOneRing
 //
-//  Created by Mikhail Zhigulin in 7533 (17.03.2025).
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit

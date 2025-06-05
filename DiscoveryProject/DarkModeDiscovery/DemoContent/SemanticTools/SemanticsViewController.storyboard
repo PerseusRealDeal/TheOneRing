@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,7 +103,7 @@
             <objects>
                 <viewController id="BSe-Jj-VE1" userLabel="Color Converter" customClass="ConverterViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XF3-uP-U0D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60, 60, 67, 0.3" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOa-uU-FZz" userLabel="RGBA Input">
@@ -137,12 +138,19 @@
                                     <action selector="convertTapped:" destination="BSe-Jj-VE1" eventType="touchUpInside" id="6f1-FZ-SGL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to RGBA from HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Ua-tb5">
-                                <rect key="frame" x="60" y="170" width="183.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to RGBA from HEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Ua-tb5">
+                                <rect key="frame" x="60" y="170" width="200" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO1-Gw-e3w">
+                                <rect key="frame" x="60" y="215" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JO1-Gw-e3w" secondAttribute="height" multiplier="1:1" id="6qV-hR-By0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b9z-dC-Nnj"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,6 +159,10 @@
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="Qgk-IZ-DHy"/>
                             <constraint firstItem="Q4h-Ua-tb5" firstAttribute="leading" secondItem="Lfb-ut-8c1" secondAttribute="leading" id="S8Q-oN-iwA"/>
                             <constraint firstItem="sFQ-v0-Cwh" firstAttribute="top" secondItem="b9z-dC-Nnj" secondAttribute="top" constant="10" id="SIo-Jk-O1W"/>
+                            <constraint firstItem="JO1-Gw-e3w" firstAttribute="top" secondItem="Lfb-ut-8c1" secondAttribute="bottom" constant="65" id="YP2-zn-iVb"/>
+                            <constraint firstItem="JO1-Gw-e3w" firstAttribute="centerX" secondItem="Lfb-ut-8c1" secondAttribute="centerX" id="Yhf-7u-kLW"/>
+                            <constraint firstItem="Q4h-Ua-tb5" firstAttribute="width" secondItem="Lfb-ut-8c1" secondAttribute="width" id="e4c-er-eKH"/>
+                            <constraint firstItem="JO1-Gw-e3w" firstAttribute="width" secondItem="Lfb-ut-8c1" secondAttribute="width" id="kDF-jq-NEU"/>
                             <constraint firstItem="Lfb-ut-8c1" firstAttribute="top" secondItem="UOa-uU-FZz" secondAttribute="bottom" constant="10" id="mKl-Ok-KGL"/>
                             <constraint firstItem="UOa-uU-FZz" firstAttribute="top" secondItem="sFQ-v0-Cwh" secondAttribute="bottom" constant="10" id="o8T-Mm-H2g"/>
                             <constraint firstItem="sFQ-v0-Cwh" firstAttribute="leading" secondItem="UOa-uU-FZz" secondAttribute="leading" id="oX7-jy-sqs"/>
@@ -165,6 +177,7 @@
                         <outlet property="RGBAInput" destination="UOa-uU-FZz" id="uDs-8F-yOr"/>
                         <outlet property="convertButton" destination="sFQ-v0-Cwh" id="Glf-Tm-DMt"/>
                         <outlet property="tabButton" destination="alh-GR-4Rg" id="oGu-RA-jzL"/>
+                        <outlet property="viewColor" destination="JO1-Gw-e3w" id="VQ9-Rv-NDG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-gl-nNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -174,14 +187,14 @@
         <!--Tab Bar Controller-->
         <scene sceneID="cAZ-i4-2e9">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R8F-pI-iJ3" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R8F-pI-iJ3" customClass="TabBarController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Hs-QK-EfP">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="aNC-0l-cVu" kind="relationship" relationship="viewControllers" id="9uk-dh-WxB"/>
@@ -288,7 +301,7 @@
             <objects>
                 <viewController id="aNC-0l-cVu" userLabel="System Colors" customClass="SystemColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHL-Qb-aJB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-wD-K8D">
@@ -324,7 +337,7 @@
             <objects>
                 <viewController id="I6h-n8-cQC" userLabel="Semantic Colors" customClass="SemanticColorsViewController" customModule="TheOneRing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cV0-bg-2Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="485.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-Rk-TXH">
@@ -370,5 +383,8 @@
         <image name="Rivendell" width="640" height="338"/>
         <image name="RivendellDark" width="1600" height="667"/>
         <image name="TheFellowship" width="1000" height="414"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

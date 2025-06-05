@@ -2,19 +2,15 @@
 //  SystemColorsViewList.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
 
-/// Represents the model of system colors for displaying on the screen.
 enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible {
+
     case systemRed    = 0
     case systemOrange = 1
     case systemYellow = 2
@@ -35,7 +31,6 @@ enum SystemColorsViewList: Int, CaseIterable, CustomStringConvertible {
     case systemGray5  = 16
     case systemGray6  = 17
 
-    /// Color name.
     var description: String {
         switch self {
         case .systemRed:

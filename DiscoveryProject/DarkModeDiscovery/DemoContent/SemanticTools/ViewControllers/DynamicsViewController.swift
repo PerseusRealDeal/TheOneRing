@@ -2,13 +2,9 @@
 //  DynamicsViewController.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
@@ -16,20 +12,13 @@ import UIKit
 import ConsolePerseusLogger
 import PerseusDarkMode
 
-/// Represents the idea of dynamic image view with two samples.
 class DynamicsViewController: UIViewController {
 
     // MARK: - Interface Builder connections
 
-    /// Section button for the screen in the bottom tab bar.
     @IBOutlet weak var tabButton: UITabBarItem!
-
-    /// The first sample of dynamic image idea.
     @IBOutlet weak var topImage: DarkModeImageView!
-
-    /// The second sample of dynamic image idea.
     @IBOutlet weak var bottomImage: DarkModeImageView!
-
     @IBOutlet weak var buttonPDMStyle: UIButton!
     @IBOutlet weak var buttonPDMSystemStyle: UIButton!
 
@@ -44,23 +33,38 @@ class DynamicsViewController: UIViewController {
 
     // MARK: - The life cyrcle methods
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configure()
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
         // Dark Mode setup
+
         DarkModeAgent.register(stakeholder: self, selector: #selector(makeUp))
         makeUp()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        log.message("[\(type(of: self))].\(#function)")
+
+        self.configure()
+    }
+
     @objc private func makeUp() {
-        view.backgroundColor = .customPrimaryBackground
+
+        view.backgroundColor = .customColorBackground
 
         tabButton.setTitleTextAttributes(
             [
                 NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemSelected
             ],
             for: .selected)
+
+        tabButton.setTitleTextAttributes(
+            [
+                NSAttributedString.Key.foregroundColor: UIColor.customTabBarItemNormal
+            ],
+            for: .normal)
 
         buttonPDMStyle.backgroundColor = .customSecondaryBackground
         buttonPDMSystemStyle.backgroundColor = .customSecondaryBackground

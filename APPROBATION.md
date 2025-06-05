@@ -1,29 +1,49 @@
-# Approbation Matrix / Dark Mode descovery for iOS v2.0
+# Approbation Matrix / Descovery project for iOS
 
-> Minor Build System: macOS Monterey 12.7.6 / Xcode 14.2
+> Build System: macOS Monterey 12.7.6 / Xcode 14.2
 
-## iOS
+> Approbated capability: Logging —— CPL
 
-<table>
-    <tr>
-      <th>iOS</th>
-      <th>Simulator</th>
-      <th>Device</th>
-      <th>Result</th>
-      <th>Details</th>
-    </tr>
-    <tr>
-      <td nowrap>iOS 12.5.7</td>
-      <td>-</td>
-      <td nowrap>iPad Air / iOS 12.5.7</td>
-      <td>??</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td nowrap>iOS 16.2</td>
-      <td nowrap>iPhone SE (3rd gen)</td>
-      <td>-</td>
-      <td>??</td>
-      <td>-</td>
-    </tr>
-</table>
+| Device          | Simulator | OS Version | Result  | Details |
+| --------------- | :-------: | ---------- | :-----: | ------- |
+| iPad Air        | no        | 12.5.7     | ok      | - |
+| iPhone SE (3rd) | yes       | 16.2       | ok      | - |
+
+> Approbated capability: Dark Mode —— Perseus Dark Mode
+
+| Device          | Simulator | OS Version | Result  | Details |
+| --------------- | :-------: | ---------- | :-----: | ------- |
+| iPad Air        | no        | 12.5.7     | ok      | - |
+| iPhone SE (3rd) | yes       | 16.2       | ok      | - |
+
+> Approbated capability: Location —— Perseus Geo Kit
+
+| Device          | Simulator | OS Version | Result  | Details |
+| --------------- | :-------: | ---------- | :-----: | ------- |
+| iPad Air        | no        | 12.5.7     | ok      | - |
+| iPhone SE (3rd) | yes       | 16.2       | ok      | - |
+
+## A3 environment
+
+### List of available Apple machines
+
+> Excluded: virtualization (e.g. VirtualBox) and hackintosh
+
+| Machine        | Memory | Storage                | OS
+| -------------- | ------ | ---------------------- | --------------- |
+| Mac mini       | 16GB   | SATA 480GB, NVMe 256GB | Monterey 12.7.6 |
+| MacBook Pro    | 8GB    | 256GB                  | Ventura 13.7.4  |
+| iPad Air A1475 | --     | 16GB                   | iOS 12.5.7      |
+
+### System configuration for A3 environment
+
+| macOS       | Version | Machine     | Xcode  | OpenCore | Git Client     |
+| ----------- | ------- | ----------- | ------ | -------- | -------------- |
+| High Sierra | 10.13.6 | Mac mini    | 10.1   | -        | GitHub Desktop |
+| Mojave      | 10.14.6 | Mac mini    | 11.3.1 | -        | GitHub Desktop |
+| Catalina    | 10.15.7 | Mac mini    | 11.7   | -        | GitHub Desktop |
+| Big Sur     | 11.7.10 | Mac mini    | 13.2.1 | -        | GitHub Desktop |
+| Monterey    | 12.7.6  | Mac mini    | 14.2   | -        | SmartGit       |
+| Ventura     | 13.7.4  | MacBook Pro | 15.2   | -        | GitHub Desktop |
+| Sonoma      | 14.7.4  | MacBook Pro | 16.2   | yes      | GitHub Desktop |
+| Sequoia     | 15.3.1  | MacBook Pro | 16.2   | yes      | GitHub Desktop |

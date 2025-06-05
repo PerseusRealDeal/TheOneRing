@@ -2,13 +2,9 @@
 //  AppGlobals.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7533 (28.12.2024).
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7533 PerseusRealDeal
-//
-//  Licensed under the special license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import Foundation

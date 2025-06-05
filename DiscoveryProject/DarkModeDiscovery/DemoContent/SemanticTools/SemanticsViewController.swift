@@ -2,36 +2,24 @@
 //  SemanticsViewController.swift, SemanticsViewController.storyboard
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
 import PerseusDarkMode
 
-/// Represents a host view controller for other view controllers.
-///
-///  - Holds close button for early iOS versions.
-///  - Holds Dark Mode panel with Dark Mode switcher.
-///  - Hides keyboard in a correct way.
 class SemanticsViewController: UIViewController {
 
     // MARK: - Interface Builder connections
 
-    /// Button to close the view controller.
     @IBOutlet weak var closeButton: UIButton!
 
-    /// Returns to the main screen.
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
-    /// Dark Mode switcher.
     @IBOutlet weak var optionsPanel: DarkModePanel!
 
     // MARK: - Closure for Dark Mode usr choice changed event
@@ -51,15 +39,14 @@ class SemanticsViewController: UIViewController {
         makeUp()
     }
 
-    /// Updates the appearance of the screen.
     @objc private func makeUp() {
-        view.backgroundColor = .customPrimaryBackground
-        closeButton.backgroundColor = .customSecondaryBackground
 
+        view.backgroundColor = .customColorBackground
+
+        closeButton.backgroundColor = .customSecondaryBackground
         optionsPanel.backgroundColor = .customViewSelected
     }
 
-    /// Configurates the screen.
     private func configure() {
         setTappedAroundHandlerUp()
 
@@ -82,7 +69,6 @@ class SemanticsViewController: UIViewController {
 
 extension UIViewController {
 
-    /// Adds recognizer for tap event to hide keyboard.
     func setTappedAroundHandlerUp() {
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(UIViewController.hideKeyboard))
@@ -90,6 +76,5 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
     }
 
-    /// Hides keyboard.
     @objc func hideKeyboard() { view.endEditing(true) }
 }

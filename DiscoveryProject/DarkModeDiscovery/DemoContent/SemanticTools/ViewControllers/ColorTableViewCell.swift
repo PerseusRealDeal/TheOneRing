@@ -2,13 +2,9 @@
 //  ColorTableViewCell.swift, ColorTableViewCell.xib
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7531.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
@@ -37,9 +33,9 @@ class ColorTableViewCell: UITableViewCell, UITextFieldDelegate {
     @objc private func makeUp() {
         guard let colorSelected = colorRepresented else { return }
 
-        colorNameLabel.textColor = .labelPerseus
-        colorHexTextField.textColor = .labelPerseus
-        colorRGBATextField.textColor = .labelPerseus
+        colorNameLabel.textColor = .customColorLabel
+        colorHexTextField.textColor = .customColorLabel
+        colorRGBATextField.textColor = .customColorLabel
 
         let rgba = colorSelected.RGBA255
 

@@ -2,19 +2,16 @@
 //  SemanticColorsViewList.swift
 //  DarkModeDiscovery
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7533 Mikhail A. Zhigulin of Novosibirsk
-//  Copyright © 7531 - 7533 PerseusRealDeal
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import UIKit
 
 /// Represents the model of semantic colors for displaying on the screen.
 enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
+
     // Label Colors
 
     case label                            = 0
@@ -56,7 +53,6 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
     case secondarySystemGroupedBackground = 16
     case tertiarySystemGroupedBackground  = 17
 
-    /// Color name.
     var description: String {
         switch self {
         case .label:
@@ -98,7 +94,6 @@ enum SemanticColorsViewList: Int, CaseIterable, CustomStringConvertible {
         }
     }
 
-    /// Color instance.
     var color: UIColor {
         switch self {
         case .label:
