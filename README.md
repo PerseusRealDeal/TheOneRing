@@ -1,60 +1,100 @@
-# ios.darkmode.discovery
+# iOS discovery project — Xcode 14.2+
 
-[![Actions Status](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/ios.darkmode.discovery/actions)
-![Version](https://img.shields.io/badge/App_Version-1.5-green.svg)
-[![Platforms iOS 9](https://img.shields.io/badge/Platform-iOS%209.3+-orange.svg)](https://en.wikipedia.org/wiki/IOS_9)
-[![SDK UIKit](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
-[![Xcode 10.1](https://img.shields.io/badge/Xcode-10.1+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-red.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
-[![License](http://img.shields.io/:License-MIT-blue.svg)](/LICENSE)
+> This is a fan iOS app themed with the Middle-earth adventures from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
+
+[![Actions Status](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml)
+[![Style](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml)
+![Version](https://img.shields.io/badge/Version-2.0-green.svg)
+[![Platforms](https://img.shields.io/badge/Platform-iOS%2012.4+-orange.svg)](https://en.wikipedia.org/wiki/IOS_12)
+[![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
+[![SDK](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
+[![License](http://img.shields.io/:License-Unlicense-green.svg)](/LICENSE)
 
 ## Dependencies
 
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-1.1.5-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode/tree/1.1.5)
-[![PerseusUISystemKit](http://img.shields.io/:PerseusUISystemKit-1.1.4-green.svg)](https://github.com/perseusrealdeal/PerseusUISystemKit/tree/1.1.4)
+> Swift Package Manager.
+
+[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.3.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.0.1-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.0.1-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
 
 # In brief
 
-> This project is used to prove a set of Perseus Dark Mode capabilities.
+> Serves the only one purpose —— the first-party software approbation.
 
-| Main Screen Light  | Details Screen Light | Main Screen Dark | Details Screen Dark |
+| Main Screen Light  | Main Screen Dark | Colors Screen Light | Colors Screen Dark |
 | :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| <img src="Images/MainScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenLight.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/MainScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="Images/DetailsScreenDark.png" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+| <img src="https://github.com/user-attachments/assets/b56a44db-427b-4c31-b4fc-f5ba64118dd7" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/d511ce06-b938-4ba3-aea9-92a4a579ad40" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/566d3c63-415d-4b11-a8e7-fc7e73dcce9e" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/b3381bf7-3f73-465e-aefd-af5191d72af8" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
-# Requirements
+> [!IMPORTANT]
+> The screenshot scenes taken from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
 
-- [macOS High Sierra 10.13.6+](https://apps.apple.com/us/app/macos-high-sierra/id1246284741?ls=1)
-- [Xcode 10.1+](https://stackoverflow.com/questions/10335747/how-to-download-xcode-dmg-or-xip-file)
-- Swift 4.2+
-- UIKit SDK
+## Approbation Matrix
+
+> [`A3 Environment and Approbation`](/APPROBATION.md)
+
+## Build system requirements
+
+- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294) / [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
 
 # First-party software
 
-- [Perseus Dark Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git) / [1.1.5](https://github.com/perseusrealdeal/perseusdarkmode/releases/tag/1.1.5)
-- [Perseus UI System Kit](https://github.com/perseusrealdeal/PerseusUISystemKit.git) / [1.1.4](https://github.com/perseusrealdeal/perseusuisystemkit/releases/tag/1.1.4)
-- [Dark Mode switching functions](https://gist.github.com/perseusrealdeal/11b1bab47f13134832b859f49d9af706)
-- [PerseusLogger](https://gist.github.com/perseusrealdeal/df456a9825fcface44eca738056eb6d5)
+| Type    | Name                                                                                                                                                                  | License |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.3.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.3.0) | MIT     |
+| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.0.1](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.0.1)                | MIT     |
+| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.0.1](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.0.1)                      | MIT     |
 
 # Third-party software
 
-- [SwiftLint](https://github.com/realm/SwiftLint) / [0.31.0: Busy Laundromat](https://github.com/realm/SwiftLint/releases/tag/0.31.0) for macOS High Sierra
-- [The class](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) extracted, edited and integrated from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift)
+| Type   | Name                                                                                                                              | License                            |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Style  | [SwiftLint](https://github.com/realm/SwiftLint) / [v0.57.0 for Monterey+](https://github.com/realm/SwiftLint/releases/tag/0.57.0) | MIT                                |
+| Action | [mxcl/xcodebuild@v3](https://github.com/mxcl/xcodebuild)                                                                          | [Unlicense](https://unlicense.org) |
+| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/)                                                 | MIT                                |
+| Class  | [HexColorConverter](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) -  extracted, edited from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift) | MIT |
 
-# License MIT
+# Unlicensed Free Software
 
-Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
+- [License](/LICENSE)
 
-Copyright © 7531 PerseusRealDeal.
+## Required License Notices
 
-- The year starts from the creation of the world according to a Slavic calendar.
-- September, the 1st of Slavic year.
+© Mikhail A. Zhigulin of Novosibirsk **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
+© PerseusRealDeal **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
+© 2025 The SwiftLint Contributors **for** SwiftLint</br>
+© GitHub **for** GitHub Action cirruslabs/swiftlint-action@v1</br>
+© 2014 R0CKSTAR **for** UIColor-Hex-Swift</br>
 
-[LICENSE](/LICENSE) for details.
+# Credits
 
-***TODO:*** Add some special words about app's theme images and text that were found on the seas of Internet.
+<table>
+<tr>
+    <td>Balance and Control</td>
+    <td>kept by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Source Code</td>
+    <td>written by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Documentation</td>
+    <td>prepared by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+<tr>
+    <td>Product Approbation</td>
+    <td>tested by</td>
+    <td>Mikhail A. Zhigulin</td>
+</tr>
+</table>
 
-# Author
+- Language support: [Reverso](https://www.reverso.net/)
+- Git clients: [SmartGit](https://syntevo.com/) and [GitHub Desktop](https://github.com/apps/desktop)
 
-> This app called as `DarkModeDiscovery` was written at Novosibirsk by Mikhail Zhigulin i.e. me, mzhigulin@gmail.com.
+# Prepared by
 
-> Mostly I'd like thank my lovely parents for supporting me in all my ways.
+> © Mikhail A. Zhigulin of Novosibirsk

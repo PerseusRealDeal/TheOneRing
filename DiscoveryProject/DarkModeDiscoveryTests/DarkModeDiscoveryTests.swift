@@ -2,21 +2,22 @@
 //  DarkModeDiscoveryTests.swift
 //  DarkModeDiscoveryTests
 //
-//  Created by Mikhail Zhigulin in 7530.
+//  Created by Mikhail A. Zhigulin of Novosibirsk.
 //
-//  Copyright © 7530 - 7531 Mikhail Zhigulin of Novosibirsk.
-//  Copyright © 7531 PerseusRealDeal.
-//
-//  Licensed under the MIT license. See LICENSE file.
-//  All rights reserved.
+//  Unlicensed Free Software.
 //
 
 import XCTest
-@testable import DarkModeDiscovery
+import ConsolePerseusLogger
+
+@testable import TheOneRing
 
 class DarkModeDiscoveryTests: XCTestCase {
 
     // func test_zero() { XCTFail("Tests not yet implemented in \(type(of: self)).") }
 
-    func test_the_first_success() { XCTAssertTrue(true, "It's done!") }
+    func test_the_first_success() {
+        log.time = true
+        log.message(#function)
+    }
 }

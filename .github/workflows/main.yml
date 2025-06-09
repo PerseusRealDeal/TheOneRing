@@ -1,27 +1,25 @@
 name: Build & Tests
 
-on: 
+on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-#  schedule:
-#    - cron: '30 5 * * 5'
-    
+# schedule:
+#   - cron: '30 5 * * 5'
+
 jobs:
 
-  build: 
-    runs-on: macos-latest
+  build:
+    runs-on: macos-14
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v2
-    - name: Show xcodebuild version
-      run: xcodebuild -version
-    - name: Show xcode embedded SDKs
-      run: xcodebuild -showsdks
+      uses: actions/checkout@v4
+    - name: Select Xcode 15.4
+      run: sudo xcode-select -s "/Applications/Xcode_15.4.app"
     - name: Show buildable schemes
-      run: xcodebuild -list -project ./DiscoveryProject/DarkModeDiscovery.xcodeproj
-    - uses: mxcl/xcodebuild@v1.9.2 
+      run: xcodebuild -list -project ./DiscoveryProject/TheOneRing.xcodeproj
+    - uses: mxcl/xcodebuild@v3
       with:
         platform: iOS
         scheme: 'DarkModeDiscovery'
@@ -30,24 +28,21 @@ jobs:
         verbosity: xcpretty
         upload-logs: always
         configuration: Release
-        
-  tests: 
-    runs-on: macos-latest
+
+  unit-tests:
+    runs-on: macos-14
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v2
-    - name: Show xcodebuild version
-      run: xcodebuild -version
-    - name: Show xcode embedded SDKs
-      run: xcodebuild -showsdks
+      uses: actions/checkout@v4
+    - name: Select Xcode 15.4
+      run: sudo xcode-select -s "/Applications/Xcode_15.4.app"
     - name: Show buildable schemes
-      run: xcodebuild -list -project ./DiscoveryProject/DarkModeDiscovery.xcodeproj
-    - uses: mxcl/xcodebuild@v1.9.2 
+      run: xcodebuild -list -project ./DiscoveryProject/TheOneRing.xcodeproj
+    - uses: mxcl/xcodebuild@v3
       with:
         platform: iOS
         scheme: 'DarkModeDiscovery'
         action: test
-        code-coverage: true
         working-directory: ./DiscoveryProject
         verbosity: xcpretty
         upload-logs: always

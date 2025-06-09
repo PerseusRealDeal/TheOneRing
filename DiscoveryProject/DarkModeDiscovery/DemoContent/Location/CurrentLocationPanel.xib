@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentLocationPanel" customModule="TheOneRing" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonCurrentLocation" destination="L4F-yD-nFQ" id="IMg-Yi-GED"/>
+                <outlet property="buttonOpenMap" destination="9js-Vn-lEb" id="AUx-3g-RPb"/>
+                <outlet property="buttonRefreshStatus" destination="ZeC-99-bUb" id="bw6-UT-EWN"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="hS1-1q-GuE"/>
+                <outlet property="labelCoordinate" destination="9F4-Ji-KHP" id="zkw-PU-57T"/>
+                <outlet property="labelGeoStatus" destination="ezu-Ki-AhQ" id="xLL-b8-tM9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Custom View">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeC-99-bUb">
+                    <rect key="frame" x="242" y="0.0" width="110" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="KA7-5u-S6v"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Refresh Status">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonRefreshStatusTapped:" destination="-1" eventType="touchUpInside" id="PiI-1Q-qmv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4F-yD-nFQ">
+                    <rect key="frame" x="5" y="95" width="130" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="130" id="qsy-R3-TQC"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Current Location">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonRefreshCurrentTapped:" destination="-1" eventType="touchUpInside" id="r1M-sE-MYt"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Permission Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-Ki-AhQ">
+                    <rect key="frame" x="51.333333333333329" y="6" width="185.66666666666669" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude, Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-Ji-KHP">
+                    <rect key="frame" x="140" y="101" width="133" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9js-Vn-lEb">
+                    <rect key="frame" x="308" y="95" width="44" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="tsK-hf-IrV"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Map">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="actionOpenMap:" destination="-1" eventType="touchUpInside" id="q4t-Yj-Hlt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9js-Vn-lEb" secondAttribute="trailing" constant="5" id="3lW-fH-KeP"/>
+                <constraint firstItem="9F4-Ji-KHP" firstAttribute="centerY" secondItem="L4F-yD-nFQ" secondAttribute="centerY" id="BF5-Ij-jet"/>
+                <constraint firstAttribute="bottom" secondItem="L4F-yD-nFQ" secondAttribute="bottom" id="GXv-73-ot8"/>
+                <constraint firstItem="ZeC-99-bUb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mw2-kE-9uP"/>
+                <constraint firstItem="ezu-Ki-AhQ" firstAttribute="centerY" secondItem="ZeC-99-bUb" secondAttribute="centerY" id="NJT-ek-sFL"/>
+                <constraint firstItem="L4F-yD-nFQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="VAV-0H-kB6"/>
+                <constraint firstAttribute="bottom" secondItem="9js-Vn-lEb" secondAttribute="bottom" id="dj0-Pc-V5N"/>
+                <constraint firstItem="9F4-Ji-KHP" firstAttribute="leading" secondItem="L4F-yD-nFQ" secondAttribute="trailing" constant="5" id="iaR-Xu-cFS"/>
+                <constraint firstAttribute="trailing" secondItem="ZeC-99-bUb" secondAttribute="trailing" constant="5" id="lM7-9u-s2v"/>
+                <constraint firstItem="ZeC-99-bUb" firstAttribute="leading" secondItem="ezu-Ki-AhQ" secondAttribute="trailing" constant="5" id="yOn-x3-X1d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="29.770992366412212" y="26.760563380281692"/>
+        </view>
+    </objects>
+</document>
