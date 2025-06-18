@@ -45,9 +45,9 @@ class LogReport: NSObject {
     private let newline = "\r\n--\r\n"
 }
 
-typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
+typealias LogLevel = PerseusGeoKit.PerseusLogger.Level
 
-func reportGeoEvent(_ text: String, _ type: LogLevel, _ localTime: LocalTime) {
+func report(_ text: String, _ type: LogLevel, _ localTime: LocalTime, _ owner: PIDandTID) {
     geoReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
@@ -55,25 +55,30 @@ let geoReport = LogReport()
 
 // MARK: - Logger
 
+geolog.customActionOnMessage = report(_:_:_:_:)
+
 // log.turned = .off
-dmlog.turned = .off
+// dmlog.turned = .off
 // geolog.turned = .off
 
-// log.output = .consoleapp
-// dmlog.output = .consoleapp
-// geolog.output = .consoleapp
+var isLoadedInfo = ""
 
-// geolog.format = .textonly
-// geolog.output = .custom
+if let path = Bundle.main.url(forResource: "CPLConfig", withExtension: "json") {
+    if log.loadConfig(path), dmlog.loadConfig(path), geolog.loadConfig(path) {
+        isLoadedInfo = "Options successfully reseted!"
+    } else {
+        isLoadedInfo = "Failed to reset options!"
+    }
+} else {
+    isLoadedInfo = "Failed to create URL!"
+}
 
-log.customActionOnMessage = reportGeoEvent(_:_:_:)
-
-// log.time = true
+log.message(isLoadedInfo)
 log.message("The app's start point...", .info)
 
-let globals = AppGlobals()
-
 // MARK: - Run the app
+
+let globals = AppGlobals()
 
 // Determine the app run purpose
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
