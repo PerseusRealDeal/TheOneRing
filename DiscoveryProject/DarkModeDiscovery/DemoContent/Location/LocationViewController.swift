@@ -89,7 +89,7 @@ class LocationViewController: UIViewController {
         makeUp() // That's for now, call if not the first, main, screen.
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.lastMessage) { _, _ in
+        observation = logReport.observe(\.lastMessage) { _, _ in
             self.refreshLogReportTextView()
         }
     }
@@ -177,7 +177,7 @@ extension LocationViewController {
     }
 
     private func refreshLogReportTextView() {
-        textViewLog.text = geoReport.text
+        textViewLog.text = logReport.text
         textViewLog.scrollToBottom()
     }
 }

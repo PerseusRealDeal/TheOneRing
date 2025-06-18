@@ -16,6 +16,7 @@
 		2EA971BB2D88790C00E564CA /* LocationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */; };
 		2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA971BC2D88798000E564CA /* LocationViewController.swift */; };
 		2EAB12312DEB6B9A002DDA8E /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EAB12302DEB6B9A002DDA8E /* PerseusGeoKit */; };
+		2EC2CAF12E0289F00044F6E9 /* CPLConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EC2CAF02E0289CA0044F6E9 /* CPLConfig.json */; };
 		2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */; };
 		2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */; };
 		2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77A2DBE21D400375792 /* PerseusDarkMode */; };
@@ -77,6 +78,7 @@
 		2EA10AA92CFE233B00535E5A /* APPROBATION.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = APPROBATION.md; path = ../APPROBATION.md; sourceTree = "<group>"; };
 		2EA971BA2D88790C00E564CA /* LocationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationViewController.storyboard; sourceTree = "<group>"; };
 		2EA971BC2D88798000E564CA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		2EC2CAF02E0289CA0044F6E9 /* CPLConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CPLConfig.json; sourceTree = "<group>"; };
 		2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
 		2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2EE5FCCF2DD0941E000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				E095389527B36E7B00AAAAAA /* Assets.xcassets */,
 				E095389A27B36E7B00AAAAAA /* Info.plist */,
 				2EE5FCCF2DD0941E000AC9CD /* UpdatingLocation.gpx */,
+				2EC2CAF02E0289CA0044F6E9 /* CPLConfig.json */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EC2CAF12E0289F00044F6E9 /* CPLConfig.json in Resources */,
 				2EA10AA62CFE211500535E5A /* .swiftlint.yml in Resources */,
 				2EA10AA82CFE221000535E5A /* swiftlint.yml in Resources */,
 				4B7EABEE298D6DDF0063172D /* main.yml in Resources */,
@@ -778,7 +782,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit/";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.1;
+				version = 1.0.3;
 			};
 		};
 		2EE1B7792DBE21D400375792 /* XCRemoteSwiftPackageReference "PerseusDarkMode" */ = {
@@ -786,7 +790,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
 				kind = exactVersion;
-				version = 2.0.1;
+				version = 2.0.3;
 			};
 		};
 		2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -794,7 +798,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.3.0;
+				version = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

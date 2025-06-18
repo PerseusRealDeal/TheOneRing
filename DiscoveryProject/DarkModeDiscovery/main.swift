@@ -47,11 +47,11 @@ class LogReport: NSObject {
 
 typealias LogLevel = ConsolePerseusLogger.PerseusLogger.Level
 
-func reportGeoEvent(_ text: String, _ type: LogLevel, _ localTime: LocalTime) {
-    geoReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
+func report(_ text: String, _ type: LogLevel, _ localTime: LocalTime, _ owner: PIDandTID) {
+    logReport.lastMessage = "[\(localTime.date)] [\(localTime.time)]\r\n> \(text)"
 }
 
-let geoReport = LogReport()
+let logReport = LogReport()
 
 // MARK: - Logger
 
@@ -66,7 +66,21 @@ dmlog.turned = .off
 // geolog.format = .textonly
 // geolog.output = .custom
 
-log.customActionOnMessage = reportGeoEvent(_:_:_:)
+log.customActionOnMessage = report(_:_:_:_:)
+
+var resetInfo = ""
+
+if let path = Bundle.main.url(forResource: "CPLConfig", withExtension: "json") {
+    if log.loadConfig(path), dmlog.loadConfig(path), geolog.loadConfig(path) {
+        resetInfo = "Options successfully reseted!"
+    } else {
+        resetInfo = "Failed to reset options!"
+    }
+} else {
+    resetInfo = "Failed to create URL!"
+}
+
+log.message(resetInfo)
 
 // log.time = true
 log.message("The app's start point...", .info)
