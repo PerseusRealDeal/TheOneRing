@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
 
     // MARK: - Interface Builder connections
 
+    @IBOutlet weak var labelLog: MessageLabel!
+
     @IBOutlet weak var titleTop: UILabel!
     @IBOutlet weak var titleImage: DarkModeImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -134,6 +136,8 @@ class MainViewController: UIViewController {
 
         optionsPanel.segmentedControlValue = choice
         semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
+
+        labelLog.message = "Dark Mode is \(choice)"
     }
 }
 

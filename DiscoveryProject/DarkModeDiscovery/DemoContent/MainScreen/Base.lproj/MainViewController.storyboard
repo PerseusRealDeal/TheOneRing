@@ -23,25 +23,31 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fuw-t9-5FU">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw7-jc-nVA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPY-S4-qUN" customClass="MessageLabel" customModule="TheOneRing" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="36" width="375" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwi-qw-VER" userLabel="Transparent Block">
-                                                        <rect key="frame" x="0.0" y="42" width="375" height="168"/>
+                                                        <rect key="frame" x="0.0" y="60" width="375" height="180"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-RV-cFq" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="0.0" width="365" height="163"/>
+                                                                <rect key="frame" x="5" y="0.0" width="365" height="175"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="TheFellowship"/>
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageDark" value="FrodoWithTheRing"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-ch-y8h" userLabel="Location Panel" customClass="CurrentLocationPanel" customModule="TheOneRing" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -59,15 +65,16 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Cwi-qw-VER" firstAttribute="height" secondItem="fuw-t9-5FU" secondAttribute="height" multiplier="0.8" id="pm7-G5-Dei"/>
-                                                    <constraint firstItem="hw7-jc-nVA" firstAttribute="height" secondItem="fuw-t9-5FU" secondAttribute="height" multiplier="0.2" id="u1g-nu-NxM"/>
+                                                    <constraint firstItem="HPY-S4-qUN" firstAttribute="height" secondItem="fuw-t9-5FU" secondAttribute="height" multiplier="0.1" id="Pcy-pY-rSR"/>
+                                                    <constraint firstItem="Cwi-qw-VER" firstAttribute="height" secondItem="fuw-t9-5FU" secondAttribute="height" multiplier="0.75" id="pm7-G5-Dei"/>
+                                                    <constraint firstItem="hw7-jc-nVA" firstAttribute="height" secondItem="fuw-t9-5FU" secondAttribute="height" multiplier="0.15" id="u1g-nu-NxM"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AW-He-ft0" userLabel="Transparent Block">
-                                                <rect key="frame" x="0.0" y="210" width="375" height="390.5"/>
+                                                <rect key="frame" x="0.0" y="240" width="375" height="360.5"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XGe-tD-ua1">
-                                                        <rect key="frame" x="5" y="0.0" width="365" height="390.5"/>
+                                                        <rect key="frame" x="5" y="0.0" width="365" height="360.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="OY5-L0-dzd"/>
@@ -85,8 +92,8 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="7AW-He-ft0" firstAttribute="height" secondItem="ieH-RN-qSa" secondAttribute="height" multiplier="0.65" id="lqB-Jx-OBb"/>
-                                            <constraint firstItem="fuw-t9-5FU" firstAttribute="height" secondItem="ieH-RN-qSa" secondAttribute="height" multiplier="0.35" id="vBy-q6-dbe"/>
+                                            <constraint firstItem="7AW-He-ft0" firstAttribute="height" secondItem="ieH-RN-qSa" secondAttribute="height" multiplier="0.6" id="lqB-Jx-OBb"/>
+                                            <constraint firstItem="fuw-t9-5FU" firstAttribute="height" secondItem="ieH-RN-qSa" secondAttribute="height" multiplier="0.4" id="vBy-q6-dbe"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNh-z0-b4N" userLabel="Transparent Block">
@@ -195,6 +202,7 @@
                     <connections>
                         <outlet property="actionToolsButton" destination="tf1-0D-Awt" id="OoR-aK-1Hv"/>
                         <outlet property="bottomImage" destination="NyA-XL-YJ8" id="3y0-0K-Zpn"/>
+                        <outlet property="labelLog" destination="HPY-S4-qUN" id="J0A-yv-Gjn"/>
                         <outlet property="optionsPanel" destination="mFc-iZ-fRe" id="41J-5T-o6c"/>
                         <outlet property="tableView" destination="XGe-tD-ua1" id="Vda-J9-5lE"/>
                         <outlet property="titleImage" destination="YlS-RV-cFq" id="Oup-t9-Xha"/>
@@ -206,11 +214,6 @@
             <point key="canvasLocation" x="67" y="94"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="YlS-RV-cFq">
-            <size key="intrinsicContentSize" width="1000" height="414"/>
-        </designable>
-    </designables>
     <resources>
         <image name="FrodoWithTheRing" width="960" height="500"/>
         <image name="TheFellowship" width="1000" height="414"/>
