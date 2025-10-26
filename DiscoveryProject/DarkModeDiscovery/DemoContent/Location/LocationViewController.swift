@@ -6,6 +6,9 @@
 //
 //  Unlicensed Free Software.
 //
+//
+// swiftlint:disable file_length
+//
 
 import UIKit
 import MapKit
@@ -34,6 +37,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var textViewLog: UITextView!
 
     private var observation: NSKeyValueObservation?
+
     private var autoMapToCurrent = true
 
     // MARK: - Actions
@@ -43,6 +47,9 @@ class LocationViewController: UIViewController {
     }
 
     @IBAction func actionButtonStatusTapped(_ sender: UIButton) {
+
+        log.message(#function, .debug, .custom)
+
         labelGeoStatus.text = "\(GeoAgent.aboutLocationServices().inDetail)".capitalized
 
         if GeoAgent.currentStatus == .allowed {
@@ -58,18 +65,30 @@ class LocationViewController: UIViewController {
     }
 
     @IBAction func actionButtonStartUpdatingTapped(_ sender: UIButton) {
+
+        log.message(#function, .debug, .custom)
+
         LocationDealer.requestUpdatingLocation()
     }
 
     @IBAction func actionButtonStopUpdatingTapped(_ sender: UIButton) {
+
+        log.message(#function, .debug, .custom)
+
         GeoAgent.shared.stopUpdatingLocation()
     }
 
     @IBAction func actionButtonCrurrentLocationTapped(_ sender: UIButton) {
+
+        log.message(#function, .debug, .custom)
+
         LocationDealer.requestCurrent(self)
     }
 
     @IBAction func actionSwitchAutoMapToCurrentTapped(_ sender: UISwitch) {
+
+        log.message(#function, .debug, .custom)
+
         autoMapToCurrent = sender.isOn ? true : false
     }
 
@@ -89,8 +108,9 @@ class LocationViewController: UIViewController {
         makeUp() // That's for now, call if not the first, main, screen.
 
         // Connect to Log Reporting
-        observation = geoReport.observe(\.lastMessage) { _, _ in
-            self.refreshLogReportTextView()
+        observation = localReport.observe(\.lastMessage) { _, _ in // Always in main thread?
+            // DispatchQueue.main.async { } // No
+            self.refreshLogReportTextView() // Yes
         }
     }
 
@@ -148,12 +168,14 @@ extension LocationViewController {
     }
 
     private func mapToCurrent() {
-        guard let location = AppGlobals.currentLocation else { return }
+        let point = AppGlobals.currentLocation ?? GeoPoint(DEFAULT_MAP_POINT)
 
-        let point = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        let region = MKCoordinateRegion(center: point.coordinate,
+        let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
+        let region = MKCoordinateRegion(center: location.coordinate,
                                         latitudinalMeters: DEFAULT_MAP_RADIUS,
                                         longitudinalMeters: DEFAULT_MAP_RADIUS)
+
+        log.message("\(point)", .debug, .custom)
 
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
@@ -177,7 +199,10 @@ extension LocationViewController {
     }
 
     private func refreshLogReportTextView() {
-        textViewLog.text = geoReport.text
+
+        log.message("\(localReport.text.count)", .debug, .standard)
+
+        textViewLog.text = localReport.text
         textViewLog.scrollToBottom()
     }
 }

@@ -1,23 +1,38 @@
 # iOS discovery project — Xcode 14.2+
 
-> This is a fan iOS app themed with the Middle-earth adventures from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
-
 [![Actions Status](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml)
 [![Style](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml)
-![Version](https://img.shields.io/badge/Version-2.1-green.svg)
+![Version](https://img.shields.io/badge/Version-2.2-green.svg)
 [![Platforms](https://img.shields.io/badge/Platform-iOS%2012.4+-orange.svg)](https://en.wikipedia.org/wiki/IOS_12)
 [![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
 [![SDK](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![License](http://img.shields.io/:License-Unlicense-green.svg)](/LICENSE)
 
+> The fan iOS app in the Middle-earth theme with screens from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
+
+> For details: [`Approbation and A3 Environment`](/APPROBATION.md).
+
 ## Dependencies
 
 > Swift Package Manager.
 
-[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.5.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.0.3-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
-[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.0.3-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
+[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.6.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.1.0-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.1.0-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
+
+## Our Terms
+
+> [`CPL`](https://github.com/perseusrealdeal/ConsolePerseusLogger.git) stands for `C`onsole `P`erseus `L`ogger.</br>
+> [`PGK`](https://github.com/perseusrealdeal/PerseusGeoKit.git) stands for `P`erseus `G`eo `K`it.</br>
+> [`PDM`](https://github.com/perseusrealdeal/PerseusDarkMode.git) stands for `P`erseus `D`ark `M`ode.</br>
+> `P2P` stands for `P`erson-`to`-`P`erson.</br>
+> [`A3`](https://docs.google.com/document/d/1K2jOeIknKRRpTEEIPKhxO2H_1eBTof5uTXxyOm5g6nQ) stands for `A`pple `A`pps `A`pprobation.</br>
+> [`T3`](https://github.com/perseusrealdeal/TheTechnologicalTree) stands for `T`he `T`echnological `T`ree.
+
+## Build system requirements
+
+- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294) / [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
 
 # In brief
 
@@ -25,26 +40,18 @@
 
 | Main Screen Light  | Main Screen Dark | Colors Screen Light | Colors Screen Dark |
 | :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| <img src="https://github.com/user-attachments/assets/b56a44db-427b-4c31-b4fc-f5ba64118dd7" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/d511ce06-b938-4ba3-aea9-92a4a579ad40" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/566d3c63-415d-4b11-a8e7-fc7e73dcce9e" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/b3381bf7-3f73-465e-aefd-af5191d72af8" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+| <img src="https://github.com/user-attachments/assets/51b526be-bbfd-4684-9339-ed00c07a4bff" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/982ac2e3-f826-4e0e-8219-afe0543bbb3b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/86f27b3e-32dc-4607-8104-395685f061e5" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/e41b5d33-e8c5-49e1-a701-db411244869b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
 
 > [!IMPORTANT]
 > The screenshot scenes taken from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
-
-## Approbation Matrix
-
-> [`A3 Environment and Approbation`](/APPROBATION.md)
-
-## Build system requirements
-
-- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294) / [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
 
 # First-party software
 
 | Type    | Name                                                                                                                                                                  | License |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.5.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.5.0) | MIT     |
-| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.0.3](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.0.3)                | MIT     |
-| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.0.3](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.0.3)                      | MIT     |
+| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.6.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.6.0) | MIT     |
+| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.1.0](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.1.0)                | MIT     |
+| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.1.0](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.1.0)                      | MIT     |
 
 # Third-party software
 

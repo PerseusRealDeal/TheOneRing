@@ -9,6 +9,7 @@
 
 import UIKit
 import PerseusDarkMode
+import ConsolePerseusLogger
 
 let TITLE = "The Fellowship of the Ring"
 
@@ -82,6 +83,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         guard value(forKey: "storyboardIdentifier") != nil else { return }
 
+        // End-user messages
+
+        localReport.messageDelegate = labelLog
+
         configure()
 
         // Dark Mode setup
@@ -137,7 +142,8 @@ class MainViewController: UIViewController {
         optionsPanel.segmentedControlValue = choice
         semanticToolsViewController.optionsPanel?.segmentedControlValue = choice
 
-        labelLog.message = "Dark Mode is \(choice)"
+        // labelLog.message = "Dark Mode is \(choice)"
+        log.message("Dark Mode is \(choice)", .notice, .custom, .enduser)
     }
 }
 
