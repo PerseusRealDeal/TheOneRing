@@ -786,7 +786,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
 				kind = exactVersion;
-				version = 2.1.0;
+				version = 2.1.1;
 			};
 		};
 		2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -794,7 +794,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.6.0;
+				version = 1.7.0;
 			};
 		};
 		2EE2C01A2EADEF1C000752AD /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
@@ -802,7 +802,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit";
 			requirement = {
 				kind = exactVersion;
-				version = 1.1.0;
+				version = 1.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

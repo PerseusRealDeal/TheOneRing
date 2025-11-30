@@ -2,14 +2,14 @@
 
 [![Actions Status](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml)
 [![Style](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml)
-![Version](https://img.shields.io/badge/Version-2.2-green.svg)
+![Version](https://img.shields.io/badge/Version-2.3-green.svg)
 [![Platforms](https://img.shields.io/badge/Platform-iOS%2012.4+-orange.svg)](https://en.wikipedia.org/wiki/IOS_12)
 [![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
 [![SDK](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
 [![License](http://img.shields.io/:License-Unlicense-green.svg)](/LICENSE)
 
-> The fan iOS app in the Middle-earth theme with screens from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
+> This is a great fan iOS app themed with the Middle-earth adventures from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
 
 > For details: [`Approbation and A3 Environment`](/APPROBATION.md).
 
@@ -17,9 +17,9 @@
 
 > Swift Package Manager.
 
-[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.6.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.1.0-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
-[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.1.0-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
+[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.7.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.1.1-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.1.1-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
 
 ## Our Terms
 
@@ -49,9 +49,9 @@
 
 | Type    | Name                                                                                                                                                                  | License |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.6.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.6.0) | MIT     |
-| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.1.0](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.1.0)                | MIT     |
-| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.1.0](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.1.0)                      | MIT     |
+| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.7.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.7.0) | MIT     |
+| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.1.1](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.1.1)                | MIT     |
+| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.1.1](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.1.1)                      | MIT     |
 
 # Third-party software
 
@@ -64,7 +64,7 @@
 
 # Unlicensed Free Software
 
-- [License](/LICENSE)
+[`License doc`](/LICENSE) for details.
 
 ## Required License Notices
 
@@ -104,4 +104,4 @@
 
 # Prepared by
 
-> © Mikhail A. Zhigulin of Novosibirsk
+> © Mikhail A. Zhigulin of Novosibirsk.
