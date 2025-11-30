@@ -56,7 +56,7 @@ public typealias MyCustomLabel = NSTextField
 
 public let DEFAULT_MESSAGE_LABEL_TEXT = "Have a great time"
 
-public class MessageLabel: MyCustomLabel, PerseusDelegatedMessage {
+public class MessageLabel: MyCustomLabel, ConsolePerseusLogger.PerseusDelegatedMessage {
 
     private var messageDeepCounter: Int = 0
 
