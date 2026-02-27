@@ -1,107 +1,234 @@
-# iOS discovery project — Xcode 14.2+
+<div align="center">
+
+The fan iOS app
+==
+
+__Discovery project__
 
 [![Actions Status](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/main.yml)
 [![Style](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/perseusrealdeal/theonering/actions/workflows/swiftlint.yml)
-![Version](https://img.shields.io/badge/Version-2.3-green.svg)
+[![Version](https://img.shields.io/badge/Version-2.4-green.svg)](/CHANGELOG.md)
+
 [![Platforms](https://img.shields.io/badge/Platform-iOS%2012.4+-orange.svg)](https://en.wikipedia.org/wiki/IOS_12)
 [![Xcode](https://img.shields.io/badge/Xcode-14.2+-red.svg)](https://en.wikipedia.org/wiki/Xcode)
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg)](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html)
 [![SDK](https://img.shields.io/badge/SDK-UIKit%20-blueviolet.svg)](https://developer.apple.com/documentation/uikit)
-[![License](http://img.shields.io/:License-Unlicense-green.svg)](/LICENSE)
 
-> This is a great fan iOS app themed with the Middle-earth adventures from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
+[![PackageManager](http://img.shields.io/:PackageManager-SwiftPM-green.svg)](https://docs.swift.org/swiftpm/documentation)
+[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.7.1-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
+[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.2.0-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
+[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.2.1-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
 
-> For details: [`Approbation and A3 Environment`](/APPROBATION.md).
+[`A3 Environment`](/APPROBATION.md) • [`Unlicense`](/LICENSE)
 
-## Dependencies
+</div>
 
-> Swift Package Manager.
+---
 
-[![ConsolePerseusLogger](http://img.shields.io/:ConsolePerseusLogger-1.7.0-green.svg)](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)
-[![PerseusDarkMode](http://img.shields.io/:PerseusDarkMode-2.1.1-green.svg)](https://github.com/perseusrealdeal/PerseusDarkMode.git)
-[![PerseusGeoKit](http://img.shields.io/:PerseusGeoKit-1.1.1-green.svg)](https://github.com/perseusrealdeal/PerseusGeoKit.git)
+Contents
+==
 
-## Our Terms
+* [Announcement](#Announcement)
+    * [Our terms](#Our-terms)
+    * [The why](#The-why)
+    * [Preview material](#Preview-material)
+    * [Top features](#Top-features)
+* [Requirements](#Requirements)
+* [First-party software](#First-party-software)
+* [Third-party software](#Third-party-software)
+* [Account points](#Account-points)
+* [License](#License)
+    * [Other required licenses details](#Other-required-licenses-details)
+* [Credits](#Credits)
+* [Contributing](#Contributing)
+* [Prepared by](#Prepared-by)
+    * [Contact](#Contact)
 
-> [`CPL`](https://github.com/perseusrealdeal/ConsolePerseusLogger.git) stands for `C`onsole `P`erseus `L`ogger.</br>
-> [`PGK`](https://github.com/perseusrealdeal/PerseusGeoKit.git) stands for `P`erseus `G`eo `K`it.</br>
-> [`PDM`](https://github.com/perseusrealdeal/PerseusDarkMode.git) stands for `P`erseus `D`ark `M`ode.</br>
-> `P2P` stands for `P`erson-`to`-`P`erson.</br>
-> [`A3`](https://docs.google.com/document/d/1K2jOeIknKRRpTEEIPKhxO2H_1eBTof5uTXxyOm5g6nQ) stands for `A`pple `A`pps `A`pprobation.</br>
-> [`T3`](https://github.com/perseusrealdeal/TheTechnologicalTree) stands for `T`he `T`echnological `T`ree.
+---
 
-## Build system requirements
+Announcement
+==
 
-- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294) / [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
+The fan iOS app in the Middle-earth theme with screens from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
 
-# In brief
+Our Terms
+--
 
-> Serves the only one purpose —— the first-party software approbation.
+| Acronym | Stands for                                                                                                |
+| :-----: | --------------------------------------------------------------------------------------------------------- |
+| CPL     | [Console_Perseus_Logger](https://github.com/perseusrealdeal/ConsolePerseusLogger.git)                     |
+| PDM     | [Perseus_Dark_Mode](https://github.com/perseusrealdeal/PerseusDarkMode.git)                               |
+| PGK     | [Perseus_Geo_Kit](https://github.com/perseusrealdeal/PerseusGeoKit.git)                                   |
+| A3      | [Apple_Apps_Approbation](https://docs.google.com/document/d/1K2jOeIknKRRpTEEIPKhxO2H_1eBTof5uTXxyOm5g6nQ) |
+| T3      | [The_Technological_Tree](https://github.com/perseusrealdeal/TheTechnologicalTree)                         |
+| P2P     | Person_to_Person                                                                                          |
 
-| Main Screen Light  | Main Screen Dark | Colors Screen Light | Colors Screen Dark |
-| :--------------------: | :----------------------: | :-------------------: | :---------------------: |
-| <img src="https://github.com/user-attachments/assets/51b526be-bbfd-4684-9339-ed00c07a4bff" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/982ac2e3-f826-4e0e-8219-afe0543bbb3b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/86f27b3e-32dc-4607-8104-395685f061e5" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> | <img src="https://github.com/user-attachments/assets/e41b5d33-e8c5-49e1-a701-db411244869b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/> |
+The why
+--
+
+This app serves the only one purpose —— the first-party `software approbation`, but also and the third.
+
+Preview material
+--
+
+<!--
+> [!IMPORTANT]
+> The next video recordered with `QuickTime Player` and than converted with ``. 
+
+TODO: paste file convertor name and link
+-->
+
+<table>
+  <tr>
+    <th>Main Screen Dark</th>
+    <th>Main Screen Light</th>
+    <th>Colors Screen Dark</th>
+    <th>Colors Screen Light</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/51b526be-bbfd-4684-9339-ed00c07a4bff" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/982ac2e3-f826-4e0e-8219-afe0543bbb3b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/e41b5d33-e8c5-49e1-a701-db411244869b" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/86f27b3e-32dc-4607-8104-395685f061e5" width="200" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"/>
+    </td>
+  </tr>
+</table>
 
 > [!IMPORTANT]
 > The screenshot scenes taken from the motion picture `The Lord of The Rings` based on the novel by `J.R.R. Tolkien`.
 
-# First-party software
+<!--
+> [!NOTE]
+> If the app from an unidentified developer:
 
-| Type    | Name                                                                                                                                                                  | License |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Package | [ConsolePerseusLogger](https://github.com/perseusrealdeal/ConsolePerseusLogger) / [1.7.0](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.7.0) | MIT     |
-| Package | [PerseusDarkMode](https://github.com/perseusrealdeal/PerseusDarkMode) / [2.1.1](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.1.1)                | MIT     |
-| Package | [PerseusGeoKit](https://github.com/perseusrealdeal/PerseusGeoKit) / [1.1.1](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.1.1)                      | MIT     |
+TODO: link to video
+-->
 
-# Third-party software
+Top features
+--
 
-| Type   | Name                                                                                                                              | License                            |
-| ------ | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| Style  | [SwiftLint](https://github.com/realm/SwiftLint) / [v0.57.0 for Monterey+](https://github.com/realm/SwiftLint/releases/tag/0.57.0) | MIT                                |
-| Action | [mxcl/xcodebuild@v3](https://github.com/mxcl/xcodebuild)                                                                          | [Unlicense](https://unlicense.org) |
-| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/)                                                 | MIT                                |
+- `Geo:` Current Location, Location Updates, Map Screen
+- `Dark Mode:` Light, Dark, Auto
+- `Colors:` Color in details, Color converter RGBA <> HEX
+
+Requirements
+==
+
+`To build:`
+
+- [macOS Monterey 12.7.6+](https://apps.apple.com/by/app/macos-monterey/id1576738294)
+- [Xcode 14.2+](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.2/Xcode_14.2.xip)
+
+First-party software
+==
+
+| Type     | Name                                                                                                      | License |
+| -------- | --------------------------------------------------------------------------------------------------------- | :-----: |
+| Package  | [ConsolePerseusLogger v1.7.1](https://github.com/perseusrealdeal/ConsolePerseusLogger/releases/tag/1.7.1) | MIT     |
+| Package  | [PerseusDarkMode v2.2.0](https://github.com/perseusrealdeal/PerseusDarkMode/releases/tag/2.2.0)           | MIT     |
+| Package  | [PerseusGeoKit v1.2.1](https://github.com/perseusrealdeal/PerseusGeoKit/releases/tag/1.2.1)               | MIT     |
+| Class    | [MessageLabel](https://gist.github.com/PerseusRealDeal/dbfed6e01ed80be084983738ba713654)                  | MIT     |
+
+Third-party software
+==
+
+| Type   | Name                                                                                  | License                            |
+| ------ | ------------------------------------------------------------------------------------- | :--------------------------------: |
+| Style  | [SwiftLint v0.57.0 Monterey+](https://github.com/realm/SwiftLint/releases/tag/0.57.0) | MIT                                |
+| Action | [mxcl/xcodebuild@v3](https://github.com/mxcl/xcodebuild)                              | [Unlicense](https://unlicense.org) |
+| Action | [cirruslabs/swiftlint-action@v1](https://github.com/cirruslabs/swiftlint-action/)     | MIT                                |
 | Class  | [HexColorConverter](/DiscoveryProject/DarkModeDiscovery/Configuration/ThirdPartyCode/HexColorConverter.swift) -  extracted, edited from [UIColor-Hex-Swift](https://github.com/yeahdongcn/UIColor-Hex-Swift) | MIT |
 
-# Unlicensed Free Software
+Account points 
+==
 
-[`License doc`](/LICENSE) for details.
+- Explicit start point [main.swift](/DiscoveryProject/DarkModeDiscovery/main.swift)
+- Explicit app delegate [TestingAppDelegate.swift](/DiscoveryProject/DarkModeDiscoveryTests/Configuration/TestingAppDelegate.swift)
+- Explicit app globals [AppGlobals.swift](/DiscoveryProject/DarkModeDiscovery/AppGlobals.swift)
+- [A3 environment specification](/APPROBATION.md)
+- [GitHub CI build & test](/.github/workflows/main.yml)
+- [GitHub CI SwiftLint](/.github/workflows/swiftlint.yml)
+- [SwiftLint Rules](/DiscoveryProject/.swiftlint.yml)
+- [Git Config](/.gitignore)
+- SwiftLint shell script as a build phase, SwiftLint preinstallation required
 
-## Required License Notices
+License
+==
 
-© Mikhail A. Zhigulin of Novosibirsk **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
-© PerseusRealDeal **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit</br>
+__Unlicensed Free Software__, see [LICENSE](/LICENSE) for details.
+
+The project has been started in 7530 by `Mikhail A. Zhigulin of Novosibirsk`.<br/>
+
+- The year starts from the creation of the world according to a Slavic calendar.
+- September, the 1st of Slavic year. For instance, "Sep 01, 2025" is the beginning of 7534.
+
+Other required licenses details
+--
+
+© Mikhail A. Zhigulin of Novosibirsk **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit, MessageLabel</br>
+© PerseusRealDeal **for** ConsolePerseusLogger, PerseusDarkMode, PerseusGeoKit, MessageLabel</br>
 © 2025 The SwiftLint Contributors **for** SwiftLint</br>
 © GitHub **for** GitHub Action cirruslabs/swiftlint-action@v1</br>
 © 2014 R0CKSTAR **for** UIColor-Hex-Swift</br>
 
-# Credits
+Credits
+==
 
 <table>
-<tr>
-    <td>Balance and Control</td>
-    <td>kept by</td>
-    <td>Mikhail A. Zhigulin</td>
-</tr>
-<tr>
-    <td>Source Code</td>
-    <td>written by</td>
-    <td>Mikhail A. Zhigulin</td>
-</tr>
-<tr>
-    <td>Documentation</td>
-    <td>prepared by</td>
-    <td>Mikhail A. Zhigulin</td>
-</tr>
-<tr>
-    <td>Product Approbation</td>
-    <td>tested by</td>
-    <td>Mikhail A. Zhigulin</td>
-</tr>
+  <tr>
+      <td>Balance and Control</td>
+      <td>Mikhail Zhigulin</td>
+  </tr>
+  <tr>
+      <td>Source Code</td>
+      <td>Mikhail Zhigulin</td>
+  </tr>
+  <tr>
+      <td>Documentation</td>
+      <td>Mikhail Zhigulin</td>
+  </tr>
+  <tr>
+      <td>Approbation</td>
+      <td>Mikhail Zhigulin</td>
+  </tr>
+  <tr>
+      <td>English</td>
+      <td>Mikhail Zhigulin</td>
+  </tr>
 </table>
 
-- Language support: [Reverso](https://www.reverso.net/)
+- Language support: [Reverso](https://www.reverso.net/) 
 - Git clients: [SmartGit](https://syntevo.com/) and [GitHub Desktop](https://github.com/apps/desktop)
 
-# Prepared by
+Contributing
+==
 
-> © Mikhail A. Zhigulin of Novosibirsk.
+> [!NOTE]
+> The product is constructed in `P2P` relationship paradigm that means the only one single and the same face in the product team during all preparation process.
+
+`Bug reports are welcome`, create an issue and give details.
+
+Prepared by
+==
+
+<div align="center">
+
+`© Mikhail A. Zhigulin of Novosibirsk`
+
+</div>
+
+Contact
+--
+
+<div align="center">
+
+[E-mail](mailto:mzhigulin@gmail.com) • [Telegram](https://t.me/velociraptor1985) • [GitHub](https://github.com/perseusrealdeal)
+
+</div>

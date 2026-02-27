@@ -189,7 +189,7 @@
                                                     <constraint firstItem="hSS-vn-jyR" firstAttribute="height" secondItem="hEo-wO-Btz" secondAttribute="height" multiplier="0.3" id="tJK-SH-Abc"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-WH-usb" customClass="DarkModeImageView" customModule="TheOneRing" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-WH-usb" customClass="DarkModeImageView" customModule="PerseusDarkMode">
                                                 <rect key="frame" x="0.0" y="380" width="375" height="253.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageLight" value="Rivendell"/>
@@ -237,6 +237,11 @@
             <point key="canvasLocation" x="-128" y="78"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="fTE-WH-usb">
+            <size key="intrinsicContentSize" width="640" height="338"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Rivendell" width="640" height="338"/>
         <image name="RivendellDark" width="1600" height="667"/>

@@ -21,41 +21,46 @@ typealias DM_LOG = PerseusDarkMode.PerseusLogger
 typealias GEO_LOG = PerseusGeoKit.PerseusLogger
 // swiftlint:enable type_name
 
-// MARK: - The log report
+// MARK: - The PerseusDarkMode Logger
 
-func report(_ instance: PerseusDarkMode.LogMessage) {
-
-    let date = instance.localTime.date
-    let time = instance.localTime.time
-
-    localReport.lastMessage = "[\(date)] [\(time)] \(instance.text)"
+func report(_ message: PerseusDarkMode.LogMessage) {
+    let text = "[\(message.localTime.date)] [\(message.localTime.time)] \(message.text)"
+    localReport.lastMessage = "SUB_DM: " + text
 }
 
-func report(_ instance: PerseusGeoKit.LogMessage) {
+DM_LOG.customActionOnMessage = report(_:)
+DM_LOG.output = .custom
+// DM_LOG.turned = .off
 
-    let date = instance.localTime.date
-    let time = instance.localTime.time
+// MARK: - The PerseusGeoKit Logger
 
-    localReport.lastMessage = "[\(date)] [\(time)] \(instance.text)"
+func report(_ message: PerseusGeoKit.LogMessage) {
+    let text = "[\(message.localTime.date)] [\(message.localTime.time)] \(message.text)"
+    localReport.lastMessage = "SUB_GEO: " + text
 }
+
+GEO_LOG.customActionOnMessage = report(_:)
+GEO_LOG.output = .custom
+// GEO_LOG.turned = .off
+
+// MARK: - The Logger
 
 let localReport = ConsolePerseusLogger.PerseusLogger.Report()
 
-// MARK: - The logger
-
-GEO_LOG.customActionOnMessage = report(_:)
-DM_LOG.customActionOnMessage = report(_:)
-
 log.customActionOnMessage = localReport.report(_:)
+log.output = .custom
+// log.turned = .off
 
-log.message("The app's start point...", .info)
+// MARK: - The start line
 
-// MARK: - The app run
+log.message("The start line...", .info)
 
 let globals = AppGlobals()
-
-// Determine the app run purpose
 let appPurpose: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
+
+// MARK: - The app's run
+
+log.message("The app is about to run...", .info)
 
 // Initialize the app object from the purpose
 UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appPurpose))

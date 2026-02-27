@@ -17,8 +17,6 @@
 		2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA971BC2D88798000E564CA /* LocationViewController.swift */; };
 		2EAC22412E3DD3AE0062A768 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC22402E3DD3AE0062A768 /* MessageLabel.swift */; };
 		2EC2CAF12E0289F00044F6E9 /* CPLConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 2EC2CAF02E0289CA0044F6E9 /* CPLConfig.json */; };
-		2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */; };
-		2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */; };
 		2EE1B77B2DBE21D400375792 /* PerseusDarkMode in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77A2DBE21D400375792 /* PerseusDarkMode */; };
 		2EE1B77E2DBE21E600375792 /* ConsolePerseusLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE1B77D2DBE21E600375792 /* ConsolePerseusLogger */; };
 		2EE2C01C2EADEF1C000752AD /* PerseusGeoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE2C01B2EADEF1C000752AD /* PerseusGeoKit */; };
@@ -81,8 +79,6 @@
 		2EA971BC2D88798000E564CA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2EAC22402E3DD3AE0062A768 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		2EC2CAF02E0289CA0044F6E9 /* CPLConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CPLConfig.json; sourceTree = "<group>"; };
-		2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMSupportingStar.swift; sourceTree = "<group>"; };
-		2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGKSupportingStar.swift; sourceTree = "<group>"; };
 		2EE5FCCF2DD0941E000AC9CD /* UpdatingLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UpdatingLocation.gpx; sourceTree = "<group>"; };
 		2EEA5B6D2DF6D90700CEDAFE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4B6B3742298E29B50003AF01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,13 +154,20 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		2EEA60642F5BFD1E00377219 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E09538A527B36E7B00AAAAAA /* Info.plist */,
+				E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		4B7EABE8298CC13A0063172D /* FirstPartyCode */ = {
 			isa = PBXGroup;
 			children = (
 				E03450EF27C368F70071443E /* CustomColors.swift */,
 				E03450F127C36F870071443E /* HelpFunctions.swift */,
-				2EC81B5C2DAB7981004C7AA6 /* PDMSupportingStar.swift */,
-				2EDCE1772DCE33BD00CC15A9 /* PGKSupportingStar.swift */,
 				2EAC22402E3DD3AE0062A768 /* MessageLabel.swift */,
 			);
 			path = FirstPartyCode;
@@ -228,9 +231,8 @@
 		E09538A227B36E7B00AAAAAA /* DarkModeDiscoveryTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EEA60642F5BFD1E00377219 /* Configuration */,
 				E09538A327B36E7B00AAAAAA /* DarkModeDiscoveryTests.swift */,
-				E09538C027B36ECA00AAAAAA /* TestingAppDelegate.swift */,
-				E09538A527B36E7B00AAAAAA /* Info.plist */,
 			);
 			path = DarkModeDiscoveryTests;
 			sourceTree = "<group>";
@@ -474,7 +476,6 @@
 				2E8501D72D2660E800C60CD2 /* CurrentLocationPanel.swift in Sources */,
 				E09183C527BD4CEF00475D2B /* SemanticColorsViewController.swift in Sources */,
 				2EA971BD2D88798000E564CA /* LocationViewController.swift in Sources */,
-				2EC81B5D2DAB7981004C7AA6 /* PDMSupportingStar.swift in Sources */,
 				E0FD2D3E27FD915800DC5405 /* SystemColorsViewList.swift in Sources */,
 				E09183C727BD4D4500475D2B /* DynamicsViewController.swift in Sources */,
 				E09183C127BD495500475D2B /* SystemColorsViewController.swift in Sources */,
@@ -492,7 +493,6 @@
 				E03450F227C36F870071443E /* HelpFunctions.swift in Sources */,
 				2EAC22412E3DD3AE0062A768 /* MessageLabel.swift in Sources */,
 				4B6B3743298E29B50003AF01 /* AppDelegate.swift in Sources */,
-				2EDCE1782DCE33BD00CC15A9 /* PGKSupportingStar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,7 +711,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
-				INFOPLIST_FILE = darkmodediscoveryTests/Info.plist;
+				INFOPLIST_FILE = darkmodediscoveryTests/configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -733,7 +733,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6DRVN4F88C;
-				INFOPLIST_FILE = darkmodediscoveryTests/Info.plist;
+				INFOPLIST_FILE = darkmodediscoveryTests/configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,7 +786,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusDarkMode";
 			requirement = {
 				kind = exactVersion;
-				version = 2.1.1;
+				version = 2.2.0;
 			};
 		};
 		2EE1B77C2DBE21E600375792 /* XCRemoteSwiftPackageReference "ConsolePerseusLogger" */ = {
@@ -794,7 +794,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/ConsolePerseusLogger";
 			requirement = {
 				kind = exactVersion;
-				version = 1.7.0;
+				version = 1.7.1;
 			};
 		};
 		2EE2C01A2EADEF1C000752AD /* XCRemoteSwiftPackageReference "PerseusGeoKit" */ = {
@@ -802,7 +802,7 @@
 			repositoryURL = "https://github.com/perseusrealdeal/PerseusGeoKit";
 			requirement = {
 				kind = exactVersion;
-				version = 1.1.1;
+				version = 1.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
